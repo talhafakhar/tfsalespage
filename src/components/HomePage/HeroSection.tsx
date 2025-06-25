@@ -2,6 +2,15 @@ import React, {useEffect, useRef, useState} from 'react';
 import Navbar from "@/components/Header/Navbar";
 import Image from "next/image";
 import LogoSlider from "@/components/Common/ClientsSlider";
+const partnerNames: string[] = [
+    "B2B SaaS Companies",
+    "AI Startups",
+    "HealthTech Innovators",
+    "FinTech Leaders",
+    "Online Marketplaces",
+    "Tech-Enabled Services"
+];
+
 const HeroSection: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -49,7 +58,6 @@ const HeroSection: React.FC = () => {
         }
         let animationId: number;
         let time = 0;
-
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             time += 0.02;
@@ -130,7 +138,7 @@ const HeroSection: React.FC = () => {
     return (
         <div className="bg-black">
             <Navbar/>
-            <section className="min-h-screen bg-gradient-to-br from-black via-secondary-950 to-secondary-900 relative overflow-hidden flex items-center">
+            <section className="bg-gradient-to-br from-black via-secondary-950 to-secondary-900 relative overflow-hidden flex items-center">
                 <div className="absolute inset-0">
                     <div
                         className="absolute top-20 left-10 w-32 h-32 bg-primary-500/10 rounded-full blur-xl animate-pulse"></div>
@@ -145,25 +153,23 @@ const HeroSection: React.FC = () => {
                     <div
                         className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-primary-500/5 via-transparent to-primary-600/5 animate-pulse"></div>
                 </div>
-                <div className="relative z-10 container mx-auto px-4 pb-10 pt-36 ">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-                        <div className="text-center md:text-start">
+                <div className="relative z-10 container mx-auto px-4 pb-10">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-10 min-h-screen">
+                        <div className="text-center md:text-start ">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-heading font-bold text-white mb-6 leading-tight">
-                                    Build, Scale, and <span className="bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 bg-clip-text text-transparent flex justify-center lg:justify-start">
+                                <h1 className="text-5xl sm:text-6xl  font-heading font-bold text-white mb-6 leading-tight">
+                                    Build, Scale, and <span className="bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent flex justify-center lg:justify-start">
                     Automate
                   </span> Your Startup.
                                 </h1>
                             </div>
                             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="text-3xl sm:text-4xl lg:text-5xl font-button font-bold text-primary-500 mb-8 flex justify-center lg:justify-start  items-center space-x-4">
-                                    <span className="animate-pulse">Faster.</span>
-                                    <span className="animate-pulse delay-500">Smarter.</span>
-                                    <span className="animate-pulse delay-1000">Leaner.</span>
+                                <div className="text-3xl sm:text-4xl lg:text-5xl font-button font-bold mb-8 flex justify-center lg:justify-start items-center space-x-4 bg-gradient-to-r from-primary-500 to-primary-400 bg-clip-text text-transparent">
+                                    Faster. Smarter. Leaner
                                 </div>
                             </div>
                             <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <p className="text-gray-300 mb-12 max-w-xl">
+                                <p className="text-gray-300 mb-8 max-w-xl">
                                     <span className="text-primary-400 font-semibold">Fractional CMO, CTO, and SDR services</span> tailored
                                     for founders who want
                                     <span className="text-white font-medium"> senior-level execution</span> without
@@ -171,8 +177,8 @@ const HeroSection: React.FC = () => {
                                 </p>
                             </div>
                             <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center sm:justify-start items-center mb-6">
-                                    <button className="group relative px-5 py-3 bg-primary-gradient text-secondary-950 font-button font-bold rounded-2xl overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                                <div className="flex flex-col sm:flex-row gap-6 justify-center sm:justify-start items-center mb-4">
+                                    <button className="group text-sm relative p-2 bg-primary-gradient text-secondary-950 font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                                         <div
                                             className="absolute inset-0 bg-primary-gradient-hover opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                         <div
@@ -197,7 +203,7 @@ const HeroSection: React.FC = () => {
 
                                     {/* Secondary CTA */}
                                     <button
-                                        className="group relative px-5 py-3 border-2 border-primary-500 text-primary-500 hover:text-secondary-950 font-button font-bold rounded-2xl overflow-hidden transition-all duration-500 transform hover:scale-105">
+                                        className="group relative p-2 border bg-white/20 text-sm border-primary-500 text-primary-500 hover:text-secondary-950 font-button font-bold rounded-md overflow-hidden transition-all duration-500 transform hover:scale-105">
                                         <div
                                             className="absolute inset-0 bg-primary-gradient scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                                         <span className="relative z-10 flex items-center space-x-2">
@@ -213,46 +219,50 @@ const HeroSection: React.FC = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div className={`transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="text-center mb-6">
-                                    <h4 className="text-sm font-medium text-white mb-4">We Partner With:</h4>
-                                </div>
-                                <div className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto">
-                                    {[
-                                        "B2B SaaS Companies",
-                                        "AI Startups",
-                                        "HealthTech Innovators",
-                                        "FinTech Leaders",
-                                        "Online Marketplaces",
-                                        "Tech-Enabled Services"
-                                    ].map((company, index) => (
+                            <div className={`transform transition-all duration-1000 delay-700 ${
+                                isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+                            }`}><div className="text-center  justify-center flex gap-2 mb-4">
+                                    <h3 className="text-lg font-medium  text-white tracking-wide">
+                                        We Partner With
+                                    </h3>
+                                    <Image src="/assets/svg/downArrow.svg" alt="arrow" className='mt-3' width={24} height={24}/>
+                                </div><div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                                    {partnerNames.map((name, index) => (
                                         <div
-                                            key={company}
+                                            key={name}
                                             className={`
-    group relative px-5 py-3 
-    bg-gradient-to-br from-primary-500/10 to-primary-500/20 
-    border border-primary-500/30 
-    rounded-xl 
-    text-sm text-gray-200 
-    transition-all duration-300 
-    cursor-default 
-    shadow-md shadow-primary-500/10 
-    animation-delay-${(index + 1) * 100}
-  `}
-                                            style={{ animationDelay: `${(index + 1) * 100}ms` }}
+              group relative
+              bg-gray-800/40 
+              border border-primary-500/40
+              rounded
+              px-2 py-1
+              text-center
+              transition-all duration-500 ease-out
+              cursor-default
+              backdrop-blur-sm
+              shadow-lg shadow-primary-500/10
+              transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
+            `}
+                                            style={{
+                                                transitionDelay: `${400 + (index * 100)}ms`
+                                            }}
                                         >
-  <span className="relative z-10 font-semibold tracking-wide">
-    {company}
-  </span>
+                                            <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 via-transparent to-primary-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
 
-                                            <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary-500/0 via-primary-500/10 to-primary-500/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl blur-sm" />
+                                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-gradient-to-r from-transparent via-primary-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-full" />
 
-                                            <div className="absolute -inset-1 rounded-xl" />
+                                            <span className="relative z-10 text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300 tracking-wide">
+              {name}
+            </span>
+
+                                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/10 via-primary-400/5 to-primary-600/10 rounded-xl" />
+                                            </div>
+
+                                            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                                         </div>
-
                                     ))}
-                                </div>
-                            </div>
+                                </div></div>
                         </div>
                         <div className={`flex-1 max-w-xs sm:max-w-md md:max-w-lg w-full transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
                             <div className="relative">
@@ -313,6 +323,7 @@ const HeroSection: React.FC = () => {
                             </div>
                         </div>
                     </div>
+                    <hr className="max-w-xl mx-auto px-2 py-2"/>
                     <LogoSlider/>
                 </div>
             </section>

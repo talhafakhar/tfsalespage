@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { BarChart3, Code, Target, Users, Bot, Brain } from 'lucide-react';
+import React, {useEffect, useRef, useState} from 'react';
+import {BarChart3, Bot, Brain, Code, Target, Users} from 'lucide-react';
 
 const ServicesCard = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [previousIndex, setPreviousIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    const containerRef = useRef(null);
+    const containerRef = useRef<HTMLDivElement | null>(null);
     const lastScrollTime = useRef(0);
     const services = {
         'Virtual CMO Services': {
@@ -108,7 +108,7 @@ const ServicesCard = () => {
         setTimeout(() => setIsAnimating(false), 800);
     };
     useEffect(() => {
-        const handleScroll = (e:any) => {
+        const handleScroll = (e: WheelEvent) => {
             if (isAnimating) return;
 
             const now = Date.now();
@@ -134,18 +134,19 @@ const ServicesCard = () => {
 
         const container = containerRef.current;
         if (container) {
-            container.addEventListener('wheel', handleScroll, { passive: false });
+
+            container.addEventListener('wheel', handleScroll, {passive: false});
             return () => container.removeEventListener('wheel', handleScroll);
         }
-    }, [currentIndex, isAnimating, totalCount]);
+    }, [currentIndex, goToNext, goToPrevious, isAnimating, totalCount]);
 
-    const getZIndex = (itemIndex:any) => {
+    const getZIndex = (itemIndex: number) => {
         return (totalCount - 1 + itemIndex - currentIndex) % totalCount;
     };
 
-    const isTopItem = (itemIndex:any) => itemIndex === currentIndex;
+    const isTopItem = (itemIndex: number) => itemIndex === currentIndex;
 
-    const isMovingItem = (itemIndex:any) => {
+    const isMovingItem = (itemIndex: number) => {
         if (!isAnimating) return false;
         return itemIndex === previousIndex || itemIndex === currentIndex;
     };
@@ -160,7 +161,11 @@ const ServicesCard = () => {
                                 <span className="text-sm">O U R</span>
                             </div>
                         </div>
-                        <h1 className="text-6xl  font-bold mt-2">Services</h1>
+                        <h1 className="text-6xl  font-bold mt-2">
+                            <span
+                                className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
+                                Services
+                            </span></h1>
                         <div className="w-16 h-0.5 bg-black mt-4"></div>
                     </div>
                     <div>
@@ -169,7 +174,7 @@ const ServicesCard = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex justify-between gap-16 items-center">
+                <div className="flex flex-col md:flex-row justify-between gap-16 items-center">
                     <div className="relative flex justify-center items-center">
                         <div className="relative w-96 h-[400px]">
                             {entries.map(([serviceName, serviceData], index) => {
@@ -192,9 +197,10 @@ const ServicesCard = () => {
                                             opacity: isMoving && isAnimating ? 0.7 : 1,
                                         }}
                                     >
-                                        <div className={`w-full h-full bg-gradient-to-br ${serviceData.color} rounded-2xl border border-white/20 shadow-2xl backdrop-blur-sm p-8 flex flex-col items-center justify-center text-white`}>
+                                        <div
+                                            className={`w-full h-full bg-gradient-to-br ${serviceData.color} rounded-2xl border border-white/20 shadow-2xl backdrop-blur-sm p-8 flex flex-col items-center justify-center text-white`}>
                                             <div className="bg-white/20 rounded-full p-6 mb-6 backdrop-blur-sm">
-                                                <IconComponent size={48} className="text-white" />
+                                                <IconComponent size={48} className="text-white"/>
                                             </div>
                                             <h3 className="text-2xl font-bold text-center mb-4">
                                                 {serviceName}
@@ -224,7 +230,8 @@ const ServicesCard = () => {
                                         <div className="space-y-3">
                                             {serviceData.points.map((point, pointIndex) => (
                                                 <div key={pointIndex} className="flex items-start gap-3">
-                                                    <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></div>
+                                                    <div
+                                                        className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></div>
                                                     <p className="text-slate-700 leading-relaxed">{point}</p>
                                                 </div>
                                             ))}

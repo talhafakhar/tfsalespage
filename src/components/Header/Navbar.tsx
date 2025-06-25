@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import {ChevronDown, Code, MessageSquare, Phone, Settings, User, Zap } from 'lucide-react';
 const Navbar: React.FC = () => {
+    const [hoveredService, setHoveredService] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     useEffect(() => {
@@ -22,15 +24,26 @@ const Navbar: React.FC = () => {
     const navLinks = [
         { href: '/', label: 'Home' },
         { href: '/about', label: 'About' },
-        { href: '/services', label: 'Services' },
-        { href: '/help', label: 'Help' },
+        { href: '/services', label: 'Services', hasDropdown: true },
         { href: '/contact', label: 'Contact' },
     ];
+    const servicesDropdown = [
+        { label: "Fractional CMO", href: "/services/fractional-cmo", icon: User },
+        { label: "Fractional CTO", href: "/services/fractional-cto", icon: Code },
+        { label: "Fractional SDR", href: "/services/fractional-sdr", icon: Phone },
+        { label: "AaaS", href: "/services/aaaS", icon: Settings },
+        { label: "Sales Automation", href: "/services/sales-automation", icon: Zap },
+        { label: "Sales Consultation", href: "/services/sales-consultation", icon: MessageSquare },
+    ];
+    const [servicesExpanded, setServicesExpanded] = useState(false);
+
+    const handleServiceToggle = () => {
+        setServicesExpanded(!servicesExpanded);
+    };
     return (
         <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black backdrop-blur-md shadow-lg border-b border-gray-800/50' : 'bg-black backdrop-blur-sm'}`}>
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16 md:h-20">
-                    {/* Logo */}
                     <Link href="/" className="flex items-center  group">
                         <div className="flex">
                             <div className="w-10 h-9 transform transition-all duration-300 group-hover:rotate-3">
@@ -46,22 +59,71 @@ const Navbar: React.FC = () => {
     Business Solution
   </span>
                     </Link>
-                    {/* Desktop Navigation */}
                     <div className="hidden md:flex items-center space-x-1">
                         {navLinks.map((link, index) => (
-                            <Link
-                                key={index}
-                                href={link.href}
-                                className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden`}
-                            >
-                                <span className="relative z-10">{link.label}</span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
-                                <div className="absolute bottom-0 left-0 w-full h-0.5  rounded-full"></div>
-                                <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
-                            </Link>
+                            <div key={index} className="relative">
+                                {link.hasDropdown ? (
+                                    <div
+                                        className="relative"
+                                        onMouseEnter={() => setHoveredService(true)}
+                                        onMouseLeave={() => setHoveredService(false)}
+                                    >
+                                        <button
+                                            className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center gap-1`}
+                                        >
+                                            <span className="relative z-10">{link.label}</span>
+                                            <ChevronDown
+                                                className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
+                                                    hoveredService ? 'rotate-180' : ''
+                                                }`}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                            <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
+                                            <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                        </button>
+
+                                        {/* Dropdown Menu */}
+                                        <div
+                                            className={`absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+                                                hoveredService
+                                                    ? 'opacity-100 visible translate-y-0'
+                                                    : 'opacity-0 invisible -translate-y-2'
+                                            }`}
+                                        >
+                                            <div className="py-2">
+                                                {servicesDropdown.map((service, serviceIndex) => {
+                                                    const IconComponent = service.icon;
+                                                    return (
+                                                        <Link
+                                                            key={serviceIndex}
+                                                            href={service.href}
+                                                            className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-primary-500/10 transition-all duration-200 group"
+                                                        >
+                                                            <IconComponent className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors duration-200" />
+                                                            <span className="font-medium">{service.label}</span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                            </div>
+
+                                            {/* Decorative gradient border */}
+                                            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <Link
+                                        href={link.href}
+                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden`}
+                                    >
+                                        <span className="relative z-10">{link.label}</span>
+                                        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
+                                        <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                    </Link>
+                                )}
+                            </div>
                         ))}
                     </div>
-                    {/* Get Started Button - Desktop */}
                     <div className="hidden md:block">
                         <button className="group relative font-button px-6 py-2 bg-primary-gradient text-secondary-950 font-bold rounded overflow-hidden transition-all duration-400 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                             {/* Multiple animated background layers */}
@@ -138,7 +200,6 @@ const Navbar: React.FC = () => {
                             </div>
                         </button>
                     </div>
-                    {/* Mobile Hamburger Menu */}
                     <div className="md:hidden">
                         <button
                             onClick={toggleMenu}
@@ -179,14 +240,56 @@ const Navbar: React.FC = () => {
                     }`}>
                     <div className="px-2 pt-2 pb-6 space-y-1  bg-black/95 backdrop-blur-md rounded-2xl mt-2  shadow-xl border border-gray-800/50">
                         {navLinks.map((link, index) => (
-                            <Link
-                                key={index}
-                                href={link.href}
-                                onClick={closeMobileMenu}
-                                className="block px-4 py-3 text-gray-300 font-nav font-medium hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-300 transform hover:translate-x-1"
-                            >
-                                {link.label}
-                            </Link>
+                            <div key={index}>
+                                {link.hasDropdown ? (
+                                    <div>
+                                        {/* Services Toggle Button */}
+                                        <button
+                                            onClick={handleServiceToggle}
+                                            className="w-full flex items-center justify-between px-4 py-3 text-gray-300 font-nav font-medium hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-300 transform hover:translate-x-1"
+                                        >
+                                            <span>{link.label}</span>
+                                            <ChevronDown
+                                                className={`w-4 h-4 transition-transform duration-300 ${
+                                                    servicesExpanded ? 'rotate-180' : ''
+                                                }`}
+                                            />
+                                        </button>
+
+                                        {/* Services Dropdown */}
+                                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                                            servicesExpanded
+                                                ? 'max-h-96 opacity-100'
+                                                : 'max-h-0 opacity-0'
+                                        }`}>
+                                            <div className="ml-4 mt-1 space-y-1 border-l-2 border-primary-500/30 pl-3">
+                                                {servicesDropdown.map((service, serviceIndex) => {
+                                                    const IconComponent = service.icon;
+                                                    return (
+                                                        <Link
+                                                            key={serviceIndex}
+                                                            href={service.href}
+                                                            onClick={closeMobileMenu}
+                                                            className="flex items-center gap-3 px-3 py-2.5 text-gray-400 hover:text-white hover:bg-primary-500/10 rounded-lg transition-all duration-200 transform hover:translate-x-1 group"
+                                                        >
+                                                            <IconComponent className="w-4 h-4 text-primary-400 group-hover:text-primary-300 transition-colors duration-200" />
+                                                            <span className="text-sm font-medium">{service.label}</span>
+                                                        </Link>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ) : (
+                                    <Link
+                                        href={link.href}
+                                        onClick={closeMobileMenu}
+                                        className="block px-4 py-3 text-gray-300 font-nav font-medium hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-300 transform hover:translate-x-1"
+                                    >
+                                        {link.label}
+                                    </Link>
+                                )}
+                            </div>
                         ))}
 
                         <div className="pt-4 px-4">
