@@ -1,0 +1,101 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+    content: [
+        "./app/**/*.{js,ts,jsx,tsx}",
+        "./pages/**/*.{js,ts,jsx,tsx}",
+        "./components/**/*.{js,ts,jsx,tsx}"
+    ],
+    theme: {
+        extend: {
+            fontFamily: {
+                'logo': ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
+                'nav': ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
+                'button': ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+                'heading': ['Playfair Display', 'Georgia', 'serif'],
+                'body': ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+                'primary': {
+                    300: '#FEF3C7',
+                    400: '#FDE047',
+                    500: '#EAB308',
+                    600: '#CA8A04',
+                    700: '#A16207',
+                },
+                'secondary': {
+                    800: '#1F2937',
+                    900: '#111827',
+                    950: '#030712',
+                }
+            },
+            animation: {
+                'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
+                'shimmer': 'shimmer 1.5s linear infinite',
+                'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
+                'wiggle': 'wiggle 0.5s ease-in-out',
+                'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
+                'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'progress-fill': 'progress-fill 0.8s ease-out forwards',
+
+            },
+            keyframes: {
+                'glow-pulse': {
+                    '0%': {
+                        boxShadow: '0 0 20px rgba(234, 179, 8, 0.6), 0 0 40px rgba(234, 179, 8, 0.2)',
+                        transform: 'scale(1)'
+                    },
+                    '100%': {
+                        boxShadow: '0 0 30px rgba(234, 179, 8, 0.8), 0 0 60px rgba(234, 179, 8, 0.4), 0 0 80px rgba(234, 179, 8, 0.1)',
+                        transform: 'scale(1.02)'
+                    }
+                },
+                'shimmer': {
+                    '0%': { transform: 'translateX(-100%) skewX(-45deg)' },
+                    '100%': { transform: 'translateX(200%) skewX(-45deg)' }
+                },
+                'bounce-subtle': {
+                    '0%, 100%': { transform: 'translateY(0) scale(1)' },
+                    '50%': { transform: 'translateY(-4px) scale(1.1)' }
+                },
+                'wiggle': {
+                    '0%, 100%': { transform: 'rotate(0deg)' },
+                    '25%': { transform: 'rotate(-3deg)' },
+                    '75%': { transform: 'rotate(3deg)' }
+                },
+                'heartbeat': {
+                    '0%, 100%': { transform: 'scale(1)' },
+                    '50%': { transform: 'scale(1.05)' }
+                },
+                'pulse-glow': {
+                    '0%, 100%': {
+                        opacity: '1',
+                        boxShadow: '0 0 0 0 rgba(234, 179, 8, 0.7)'
+                    },
+                    '50%': {
+                        opacity: '0.8',
+                        boxShadow: '0 0 0 10px rgba(234, 179, 8, 0)'
+                    }
+                },
+                'progress-fill': {
+                    '0%': {
+                        width: '0%',
+                        opacity: '0'
+                    },
+                    '10%': {
+                        opacity: '1'
+                    },
+                    '100%': {
+                        width: '100%',
+                        opacity: '1'
+                    }
+                }
+            },
+            backgroundImage: {
+                'primary-gradient': 'linear-gradient(135deg, #EAB308 0%, #CA8A04 50%, #A16207 100%)',
+                'primary-gradient-hover': 'linear-gradient(135deg, #FDE047 0%, #EAB308 50%, #CA8A04 100%)',
+                'primary-gradient-intense': 'linear-gradient(45deg, #FDE047 0%, #EAB308 25%, #CA8A04 50%, #EAB308 75%, #FDE047 100%)',
+            }
+        },
+    },
+    plugins: [],
+}
