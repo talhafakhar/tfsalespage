@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {CheckCircle, Users, Zap, Quote, Star, ChevronRight, ChevronLeft, ArrowRight, LucideIcon} from 'lucide-react';
 import Image from 'next/image';
 interface Feature {
@@ -41,19 +41,19 @@ const CoCreate = () => {
             company: "Creative Studios"
         }
     ];
-    const handleNext = () => {
+    const handleNext = useCallback(() => {
         if (isAnimating) return;
         setIsAnimating(true);
         setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
         setTimeout(() => setIsAnimating(false), 500);
-    };
+    }, [isAnimating, testimonials.length]);
     useEffect(() => {
         const timer = setInterval(() => {
             handleNext();
         }, 5000);
 
         return () => clearInterval(timer);
-    }, [currentTestimonial, handleNext]);
+    }, [handleNext]);
 
 
     const handlePrev = () => {

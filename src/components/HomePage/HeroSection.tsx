@@ -130,6 +130,7 @@ const HeroSection: React.FC = () => {
             ctx.restore();
             animationId = requestAnimationFrame(animate);
         };
+        animate();
         return () => {
             window.removeEventListener('resize', resizeCanvas);
             cancelAnimationFrame(animationId);
