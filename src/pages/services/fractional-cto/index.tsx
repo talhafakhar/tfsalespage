@@ -10,15 +10,17 @@ import HeroSection from "@/components/Services/FractionalCTO/HeroSection";
 import ChallengeSection from "@/components/Services/FractionalCTO/ChallengesSection";
 import ServicesIncludedSection from "@/components/Services/FractionalCTO/ServicesIncludedSection";
 import WhyChooseSection from "@/components/Services/FractionalCTO/WhyChooseSection";
+import WhoWeWorkWithSection from "@/components/Services/FractionalCTO/WhoWeWorkWithSection";
 
 export default function FractionalCTO() {
     return (
         <>
-            <HeroSection />
+            <HeroSection/>
             <ChallengeSection/>
-<ServicesIncludedSection/>
+            <ServicesIncludedSection/>
             <WhyChooseSection/>
-            <Footer />
+            <WhoWeWorkWithSection/>
+            <Footer/>
         </>
     );
 }

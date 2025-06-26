@@ -1,7 +1,7 @@
 'use client';
 import {easeInOut, motion, Variants} from 'framer-motion';
 import {useInView} from 'react-intersection-observer';
-import {ArrowRight, CheckCircle, DollarSign, HandHeart, Star, Target, Zap} from 'lucide-react';
+import {ArrowRight, CheckCircle, DollarSign, HandHeart, Target, Zap} from 'lucide-react';
 import React, {useState} from 'react';
 
 interface Reason {
@@ -9,14 +9,14 @@ interface Reason {
     title: string;
     description: string;
     details: string;
-    accent: 'primary' | 'secondary' | 'blue' | 'green';
+    accent: 'blue' | 'green' | 'purple' | 'orange';
 }
 
 interface Stat {
     number: string;
     suffix: string;
     label: string;
-    color: 'green' | 'blue' | 'purple' | 'orange';
+    color: 'primary' | 'secondary' | 'blue' | 'green';
 }
 
 const WhyChooseSection = () => {
@@ -105,10 +105,10 @@ const WhyChooseSection = () => {
     ];
 
     const features: string[] = [
-        'Strategic Technology Leadership',
-        'Scalable Architecture Design',
-        'Team Building & Management',
-        '24/7 Technical Support'
+        'We align product development with your business model, not just features',
+        'You get high-level strategic leadership without full-time costs',
+        'We fit into your existing team or bring in the right talent for the job',
+        'We help you scale smart — not just fast'
     ];
 
     return (
@@ -127,33 +127,23 @@ const WhyChooseSection = () => {
                     initial="hidden"
                     animate={inView ? "visible" : "hidden"}
                 >
-                    {/* Header Section */}
-                    <motion.div variants={itemVariants} className="text-center mb-20">
-                        <h2 className="font-heading text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
-                            The Smart Choice for{' '}
-                            <span className="relative">
-                                <span className="text-transparent bg-primary-gradient bg-clip-text">
-                                    Modern CTOs
-                                </span>
-                                <motion.div
-                                    initial={{scaleX: 0}}
-                                    animate={inView ? {scaleX: 1} : {scaleX: 0}}
-                                    transition={{duration: 0.8, delay: 1}}
-                                    className="absolute bottom-0 left-0 right-0 h-1 bg-primary-gradient origin-left"
-                                />
-                            </span>
+                    <motion.div
+                        variants={itemVariants}
+                        className="text-center mb-16">
+                        <h2 className="font-nav text-4xl md:text-5xl font-bold mb-6">
+                            Why Founders Choose Our{' '}
+                            <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
+    CTO Model
+  </span>
                         </h2>
-
-                        <p className="font-body text-xl text-gray-600 max-w-3xl mx-auto">
-                            We don&#39;t just build products. We build the future of your business with strategic technology
-                            leadership.
+                        <p className="font-body text-gray-600 max-w-3xl mx-auto">
+                            Not Just Code. Real Strategy. Real Speed. Real Results
                         </p>
+
                     </motion.div>
 
-                    {/* Main Content Layout */}
                     <div className="grid lg:grid-cols-2 gap-16 items-start">
-                        
-                        <motion.div variants={containerVariants} className="space-y-8">
+                        <motion.div variants={containerVariants} className="space-y-2">
                             {reasons.map((reason, index) => (
                                 <motion.div
                                     key={index}
@@ -164,7 +154,7 @@ const WhyChooseSection = () => {
                                 >
                                     <div className="flex items-start space-x-6 p-6 rounded-2xl transition-all duration-300 hover:bg-gray-50">
                                         <motion.div
-                                            animate={hoveredIndex === index ? {
+                                            animate={hoveredIndex === index || index === 0 ? {
                                                 scale: 1.1,
                                             } : {scale: 1}}
                                             whileHover={{
@@ -190,7 +180,7 @@ const WhyChooseSection = () => {
 
                                             <motion.div
                                                 initial={{opacity: 0, height: 0}}
-                                                animate={hoveredIndex === index ? {
+                                                animate={hoveredIndex === index || index === 0 ? {
                                                     opacity: 1,
                                                     height: "auto"
                                                 } : {
@@ -209,9 +199,12 @@ const WhyChooseSection = () => {
                                         </div>
                                         
                                         <motion.div
-                                            animate={hoveredIndex === index ? {x: 5} : {x: 0}}
-                                            className={`opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${getTextAccentColor(reason.accent)}`}
-                                        >
+                                            animate={hoveredIndex === index || index === 0 ? {x: 5} : {x: 0}}
+                                            className={`
+    ${hoveredIndex === index || index === 0 ? 'opacity-100' : 'opacity-0'} 
+    transition-opacity duration-300 
+    ${getTextAccentColor(reason.accent)}
+  `}                                        >
                                             <ArrowRight className="w-6 h-6"/>
                                         </motion.div>
                                     </div>
@@ -219,19 +212,15 @@ const WhyChooseSection = () => {
                                     {/* Side accent line */}
                                     <motion.div
                                         initial={{scaleY: 0}}
-                                        animate={hoveredIndex === index ? {scaleY: 1} : {scaleY: 0}}
+                                        animate={hoveredIndex === index || index === 0 ? {scaleY: 1} : {scaleY: 0}}
                                         transition={{duration: 0.3}}
                                         className={`absolute left-0 top-6 bottom-6 w-1 ${getAccentColor(reason.accent)} rounded-full origin-top`}
                                     />
                                 </motion.div>
                             ))}
                         </motion.div>
-
-                        {/* Right Side - Stats & Visual */}
                         <motion.div variants={itemVariants} className="lg:sticky lg:top-20">
-                            <div
-                                className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 relative overflow-hidden">
-                                {/* Background decoration */}
+                            <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 relative overflow-hidden">
                                 <div
                                     className="absolute top-0 right-0 w-32 h-32 bg-primary-gradient opacity-10 rounded-full blur-2xl animate-pulse-glow"></div>
                                 <div
@@ -248,7 +237,7 @@ const WhyChooseSection = () => {
                                                 key={index}
                                                 initial={{opacity: 0, y: 20}}
                                                 animate={inView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
-                                                transition={{duration: 0.5, delay: 0.8 + index * 0.1}}
+                                                transition={{duration: 0.1, delay: 0.1 + index * 0.1}}
                                                 whileHover={{
                                                     scale: 1.05,
                                                     boxShadow: "0 10px 25px rgba(0,0,0,0.1)"
@@ -267,7 +256,6 @@ const WhyChooseSection = () => {
                                         ))}
                                     </div>
 
-                                    {/* Features List */}
                                     <div className="space-y-4">
                                         {features.map((feature, index) => (
                                             <motion.div
@@ -278,50 +266,13 @@ const WhyChooseSection = () => {
                                                 whileHover={{x: 5}}
                                                 className="flex items-center space-x-3 cursor-pointer group"
                                             >
-                                                <CheckCircle
-                                                    className="w-5 h-5 text-green-500 flex-shrink-0 group-hover:animate-wiggle"/>
-                                                <span
-                                                    className="font-body text-gray-700 font-medium group-hover:text-gray-900 transition-colors duration-200">{feature}</span>
+                                                <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0 group-hover:animate-wiggle"/>
+                                                <span className="font-body text-gray-700 font-medium group-hover:text-gray-900 transition-colors duration-200">{feature}</span>
                                             </motion.div>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-
-                            {/* CTA Button */}
-                            <motion.div
-                                initial={{opacity: 0, y: 20}}
-                                animate={inView ? {opacity: 1, y: 0} : {opacity: 0, y: 20}}
-                                transition={{duration: 0.5, delay: 1.6}}
-                                className="mt-8 text-center"
-                            >
-                                <motion.button
-                                    whileHover={{scale: 1.05, y: -2}}
-                                    whileTap={{scale: 0.95}}
-                                >
-                                    <button
-                                        className="group relative px-2 py-3 bg-primary-gradient text-secondary-950 font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-                                        <div
-                                            className="absolute inset-0 bg-primary-gradient-hover opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                        <div
-                                            className="absolute inset-0 bg-primary-gradient-intense opacity-0 group-hover:opacity-70 transition-opacity duration-700 animate-pulse"></div>
-                                        <div
-                                            className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            <div
-                                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform animate-shimmer"></div>
-                                        </div>
-                                        <span className="relative text-sm z-10 flex items-center space-x-2">
-                                            <span className="tracking-wide">Get Your Free Strategy Session</span>
-                                            <svg
-                                                className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                                                      d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                            </svg>
-                                        </span>
-                                    </button>
-                                </motion.button>
-                            </motion.div>
                         </motion.div>
                     </div>
                 </motion.div>
