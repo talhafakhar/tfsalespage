@@ -3,16 +3,13 @@ import {
     ArrowRight,
     MessageCircle,
     ExternalLink,
-    Sparkles,
     CheckCircle,
     Zap,
     TrendingUp,
     Target,
-    Users,
     Award,
-    Star,
-    Play
 } from 'lucide-react';
+import Image from "next/image";
 
 interface Benefit {
     icon: React.ComponentType<{ size?: number; className?: string }>;
@@ -35,17 +32,8 @@ const FinalCTASection: React.FC = () => {
         { icon: Award, text: "Powerful systems", delay: "800ms" },
         { icon: CheckCircle, text: "Measurable growth", delay: "1000ms" }
     ];
-
-    const stats = [
-        { number: "500+", label: "Founders Served", icon: Users },
-        { number: "300%", label: "Average Growth", icon: TrendingUp },
-        { number: "90", label: "Days to Results", icon: Zap },
-        { number: "4.9★", label: "Client Rating", icon: Star }
-    ];
-
     return (
         <section className="bg-white py-20 px-4 relative overflow-hidden">
-            {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{
                     backgroundImage: `radial-gradient(circle at 2px 2px, rgba(234, 179, 8, 0.15) 1px, transparent 0)`,
@@ -145,11 +133,15 @@ const FinalCTASection: React.FC = () => {
                         isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-8'
                     }`}>
                         <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                            <img
-                                src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=700&fit=crop&crop=top"
+                            <Image
+                                src="/assets/home/graph.webp"
                                 alt="Growth Strategy Team"
+                                width={1920}
+                                height={384}
                                 className="w-full h-96 object-cover"
+                                priority
                             />
+
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">
                                 <div className="text-white">
                                     <div className="flex items-center gap-3 mb-3">
@@ -161,7 +153,7 @@ const FinalCTASection: React.FC = () => {
                                             <div className="text-sm opacity-90">Already Growing</div>
                                         </div>
                                     </div>
-                                    <p className="text-sm opacity-80">Join successful entrepreneurs who've accelerated their growth</p>
+                                    <p className="text-sm opacity-80">Join successful entrepreneurs who&#39;ve accelerated their growth</p>
                                 </div>
                             </div>
 

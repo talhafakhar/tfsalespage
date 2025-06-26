@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React ,{ useCallback, useEffect, useRef, useState } from 'react';
 import {BarChart3, Bot, Brain, Code, Target, Users} from 'lucide-react';
 
 const ServicesCard = () => {
@@ -92,21 +92,21 @@ const ServicesCard = () => {
     const [rotations] = useState(() =>
         entries.map(() => (Math.random() - 0.5) * 15)
     );
-    const goToNext = () => {
+    const goToNext = useCallback(() => {
         if (isAnimating) return;
         setIsAnimating(true);
         setPreviousIndex(currentIndex);
         setCurrentIndex((prev) => (prev + 1) % totalCount);
         setTimeout(() => setIsAnimating(false), 800);
-    };
+    }, [isAnimating, currentIndex, totalCount]);
 
-    const goToPrevious = () => {
+    const goToPrevious = useCallback(() => {
         if (isAnimating) return;
         setIsAnimating(true);
         setPreviousIndex(currentIndex);
         setCurrentIndex((prev) => (prev - 1 + totalCount) % totalCount);
         setTimeout(() => setIsAnimating(false), 800);
-    };
+    }, [isAnimating, currentIndex, totalCount]);
     useEffect(() => {
         const handleScroll = (e: WheelEvent) => {
             if (isAnimating) return;
@@ -134,11 +134,10 @@ const ServicesCard = () => {
 
         const container = containerRef.current;
         if (container) {
-
-            container.addEventListener('wheel', handleScroll, {passive: false});
+            container.addEventListener('wheel', handleScroll, { passive: false });
             return () => container.removeEventListener('wheel', handleScroll);
         }
-    }, [currentIndex, goToNext, goToPrevious, isAnimating, totalCount]);
+    }, [goToNext, goToPrevious, isAnimating]);
 
     const getZIndex = (itemIndex: number) => {
         return (totalCount - 1 + itemIndex - currentIndex) % totalCount;

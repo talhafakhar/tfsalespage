@@ -49,7 +49,7 @@ const HeroSection: React.FC = () => {
                             </div>
                             <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <p className="text-gray-300 mb-5 max-w-xl ">
-                                    Stop watching opportunities slip away while competitors capture market share. Get <span className="text-primary-400 font-semibold">strategic marketing leadership</span> that drives real results, whether you're launching a product or scaling a service.
+                                    Stop watching opportunities slip away while competitors capture market share. Get <span className="text-primary-400 font-semibold">strategic marketing leadership</span> that drives real results, whether you&#39;re launching a product or scaling a service.
                                 </p>
 
                                 <div className="bg-primary-500 text-black px-2 py-3 rounded-lg inline-block mb-4 animate-pulse-glow">

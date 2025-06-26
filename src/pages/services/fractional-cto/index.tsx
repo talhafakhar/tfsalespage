@@ -11,6 +11,7 @@ import ChallengeSection from "@/components/Services/FractionalCTO/ChallengesSect
 import ServicesIncludedSection from "@/components/Services/FractionalCTO/ServicesIncludedSection";
 import WhyChooseSection from "@/components/Services/FractionalCTO/WhyChooseSection";
 import WhoWeWorkWithSection from "@/components/Services/FractionalCTO/WhoWeWorkWithSection";
+import PricingSection from "@/components/Services/FractionalCTO/PricingTableSection";
 
 export default function FractionalCTO() {
     return (
@@ -20,6 +21,7 @@ export default function FractionalCTO() {
             <ServicesIncludedSection/>
             <WhyChooseSection/>
             <WhoWeWorkWithSection/>
+            <PricingSection/>
             <Footer/>
         </>
     );

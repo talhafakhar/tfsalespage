@@ -5,9 +5,7 @@ import {
     Target,
     Bot,
     ArrowRight,
-    Sparkles,
     Star,
-    Zap
 } from 'lucide-react';
 
 interface FounderPoint {
@@ -84,28 +82,21 @@ const FoundersSection: React.FC = () => {
 
     return (
         <section className="bg-white py-20 px-4 relative overflow-hidden">
-            {/* Background Elements */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{
                     backgroundImage: `radial-gradient(circle at 1px 1px, rgba(234, 179, 8, 0.15) 1px, transparent 0)`,
                     backgroundSize: '50px 50px'
                 }}></div>
             </div>
-
-            {/* Floating Decorative Elements */}
             <div className="absolute top-10 right-10 w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
             <div className="absolute top-32 right-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
             <div className="absolute bottom-20 left-10 w-3 h-3 bg-emerald-400 rounded-full animate-pulse delay-700"></div>
             <div className="absolute bottom-40 left-32 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
-
             <div className="max-w-6xl mx-auto relative z-10">
-
-                {/* Header Section */}
                 <div className={`mb-20 transition-all duration-1000 ${
                     isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
 
-                    {/* Main Headline */}
                     <div className="flex justify-center items-center">
                         <div>
                             <h2 className="text-5xl text-center font-bold text-secondary-900 leading-tight mb-6">
@@ -125,8 +116,6 @@ const FoundersSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Founder Points - Creative Layout */}
                 <div className="space-y-12">
                     {founderPoints.map((point, index) => {
                         const IconComponent = point.icon;
@@ -146,11 +135,8 @@ const FoundersSection: React.FC = () => {
                                 <div className={`grid lg:grid-cols-12 gap-8 items-center ${
                                     isEven ? '' : 'lg:direction-rtl'
                                 }`}>
-
-                                    {/* Content Side */}
                                     <div className={`lg:col-span-8 ${isEven ? '' : 'lg:text-right'}`}>
                                         <div className="flex items-start gap-4 mb-6">
-                                            {/* Animated Number */}
                                             <div className={`
                         flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg
                         transition-all duration-500 ${
@@ -194,10 +180,8 @@ const FoundersSection: React.FC = () => {
                                                 {point.description}
                                             </p>
                                         </div>
-
-                                        {/* Learn More Link */}
                                         <div className={`
-                      flex items-center gap-2 mt-6 font-semibold transition-all duration-300 cursor-pointer ${
+                     flex items-center gap-2 mt-6 font-semibold transition-all duration-300 cursor-pointer ${
                                             isHovered
                                                 ? `${getColorClasses(point.color, 'text')} transform translate-x-2`
                                                 : 'text-gray-400'

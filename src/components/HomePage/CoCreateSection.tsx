@@ -41,19 +41,20 @@ const CoCreate = () => {
             company: "Creative Studios"
         }
     ];
-    useEffect(() => {
-        const timer = setInterval(() => {
-            handleNext();
-        }, 5000);
-
-        return () => clearInterval(timer);
-    }, [currentTestimonial]);
     const handleNext = () => {
         if (isAnimating) return;
         setIsAnimating(true);
         setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
         setTimeout(() => setIsAnimating(false), 500);
     };
+    useEffect(() => {
+        const timer = setInterval(() => {
+            handleNext();
+        }, 5000);
+
+        return () => clearInterval(timer);
+    }, [currentTestimonial, handleNext]);
+
 
     const handlePrev = () => {
         if (isAnimating) return;
