@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
     ];
 
     return (
-        <footer className="bg-secondary-950 text-white relative overflow-hidden">
+        <footer className="bg-secondary text-white relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute inset-0" style={{

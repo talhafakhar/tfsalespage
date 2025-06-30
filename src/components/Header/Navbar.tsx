@@ -41,8 +41,8 @@ const Navbar: React.FC = () => {
         setServicesExpanded(!servicesExpanded);
     };
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black backdrop-blur-md shadow-lg border-b border-gray-800/50' : 'bg-black backdrop-blur-sm'}`}>
-            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-secondary backdrop-blur-md shadow-lg border-b border-gray-800/50' : 'bg-black backdrop-blur-sm'}`}>
+            <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 md:h-20">
                     <Link href="/" className="flex items-center  group">
                         <div className="flex">
@@ -55,11 +55,11 @@ const Navbar: React.FC = () => {
                                 />
                             </div>
                         </div>
-                        <span className="font-logo text-xl text-white">
+                        <span className="font-logo text-lg lg:text-xl text-white text-nowrap">
     Business Solution
   </span>
                     </Link>
-                    <div className="hidden md:flex items-center space-x-1">
+                    <div className="hidden lg:flex items-center space-x-1">
                         {navLinks.map((link, index) => (
                             <div key={index} className="relative">
                                 {link.hasDropdown ? (
@@ -79,10 +79,9 @@ const Navbar: React.FC = () => {
                                             />
                                             <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                                             <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
-                                            <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                            <div className="absolute bottom-0 left-0 h-0.5  rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
                                         </button>
 
-                                        {/* Dropdown Menu */}
                                         <div
                                             className={`absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
                                                 hoveredService
@@ -97,52 +96,37 @@ const Navbar: React.FC = () => {
                                                         <Link
                                                             key={serviceIndex}
                                                             href={service.href}
-                                                            className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-white hover:bg-primary-500/10 transition-all duration-200 group"
+                                                            className="flex items-center gap-3 px-4 py-3 text-white hover:bg-primary/20 transition-all duration-200 group"
                                                         >
-                                                            <IconComponent className="w-5 h-5 text-primary-400 group-hover:text-primary-300 transition-colors duration-200" />
+                                                            <IconComponent className="w-5 h-5 text-primary group-hover:text-primary transition-colors duration-200" />
                                                             <span className="font-medium">{service.label}</span>
                                                         </Link>
                                                     );
                                                 })}
                                             </div>
 
-                                            {/* Decorative gradient border */}
                                             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary-500/50 to-transparent"></div>
                                         </div>
                                     </div>
                                 ) : (
                                     <Link
                                         href={link.href}
-                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden`}
+                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-white overflow-hidden`}
                                     >
                                         <span className="relative z-10">{link.label}</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                        <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                                         <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
-                                        <div className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-primary-400 via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                        <div className="absolute bottom-0 left-0 h-0.5 bg-primary via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
                                     </Link>
                                 )}
                             </div>
                         ))}
                     </div>
-                    <div className="hidden md:block">
-                        <button className="group relative font-button px-6 py-2 bg-primary-gradient text-secondary-950 font-bold rounded overflow-hidden transition-all duration-400 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-                            {/* Multiple animated background layers */}
-                            <div className="absolute inset-0 bg-primary-gradient-hover opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                            <div className="absolute inset-0 bg-primary-gradient-intense opacity-0 group-hover:opacity-70 transition-opacity duration-400 animate-pulse"></div>
-                            {/* Enhanced shimmer effect */}
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform animate-shimmer"></div>
-                            </div>
-                            {/* Multiple glowing borders */}
-                            <div className="absolute inset-0 rounded bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-400 blur-sm animate-pulse-glow"></div>
-                            <div className="absolute inset-0 rounded bg-primary-500 opacity-0 group-hover:opacity-50 transition-opacity duration-400 blur-md"></div>
-                            {/* Floating background effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-primary-300/20 to-primary-500/20 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-400 animate-float"></div>
-                            {/* Button content */}
+                    <div className="hidden lg:block">
+                        <button className="group  font-button px-6 py-2 bg-primary text-secondary font-semibold rounded overflow-hidden transition-all duration-400 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                             <span className="relative z-10 flex items-center space-x-2">
-                <span className="tracking-wide animate-heartbeat">GET STARTED</span>
+                <span className="tracking-wide">GET STARTED</span>
                                 <div className="relative">
-
                                     <svg
                                         className="w-6 h-6 transform group-hover:translate-x-3 group-hover:scale-125 transition-all duration-500 animate-bounce-subtle"
                                         fill="none"
@@ -157,7 +141,6 @@ const Navbar: React.FC = () => {
                     />
                   </svg>
 
-                                    {/* Arrow trail effects */}
                                     <svg
                                         className="absolute inset-0 w-6 h-6 opacity-0 group-hover:opacity-40 transform translate-x-1 group-hover:translate-x-4 transition-all duration-500 delay-100"
                                         fill="none"
@@ -187,20 +170,9 @@ const Navbar: React.FC = () => {
                   </svg>
                 </div>
               </span>
-                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                                <div className="absolute top-2 left-4 w-1.5 h-1.5 bg-primary-300 rounded-full animate-bounce-subtle"></div>
-                                <div className="absolute top-4 right-6 w-1 h-1 bg-primary-400 rounded-full animate-bounce-subtle delay-150"></div>
-                                <div className="absolute bottom-3 left-8 w-1.5 h-1.5 bg-primary-300 rounded-full animate-bounce-subtle delay-300"></div>
-                                <div className="absolute bottom-2 right-4 w-1 h-1 bg-primary-400 rounded-full animate-bounce-subtle delay-450"></div>
-                                <div className="absolute top-1/2 left-2 w-0.5 h-0.5 bg-primary-500 rounded-full animate-bounce-subtle delay-600"></div>
-                                <div className="absolute top-1/2 right-2 w-0.5 h-0.5 bg-primary-500 rounded-full animate-bounce-subtle delay-750"></div>
-                            </div>
-                            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <div className="absolute inset-0 rounded-2xl border-2 border-primary-400 animate-pulse-glow"></div>
-                            </div>
                         </button>
                     </div>
-                    <div className="md:hidden">
+                    <div className="lg:hidden">
                         <button
                             onClick={toggleMenu}
                             className={`relative w-8 h-8 focus:outline-none transform transition-all duration-300 ${
@@ -232,8 +204,7 @@ const Navbar: React.FC = () => {
                         </button>
                     </div>
                 </div>
-                {/* Mobile Menu */}
-                <div className={`md:hidden transition-all duration-300 ease-in-out ${
+                <div className={`lg:hidden transition-all duration-300 ease-in-out ${
                         isOpen
                             ? 'max-h-screen opacity-100 visible'
                             : 'max-h-0 opacity-0 invisible'
@@ -243,7 +214,6 @@ const Navbar: React.FC = () => {
                             <div key={index}>
                                 {link.hasDropdown ? (
                                     <div>
-                                        {/* Services Toggle Button */}
                                         <button
                                             onClick={handleServiceToggle}
                                             className="w-full flex items-center justify-between px-4 py-3 text-gray-300 font-nav font-medium hover:text-white hover:bg-gray-800/50 rounded-xl transition-all duration-300 transform hover:translate-x-1"
@@ -256,13 +226,12 @@ const Navbar: React.FC = () => {
                                             />
                                         </button>
 
-                                        {/* Services Dropdown */}
                                         <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
                                             servicesExpanded
                                                 ? 'max-h-96 opacity-100'
                                                 : 'max-h-0 opacity-0'
                                         }`}>
-                                            <div className="ml-4 mt-1 space-y-1 border-l-2 border-primary-500/30 pl-3">
+                                            <div className="ml-4 mt-1 space-y-1 border-l-2 border-primary/20 pl-3">
                                                 {servicesDropdown.map((service, serviceIndex) => {
                                                     const IconComponent = service.icon;
                                                     return (
@@ -270,9 +239,9 @@ const Navbar: React.FC = () => {
                                                             key={serviceIndex}
                                                             href={service.href}
                                                             onClick={closeMobileMenu}
-                                                            className="flex items-center gap-3 px-3 py-2.5 text-gray-400 hover:text-white hover:bg-primary-500/10 rounded-lg transition-all duration-200 transform hover:translate-x-1 group"
+                                                            className="flex items-center gap-3 px-3 py-2.5 text-gray-400 hover:text-white hover:bg-primary/20 rounded-lg transition-all duration-200 transform hover:translate-x-1 group"
                                                         >
-                                                            <IconComponent className="w-4 h-4 text-primary-400 group-hover:text-primary-300 transition-colors duration-200" />
+                                                            <IconComponent className="w-4 h-4 text-primary  transition-colors duration-200" />
                                                             <span className="text-sm font-medium">{service.label}</span>
                                                         </Link>
                                                     );
@@ -293,30 +262,16 @@ const Navbar: React.FC = () => {
                         ))}
 
                         <div className="pt-4 px-4">
-                            <button className="w-full group relative py-2 bg-primary-gradient text-secondary-950 font-button font-bold rounded overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-                                {/* Multiple animated background layers */}
-                                <div className="absolute inset-0 bg-primary-gradient-hover opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
-                                <div className="absolute inset-0 bg-primary-gradient-intense opacity-0 group-hover:opacity-70 transition-opacity duration-400 animate-pulse"></div>
+                            <button className="w-full group relative py-2 bg-primary text-secondary font-button font-bold rounded overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
 
-                                {/* Enhanced shimmer effect */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform animate-shimmer"></div>
-                                </div>
 
-                                {/* Multiple glowing borders */}
-                                <div className="absolute inset-0 rounded bg-gradient-to-r from-primary-400 via-primary-500 to-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm animate-pulse-glow"></div>
-                                <div className="absolute inset-0 rounded bg-primary-500 opacity-0 group-hover:opacity-50 transition-opacity duration-400 blur-md"></div>
 
-                                {/* Floating background effect */}
-                                <div className="absolute inset-0 bg-gradient-to-r from-primary-300/20 to-primary-500/20 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-float"></div>
 
                                 {/* Button content */}
                                 <span className="relative z-10 flex items-center justify-center space-x-2">
-                  <span className="tracking-wide animate-heartbeat">GET STARTED</span>
+                  <span className="tracking-wide">GET STARTED</span>
 
-                                    {/* Super advanced arrow with multiple animations */}
                                     <div className="relative">
-                    {/* Main arrow */}
                                         <svg
                                             className="w-6 h-6 transform group-hover:translate-x-3 group-hover:scale-125 transition-all duration-500 animate-bounce-subtle"
                                             fill="none"
@@ -331,7 +286,7 @@ const Navbar: React.FC = () => {
                       />
                     </svg>
 
-                                        {/* Arrow trail effects */}
+
                                         <svg
                                             className="absolute inset-0 w-6 h-6 opacity-0 group-hover:opacity-40 transform translate-x-1 group-hover:translate-x-4 transition-all duration-500 delay-100"
                                             fill="none"
@@ -362,20 +317,8 @@ const Navbar: React.FC = () => {
                   </div>
                 </span>
 
-                                {/* Enhanced particle effects */}
-                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                                    <div className="absolute top-2 left-4 w-1.5 h-1.5 bg-primary-300 rounded-full animate-bounce-subtle"></div>
-                                    <div className="absolute top-4 right-6 w-1 h-1 bg-primary-400 rounded-full animate-bounce-subtle delay-150"></div>
-                                    <div className="absolute bottom-3 left-8 w-1.5 h-1.5 bg-primary-300 rounded-full animate-bounce-subtle delay-300"></div>
-                                    <div className="absolute bottom-2 right-4 w-1 h-1 bg-primary-400 rounded-full animate-bounce-subtle delay-450"></div>
-                                    <div className="absolute top-1/2 left-2 w-0.5 h-0.5 bg-primary-500 rounded-full animate-bounce-subtle delay-600"></div>
-                                    <div className="absolute top-1/2 right-2 w-0.5 h-0.5 bg-primary-500 rounded-full animate-bounce-subtle delay-750"></div>
-                                </div>
 
-                                {/* Ripple effect */}
-                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <div className="absolute inset-0 rounded-2xl border-2 border-primary-400 animate-pulse-glow"></div>
-                                </div>
+
                             </button>
                         </div>
                     </div>

@@ -9,23 +9,51 @@ const partnerNames: string[] = [
     "Online Marketplaces",
     "Tech-Enabled Services"
 ];
-
 const HeroSection: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
     useEffect(() => {
         setIsVisible(true);
     }, []);
-  
+    const handleVideoLoad = () => {
+        setIsVideoLoaded(true);
+    };
+    const handleVideoError = (e: React.SyntheticEvent<HTMLVideoElement, Event>) => {
+        console.error('Video failed to load:', e);
+    };
+    const toggleVideo = () => {
+        if (videoRef) {
+            if (isPlaying) {
+                videoRef.pause();
+                setIsPlaying(false);
+            } else {
+                videoRef.play();
+                setIsPlaying(true);
+            }
+        }
+    };
+    const handleVideoPlay = () => {
+        setIsPlaying(true);
+    };
+    const handleVideoPause = () => {
+        setIsPlaying(false);
+    };
+
 
     return (
         <div>
             <Navbar/>
-            <section className="bg-secondary flex items-center">
-                <div className="container mx-auto px-4 pb-10">
-                    <div className="flex flex-col lg:flex-row items-center justify-between gap-10 min-h-screen">
-                        <div className="text-center md:text-start">
+            <section
+                className="flex bg-black items-center min-h-screen bg-cover bg-center pt-24"
+                style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}
+            >
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
+                        <div className="text-center lg:text-start">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-5xl sm:text-6xl   font-bold text-white mb-6 leading-tight">
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                                     Build, Scale, and <span className="text-primary flex justify-center lg:justify-start">
                     Automate
                   </span> Your Startup.
@@ -40,7 +68,7 @@ const HeroSection: React.FC = () => {
                                 </p>
                             </div>
                             <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="flex flex-col sm:flex-row gap-6 justify-center sm:justify-start items-center mb-4">
+                                <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center sm:justify-start items-center mb-4">
                                     <button className="group text-sm  p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                                         <span className="relative z-10 flex items-center space-x-2">
                     <span className="tracking-wide">Get Growth Advice</span>
@@ -52,7 +80,7 @@ const HeroSection: React.FC = () => {
                     </svg>
                   </span>
                                     </button>
-                                    <button className="group  p-2 border bg-white/20 text-sm border-primary text-primary hover:text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-500 transform hover:scale-105">
+                                    <button className="group  p-2 border bg-white/20 text-sm border-primary text-primary font-button font-bold rounded-md  transition-all duration-500">
                                         <span className="relative z-10 flex items-center space-x-2">
                     <svg className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300"
                          fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -73,7 +101,7 @@ const HeroSection: React.FC = () => {
                                         We Partner With
                                     </h3>
                                     <Image src="/assets/svg/downArrow.svg" alt="arrow" className='mt-3' width={24} height={24}/>
-                                </div><div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
+                                </div><div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
                                     {partnerNames.map((name, index) => (
                                         <div
                                             key={name}
@@ -101,7 +129,56 @@ const HeroSection: React.FC = () => {
                                 </div></div>
                         </div>
                         <div className={`transform transition-all duration-1000 delay-900 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
-
+                            <div className="relative group bg-black">
+                                {!isVideoLoaded && (
+                                    <div className="border rounded-md absolute w-full h-80"></div>
+                                )}
+                                <video
+                                    ref={setVideoRef}
+                                    className={`w-full h-80 bg-black object-cover rounded-lg transition-opacity duration-500 z-99999`}
+                                    muted
+                                    loop
+                                    playsInline
+                                    preload="auto"
+                                    onLoadedData={handleVideoLoad}
+                                    onCanPlay={handleVideoLoad}
+                                    onError={handleVideoError}
+                                    onPlay={handleVideoPlay}
+                                    onPause={handleVideoPause}
+                                >
+                                    <source src="/assets/home/hero-video.mp4" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                    <button
+                                        onClick={toggleVideo}
+                                        className={`
+                                                    group/play relative
+                                                    w-16 h-16 
+                                                    bg-white/90 hover:bg-white
+                                                    backdrop-blur-sm
+                                                    rounded-full
+                                                    flex items-center justify-center
+                                                    transition-all duration-300
+                                                    transform hover:scale-110 active:scale-95
+                                                    shadow-lg hover:shadow-xl
+                                                    ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'}
+                                                `}
+                                    >
+                                        {isPlaying ? (
+                                            <svg className="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                                            </svg>
+                                        ) : (
+                                            <svg className="w-8 h-8 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M8 5v14l11-7z"/>
+                                            </svg>
+                                        )}
+                                        <div className="absolute inset-0 rounded-full bg-primary/20 scale-0 group-hover/play:scale-150 transition-transform duration-500"></div>
+                                    </button>
+                                </div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -5,246 +5,123 @@ import {
     Target,
     Bot,
     ArrowRight,
-    Star,
 } from 'lucide-react';
 
-interface FounderPoint {
-    icon: React.ComponentType<{ size?: number; className?: string }>;
-    title: string;
-    description: string;
-    color: string;
-}
-
-const FoundersSection: React.FC = () => {
-    const [hoveredPoint, setHoveredPoint] = useState<number | null>(null);
-    const [isVisible, setIsVisible] = useState<boolean>(false);
+const FoundersSection = () => {
+    const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
         setIsVisible(true);
     }, []);
 
-    const founderPoints: FounderPoint[] = [
+    const founderPoints = [
         {
             icon: Rocket,
             title: "Launching or relaunching products",
-            description: "and need expert guidance across growth, tech, and sales",
-            color: "primary"
+            description: "and need expert guidance across growth, tech, and sales"
         },
         {
             icon: TrendingUp,
             title: "Struggling to break through revenue plateaus",
-            description: "and want a smarter, more focused system",
-            color: "emerald"
+            description: "and want a smarter, more focused system"
         },
         {
             icon: Target,
             title: "Scaling outbound, inbound, or hybrid sales",
-            description: "without adding unnecessary complexity",
-            color: "blue"
+            description: "without adding unnecessary complexity"
         },
         {
             icon: Bot,
             title: "Replacing manual processes with AI powered workflows",
-            description: "to unlock efficiency and speed",
-            color: "purple"
+            description: "to unlock efficiency and speed"
         }
     ];
 
-    const getColorClasses = (color: string, variant: 'bg' | 'text' | 'border' | 'gradient') => {
-        const colorMap = {
-            primary: {
-                bg: 'bg-primary-500',
-                text: 'text-primary-600',
-                border: 'border-primary-500',
-                gradient: 'from-primary-400 to-primary-600'
-            },
-            emerald: {
-                bg: 'bg-emerald-500',
-                text: 'text-emerald-600',
-                border: 'border-emerald-500',
-                gradient: 'from-emerald-400 to-emerald-600'
-            },
-            blue: {
-                bg: 'bg-blue-500',
-                text: 'text-blue-600',
-                border: 'border-blue-500',
-                gradient: 'from-blue-400 to-blue-600'
-            },
-            purple: {
-                bg: 'bg-purple-500',
-                text: 'text-purple-600',
-                border: 'border-purple-500',
-                gradient: 'from-purple-400 to-purple-600'
-            }
-        };
-        return colorMap[color as keyof typeof colorMap]?.[variant] || '';
-    };
-
     return (
-        <section className="bg-white py-20 px-4 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 1px 1px, rgba(234, 179, 8, 0.15) 1px, transparent 0)`,
-                    backgroundSize: '50px 50px'
-                }}></div>
-            </div>
-            <div className="absolute top-10 right-10 w-2 h-2 bg-primary-400 rounded-full animate-pulse"></div>
-            <div className="absolute top-32 right-20 w-1 h-1 bg-blue-400 rounded-full animate-pulse delay-300"></div>
-            <div className="absolute bottom-20 left-10 w-3 h-3 bg-emerald-400 rounded-full animate-pulse delay-700"></div>
-            <div className="absolute bottom-40 left-32 w-1 h-1 bg-purple-400 rounded-full animate-pulse delay-1000"></div>
-            <div className="max-w-6xl mx-auto relative z-10">
-                <div className={`mb-20 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+        <section className="bg-black">
+
+            <div className="relative z-10 px-4 py-20">
+                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
-
-                    <div className="flex justify-center items-center">
-                        <div>
-                            <h2 className="text-5xl text-center font-bold text-secondary-900 leading-tight mb-6">
-                                Built for{' '}
-
-                  <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-                    Founders 
-                  </span>
-                                {' '}Who Are
-                            </h2>
-                            <div className="flex items-center justify-center gap-4 text-lg text-gray-600 mb-8">
-                                <div className="flex items-center justify-center gap-2">
-                                    <Star size={20} className="text-primary-500 fill-primary-500" />
-                                    <span className="font-semibold">Trusted by 500+ Founders</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
+                       Build For{' '}
+                        <span className="text-primary">
+              Founders
+            </span>
+                        {' '}Who Are
+                    </h2>
                 </div>
-                <div className="space-y-12">
+                <div className="max-w-7xl mx-auto space-y-32">
                     {founderPoints.map((point, index) => {
                         const IconComponent = point.icon;
-                        const isEven = index % 2 === 0;
-                        const isHovered = hoveredPoint === index;
-
+                        const isLeft = index % 2 === 0;
                         return (
                             <div
                                 key={index}
-                                className={`transition-all duration-700 ${
-                                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'
-                                }`}
-                                style={{ transitionDelay: `${400 + index * 200}ms` }}
-                                onMouseEnter={() => setHoveredPoint(index)}
-                                onMouseLeave={() => setHoveredPoint(null)}
+                                className={`transition-all duration-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'}`}
+                                style={{ transitionDelay: `${index * 300}ms` }}
                             >
-                                <div className={`grid lg:grid-cols-12 gap-8 items-center ${
-                                    isEven ? '' : 'lg:direction-rtl'
-                                }`}>
-                                    <div className={`lg:col-span-8 ${isEven ? '' : 'lg:text-right'}`}>
-                                        <div className="flex items-start gap-4 mb-6">
-                                            <div className={`
-                        flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg
-                        transition-all duration-500 ${
-                                                isHovered
-                                                    ? `bg-gradient-to-br ${getColorClasses(point.color, 'gradient')} scale-110 shadow-2xl`
-                                                    : 'bg-gray-400'
-                                            }
-                      `}>
-                                                {index + 1}
+                                <div className={`grid lg:grid-cols-12 gap-12 items-center ${isLeft ? '' : 'lg:grid-flow-col-dense'}`}>
+                                    {/* Content Side */}
+                                    <div className={`lg:col-span-7 ${isLeft ? '' : 'lg:col-start-6'}`}>
+                                        <div className="space-y-8">
+                                            {/* Number */}
+                                            <div className="flex items-center gap-6">
+                                                <div className={`w-20 h-20 border-4 border-yellow-400 flex items-center justify-center transition-all duration-500 text-yellow-400'`}>
+                                                    <span className="text-3xl font-black">
+                                                        {String(index + 1).padStart(2, '0')}
+                                                    </span>
+                                                </div>
+                                                <div className={`h-px flex-1 transition-all duration-500 bg-white/20`}></div>
                                             </div>
 
-                                            {/* Point Indicator */}
-                                            <div className={`
-                        flex items-center gap-3 transition-all duration-300 ${
-                                                isHovered ? 'transform translate-x-2' : ''
-                                            }
-                      `}>
-                                                <div className={`
-                          w-3 h-3 rounded-full transition-all duration-300 ${
-                                                    isHovered ? getColorClasses(point.color, 'bg') : 'bg-gray-300'
-                                                }
-                        `}></div>
-                                                <div className={`
-                          h-px flex-1 transition-all duration-300 ${
-                                                    isHovered ? getColorClasses(point.color, 'bg') : 'bg-gray-200'
-                                                }
-                        `} style={{ width: isHovered ? '80px' : '40px' }}></div>
-                                            </div>
-                                        </div>
-
-                                        {/* Title and Description */}
-                                        <div className="space-y-3">
-                                            <h3 className={`
-                        text-3xl md:text-4xl font-bold transition-colors duration-300 ${
-                                                isHovered ? getColorClasses(point.color, 'text') : 'text-secondary-900'
-                                            }
-                      `}>
-                                                {point.title}
+                                            {/* Title */}
+                                            <h3 className={`text-4xl md:text-6xl font-black leading-tight transition-all duration-500 text-white`}>
+                                                {point.title.toUpperCase()}
                                             </h3>
-                                            <p className="text-xl text-gray-600 leading-relaxed">
+
+                                            {/* Description */}
+                                            <p className="text-2xl text-white/70 leading-relaxed font-light">
                                                 {point.description}
                                             </p>
-                                        </div>
-                                        <div className={`
-                     flex items-center gap-2 mt-6 font-semibold transition-all duration-300 cursor-pointer ${
-                                            isHovered
-                                                ? `${getColorClasses(point.color, 'text')} transform translate-x-2`
-                                                : 'text-gray-400'
-                                        }
-                    `}>
-                                            <span>Explore this area</span>
-                                            <ArrowRight
-                                                size={16}
-                                                className={`transition-transform duration-300 ${
-                                                    isHovered ? 'transform translate-x-1' : ''
-                                                }`}
-                                            />
+
+                                            {/* Action */}
+                                            <div className={`flex items-center gap-4 text-xl font-bold cursor-pointer group transition-all duration-300 text-white
+                                            `}>
+                                                <span>EXPLORE THIS AREA</span>
+                                                <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-300 border-white `}>
+                                                    <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
                                     {/* Visual Side */}
-                                    <div className={`lg:col-span-4 ${isEven ? '' : 'lg:order-first'}`}>
-                                        <div className={`
-                      relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 
-                      transition-all duration-500 hover:shadow-2xl ${
-                                            isHovered ? 'transform scale-105 shadow-xl' : ''
-                                        }
-                    `}>
-                                            {/* Background Glow */}
-                                            <div className={`
-                        absolute inset-0 bg-gradient-to-br ${getColorClasses(point.color, 'gradient')} 
-                        rounded-3xl transition-opacity duration-500 ${
-                                                isHovered ? 'opacity-10' : 'opacity-0'
-                                            }
-                      `}></div>
+                                    <div className={`lg:col-span-5 ${isLeft ? 'lg:col-start-8' : 'lg:col-start-1'}`}>
+                                        <div className="relative">
+                                            {/* Main Icon Container */}
+                                            <div className={`relative w-80 h-80 mx-auto transition-all duration-700  hover:scale-110`}>
+                                                {/* Background Shape */}
+                                                <div className={`absolute inset-0 border-4 transition-all duration-500 border-white/20`}></div>
 
-                                            {/* Icon Container */}
-                                            <div className="relative z-10 text-center">
-                                                <div className={`
-                          inline-flex items-center justify-center w-24 h-24 rounded-2xl shadow-lg mb-4
-                          transition-all duration-500 ${
-                                                    isHovered
-                                                        ? `bg-gradient-to-br ${getColorClasses(point.color, 'gradient')} transform rotate-6 scale-110`
-                                                        : 'bg-white'
-                                                }
-                        `}>
-                                                    <IconComponent
-                                                        size={36}
-                                                        className={`transition-colors duration-300 ${
-                                                            isHovered ? 'text-white' : getColorClasses(point.color, 'text')
-                                                        }`}
-                                                    />
+                                                {/* Inner Shape */}
+                                                <div className={`absolute inset-8 border-2 transition-all duration-500 border-white/10`}></div>
+
+                                                {/* Icon */}
+                                                <div className="absolute inset-0 flex items-center justify-center">
+                                                    <div className={`w-24 h-24 flex items-center justify-center transition-all duration-500 bg-white text-black`}>
+                                                        <IconComponent size={48} />
+                                                    </div>
                                                 </div>
 
-                                                {/* Additional Visual Elements */}
-                                                <div className="flex justify-center gap-2">
-                                                    {[...Array(3)].map((_, i) => (
-                                                        <div
-                                                            key={i}
-                                                            className={`
-                                w-2 h-2 rounded-full transition-all duration-300 ${
-                                                                isHovered ? getColorClasses(point.color, 'bg') : 'bg-gray-300'
-                                                            }
-                              `}
-                                                            style={{ transitionDelay: `${i * 100}ms` }}
-                                                        ></div>
-                                                    ))}
-                                                </div>
+                                                <div className={`absolute -top-2 -left-2 w-6 h-6 transition-all duration-500 bg-white
+                                                `}></div>
+                                                <div className={`absolute -top-2 -right-2 w-6 h-6 transition-all duration-500 bg-white
+                                                `}></div>
+                                                <div className={`absolute -bottom-2 -left-2 w-6 h-6 transition-all duration-500 bg-white
+                                                `}></div>
+                                                <div className={`absolute -bottom-2 -right-2 w-6 h-6 transition-all duration-500bg-white
+                                                `}></div>
                                             </div>
                                         </div>
                                     </div>
@@ -252,25 +129,88 @@ const FoundersSection: React.FC = () => {
                             </div>
                         );
                     })}
-                </div>
-                <div className={`text-center mt-20 transition-all duration-1000 delay-1200 ${
-                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <div className="bg-gradient-to-r from-primary-50 via-white to-primary-50 rounded-3xl p-5 border-2 border-primary-200 relative overflow-hidden">
-                        <div className="absolute top-0 left-1/2 w-32 h-32 bg-gradient-to-br from-primary-400/10 to-primary-600/10 rounded-full blur-2xl transform -translate-x-1/2 -translate-y-1/2"></div>
 
-                        <div className="relative z-10">
-                            <h3 className="text-4xl font-bold text-secondary-900 mb-4">
-                                Ready to Join Successful Founders?
-                            </h3>
-                            <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                                Transform your business with proven strategies that have helped hundreds of founders break through plateaus and achieve extraordinary growth.
-                            </p>
+                    <div className={`text-center mt-20 transition-all duration-1000 delay-1200 ${
+                        isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                    }`}>
+                        <div
+                            className="border-white rounded-3xl p-5 border-2 relative overflow-hidden"
+                            style={{
+                                background: `
+                radial-gradient(circle at 20% 50%, rgba(255, 255, 0, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(255, 255, 0, 0.2) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)
+            `,
+                                backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%',
+                                boxShadow: `
+                0 0 50px rgba(255, 255, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 25px 50px -12px rgba(0, 0, 0, 0.9)
+            `
+                            }}
+                        >
+                            {/* Animated mesh overlay */}
+                            <div
+                                className="absolute inset-0 opacity-30"
+                                style={{
+                                    background: `
+                    conic-gradient(from 0deg at 50% 50%, 
+                        transparent 0deg, 
+                        rgba(255, 255, 0, 0.1) 60deg, 
+                        transparent 120deg, 
+                        rgba(255, 255, 255, 0.08) 180deg, 
+                        transparent 240deg, 
+                        rgba(255, 255, 0, 0.12) 300deg, 
+                        transparent 360deg
+                    )
+                `,
+                                    animation: 'spin 20s linear infinite reverse'
+                                }}
+                            />
 
-                            <button className="group bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white px-8 py-3 rounded-2xl font-bold text-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl flex items-center gap-3 mx-auto">
-                                <span>Start Your Transformation</span>
-                                <ArrowRight size={24} className="group-hover:transform group-hover:translate-x-1 transition-transform duration-300" />
-                            </button>
+                            {/* Noise texture overlay */}
+                            <div
+                                className="absolute inset-0 opacity-20"
+                                style={{
+                                    background: `
+                    repeating-linear-gradient(
+                        45deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(255, 255, 255, 0.02) 2px,
+                        rgba(255, 255, 255, 0.02) 4px
+                    ),
+                    repeating-linear-gradient(
+                        -45deg,
+                        transparent,
+                        transparent 2px,
+                        rgba(255, 255, 0, 0.03) 2px,
+                        rgba(255, 255, 0, 0.03) 4px
+                    )
+                `
+                                }}
+                            />
+
+                            <div className="relative z-10">
+                                <h3 className="text-4xl font-bold text-white mb-4">
+                                    Ready to Join Successful Founders?
+                                </h3>
+                                <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                                    Transform your business with proven strategies that have helped hundreds of founders break through plateaus and achieve extraordinary growth.
+                                </p>
+                                <button className="group text-sm p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                <span className="relative z-10 flex items-center space-x-2">
+                    <span className="tracking-wide">Start Your Transformation</span>
+                    <svg
+                        className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                              d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

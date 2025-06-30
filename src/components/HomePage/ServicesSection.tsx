@@ -151,24 +151,24 @@ const ServicesCard = () => {
     };
 
     return (
-        <div ref={containerRef} className="bg-white min-h-screen">
-            <div className="max-w-7xl mx-auto pt-20">
+        <div ref={containerRef} className="bg-secondary py-10">
+            <div className="max-w-7xl mx-auto">
                 <div className="flex justify-between items-center mb-12">
                     <div>
                         <div className="flex items-center space-x-4">
                             <div className="text-4xl tracking-widest">
-                                <span className="text-sm">O U R</span>
+                                <span className="text-sm text-white">O U R</span>
                             </div>
                         </div>
                         <h1 className="text-6xl  font-bold mt-2">
                             <span
-                                className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
+                                className="text-primary">
                                 Services
                             </span></h1>
-                        <div className="w-16 h-0.5 bg-black mt-4"></div>
+                        <div className="w-16 h-0.5 bg-white mt-4"></div>
                     </div>
                     <div>
-                        <p className="text-black font -bold leading-relaxed">
+                        <p className=" font-bold text-white leading-relaxed">
                             We Help Founders Go From Idea to Revenue With Fractional Growth Leadership
                         </p>
                     </div>

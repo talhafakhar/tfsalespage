@@ -21,18 +21,14 @@ interface SuccessStory {
         results: string[];
         clientType: string;
     };
-    gradient: string;
-    bgColor: string;
 }
 
 const SuccessSnapshots: React.FC = () => {
     const [expandedItem, setExpandedItem] = useState<number | null>(0);
     const [isVisible, setIsVisible] = useState<boolean>(false);
-
     useEffect(() => {
         setIsVisible(true);
     }, []);
-
     const successStories: SuccessStory[] = [
         {
             id: 1,
@@ -52,8 +48,6 @@ const SuccessSnapshots: React.FC = () => {
                 ],
                 clientType: "B2B SaaS Startup"
             },
-            gradient: "from-emerald-400 to-emerald-600",
-            bgColor: "bg-emerald-50"
         },
         {
             id: 2,
@@ -73,8 +67,6 @@ const SuccessSnapshots: React.FC = () => {
                 ],
                 clientType: "Tech Startup"
             },
-            gradient: "from-blue-400 to-blue-600",
-            bgColor: "bg-blue-50"
         },
         {
             id: 3,
@@ -94,8 +86,6 @@ const SuccessSnapshots: React.FC = () => {
                 ],
                 clientType: "Growing Enterprise"
             },
-            gradient: "from-primary-400 to-primary-600",
-            bgColor: "bg-primary-50"
         }
     ];
 
@@ -104,25 +94,18 @@ const SuccessSnapshots: React.FC = () => {
     };
 
     return (
-        <section className="bg-gradient-to-br from-secondary-950 via-secondary-900 to-secondary-950 py-10 px-4 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-emerald-400 to-blue-600 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 right-20 w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full blur-2xl animate-pulse delay-500"></div>
-            </div>
-            <div className="max-w-6xl mx-auto relative z-10">
-                <div className={`text-center mb-16 transition-all duration-1000 ${
-                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+        <section className="bg-secondary   px-4">
+            <div className="max-w-6xl mx-auto border-t-2 py-10">
+                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
                         What We&#39;ve Helped{' '}
-                        <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent relative">
+                        <span className="text-primary">
               Founders
-              <div className="absolute bottom-0 left-0 w-full h-2 bg-gradient-to-r from-primary-400 to-primary-600 transform scale-x-0 origin-left transition-transform duration-1000 delay-500 opacity-30 rounded-full"></div>
             </span>
                         {' '}Achieve
                     </h2>
-                    <p className=" text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
                         Real results from real founders who transformed their businesses with our proven strategies and solutions.
                     </p>
                 </div>
@@ -144,9 +127,9 @@ const SuccessSnapshots: React.FC = () => {
                                 style={{ transitionDelay: `${300 + index * 200}ms` }}
                             >
                                 <div className={`
-                  bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden
-                  transition-all duration-500 hover:border-white/20
-                  ${isExpanded ? 'bg-white/10 border-primary-400/50 shadow-2xl' : 'hover:shadow-xl'}
+                  bg-white/10 backdrop-blur-xl rounded-3xl border border-white/30 overflow-hidden
+                  transition-all duration-500 
+                  ${isExpanded ? 'bg-white/10 border-primary/50 shadow-2xl' : 'hover:shadow-xl'}
                 `}>
 
                                     <div
@@ -156,18 +139,11 @@ const SuccessSnapshots: React.FC = () => {
                                         <div className="flex items-center justify-between">
 
                                             <div className="flex items-center gap-4">
-                                                <div className={`
-                          w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg
-                          transition-all duration-500
-                          ${isExpanded
-                                                    ? `bg-gradient-to-br ${story.gradient} transform scale-110 rotate-6`
-                                                    : 'bg-white/10 hover:bg-white/20'
-                                                }
-                        `}>
+                                                <div className={` w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg  transition-all duration-500 bg-white/10`}>
                                                     <IconComponent
                                                         size={28}
                                                         className={`transition-colors duration-300 ${
-                                                            isExpanded ? 'text-white' : 'text-primary-400'
+                                                            isExpanded ? 'text-white' : 'text-primary'
                                                         }`}
                                                     />
                                                 </div>
@@ -175,7 +151,7 @@ const SuccessSnapshots: React.FC = () => {
                                                     <div className="flex items-baseline gap-3 mb-2">
                             <span className={`
                               text-4xl font-bold transition-colors duration-300
-                              ${isExpanded ? 'text-primary-300' : 'text-white'}
+                              ${isExpanded ? 'text-primary' : 'text-white'}
                             `}>
                               {story.metric}
                             </span>
@@ -188,7 +164,7 @@ const SuccessSnapshots: React.FC = () => {
                               inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium
                               transition-all duration-300
                               ${isExpanded
-                                                            ? 'bg-primary-400/20 text-primary-300'
+                                                            ? 'bg-primary/20 text-primary'
                                                             : 'bg-white/10 text-slate-300'
                                                         }
                             `}>
@@ -220,11 +196,11 @@ const SuccessSnapshots: React.FC = () => {
                     ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
                   `}>
                                         <div className="px-8 pb-4">
-                                            <div className="border-t border-white/20 pt-4">
+                                            <div className="border-t border-white pt-4">
                                                 <div className="flex justify-between items-start mb-6">
                                                     <div className={`
                             inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
-                            bg-gradient-to-r ${story.gradient} text-white shadow-lg
+                            bg-white 
                           `}>
                                                         <CheckCircle size={16} />
                                                         <span>{story.details.clientType}</span>
@@ -234,8 +210,8 @@ const SuccessSnapshots: React.FC = () => {
 
                                                     <div className="space-y-6">
                                                         <div>
-                                                            <h4 className="text-lg font-semibold text-primary-300 mb-3 flex items-center gap-2">
-                                                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                                            <h4 className="text-lg font-semibold text-primary mb-3 flex items-center gap-2">
+                                                                <div className="w-2 h-2 bg-primary rounded-full"></div>
                                                                 Challenge
                                                             </h4>
                                                             <p className="text-slate-300 leading-relaxed">
@@ -244,8 +220,8 @@ const SuccessSnapshots: React.FC = () => {
                                                         </div>
 
                                                         <div>
-                                                            <h4 className="text-lg font-semibold text-primary-300 mb-3 flex items-center gap-2">
-                                                                <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                                            <h4 className="text-lg font-semibold text-primary mb-3 flex items-center gap-2">
+                                                                <div className="w-2 h-2 bg-primary rounded-full"></div>
                                                                 Our Approach
                                                             </h4>
                                                             <p className="text-slate-300 leading-relaxed">
@@ -255,8 +231,8 @@ const SuccessSnapshots: React.FC = () => {
                                                     </div>
 
                                                     <div>
-                                                        <h4 className="text-lg font-semibold text-primary-300 mb-4 flex items-center gap-2">
-                                                            <div className="w-2 h-2 bg-primary-400 rounded-full"></div>
+                                                        <h4 className="text-lg font-semibold text-primary mb-4 flex items-center gap-2">
+                                                            <div className="w-2 h-2 bg-primary rounded-full"></div>
                                                             Key Results
                                                         </h4>
                                                         <ul className="space-y-3">

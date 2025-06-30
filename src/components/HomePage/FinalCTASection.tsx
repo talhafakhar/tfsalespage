@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import {
-    ArrowRight,
-    MessageCircle,
-    ExternalLink,
     CheckCircle,
     Zap,
     TrendingUp,
@@ -19,7 +16,6 @@ interface Benefit {
 
 const FinalCTASection: React.FC = () => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
-    const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
     useEffect(() => {
         setIsVisible(true);
@@ -33,98 +29,34 @@ const FinalCTASection: React.FC = () => {
         { icon: CheckCircle, text: "Measurable growth", delay: "1000ms" }
     ];
     return (
-        <section className="bg-white py-20 px-4 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-                <div className="absolute inset-0" style={{
-                    backgroundImage: `radial-gradient(circle at 2px 2px, rgba(234, 179, 8, 0.15) 1px, transparent 0)`,
-                    backgroundSize: '60px 60px'
-                }}></div>
-            </div>
-            <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-primary-400/20 to-primary-600/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-purple-600/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute top-1/2 left-1/4 w-20 h-20 bg-gradient-to-br from-emerald-400/15 to-emerald-600/15 rounded-full blur-2xl animate-pulse delay-500"></div>
-            <div className="max-w-7xl mx-auto relative z-10">
+        <section className="bg-white py-20 px-4">
+            <div className="max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <div className={`transition-all duration-1000 delay-300 ${
                         isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-8'
                     }`}>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary-900 leading-tight mb-6">
-                            Let&#39;s Build Your{' '}
-                            <span className="relative">
-                <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight mb-6">Let&#39;s Build Your{' '}<span className="text-primary">
                   Growth Stack
-                </span>
-                                {/* Animated underline */}
-                                <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary-400 to-primary-600 transform origin-left scale-x-0 animate-pulse rounded-full"></div>
-              </span>
-                            {' '}Together
-                        </h2>
-
-                        {/* Subheadline */}
-                        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                            No retainers. No fluff. Just senior-level execution, powerful systems, and measurable growth.
-                        </p>
-
-                        {/* Benefits List */}
+                </span>{' '}Together</h2>
+                        <p className="text-gray-600 mb-4 leading-relaxed">No retainers. No fluff. Just senior-level execution, powerful systems, and measurable growth.</p>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
                             {benefits.map((benefit, index) => {
                                 const IconComponent = benefit.icon;
                                 return (
                                     <div
                                         key={index}
-                                        className={`flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-primary-50 transition-all duration-500 hover:scale-105 hover:shadow-md ${
-                                            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4'
-                                        }`}
+                                        className={`flex items-center gap-3 p-3 rounded-xl bg-white border border-primary transition-all duration-300 hover:shadow-md  translate-y-4`}
                                         style={{ transitionDelay: benefit.delay }}
                                     >
-                                        <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg flex items-center justify-center shadow-md">
-                                            <IconComponent size={16} className="text-white" />
+                                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-md">
+                                            <IconComponent size={16} className="text-black"/>
                                         </div>
-                                        <span className="text-md font-semibold text-secondary-800">{benefit.text}</span>
+                                        <span className="text-md font-semibold text-secondary">{benefit.text}</span>
                                     </div>
                                 );
                             })}
                         </div>
 
-                        {/* CTA Buttons */}
-                        <div className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-800 ${
-                            isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                        }`}>
-
-                            {/* Primary CTA */}
-                            <button
-                                className="group relative bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-400 hover:to-primary-500 text-white px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl flex items-center gap-2 justify-center overflow-hidden"
-                                onMouseEnter={() => setHoveredButton('primary')}
-                                onMouseLeave={() => setHoveredButton(null)}
-                            >
-                                {/* Background animation */}
-                                <div className={`absolute inset-0 bg-gradient-to-r from-white/20 to-white/10 transform transition-transform duration-300 ${
-                                    hoveredButton === 'primary' ? 'translate-x-0' : '-translate-x-full'
-                                }`}></div>
-
-                                <div className="relative z-10 flex items-center gap-2">
-                                    <MessageCircle size={20} />
-                                    <span>Talk to a Growth Strategist</span>
-                                    <ArrowRight size={16} className="group-hover:transform group-hover:translate-x-1 transition-transform duration-300" />
-                                </div>
-                            </button>
-
-                            <button
-                                className="group relative bg-white border-2 border-gray-300 hover:border-primary-500 text-gray-700 hover:text-primary-600 px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-lg flex items-center gap-2 justify-center overflow-hidden"
-                                onMouseEnter={() => setHoveredButton('secondary')}
-                                onMouseLeave={() => setHoveredButton(null)}
-                            >
-                                <div className={`absolute inset-0 bg-gradient-to-r from-primary-50 to-primary-100 transform transition-transform duration-300 ${
-                                    hoveredButton === 'secondary' ? 'translate-x-0' : 'translate-x-full'
-                                }`}></div>
-
-                                <div className="relative z-10 flex items-center gap-2">
-                                    <ExternalLink size={20} />
-                                    <span>Explore Our Services</span>
-                                    <ArrowRight size={16} className="group-hover:transform group-hover:translate-x-1 transition-transform duration-300" />
-                                </div>
-                            </button>
-                        </div>
 
 
                     </div>
@@ -168,7 +100,21 @@ const FinalCTASection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-
+                <div className={`flex flex-col sm:flex-row justify-center mt-5 gap-4 transition-all duration-1000 delay-800 ${
+                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                }`}>
+                    <button className="group text-sm  p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                                        <span className="relative z-10 flex items-center space-x-2">
+                    <span className="tracking-wide">Get Growth Advice</span>
+                    <svg
+                        className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                  </span>
+                    </button>
+                </div>
             </div>
         </section>
     );

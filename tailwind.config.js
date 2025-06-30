@@ -17,18 +17,8 @@ module.exports = {
                 'body': ['Inter', 'system-ui', 'sans-serif'],
             },
             colors: {
-                'primary': {
-                    300: '#FEF3C7',
-                    400: '#FDE047',
-                    500: '#EAB308',
-                    600: '#CA8A04',
-                    700: '#A16207',
-                },
-                'secondary': {
-                    800: '#1F2937',
-                    900: '#111827',
-                    950: '#030712',
-                }
+                'primary': "#E5BD3D",
+                'secondary': "#000000"
             },
             animation: {
                 'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
@@ -38,6 +28,7 @@ module.exports = {
                 'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
                 'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 'progress-fill': 'progress-fill 0.8s ease-out forwards',
+                'scroll': 'scroll 2000s linear infinite'
 
             },
             keyframes: {
@@ -52,21 +43,21 @@ module.exports = {
                     }
                 },
                 'shimmer': {
-                    '0%': { transform: 'translateX(-100%) skewX(-45deg)' },
-                    '100%': { transform: 'translateX(200%) skewX(-45deg)' }
+                    '0%': {transform: 'translateX(-100%) skewX(-45deg)'},
+                    '100%': {transform: 'translateX(200%) skewX(-45deg)'}
                 },
                 'bounce-subtle': {
-                    '0%, 100%': { transform: 'translateY(0) scale(1)' },
-                    '50%': { transform: 'translateY(-4px) scale(1.1)' }
+                    '0%, 100%': {transform: 'translateY(0) scale(1)'},
+                    '50%': {transform: 'translateY(-4px) scale(1.1)'}
                 },
                 'wiggle': {
-                    '0%, 100%': { transform: 'rotate(0deg)' },
-                    '25%': { transform: 'rotate(-3deg)' },
-                    '75%': { transform: 'rotate(3deg)' }
+                    '0%, 100%': {transform: 'rotate(0deg)'},
+                    '25%': {transform: 'rotate(-3deg)'},
+                    '75%': {transform: 'rotate(3deg)'}
                 },
                 'heartbeat': {
-                    '0%, 100%': { transform: 'scale(1)' },
-                    '50%': { transform: 'scale(1.05)' }
+                    '0%, 100%': {transform: 'scale(1)'},
+                    '50%': {transform: 'scale(1.05)'}
                 },
                 'pulse-glow': {
                     '0%, 100%': {
@@ -90,7 +81,12 @@ module.exports = {
                         width: '100%',
                         opacity: '1'
                     }
+                },
+                'scroll': {
+                    '0%': {transform: 'translateX(0)'},
+                    '100%': {transform: 'translateX(-50%)'}
                 }
+
             },
             backgroundImage: {
                 'primary-gradient': 'linear-gradient(135deg, #EAB308 0%, #CA8A04 50%, #A16207 100%)',
