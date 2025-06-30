@@ -68,7 +68,7 @@ const FoundersSection = () => {
                                             {/* Number */}
                                             <div className="flex items-center gap-6">
                                                 <div className={`w-20 h-20 border-4 border-yellow-400 flex items-center justify-center transition-all duration-500 text-yellow-400'`}>
-                                                    <span className="text-3xl font-black">
+                                                    <span className="text-3xl text-white font-bold">
                                                         {String(index + 1).padStart(2, '0')}
                                                     </span>
                                                 </div>
