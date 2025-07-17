@@ -61,58 +61,22 @@ const FinalCTASection: React.FC = () => {
                         </div>
                     </div>
 
-                    {/*<div className={`transition-all duration-1000 delay-500 ${*/}
-                    {/*    isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform translate-x-8'*/}
-                    {/*}`}>*/}
-                    {/*    <div className="relative rounded-3xl overflow-hidden shadow-2xl">*/}
-                    {/*        <Image*/}
-                    {/*            src="/assets/home/graph.webp"*/}
-                    {/*            alt="Growth Strategy Team"*/}
-                    {/*            width={1920}*/}
-                    {/*            height={384}*/}
-                    {/*            className="w-full h-96 object-cover"*/}
-                    {/*            priority*/}
-                    {/*        />*/}
-
-                    {/*        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-8">*/}
-                    {/*            <div className="text-white">*/}
-                    {/*                <div className="flex items-center gap-3 mb-3">*/}
-                    {/*                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-600 rounded-xl flex items-center justify-center shadow-lg">*/}
-                    {/*                        <TrendingUp size={24} className="text-white" />*/}
-                    {/*                    </div>*/}
-                    {/*                    <div>*/}
-                    {/*                        <div className="text-2xl font-bold">500+ Founders</div>*/}
-                    {/*                        <div className="text-sm opacity-90">Already Growing</div>*/}
-                    {/*                    </div>*/}
-                    {/*                </div>*/}
-                    {/*                <p className="text-sm opacity-80">Join successful entrepreneurs who&#39;ve accelerated their growth</p>*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-
-                    {/*        /!* Floating Stats *!/*/}
-                    {/*        <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 shadow-lg">*/}
-                    {/*            <div className="text-center">*/}
-                    {/*                <div className="text-2xl font-bold text-secondary-900">300%</div>*/}
-                    {/*                <div className="text-sm text-gray-600">Avg Growth</div>*/}
-                    {/*            </div>*/}
-                    {/*        </div>*/}
-
-                    {/*    </div>*/}
-                    {/*</div>*/}
                 </div>
                 <div className={`flex flex-col sm:flex-row justify-center mt-5 gap-4 transition-all duration-1000 delay-800 ${
                     isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
-                    <button
-                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-                    >
-                        Get in touch
-                        <span
-                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                    <div className='mx-auto'>
+                        <button
+                            className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                         >
+                            Get in touch
+                            <span
+                                className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                            >
     <ArrowRight className="w-4 h-4" />
   </span>
-                    </button>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>

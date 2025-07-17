@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
     return (
         <footer className="bg-secondary text-white relative overflow-hidden">
             <div className='relative container mx-auto px-4'>
-                <div className="absolute right-0 top-16">
+                <div className="absolute right-0 top-16 hidden md:block">
                     <Image
                         src="/assets/home/footer-bg.png"
                         alt="astronot"
