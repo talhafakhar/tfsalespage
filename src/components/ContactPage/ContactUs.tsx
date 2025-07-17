@@ -10,13 +10,14 @@ const ContactUsPage = () => {
         subject: '',
         message: ''
     });
-    const handleInputChange = (e) => {
-        const {name, value} = e.target;
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
         setFormData(prev => ({
             ...prev,
-            [name]: value
+            [name]: value,
         }));
     };
+
     const handleSubmit = () => {
         alert('Thank you for your message! We\'ll get back to you soon.');
         setFormData({
@@ -157,7 +158,7 @@ const ContactUsPage = () => {
                                 <textarea
                                     name="message"
                                     value={formData.message}
-                                    onChange={handleInputChange}
+                                    onChange={()=>handleInputChange}
                                     placeholder="Tell us about your project"
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
                                 ></textarea>
