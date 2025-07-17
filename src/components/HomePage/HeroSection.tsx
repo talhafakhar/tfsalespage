@@ -14,39 +14,12 @@ const partnerNames: string[] = [
 
 const HeroSection: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
-    const [isPlaying, setIsPlaying] = useState(false);
-    const [videoRef, setVideoRef] = useState<HTMLVideoElement | null>(null);
-
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true);
         }, 100);
     }, []);
 
-    const handleVideoLoad = () => {
-        setIsVideoLoaded(true);
-    };
-
-    const toggleVideo = () => {
-        if (videoRef) {
-            if (isPlaying) {
-                videoRef.pause();
-                setIsPlaying(false);
-            } else {
-                videoRef.play();
-                setIsPlaying(true);
-            }
-        }
-    };
-
-    const handleVideoPlay = () => {
-        setIsPlaying(true);
-    };
-
-    const handleVideoPause = () => {
-        setIsPlaying(false);
-    };
 
     return (
         <div>
@@ -133,57 +106,6 @@ const HeroSection: React.FC = () => {
                             </div>
                         </div>
 
-                        {/*<div className={`transform transition-all duration-1000 delay-1000 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>*/}
-                        {/*    <div className="relative group bg-black">*/}
-                        {/*        {!isVideoLoaded && (*/}
-                        {/*            <div className="border rounded-md absolute w-full h-80"></div>*/}
-                        {/*        )}*/}
-                        {/*        <video*/}
-                        {/*            ref={setVideoRef}*/}
-                        {/*            className={`w-full h-80 bg-black object-cover rounded-lg transition-opacity duration-500 z-99999`}*/}
-                        {/*            muted*/}
-                        {/*            loop*/}
-                        {/*            playsInline*/}
-                        {/*            preload="auto"*/}
-                        {/*            onLoadedData={handleVideoLoad}*/}
-                        {/*            onCanPlay={handleVideoLoad}*/}
-                        {/*            onPlay={handleVideoPlay}*/}
-                        {/*            onPause={handleVideoPause}*/}
-                        {/*        >*/}
-                        {/*            <source src="/assets/home/hero-video.mp4" type="video/mp4" />*/}
-                        {/*            Your browser does not support the video tag.*/}
-                        {/*        </video>*/}
-                        {/*        <div className="absolute inset-0 flex items-center justify-center">*/}
-                        {/*            <button*/}
-                        {/*                onClick={toggleVideo}*/}
-                        {/*                className={`*/}
-                        {/*                    group/play relative*/}
-                        {/*                    w-16 h-16 */}
-                        {/*                    bg-white/90 hover:bg-white*/}
-                        {/*                    backdrop-blur-sm*/}
-                        {/*                    rounded-full*/}
-                        {/*                    flex items-center justify-center*/}
-                        {/*                    transition-all duration-300*/}
-                        {/*                    transform hover:scale-110 active:scale-95*/}
-                        {/*                    shadow-lg hover:shadow-xl*/}
-                        {/*                    ${isPlaying ? 'opacity-0 hover:opacity-100' : 'opacity-100'}*/}
-                        {/*                `}*/}
-                        {/*            >*/}
-                        {/*                {isPlaying ? (*/}
-                        {/*                    <svg className="w-8 h-8 text-gray-800" fill="currentColor" viewBox="0 0 24 24">*/}
-                        {/*                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>*/}
-                        {/*                    </svg>*/}
-                        {/*                ) : (*/}
-                        {/*                    <svg className="w-8 h-8 text-gray-800 ml-1" fill="currentColor" viewBox="0 0 24 24">*/}
-                        {/*                        <path d="M8 5v14l11-7z"/>*/}
-                        {/*                    </svg>*/}
-                        {/*                )}*/}
-                        {/*                <div className="absolute inset-0 rounded-full bg-primary/20 scale-0 group-hover/play:scale-150 transition-transform duration-500"></div>*/}
-                        {/*            </button>*/}
-                        {/*        </div>*/}
-                        {/*        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </div>
                 </div>
             </section>
