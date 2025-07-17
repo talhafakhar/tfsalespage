@@ -1,220 +1,182 @@
-import React, { useState, useEffect } from 'react';
-import {
-    Rocket,
-    TrendingUp,
-    Target,
-    Bot,
-    ArrowRight,
-} from 'lucide-react';
+'use client';
+import React, {useEffect, useRef, useState} from 'react';
+import { ArrowRight, Bot, Rocket, Target, TrendingUp } from 'lucide-react';
+import Image from 'next/image';
+import {motion, useInView} from 'framer-motion';
+
+const founderPoints = [
+    {
+        icon: Rocket,
+        title: 'Launching or relaunching products',
+        description: 'and need expert guidance across growth, tech, and sales',
+    },
+    {
+        icon: TrendingUp,
+        title: 'Struggling to break through revenue plateaus',
+        description: 'and want a smarter, more focused system',
+    },
+    {
+        icon: Target,
+        title: 'Scaling outbound, inbound, or hybrid sales',
+        description: 'without adding unnecessary complexity',
+    },
+    {
+        icon: Bot,
+        title: 'Replacing manual processes with AI powered workflows',
+        description: 'to unlock efficiency and speed',
+    },
+];
 
 const FoundersSection = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [isSticky, setIsSticky] = useState(false);
+    const sectionRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         setIsVisible(true);
-    }, []);
+        const handleScroll = () => {
+            if (sectionRef.current) {
+                const offset = Math.abs(sectionRef.current.getBoundingClientRect().top);
+                setIsSticky(offset > 2);
+            }
+        };
 
-    const founderPoints = [
-        {
-            icon: Rocket,
-            title: "Launching or relaunching products",
-            description: "and need expert guidance across growth, tech, and sales"
-        },
-        {
-            icon: TrendingUp,
-            title: "Struggling to break through revenue plateaus",
-            description: "and want a smarter, more focused system"
-        },
-        {
-            icon: Target,
-            title: "Scaling outbound, inbound, or hybrid sales",
-            description: "without adding unnecessary complexity"
-        },
-        {
-            icon: Bot,
-            title: "Replacing manual processes with AI powered workflows",
-            description: "to unlock efficiency and speed"
-        }
-    ];
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+    const isInView = useInView(sectionRef, { once: true, margin: "-300px" });
+
 
     return (
-        <section className="bg-black">
-
-            <div className="relative z-10 px-4 py-20">
-                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
+        <section ref={sectionRef} className="bg-black py-20 px-4 relative">
+                <div
+                    className={`text-center mb-16 transition-all duration-1000 ${
+                        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+                    }`}
+                >
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
-                       Build For{' '}
-                        <span className="text-primary">
-              Founders
-            </span>
-                        {' '}Who Are
+                        Build For <span className="text-primary">Founders</span> Who Are
                     </h2>
                 </div>
-                <div className="max-w-7xl mx-auto space-y-32">
-                    {founderPoints.map((point, index) => {
-                        const IconComponent = point.icon;
-                        const isLeft = index % 2 === 0;
-                        return (
-                            <div
-                                key={index}
-                                className={`transition-all duration-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-12'}`}
-                                style={{ transitionDelay: `${index * 300}ms` }}
+
+                <div className="container mx-auto relative">
+                <div className="container mx-auto relative">
+                    <div className="flex md:flex-row flex-col items-center  justify-center md:justify-between gap-1">
+                        <div className="flex flex-col gap-4 w-full md:w-1/2">
+                                {founderPoints.map((point, index) => {
+                                    return (
+                                        <div
+                                            key={index}
+                                            className={`relative cursor-pointer transition-all duration-500 transform hover:scale-105`}
+                                            style={{ transitionDelay: `${index * 150}ms` }}
+                                        >
+                                            <div
+                                                className={`p-8 transition-all duration-500 
+                                                   bg-white/5 backdrop-blur-sm
+                                                `}
+                                            >
+                                                <div className="flex items-center mb-6">
+                                                    <div
+                                                        className={`w-16 h-16 border-2 flex items-center justify-center transition-all duration-500
+                                                                border-primary bg-primary/10
+                                                            
+                                                        `}
+                                                    >
+                            <span
+                                className={`text-2xl font-bold transition-all duration-500 
+                                    text-primary
+                                `}
                             >
-                                <div className={`grid lg:grid-cols-12 gap-12 items-center ${isLeft ? '' : 'lg:grid-flow-col-dense'}`}>
-                                    {/* Content Side */}
-                                    <div className={`lg:col-span-7 ${isLeft ? '' : 'lg:col-start-6'}`}>
-                                        <div className="space-y-8">
-                                            {/* Number */}
-                                            <div className="flex items-center gap-6">
-                                                <div className={`w-20 h-20 border-4 border-yellow-400 flex items-center justify-center transition-all duration-500 text-yellow-400'`}>
-                                                    <span className="text-3xl text-white font-bold">
-                                                        {String(index + 1).padStart(2, '0')}
-                                                    </span>
+                              {String(index + 1).padStart(2, '0')}
+                            </span>
+                                                    </div>
+                                                    <div
+                                                        className={`h-px flex-1 ml-6 transition-all duration-500 
+                                                          bg-primary`}
+                                                    ></div>
                                                 </div>
-                                                <div className={`h-px flex-1 transition-all duration-500 bg-white/20`}></div>
-                                            </div>
 
-                                            {/* Title */}
-                                            <h3 className={`text-4xl md:text-6xl font-black leading-tight transition-all duration-500 text-white`}>
-                                                {point.title.toUpperCase()}
-                                            </h3>
+                                                <h3
+                                                    className={`text-3xl font-bold mb-4 transition-all duration-500 
+                                                     text-white`}
+                                                >
+                                                    {point.title.toUpperCase()}
+                                                </h3>
 
-                                            {/* Description */}
-                                            <p className="text-2xl text-white/70 leading-relaxed font-light">
-                                                {point.description}
-                                            </p>
+                                                <p
+                                                    className={`text-lg leading-relaxed transition-all duration-500
+                                                       text-white/80`}
+                                                >
+                                                    {point.description}
+                                                </p>
 
-                                            {/* Action */}
-                                            <div className={`flex items-center gap-4 text-xl font-bold cursor-pointer group transition-all duration-300 text-white
-                                            `}>
-                                                <span>EXPLORE THIS AREA</span>
-                                                <div className={`w-12 h-12 border-2 flex items-center justify-center transition-all duration-300 border-white `}>
-                                                    <ArrowRight size={20} className="transition-transform duration-300 group-hover:translate-x-1" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Visual Side */}
-                                    <div className={`lg:col-span-5 ${isLeft ? 'lg:col-start-8' : 'lg:col-start-1'}`}>
-                                        <div className="relative">
-                                            {/* Main Icon Container */}
-                                            <div className={`relative w-80 h-80 mx-auto transition-all duration-700  hover:scale-110`}>
-                                                {/* Background Shape */}
-                                                <div className={`absolute inset-0 border-4 transition-all duration-500 border-white/20`}></div>
-
-                                                {/* Inner Shape */}
-                                                <div className={`absolute inset-8 border-2 transition-all duration-500 border-white/10`}></div>
-
-                                                {/* Icon */}
-                                                <div className="absolute inset-0 flex items-center justify-center">
-                                                    <div className={`w-24 h-24 flex items-center justify-center transition-all duration-500 bg-white text-black`}>
-                                                        <IconComponent size={48} />
+                                                {/* Explore Link */}
+                                                <div
+                                                    className={`flex items-center gap-4 mt-6 text-lg font-bold cursor-pointer group transition-all duration-300
+                                                       text-primary`}
+                                                >
+                                                    <span>EXPLORE THIS AREA</span>
+                                                    <div
+                                                        className={`w-10 h-10 border-2 flex items-center justify-center transition-all duration-300
+                                                           border-primary'
+                                                        `}
+                                                    >
+                                                        <ArrowRight
+                                                            size={16}
+                                                            className="transition-transform duration-300 group-hover:translate-x-1"
+                                                        />
                                                     </div>
                                                 </div>
-
-                                                <div className={`absolute -top-2 -left-2 w-6 h-6 transition-all duration-500 bg-white
-                                                `}></div>
-                                                <div className={`absolute -top-2 -right-2 w-6 h-6 transition-all duration-500 bg-white
-                                                `}></div>
-                                                <div className={`absolute -bottom-2 -left-2 w-6 h-6 transition-all duration-500 bg-white
-                                                `}></div>
-                                                <div className={`absolute -bottom-2 -right-2 w-6 h-6 transition-all duration-500bg-white
-                                                `}></div>
                                             </div>
+
+                                            {/* Active Indicator */}
+                                            <div
+                                                className={`absolute left-0 top-0 w-1 h-full transition-all duration-500
+                                                    bg-yellow-400`}
+                                            ></div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        );
-                    })}
-
-                    <div className={`text-center mt-20 transition-all duration-1000 delay-1200 ${
-                        isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                    }`}>
-                        <div
-                            className="border-white rounded-3xl p-5 border-2 relative overflow-hidden"
-                            style={{
-                                background: `
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 255, 0, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 20, 0.9) 100%)
-            `,
-                                backgroundSize: '100% 100%, 100% 100%, 100% 100%, 100% 100%',
-                                boxShadow: `
-                0 0 50px rgba(255, 255, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 25px 50px -12px rgba(0, 0, 0, 0.9)
-            `
-                            }}
-                        >
-                            {/* Animated mesh overlay */}
-                            <div
-                                className="absolute inset-0 opacity-30"
-                                style={{
-                                    background: `
-                    conic-gradient(from 0deg at 50% 50%, 
-                        transparent 0deg, 
-                        rgba(255, 255, 0, 0.1) 60deg, 
-                        transparent 120deg, 
-                        rgba(255, 255, 255, 0.08) 180deg, 
-                        transparent 240deg, 
-                        rgba(255, 255, 0, 0.12) 300deg, 
-                        transparent 360deg
-                    )
-                `,
-                                    animation: 'spin 20s linear infinite reverse'
-                                }}
-                            />
-
-                            {/* Noise texture overlay */}
-                            <div
-                                className="absolute inset-0 opacity-20"
-                                style={{
-                                    background: `
-                    repeating-linear-gradient(
-                        45deg,
-                        transparent,
-                        transparent 2px,
-                        rgba(255, 255, 255, 0.02) 2px,
-                        rgba(255, 255, 255, 0.02) 4px
-                    ),
-                    repeating-linear-gradient(
-                        -45deg,
-                        transparent,
-                        transparent 2px,
-                        rgba(255, 255, 0, 0.03) 2px,
-                        rgba(255, 255, 0, 0.03) 4px
-                    )
-                `
-                                }}
-                            />
-
-                            <div className="relative z-10">
-                                <h3 className="text-4xl font-bold text-white mb-4">
-                                    Ready to Join Successful Founders?
-                                </h3>
-                                <p className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
-                                    Transform your business with proven strategies that have helped hundreds of founders break through plateaus and achieve extraordinary growth.
-                                </p>
-                                <button className="group text-sm p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-                <span className="relative z-10 flex items-center space-x-2">
-                    <span className="tracking-wide">Start Your Transformation</span>
-                    <svg
-                        className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                              d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                    </svg>
-                </span>
-                                </button>
-                            </div>
+                                    );
+                                })}
                         </div>
+                            <motion.div
+                                className={`w-full md:w-1/2  transition-all duration-300 ${
+                                    isSticky ? 'md:sticky md:top-10' : ''
+                                }`}
+                                initial={{ opacity: 0, y: 80 }}
+                                transition={
+                                    isInView
+                                        ? {
+                                            duration: 2,
+                                            repeat: Infinity,
+                                            repeatType: "loop",
+                                            ease: "easeInOut",
+                                        }
+                                        : {
+                                            duration: 0.8,
+                                        }
+                                }
+                                animate={
+                                    isInView
+                                        ? {
+                                            opacity: 1,
+                                            y: [0, -80, 0],
+                                        }
+                                        : {
+                                            opacity: 1,
+                                        }
+                                }
+                            >
+                            <Image
+                                src="/assets/home/rigth-man.webp"
+                                className="mx-auto"
+                                alt="man"
+                                width={500}
+                                height={500}
+                            />
+                            </motion.div>
+                    </div>
                     </div>
                 </div>
-            </div>
         </section>
     );
 };

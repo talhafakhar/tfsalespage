@@ -1,232 +1,235 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {AnimatePresence, motion, useInView} from 'framer-motion';
-import { Monitor, PenTool, Users, Rocket, Settings, Bot} from 'lucide-react';
+import React, { useRef, } from "react";
+import {motion, useInView} from "framer-motion";
+import { Monitor, PenTool, Users, Rocket, Settings, Bot, Sparkles, TrendingUp, Zap } from "lucide-react";
+import Image from "next/image";
+
 const services = [
     {
         id: "virtual-cmo",
         title: "Virtual CMO Services",
-        icon: <Rocket className="w-8 h-8" />,
-        description: `Design and lead your go-to-market strategy confidently. Launch test campaigns, build demand across channels, create SEO-focused content, and set up automation that scales. Craft messaging and a brand story that convert leads into loyal customers.`
+        icon: <Rocket className="w-12 h-12" />,
+        description: `Design and lead your go-to-market strategy confidently. Launch test campaigns, build demand across channels, create SEO-focused content, and set up automation that scales. Craft messaging and a brand story that convert leads into loyal customers.`,
+        shortDescription: "Strategic marketing leadership to accelerate your growth",
+        tag: { text: "Popular", icon: <TrendingUp className="w-3 h-3" /> }
     },
     {
         id: "virtual-cto",
         title: "Virtual CTO Services",
-        icon: <Monitor className="w-8 h-8" />,
-        description: `Transform your product vision into a scalable platform. Build MVPs quickly, manage SaaS development, ensure compliance, and integrate AI features. Get hands-on leadership to guide teams and create investor-ready technology foundations.`
+        icon: <Monitor className="w-12 h-12" />,
+        description: `Transform your product vision into a scalable platform. Build MVPs quickly, manage SaaS development, ensure compliance, and integrate AI features. Get hands-on leadership to guide teams and create investor-ready technology foundations.`,
+        shortDescription: "Technical expertise to build and scale your product"
     },
     {
         id: "fractional-sdr",
         title: "Fractional SDR Services",
-        icon: <Users className="w-8 h-8" />,
-        description: `Fill your sales pipeline with qualified conversations. Launch effective cold outreach, connect on social channels, automate workflows, and build messaging that resonates. Turn outbound sales into a consistent, scalable engine for growth.`
+        icon: <Users className="w-12 h-12" />,
+        description: `Fill your sales pipeline with qualified conversations. Launch effective cold outreach, connect on social channels, automate workflows, and build messaging that resonates. Turn outbound sales into a consistent, scalable engine for growth.`,
+        shortDescription: "Dedicated outbound sales to fill your pipeline",
+        tag: { text: "New", icon: <Sparkles className="w-3 h-3" /> }
     },
     {
         id: "sales-consulting",
         title: "Sales Consulting & Team Training",
-        icon: <PenTool className="w-8 h-8" />,
-        description: `Develop a repeatable sales system that drives revenue. Build account-based strategies, optimize cold outreach, train teams on buyer psychology, and implement tools for tracking and scaling your most profitable sales channels.`
+        icon: <PenTool className="w-12 h-12" />,
+        description: `Develop a repeatable sales system that drives revenue. Build account-based strategies, optimize cold outreach, train teams on buyer psychology, and implement tools for tracking and scaling your most profitable sales channels.`,
+        shortDescription: "Expert guidance to optimize your sales process"
     },
     {
         id: "sales-automation",
         title: "Sales Automation",
-        icon: <Settings className="w-8 h-8" />,
-        description: `Automate your sales workflows to work smarter. Set up AI-powered follow-ups, integrate your CRM and communication tools, and build custom systems that convert leads efficiently while saving time and reducing manual tasks.`
+        icon: <Settings className="w-12 h-12" />,
+        description: `Automate your sales workflows to work smarter. Set up AI-powered follow-ups, integrate your CRM and communication tools, and build custom systems that convert leads efficiently while saving time and reducing manual tasks.`,
+        shortDescription: "Smart automation to scale your sales efforts"
     },
     {
         id: "agent-as-a-service",
         title: "Agent-as-a-Service (AAS)",
-        icon: <Bot className="w-8 h-8" />,
-        description: `Deploy AI agents that handle sales, support, and operations. Build custom bots that qualify leads, automate onboarding, update CRMs, and deliver fast responses. Seamlessly connect channels to create a smooth, consistent customer experience.`
+        icon: <Bot className="w-12 h-12" />,
+        description: `Deploy AI agents that handle sales, support, and operations. Build custom bots that qualify leads, automate onboarding, update CRMs, and deliver fast responses. Seamlessly connect channels to create a smooth, consistent customer experience.`,
+        shortDescription: "AI-powered agents to automate customer interactions",
+        tag: { text: "AI Powered", icon: <Zap className="w-3 h-3" /> }
     }
 ];
 
 const ServicesSection: React.FC = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const isInView =useInView(sectionRef, { margin: "-50% 0px -50% 0px" });
-    useEffect(() => {
-        if (!isInView) return;
-
-        let timeoutId: NodeJS.Timeout;
-
-        const handleWheel = (e: WheelEvent) => {
-            if (!isInView) return;
-
-            e.preventDefault();
-            clearTimeout(timeoutId);
-
-            timeoutId = setTimeout(() => {
-                const isScrollingDown = e.deltaY > 0;
-                const isScrollingUp = e.deltaY < 0;
-
-                if (isScrollingDown && currentIndex < services.length - 1) {
-                    setCurrentIndex((prev) => prev + 1);
-                } else if (isScrollingUp && currentIndex > 0) {
-                    setCurrentIndex((prev) => prev - 1);
-                } else if (isScrollingDown && currentIndex === services.length - 1) {
-                    document.body.style.overflow = "auto";
-                    window.scrollBy(0, 100);
-                } else if (isScrollingUp && currentIndex === 0) {
-                    document.body.style.overflow = "auto";
-                    window.scrollBy(0, -100);
+    const sectionRef = useRef(null);
+    const isInView = useInView(sectionRef, { once: true, margin: "-300px" });
+     return (
+        <section ref={sectionRef} className="relative px-4 py-20 bg-secondary overflow-hidden">
+            <div className="absolute inset-0 bg-secondary" />
+            <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
+                <motion.div
+                    className="absolute top-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
+                    animate={{
+                        x: isInView ? 0 : -100,
+                        opacity: isInView ? 1 : 0
+                    }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                />
+                <motion.div
+                    className="absolute bottom-20 right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
+                    animate={{
+                        x: isInView ? 0 : 100,
+                        opacity: isInView ? 1 : 0
+                    }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                />
+            </div>
+            <motion.div
+                className="absolute top-5 right-0 pointer-events-none"
+                initial={{ opacity: 0, y: 50 }}
+                transition={
+                    isInView
+                        ? {
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "loop",
+                            ease: "easeInOut",
+                        }
+                        : {
+                            duration: 0.8,
+                        }
                 }
-            }, 50);
-        };
-
-        document.body.style.overflow = "hidden";
-        window.addEventListener("wheel", handleWheel, { passive: false });
-
-        return () => {
-            clearTimeout(timeoutId);
-            window.removeEventListener("wheel", handleWheel);
-            document.body.style.overflow = "auto";
-        };
-    }, [isInView, currentIndex]);
-
-    useEffect(() => {
-        if (!isInView) {
-            document.body.style.overflow = "auto";
-        }
-    }, [isInView]);
-
-    const getCardTransform = (index: number) => {
-        const offset = index - currentIndex;
-        const baseRotation = -12;
-        const rotationStep = 6;
-        const translateStep = 15;
-
-        return {
-            rotate: baseRotation + (offset * rotationStep),
-            x: offset * translateStep,
-            y: offset * translateStep,
-            scale: index === currentIndex ? 1 : 1,
-            zIndex: services.length - Math.abs(offset)
-        };
-    };
-
-    const getServiceItemOpacity = (index: number) => {
-        return index === currentIndex ? 1 : 0.4;
-    };
-
-    return (
-        <section
-            ref={sectionRef}
-            className="relative px-4 pb-32 pt-10 bg-secondary overflow-hidden"
-        >
-            <div className="max-w-6xl mx-auto flex md:flex-row flex-col  justify-center md:justify-between items-center mb-32 gap-10">
+                animate={
+                    isInView
+                        ? {
+                            opacity: 1,
+                            y: [0, -20, 0],
+                        }
+                        : {
+                            opacity: 1,
+                        }
+                }
+            >
+                <Image
+                    src="/assets/home/astronot.png"
+                    alt="astronot"
+                    width={450}
+                    height={450}
+                />
+            </motion.div>
+            <motion.div
+                className="relative container mx-auto flex z-9999 md:flex-row flex-col justify-center  items-center mb-16 gap-10"
+                initial={{ opacity: 0, y: 50 }}
+                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                transition={{ duration: 0.8 }}
+            >
                 <div>
-                    <div className="flex items-center space-x-4">
+                    <motion.div
+                        className="flex items-center justify-center space-x-4"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                    >
                         <div className="text-4xl tracking-widest">
-                            <span className="text-sm text-white">O U R</span>
+                            <span className="text-[16px] text-white">O U R</span>
                         </div>
-                    </div>
-                    <h1 className="text-6xl  font-bold mt-2"><span className="text-primary">Services</span></h1>
-                        <div className="w-44 sm:w-16 h-0.5 bg-white mt-4"></div>
-
+                    </motion.div>
+                    <motion.h1
+                        className="text-6xl font-bold mt-2 font-clash"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                        <span className="text-white">Services</span>
+                    </motion.h1>
+                    <motion.div
+                        className="w-full h-0.5 bg-white mt-4"
+                        initial={{ scaleX: 0 }}
+                        animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        style={{ transformOrigin: "left" }}
+                    />
                 </div>
-                <div>
-                    <p className=" font-bold text-white text-center leading-relaxed">
-                        We Help Founders Go From Idea to Revenue With Fractional Growth Leadership
-                    </p>
-                </div>
-            </div>
-            <div className="max-w-5xl mx-auto">
-                <div className="flex items-center">
-                    <div className="w-full flex md:flex-row flex-col gap-32 justify-center md:justify-between items-center">
-                        <div className="flex justify-center">
-                            <div className="relative w-80 h-96">
-                                <AnimatePresence>
-                                    {services.map((service, index) => {
-                                        const transform = getCardTransform(index);
-                                        const isActive = index === currentIndex;
-
-                                        return (
-                                            <motion.div
-                                                key={service.id}
-                                                className={`absolute inset-0 rounded-3xl p-6 text-white shadow-2xl transition-all duration-300 ${
-                                                    !isActive ? 'blur-sm' : ''
-                                                }`}
-                                                style={{
-                                                    background: 'linear-gradient(135deg, #1f2937 0%, #111827 100%)',
-                                                    border: '3px solid #374151'
-                                                }}
-                                                initial={{rotate: -12, x: 0, y: 0, scale: 0.95}}
-                                                animate={{
-                                                    rotate: transform.rotate,
-                                                    x: transform.x,
-                                                    y: transform.y,
-                                                    scale: transform.scale,
-                                                    zIndex: transform.zIndex,
-                                                }}
-                                                transition={{
-                                                    type: "spring",
-                                                    stiffness: 200,
-                                                    damping: 25,
-                                                    duration: 0.6
-                                                }}
-                                            >
-                                                <div className="flex flex-col h-full">
-                                                    <div className="flex items-center justify-between mb-4">
-                                                        <div className="bg-white/10 p-2 rounded-xl backdrop-blur-sm">
-                                                            <div className="bg-primary p-2 rounded-lg text-gray-900">
-                                                                {service.icon}
-                                                            </div>
-                                                        </div>
-                                                        <div className="text-3xl font-bold text-gray-500">
-                                                            {String(index + 1).padStart(2, '0')}
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="bg-white/10 p-3 rounded-xl mb-4 backdrop-blur-sm">
-                                                        <div className="text-xl font-bold">{service.title}</div>
-                                                    </div>
-
-                                                    <div className="flex-1 text-sm leading-relaxed text-gray-300">
-                                                        {service.description}
-                                                    </div>
-                                                </div>
-                                            </motion.div>
-                                        );
-                                    })}
-                                </AnimatePresence>
-                            </div>
-                        </div>
-                        <div className="flex justify-center">
-                            <div className="max-w-md">
-
-                                <div className="space-y-4">
-                                    {services.map((service, index) => (
-                                        <motion.div
-                                            key={service.id}
-                                            className="flex items-center space-x-4 cursor-pointer group py-2"
-                                            animate={{
-                                                opacity: getServiceItemOpacity(index),
-                                                x: index === currentIndex ? 16 : 0,
-                                            }}
-                                            transition={{duration: 0.3}}
-                                            whileHover={{x: 8}}
-                                        >
-                                            <div className={`w-5 h-0.5  transition-all duration-300 ${
-                                                index === currentIndex
-                                                    ? 'bg-primary scale-125'
-                                                    : 'bg-white'
-                                            }`}/>
-                                            <div className={`text-lg font-medium transition-colors duration-300 ${
-                                                index === currentIndex
-                                                    ? 'text-white text-xl'
-                                                    : 'text-gray-400 '
-                                            }`}>
-                                                {service.title}
-                                            </div>
-                                        </motion.div>
-                                    ))}
+            </motion.div>
+            <motion.div
+                className="relative container z-99999 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                initial="hidden"
+                animate={isInView ? "show" : "hidden"}
+                variants={{
+                    hidden: {},
+                    show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
+                }}
+            >
+                {services.map((service, index) => (
+                    <motion.div
+                        key={service.id}
+                        className="relative bg-secondary/80 backdrop-blur-sm border border-white cursor-pointer rounded-xl overflow-hidden group"
+                        whileHover={{
+                            scale: 1.03,
+                            rotate: 0.5,
+                            transition: { type: "spring", stiffness: 400 }
+                        }}
+                        variants={{
+                            hidden: {
+                                opacity: 0,
+                                y: 40,
+                                rotateX: -15
+                            },
+                            show: {
+                                opacity: 1,
+                                y: 0,
+                                rotateX: 0,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 15
+                                }
+                            }
+                        }}
+                    >
+                        {service.tag && (
+                            <motion.div
+                                className="absolute top-4 right-4 z-10"
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
+                            >
+                                <div className="flex items-center gap-1 px-3 py-1 bg-primary text-secondary text-xs font-bold rounded-full shadow-lg">
+                                    {service.tag.icon}
+                                    <span>{service.tag.text}</span>
                                 </div>
+                            </motion.div>
+                        )}
 
+                        <motion.div
+                            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 opacity-0"
+                            whileHover={{ opacity: 1 }}
+                            transition={{ duration: 0.3 }}
+                        />
+
+                        <div className="relative p-8 h-full flex flex-col justify-between min-h-[280px]">
+                            <div>
+                                <div className="flex items-center justify-center mb-4">
+                                    <motion.div
+                                        className="p-4 bg-primary/20 rounded-full relative"
+                                        whileHover={{
+                                            scale: 1.2,
+                                            rotate: 5
+                                        }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        <div className="text-primary">{service.icon}</div>
+                                    </motion.div>
+                                </div>
+                                <h3 className="text-2xl font-bold text-white text-center font-manrope mb-3">
+                                    {service.title}
+                                </h3>
                             </div>
+
+                            <motion.p
+                                className="text-white/70 text-sm text-center font-dm-sans leading-relaxed"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1 }}
+                            >
+                                {service.description}
+                            </motion.p>
+
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </motion.div>
+                ))}
+            </motion.div>
         </section>
     );
 };

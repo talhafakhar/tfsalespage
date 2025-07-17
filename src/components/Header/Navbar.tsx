@@ -22,10 +22,10 @@ const Navbar: React.FC = () => {
         setIsOpen(false);
     };
     const navLinks = [
-        { href: '/', label: 'Home' },
-        { href: '/about', label: 'About' },
-        { href: '/services', label: 'Services', hasDropdown: true },
-        { href: '/contact', label: 'Contact' },
+        { href: '/', label: 'HOME' },
+        { href: '/about', label: 'ABOUT' },
+        { href: '/services', label: 'SERVICES', hasDropdown: true },
+        { href: '/contact', label: 'CONTACT' },
     ];
     const servicesDropdown = [
         { label: "Fractional CMO", href: "/services/fractional-cmo", icon: User },
@@ -36,12 +36,15 @@ const Navbar: React.FC = () => {
         { label: "Sales Consultation", href: "/services/sales-consultation", icon: MessageSquare },
     ];
     const [servicesExpanded, setServicesExpanded] = useState(false);
-
+    const [isVisible, setIsVisible] = useState(false);
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
     const handleServiceToggle = () => {
         setServicesExpanded(!servicesExpanded);
     };
     return (
-        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-secondary backdrop-blur-md shadow-lg border-b border-gray-800/50' : 'bg-black backdrop-blur-sm'}`}>
+        <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'} ${scrolled ? 'bg-secondary backdrop-blur-md shadow-lg border-b border-gray-800/50' : 'bg-black backdrop-blur-sm'}`}>
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center h-16 md:h-20">
                     <Link href="/" className="flex items-center  group">
@@ -74,16 +77,15 @@ const Navbar: React.FC = () => {
                                             <span className="relative z-10">{link.label}</span>
                                             <ChevronDown
                                                 className={`w-4 h-4 relative z-10 transition-transform duration-300 ${
-                                                    hoveredService ? 'rotate-180' : ''
+                                                    hoveredService ? 'rotate-180 ' : ''
                                                 }`}
                                             />
-                                            <div className="absolute inset-0 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
+                                            <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                                             <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
-                                            <div className="absolute bottom-0 left-0 h-0.5  rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                            <div className="absolute bottom-0 left-0 h-0.5 bg-primary rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-300 ease-out"></div>
                                         </button>
 
-                                        <div
-                                            className={`absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+                                        <div className={`absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
                                                 hoveredService
                                                     ? 'opacity-100 visible translate-y-0'
                                                     : 'opacity-0 invisible -translate-y-2'

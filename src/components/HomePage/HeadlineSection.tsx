@@ -1,60 +1,143 @@
-import React from 'react';
-const CanvasHeroSection: React.FC = () => {
-    return (
-        <section className="px-4 w-full py-10 overflow-hidden">
-            <div className="flex items-center justify-center  ">
-                <div className="max-w-6xl mx-auto text-center">
-                    {/* Main Tagline */}
-                    <div className="mb-8">
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-gray-900 mb-4 tracking-tight">
-                            <span className="block drop-shadow-sm">Faster.</span>
-                            <span className="block  text-primary drop-shadow-lg">
-                Smarter.
-              </span>
-                            <span className="block drop-shadow-sm">Leaner.</span>
-                        </h1>
-                    </div>
+import React, { useEffect, useState, useRef } from 'react';
 
-                    {/* Main Headline */}
+const HeadlineSection: React.FC = () => {
+    const [isVisible, setIsVisible] = useState(false);
+    const [isCounterVisible, setIsCounterVisible] = useState(false);
+    const [count1, setCount1] = useState(0);
+    const [count2, setCount2] = useState(0);
+    const [count3, setCount3] = useState(0);
+    const counterRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 200);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !isCounterVisible) {
+                    setIsCounterVisible(true);
+                }
+            },
+            { threshold: 0.5 }
+        );
+
+        if (counterRef.current) {
+            observer.observe(counterRef.current);
+        }
+
+        return () => {
+            if (counterRef.current) {
+                observer.unobserve(counterRef.current);
+            }
+        };
+    }, [isCounterVisible]);
+
+    useEffect(() => {
+        if (isCounterVisible) {
+            // Counter 1: 500+
+            const increment1 = setInterval(() => {
+                setCount1(prev => {
+                    if (prev >= 500) {
+                        clearInterval(increment1);
+                        return 500;
+                    }
+                    return prev + 10;
+                });
+            }, 20);
+
+            // Counter 2: 98%
+            const increment2 = setInterval(() => {
+                setCount2(prev => {
+                    if (prev >= 98) {
+                        clearInterval(increment2);
+                        return 98;
+                    }
+                    return prev + 2;
+                });
+            }, 30);
+
+            // Counter 3: 3x
+            const increment3 = setInterval(() => {
+                setCount3(prev => {
+                    if (prev >= 3) {
+                        clearInterval(increment3);
+                        return 3;
+                    }
+                    return prev + 1;
+                });
+            }, 500);
+
+            return () => {
+                clearInterval(increment1);
+                clearInterval(increment2);
+                clearInterval(increment3);
+            };
+        }
+    }, [isCounterVisible]);
+
+    return (
+        <section className="relative px-4 w-full py-16 lg:py-24 overflow-hidden bg-white">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+            </div>
+
+            <div className="relative max-w-6xl mx-auto text-center">
+                <div className="mb-8">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight font-clash leading-tight">
+                        <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                            <span className="block mb-2">Faster.</span>
+                        </div>
+                        <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                            <span className="block text-primary mb-2">Smarter.</span>
+                        </div>
+                        <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                            <span className="block mb-2">Leaner.</span>
+                        </div>
+                    </h1>
+                </div>
+                <div className={`transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                     <div className="mb-8">
-                        <h2 className="text-2xl md:text-4xl font-semibold text-gray-800 leading-tight mb-6 drop-shadow-sm">
+                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight mb-4 font-manrope">
                             We Help Founders Go From{' '}
-                            <span className="text-primary drop-shadow-lg">
-                Idea to Revenue
-              </span>
+                            <span className="text-primary font-bold">Idea to Revenue</span>
                             <br />
                             With Fractional Growth Leadership
                         </h2>
                     </div>
-
-                    <div className="max-w-4xl mx-auto mb-12">
-                        <p className="text-lg leading-relaxed drop-shadow-sm">
-                            You have the vision. You are building something with real potential. But hiring full time marketing,
-                            tech, and sales leadership this early can slow you down or drain your runway. That is why{' '}
-                            <span className="text-primary font-semibold">TF Business Solutions</span> exists.
-                            We bring you experienced CMO, CTO, and SDR leadership on demand. Quick to launch,
-                            budget friendly, and designed to accelerate your business growth.
-                        </p>
-                    </div>
-
-                    <div className="flex  gap-4 justify-center items-center">
-                        <button className="group text-sm  p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700">
-                                        <span className="relative z-10 flex items-center space-x-2">
-                    <span className="tracking-wide">Get Growth Advice</span>
-                    <svg
-                        className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                            d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                    </svg>
-                  </span>
-                        </button>
+                </div>
+                <div
+                    ref={counterRef}
+                    className={`transform transition-all duration-1000 delay-1400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                >
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 max-w-2xl mx-auto">
+                        <div className="text-center">
+                            <div className="text-5xl font-bold text-primary mb-1 font-clash">
+                                {count1}+
+                            </div>
+                            <div className="text-sm font-dm-sans">Startups Helped</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-5xl font-bold text-primary mb-1 font-clash">
+                                {count2}%
+                            </div>
+                            <div className="text-sm font-dm-sans">Success Rate</div>
+                        </div>
+                        <div className="text-center">
+                            <div className="text-5xl font-bold text-primary mb-1 font-clash">
+                                {count3}x
+                            </div>
+                            <div className="text-sm font-dm-sans">Faster Growth</div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </section>
     );
 };
 
-export default CanvasHeroSection;
+export default HeadlineSection;

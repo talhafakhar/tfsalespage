@@ -17,7 +17,7 @@ module.exports = {
                 'body': ['Inter', 'system-ui', 'sans-serif'],
             },
             colors: {
-                'primary': "#E5BD3D",
+                'primary': "#F7CB40",
                 'secondary': "#000000"
             },
             animation: {

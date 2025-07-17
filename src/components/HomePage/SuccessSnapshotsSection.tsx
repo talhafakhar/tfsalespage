@@ -95,7 +95,7 @@ const SuccessSnapshots: React.FC = () => {
 
     return (
         <section className="bg-secondary   px-4">
-            <div className="max-w-6xl mx-auto border-t-2 py-10">
+            <div className="container mx-auto py-10">
                 <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
@@ -150,9 +150,8 @@ const SuccessSnapshots: React.FC = () => {
                                                 <div>
                                                     <div className="flex items-baseline gap-3 mb-2">
                             <span className={`
-                              text-4xl font-bold transition-colors duration-300
-                              ${isExpanded ? 'text-primary' : 'text-white'}
-                            `}>
+                              text-4xl font-bold transition-colors duration-300 text-white
+                           `}>
                               {story.metric}
                             </span>
                                                         <span className="text-gray-300">
@@ -163,9 +162,7 @@ const SuccessSnapshots: React.FC = () => {
                                                         <div className={`
                               inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium
                               transition-all duration-300
-                              ${isExpanded
-                                                            ? 'bg-primary/20 text-primary'
-                                                            : 'bg-white/10 text-slate-300'
+                                                            bg-white/10 text-slate-300
                                                         }
                             `}>
                                                             <Target size={14} />

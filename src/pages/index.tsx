@@ -1,13 +1,14 @@
 import HeroSection from "@/components/HomePage/HeroSection";
-import CoCreate from "@/components/HomePage/CoCreateSection";
 import FoundersSection from "@/components/HomePage/BuildForFounderSection";
 import SuccessSnapshots from "@/components/HomePage/SuccessSnapshotsSection";
 import FinalCTASection from "@/components/HomePage/FinalCTASection";
 import Footer from "@/components/Footer/footer";
 import {FAQPageJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd} from "next-seo";
-import InfiniteLogoSlider from "@/components/Common/ClientsSlider";
-import CanvasHeroSection from "@/components/HomePage/HeadlineSection";
+import HeadlineSection from "@/components/HomePage/HeadlineSection";
 import NewServicesSection from "@/components/HomePage/NewServiceSection";
+import {TimelineFlowLayout} from "@/components/HomePage/FeaturesSection";
+import Banner from "@/components/HomePage/bannerSection";
+import Testimonial from "@/components/HomePage/Testimonials";
 export default function Home() {
     return (
         <>
@@ -95,11 +96,12 @@ export default function Home() {
                 ]}
             />
             <HeroSection/>
-            <InfiniteLogoSlider/>
-            <CanvasHeroSection/>
+            <HeadlineSection/>
             <NewServicesSection/>
-            <CoCreate/>
+            <TimelineFlowLayout/>
+            <Banner/>
             <FoundersSection/>
+            <Testimonial/>
             <SuccessSnapshots/>
             <FinalCTASection/>
             <Footer/>
