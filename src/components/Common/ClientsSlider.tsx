@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image';
 const InfiniteLogoSlider = () => {
     const logos = [
         {
@@ -59,11 +59,12 @@ const InfiniteLogoSlider = () => {
                 transform hover:scale-105
               "
                                 >
-                                    <img
+                                    <Image
                                         src={logo.url}
                                         alt="Client Logo"
+                                        width={300}
+                                        height={300}
                                         className="max-w-full max-h-full object-contain"
-                                        loading="lazy"
                                     />
                                 </div>
                             ))}

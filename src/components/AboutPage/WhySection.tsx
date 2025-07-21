@@ -34,7 +34,6 @@ const WhySection = () => {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center" data-section="1">
-                    {/* Left Content */}
                     <div className={`transform transition-all duration-1000 delay-200 ${
                         isVisible[1] ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
@@ -65,7 +64,7 @@ const WhySection = () => {
                             </p>
                             <p className="flex items-start gap-3">
                                 <div className="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
-                                That&#39;s why we created TF Business Solutions—to be the growth partners you can't afford
+                                That&#39;s why we created TF Business Solutions—to be the growth partners you can&#39;t afford
                                 to hire full-time, but can&#39;t afford to go without.
                             </p>
                         </div>
@@ -104,11 +103,7 @@ const WhySection = () => {
                         <div className="relative">
                             {/* Main image with enhanced styling */}
                             <div className="relative overflow-hidden rounded-3xl">
-                                <img
-                                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop"
-                                    alt="Team collaboration"
-                                    className="w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
-                                />
+
                                 {/* Overlay gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
                             </div>

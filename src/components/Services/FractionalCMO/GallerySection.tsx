@@ -7,11 +7,10 @@ import {
     UtensilsCrossed,
     Truck
 } from 'lucide-react';
-
 interface Industry {
     id: number;
     title: string;
-    icon: React.ComponentType<any>;
+    icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     imageUrl: string;
     overlay: string;
     size: 'large' | 'medium' | 'small';

@@ -43,11 +43,11 @@ const ContactUsPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
                     <div className="relative">
                         <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            <img
-                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"
-                                alt="Professional consultant ready to help"
-                                className="w-full h-[600px] object-cover"
-                            />
+                            {/*<img*/}
+                            {/*    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"*/}
+                            {/*    alt="Professional consultant ready to help"*/}
+                            {/*    className="w-full h-[600px] object-cover"*/}
+                            {/*/>*/}
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                     </div>
