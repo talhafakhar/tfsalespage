@@ -170,8 +170,8 @@ const FoundersSection = () => {
                                 src="/assets/home/rigth-man.webp"
                                 className="mx-auto"
                                 alt="man"
-                                width={500}
-                                height={500}
+                                width={600}
+                                height={600}
                             />
                             </motion.div>
                     </div>

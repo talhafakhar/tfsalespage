@@ -80,7 +80,7 @@ const HeadlineSection: React.FC = () => {
     }, [isCounterVisible]);
 
     return (
-        <section className="relative px-4 w-full py-16 lg:py-24 overflow-hidden bg-white">
+        <section className="relative px-4 w-full py-16  overflow-hidden bg-white">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>

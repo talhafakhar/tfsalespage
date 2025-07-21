@@ -104,8 +104,8 @@ const ServicesSection: React.FC = () => {
                 <Image
                     src="/assets/home/astronot.png"
                     alt="astronot"
-                    width={450}
-                    height={450}
+                    width={700}
+                    height={700}
                 />
             </motion.div>
             <motion.div
@@ -154,7 +154,7 @@ const ServicesSection: React.FC = () => {
                 {services.map((service, index) => (
                     <motion.div
                         key={service.id}
-                        className="relative bg-secondary/80 backdrop-blur-sm border border-white cursor-pointer rounded-xl overflow-hidden group"
+                        className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary"
                         whileHover={{
                             scale: 1.03,
                             rotate: 0.5,
@@ -178,6 +178,8 @@ const ServicesSection: React.FC = () => {
                             }
                         }}
                     >
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
                         {service.tag && (
                             <motion.div
                                 className="absolute top-4 right-4 z-10"

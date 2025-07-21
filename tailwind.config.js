@@ -28,8 +28,11 @@ module.exports = {
                 'heartbeat': 'heartbeat 1.5s ease-in-out infinite',
                 'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                 'progress-fill': 'progress-fill 0.8s ease-out forwards',
-                'scroll': 'scroll 2000s linear infinite'
-
+                'scroll': 'scroll 2000s linear infinite',
+                'fade-in': 'fade-in 0.7s ease-out forwards',
+                'fade-out': 'fade-out 0.7s ease-out forwards',
+                'slide-up': 'slide-up 0.5s ease-out forwards',
+                textLoop: 'textLoop 5s ease-in-out infinite',
             },
             keyframes: {
                 'glow-pulse': {
@@ -85,7 +88,26 @@ module.exports = {
                 'scroll': {
                     '0%': {transform: 'translateX(0)'},
                     '100%': {transform: 'translateX(-50%)'}
-                }
+                },
+                'fade-in': {
+                    '0%': { opacity: 0 },
+                    '100%': { opacity: 1 },
+                },
+                'fade-out': {
+                    '0%': { opacity: 1 },
+                    '100%': { opacity: 0 },
+                },
+                'slide-up': {
+                    '0%': { transform: 'translateY(20px)', opacity: 0 },
+                    '100%': { transform: 'translateY(0)', opacity: 1 },
+                },
+                textLoop: {
+                    '0%, 10%': { marginTop: '0rem' },
+                    '20%, 30%': { marginTop: '-2.81rem' },
+                    '40%, 60%': { marginTop: '-5.62rem' },
+                    '70%, 80%': { marginTop: '-2.81rem' },
+                    '90%, 100%': { marginTop: '0rem' },
+                },
 
             },
             backgroundImage: {
