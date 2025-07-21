@@ -39,34 +39,31 @@ const HeadlineSection: React.FC = () => {
 
     useEffect(() => {
         if (isCounterVisible) {
-            // Counter 1: 500+
             const increment1 = setInterval(() => {
                 setCount1(prev => {
-                    if (prev >= 500) {
+                    if (prev >= 30) {
                         clearInterval(increment1);
-                        return 500;
+                        return 30;
                     }
                     return prev + 10;
                 });
             }, 20);
 
-            // Counter 2: 98%
             const increment2 = setInterval(() => {
                 setCount2(prev => {
-                    if (prev >= 98) {
+                    if (prev >= 97) {
                         clearInterval(increment2);
-                        return 98;
+                        return 97;
                     }
                     return prev + 2;
                 });
             }, 30);
 
-            // Counter 3: 3x
             const increment3 = setInterval(() => {
                 setCount3(prev => {
-                    if (prev >= 3) {
+                    if (prev >= 5) {
                         clearInterval(increment3);
-                        return 3;
+                        return 5;
                     }
                     return prev + 1;
                 });
@@ -91,23 +88,19 @@ const HeadlineSection: React.FC = () => {
                 <div className="mb-8">
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight font-clash leading-tight">
                         <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <span className="block mb-2">Faster.</span>
+                            <span className="block mb-2">Strategy.</span>
                         </div>
                         <div className={`transform transition-all duration-1000 delay-400 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <span className="block text-primary mb-2">Smarter.</span>
+                            <span className="block text-primary mb-2">Execution.</span>
                         </div>
                         <div className={`transform transition-all duration-1000 delay-600 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                            <span className="block mb-2">Leaner.</span>
+                            <span className="block mb-2">Results.</span>
                         </div>
                     </h1>
                 </div>
                 <div className={`transform transition-all duration-1000 delay-800 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                     <div className="mb-8">
-                        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 leading-tight mb-4 font-manrope">
-                            We Help Founders Go From{' '}
-                            <span className="text-primary font-bold">Idea to Revenue</span>
-                            <br />
-                            With Fractional Growth Leadership
+                        <h2 className="text-lg md:text-2xl text-gray-800 leading-tight mb-4 font-manrope">Fractional C-level leaders who guide, empower, and execute within your current team.
                         </h2>
                     </div>
                 </div>

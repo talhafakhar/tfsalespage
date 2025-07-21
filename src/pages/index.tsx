@@ -9,6 +9,8 @@ import NewServicesSection from "@/components/HomePage/NewServiceSection";
 import {TimelineFlowLayout} from "@/components/HomePage/FeaturesSection";
 import Banner from "@/components/HomePage/bannerSection";
 import Testimonial from "@/components/HomePage/Testimonials";
+import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
+import React from "react";
 export default function Home() {
     return (
         <>
@@ -104,6 +106,76 @@ export default function Home() {
             <Testimonial/>
             <SuccessSnapshots/>
             <FinalCTASection/>
+            <FAQSection
+                faqs={[
+                    {
+                        id: 1,
+                        question: "What is fractional leadership and how does it work?",
+                        answer: (
+                            <p>
+                                Fractional leadership means bringing in experienced C-level executives (CMO, CTO, CSO) on a part-time or project basis. You get senior-level expertise without the cost or commitment of a full-time hire.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 2,
+                        question: "How is this different from hiring a consultant or freelancer?",
+                        answer: (
+                            <p>
+                                We don’t just advise. We work directly with your team, take ownership of KPIs, build systems, and deliver measurable outcomes. Think of us as an embedded executive, not just external help.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 3,
+                        question: "What types of companies do you work with?",
+                        answer: (
+                            <p>
+                                We work with growing agencies, startups, B2B service providers, and digital product companies that want to scale efficiently without hiring full-time leadership.
+
+                            </p>
+                        )
+                    },
+                    {
+                        id: 4,
+                        question: "How quickly can we get started?",
+                        answer: (
+                            <p>
+                                You can schedule a free discovery call today. Once aligned, we typically start within 3 to 5 business days with a strategic roadmap and onboarding.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 5,
+                        question: " What’s included in the Discovery Call?",
+                        answer: (
+                            <p>
+                                We’ll discuss your goals, challenges, and current gaps across sales, marketing, and tech. You’ll receive insights on where fractional leadership can create immediate impact.
+
+                            </p>
+                        )
+                    },
+                    {
+                        id: 6,
+                        question: "Do you offer one-time projects or ongoing support?",
+                        answer: (
+                            <p>
+                                Both. We offer monthly or quarterly engagements depending on your needs. There are no long-term commitments, only results-focused support.
+
+                            </p>
+                        )
+                    },
+                    {
+                        id: 7,
+                        question: "Can you train our existing team while leading the strategy?",
+                        answer: (
+                            <p>
+                                Yes. We specialize in execution and enablement. Your team learns our systems and frameworks while we drive the strategy and implementation.
+                            </p>
+                        )
+                    }
+                ]}
+            />
             <Footer/>
         </>
     );

@@ -32,15 +32,16 @@ const HeroSection: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                         <div className="text-center ">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-4xl sm:text-4xl md:text-6xl lg:text-8xl font-bold font-button text-white mb-6">
-                                    Build, Scale, and <span className="text-primary flex justify-center ">Automate
-                                    </span> Your Startup.
+                                <h1 className="text-4xl  md:text-6xl lg:text-7xl font-bold font-button text-white mb-6">
+                                    Fractional Leadership <span className="text-primary flex justify-center ">Founder Strategy
+                                    </span>  Team Training.
+
                                 </h1>
                             </div>
 
                             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <p className="text-white mb-8 max-w-xl mx-auto">
-                                    Senior-level growth, technology, and sales support—fractional and on-demand.
+                                    CMO, CTO, and CSO support to scale sales, marketing & tech.
                                 </p>
                             </div>
 

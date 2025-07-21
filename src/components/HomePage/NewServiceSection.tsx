@@ -8,45 +8,40 @@ const services = [
         id: "virtual-cmo",
         title: "Virtual CMO Services",
         icon: <Rocket className="w-12 h-12" />,
-        description: `Design and lead your go-to-market strategy confidently. Launch test campaigns, build demand across channels, create SEO-focused content, and set up automation that scales. Craft messaging and a brand story that convert leads into loyal customers.`,
-        shortDescription: "Strategic marketing leadership to accelerate your growth",
+        description: `Your marketing lacks strategic direction and consistent lead generation. We build demand-generation strategies, brand positioning, and conversion-focused campaigns that create predictable revenue engines. You get C-level marketing expertise without the full-time cost..`,
         tag: { text: "Popular", icon: <TrendingUp className="w-3 h-3" /> }
     },
     {
         id: "virtual-cto",
         title: "Virtual CTO Services",
         icon: <Monitor className="w-12 h-12" />,
-        description: `Transform your product vision into a scalable platform. Build MVPs quickly, manage SaaS development, ensure compliance, and integrate AI features. Get hands-on leadership to guide teams and create investor-ready technology foundations.`,
-        shortDescription: "Technical expertise to build and scale your product"
+        description: `Your tech infrastructure can't support growth or attract investors. We launch products, scale tech teams, implement AI solutions, and establish robust infrastructure for funding readiness. You get enterprise-level technology leadership at a fraction of the price.
+`,
     },
     {
         id: "fractional-sdr",
         title: "Fractional SDR Services",
         icon: <Users className="w-12 h-12" />,
-        description: `Fill your sales pipeline with qualified conversations. Launch effective cold outreach, connect on social channels, automate workflows, and build messaging that resonates. Turn outbound sales into a consistent, scalable engine for growth.`,
-        shortDescription: "Dedicated outbound sales to fill your pipeline",
+        description: ` Your sales pipeline is inconsistent and your team lacks proven processes. We build high-performing outbound engines from scratch with messaging, prospecting, and automation that keeps your calendar full. You get predictable revenue without hiring expensive sales directors.`,
         tag: { text: "New", icon: <Sparkles className="w-3 h-3" /> }
     },
     {
         id: "sales-consulting",
         title: "Sales Consulting & Team Training",
         icon: <PenTool className="w-12 h-12" />,
-        description: `Develop a repeatable sales system that drives revenue. Build account-based strategies, optimize cold outreach, train teams on buyer psychology, and implement tools for tracking and scaling your most profitable sales channels.`,
-        shortDescription: "Expert guidance to optimize your sales process"
+        description: ` Your team struggles with modern sales techniques and consistent closing. We train your teams on sales psychology, account-based marketing, and proven closing frameworks. You get immediate performance improvements with lasting results.`,
     },
     {
         id: "sales-automation",
         title: "Sales Automation",
         icon: <Settings className="w-12 h-12" />,
-        description: `Automate your sales workflows to work smarter. Set up AI-powered follow-ups, integrate your CRM and communication tools, and build custom systems that convert leads efficiently while saving time and reducing manual tasks.`,
-        shortDescription: "Smart automation to scale your sales efforts"
+        description: `Manual processes are killing your team's productivity and growth potential. We streamline operations with intelligent workflows, CRM integrations, and AI-powered systems that save 100+ hours monthly. You get efficiency that scales with your business.`,
     },
     {
         id: "agent-as-a-service",
         title: "Agent-as-a-Service (AAS)",
         icon: <Bot className="w-12 h-12" />,
-        description: `Deploy AI agents that handle sales, support, and operations. Build custom bots that qualify leads, automate onboarding, update CRMs, and deliver fast responses. Seamlessly connect channels to create a smooth, consistent customer experience.`,
-        shortDescription: "AI-powered agents to automate customer interactions",
+        description: `Customer support and lead qualification are eating your resources. We deploy intelligent AI agents for sales, onboarding, and support that work 24/7. You get scalable operations without expanding headcount.`,
         tag: { text: "AI Powered", icon: <Zap className="w-3 h-3" /> }
     }
 ];

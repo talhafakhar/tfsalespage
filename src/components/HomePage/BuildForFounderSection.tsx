@@ -1,29 +1,24 @@
 'use client';
 import React, {useEffect, useRef, useState} from 'react';
-import { ArrowRight, Bot, Rocket, Target, TrendingUp } from 'lucide-react';
+import { ArrowRight, Rocket, Target, TrendingUp } from 'lucide-react';
 import Image from 'next/image';
 import {motion, useInView} from 'framer-motion';
 
 const founderPoints = [
     {
         icon: Rocket,
-        title: 'Launching or relaunching products',
-        description: 'and need expert guidance across growth, tech, and sales',
+        title: 'Struggling to grow without hiring full-time executives?',
+        description: 'Get on-demand access to seasoned CMO, CTO, or CSO leadership without the overhead of full-time hires.',
     },
     {
         icon: TrendingUp,
-        title: 'Struggling to break through revenue plateaus',
-        description: 'and want a smarter, more focused system',
+        title: 'Your team has talent but lacks execution clarity?',
+        description: 'Our team training programs give your sales, marketing, and tech teams the tools, frameworks, and direction to drive results.',
     },
     {
         icon: Target,
-        title: 'Scaling outbound, inbound, or hybrid sales',
-        description: 'without adding unnecessary complexity',
-    },
-    {
-        icon: Bot,
-        title: 'Replacing manual processes with AI powered workflows',
-        description: 'to unlock efficiency and speed',
+        title: 'Feeling stuck despite a great product or service?',
+        description: 'Get 1:1 strategic consultation to uncover blind spots, prioritize growth levers, and move forward with confidence.',
     },
 ];
 
@@ -55,7 +50,7 @@ const FoundersSection = () => {
                     }`}
                 >
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
-                        Build For <span className="text-primary">Founders</span> Who Are
+                        For <span className="text-primary">Founders & Teams</span> Ready to Scale Smarter
                     </h2>
                 </div>
 

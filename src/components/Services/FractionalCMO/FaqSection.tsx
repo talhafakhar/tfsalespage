@@ -2,13 +2,15 @@ import React, {useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {PlusCircle} from "lucide-react";
 
-interface FAQItem {
+interface FAQ {
     id: number;
     question: string;
-    answer: string | React.ReactNode;
+    answer: React.ReactNode;
 }
-
-const FAQSection: React.FC = () => {
+interface FAQSectionProps {
+    faqs: FAQ[];
+}
+const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
     const [activeItems, setActiveItems] = useState<number[]>([]);
     const toggleItem = (id: number) => {
         if (activeItems.includes(id)) {
@@ -18,80 +20,6 @@ const FAQSection: React.FC = () => {
         }
     };
 
-    const faqData: FAQItem[] = [
-        {
-            id: 1,
-            question: "How much does it cost to hire a web development company?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        },
-        {
-            id: 2,
-            question: "What is custom programming?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        },
-        {
-            id: 3,
-            question: "What are the examples of custom web apps?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        },
-        {
-            id: 4,
-            question: "What is custom programming?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        },
-        {
-            id: 5,
-            question: "How much does it cost to hire a web development company?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        },
-        {
-            id: 6,
-            question: "What are the examples of custom web apps?",
-            answer: (
-                <p>
-                    The cost of hiring a custom web application development company is determined by the composition of
-                    the team working on the project, but typically companies charge between $30 to $70 per hour for
-                    specialist work. A flat fee for a web app can range from $10,000 to $200,000 per project. To get a
-                    detailed estimate for your project, please reach out to us with your specific requirements.
-                </p>
-            )
-        }
-    ];
 
     return (
         <section className='bg-secondary'>
@@ -102,7 +30,7 @@ const FAQSection: React.FC = () => {
                 </h2>
 
                 <div className="space-y-4">
-                    {faqData.map((item) => (
+                    {faqs.map((item:any) => (
                         <motion.div
                             key={item.id}
                             className="border-b border-gray-200 pb-4"

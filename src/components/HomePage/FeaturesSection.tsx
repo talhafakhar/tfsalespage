@@ -4,20 +4,20 @@ import { Zap, Star, Users, CheckCircle, ArrowRight } from "lucide-react";
 const features = [
     {
         icon: Zap,
-        title: "Smart Automation",
-        description: "Intelligent automation that learns from your behavior and adapts to make your workflow seamless.",
+        title: "Quick Strategy Check-In",
+        description: "We start with a focused call to understand your goals, challenges, and opportunities across sales, marketing, and tech.",
         delay: "0ms"
     },
     {
         icon: Star,
-        title: "Premium Quality",
-        description: "Meticulously crafted with attention to every detail, delivering excellence that exceeds expectations.",
+        title: "Custom Growth Roadmap",
+        description: "You receive a tailored action plan with clear KPIs, execution timelines, and systems aligned to your business stage.",
         delay: "100ms"
     },
     {
         icon: Users,
-        title: "Team Collaboration",
-        description: "Seamlessly work together with real-time collaboration tools designed for modern teams.",
+        title: "Execution & Weekly Insights",
+        description: "We integrate with your team to deliver results, backed by weekly updates, agile iterations, and performance tracking.",
         delay: "200ms"
     },
 ];
@@ -39,13 +39,13 @@ export const TimelineFlowLayout = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight font-nav text-black">
-                        We Don&#39;t Just Consult.
+                    <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight  text-black">
+                        Accelerating Your Success with a
                         <br/>
                         <span className="text-yellow-400">
-                            We Co-Create Growth
+                            Proven Process
+
                         </span>
-                        <span className="text-black"> With You.</span>
                     </h2>
                 </motion.div>
 
