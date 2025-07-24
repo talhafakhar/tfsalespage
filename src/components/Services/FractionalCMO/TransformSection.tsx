@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
 import { motion, useAnimation,easeOut } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 const Transform = () => {
     const controls = useAnimation();
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
@@ -35,7 +35,7 @@ const Transform = () => {
     };
 
     return (
-        <section className="py-16 px-6 md:px-12" ref={ref}>
+        <section className="py-10 px-6" ref={ref}>
             <div className="container mx-auto grid md:grid-cols-2 gap-5 items-center">
                 <motion.div
                     initial="hidden"

@@ -10,8 +10,15 @@ import {TimelineFlowLayout} from "@/components/HomePage/FeaturesSection";
 import Banner from "@/components/HomePage/bannerSection";
 import Testimonial from "@/components/HomePage/Testimonials";
 import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
-import React from "react";
+import React, {useEffect, useState} from "react";
+import Image from "next/image";
 export default function Home() {
+    const [show, setShow] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setShow(true), 5000);
+        return () => clearTimeout(timer);
+    }, []);
     return (
         <>
             <NextSeo
@@ -97,6 +104,8 @@ export default function Home() {
                     },
                 ]}
             />
+            <div>
+                <div>
             <HeroSection/>
             <HeadlineSection/>
             <NewServicesSection/>
@@ -106,8 +115,7 @@ export default function Home() {
             <Testimonial/>
             <SuccessSnapshots/>
             <FinalCTASection/>
-            <FAQSection
-                faqs={[
+            <FAQSection faqs={[
                     {
                         id: 1,
                         question: "What is fractional leadership and how does it work?",
@@ -145,38 +153,71 @@ export default function Home() {
                             </p>
                         )
                     },
-                    {
-                        id: 5,
-                        question: " What’s included in the Discovery Call?",
-                        answer: (
-                            <p>
-                                We’ll discuss your goals, challenges, and current gaps across sales, marketing, and tech. You’ll receive insights on where fractional leadership can create immediate impact.
-
-                            </p>
-                        )
-                    },
-                    {
-                        id: 6,
-                        question: "Do you offer one-time projects or ongoing support?",
-                        answer: (
-                            <p>
-                                Both. We offer monthly or quarterly engagements depending on your needs. There are no long-term commitments, only results-focused support.
-
-                            </p>
-                        )
-                    },
-                    {
-                        id: 7,
-                        question: "Can you train our existing team while leading the strategy?",
-                        answer: (
-                            <p>
-                                Yes. We specialize in execution and enablement. Your team learns our systems and frameworks while we drive the strategy and implementation.
-                            </p>
-                        )
-                    }
-                ]}
-            />
+                    // {
+                    //     id: 5,
+                    //     question: " What’s included in the Discovery Call?",
+                    //     answer: (
+                    //         <p>
+                    //             We’ll discuss your goals, challenges, and current gaps across sales, marketing, and tech. You’ll receive insights on where fractional leadership can create immediate impact.
+                    //
+                    //         </p>
+                    //     )
+                    // },
+                    // {
+                    //     id: 6,
+                    //     question: "Do you offer one-time projects or ongoing support?",
+                    //     answer: (
+                    //         <p>
+                    //             Both. We offer monthly or quarterly engagements depending on your needs. There are no long-term commitments, only results-focused support.
+                    //
+                    //         </p>
+                    //     )
+                    // },
+                    // {
+                    //     id: 7,
+                    //     question: "Can you train our existing team while leading the strategy?",
+                    //     answer: (
+                    //         <p>
+                    //             Yes. We specialize in execution and enablement. Your team learns our systems and frameworks while we drive the strategy and implementation.
+                    //         </p>
+                    //     )
+                    // }
+                ]}/>
             <Footer/>
-        </>
+                </div>
+                {show && (
+                    <div
+                        className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-md shadow-md"
+                        style={{zIndex: "99999"}}>
+                        <div className="max-w-xl mx-auto flex gap-8 items-center">
+                            <div className='flex gap-2 items-center'>
+                                <div className="border rounded-full bg-white">
+                                    <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                                </div>
+                                <div className="text-xs flex items-center gap-1 text-gray-600">
+                                    <p className="text-base font-semibold">Hello 👋 I&apos;m</p>
+                                    <section className="h-[24px] rounded overflow-hidden  inline-block">
+                                        <div className="animate-textLoop rounded">
+                                            <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                                                Carlos Córdova
+                                            </div>
+                                            <div className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                                                Web Developer
+                                            </div>
+                                            <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.81rem]">
+                                                Software Engineer
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            </div>
+                            <button className='bg-black text-white font-button rounded-md p-2 text-xs'>
+                                Book a Call
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </div>
+            </>
     );
 }

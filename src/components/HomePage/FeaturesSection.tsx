@@ -44,9 +44,11 @@ export const TimelineFlowLayout = () => {
                         <br/>
                         <span className="text-yellow-400">
                             Proven Process
-
                         </span>
                     </h2>
+                    <p className="text-lg  text-black/70 max-w-3xl mx-auto">
+                        Our structured approach ensures you get the most out of our fractional leadership 
+                    </p>
                 </motion.div>
 
                 <div className="relative">

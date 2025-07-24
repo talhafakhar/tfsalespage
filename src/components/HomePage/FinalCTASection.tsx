@@ -43,7 +43,7 @@ const FinalCTASection: React.FC = () => {
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight mb-6">Ready to Scale Without the{' '}<span className="text-primary">
                 Executive Overhead?
                 </span></h2>
-                        <p className="text-gray-600 mb-4 text-center leading-relaxed">Why Choose Fractional Leadership</p>
+                        <p className=" mb-4 text-center leading-relaxed">Why Choose Fractional Leadership</p>
                         <motion.span
                             className="flex justify-center mb-2"
                             animate={{ y: [0, 10, 0] }}

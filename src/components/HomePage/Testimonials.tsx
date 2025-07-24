@@ -68,16 +68,16 @@ const Testimonial = () => {
             </div>
             <div className=" relative max-w-7xl mx-auto px-6 z-10">
                 <h2 className="text-5xl text-center font-bold  mb-8 leading-tight">
-                    What Our{' '}
-                    <span className="text-primary">
-            Clients Say
-            </span>
+                    What Our{' '}<span className="text-primary">Clients Say</span>
                 </h2>
+                <p className="text-center text-lg mb-12">
+                    Hear from our satisfied clients about their experiences with our services.
+                </p>
                 <div className="relative mx-auto max-w-4xl">
                     <div className="border border-secondary rounded-3xl p-8 md:p-12  shadow-2xl relative overflow-hidden">
                         <div className="absolute -top-5 left-8 z-10">
                             <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-2xl rotate-12 hover:rotate-0 transition-transform duration-500">
-                                <Quote size={28} className=""/>
+                                <Quote size={28}/>
                             </div>
                         </div>
                         <button
@@ -131,7 +131,6 @@ const Testimonial = () => {
                             </div>
                         </div>
                     </div>
-
                     <div className="flex justify-center gap-3 mt-8">
                         {testimonials.map((_, index) => (
                             <button
@@ -152,7 +151,6 @@ const Testimonial = () => {
                         ))}
                     </div>
                 </div>
-
             </div>
         </section>
     );

@@ -23,14 +23,15 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
 
     return (
         <section className='bg-secondary'>
-            <div className="max-w-3xl mx-auto px-4 py-10 md:py-20">
-                <h2 className=" flex  gap-4 items-center mb-8 ">
-                    <span className="text-primary text-5xl font-bold">FAQS</span>
-                    <span className="text-white"> - Your doubts, cleared in seconds</span>
+            <div className="max-w-4xl mx-auto px-4 py-10 md:py-20">
+                <h2 className=" flex font-button  gap-4 justify-center font-bold items-center text-5xl text-white mb-4 ">
+                    <span className="text-primary ">Frequently {" "}</span>Asked Questions
+
                 </h2>
+                <p className="text-white text-center mb-5">Your doubts, cleared in seconds</p>
 
                 <div className="space-y-4">
-                    {faqs.map((item:any) => (
+                    {faqs.map((item) => (
                         <motion.div
                             key={item.id}
                             className="border-b border-gray-200 pb-4"
@@ -42,13 +43,15 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                                 className="flex justify-between items-center cursor-pointer py-3"
                                 onClick={() => toggleItem(item.id)}
                             >
-                                <h2 className="text-xl font-semibold text-white">{item.question}</h2>
+                                <h2 className={`text-xl ${activeItems.includes(item.id) ? "text-primary" : "text-white"} font-semibold`}>
+                                    {item.question}</h2>
                                 <motion.div
                                     animate={{rotate: activeItems.includes(item.id) ? 45 : 0}}
                                     transition={{duration: 0.2}}
                                     className="  text-xl"
                                 >
-                                    <PlusCircle className='text-primary'/>
+                                    <PlusCircle className={activeItems.includes(item.id) ? "text-primary" : "text-white"} />
+
                                 </motion.div>
                             </div>
 
@@ -62,7 +65,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                                         className="overflow-hidden"
                                     >
                                         <div className="pb-4 text-sm text-gray-400">
-                                            {item.answer && item.answer}
+                                            {item.answer}
                                         </div>
                                     </motion.div>
                                 )}

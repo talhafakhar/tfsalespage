@@ -52,6 +52,9 @@ const FoundersSection = () => {
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
                         For <span className="text-primary">Founders & Teams</span> Ready to Scale Smarter
                     </h2>
+                    <p className="text-lg text-white mb-4">
+                        Unlock the power of fractional leadership to drive growth without the overhead.
+                    </p>
                 </div>
 
                 <div className="container mx-auto relative">
