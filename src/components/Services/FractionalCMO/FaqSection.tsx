@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
-import {PlusCircle} from "lucide-react";
+import {ArrowRight, PlusCircle} from "lucide-react";
 
 interface FAQ {
     id: number;
@@ -12,6 +12,10 @@ interface FAQSectionProps {
 }
 const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
     const [activeItems, setActiveItems] = useState<number[]>([]);
+    const [isVisible, setIsVisible] = useState<boolean>(false);
+    useEffect(() => {
+        setIsVisible(true);
+    }, []);
     const toggleItem = (id: number) => {
         if (activeItems.includes(id)) {
             setActiveItems(activeItems.filter(itemId => itemId !== id));
@@ -72,6 +76,19 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                             </AnimatePresence>
                         </motion.div>
                     ))}
+                </div>
+                <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                }`}>
+                    <button
+                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
+                    >
+                        Book a Free Consultation
+                        <span
+                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        >
+    <ArrowRight className="w-4 h-4" />
+  </span>
+                    </button>
                 </div>
             </div>
 

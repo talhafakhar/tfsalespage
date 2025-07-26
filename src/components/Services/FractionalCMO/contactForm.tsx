@@ -1,140 +1,140 @@
-'use client';
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Youtube } from 'lucide-react';
 
-import { ChevronDown } from 'lucide-react';
-import React from 'react';
+const ContactSalesForm = () => {
+    const [focusedField, setFocusedField] = useState(null);
 
-const ContactSalesForm: React.FC = () => {
     return (
-        <div className="px-4 py-16 sm:px-6 lg:px-8 bg-white">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                <div className="space-y-10">
-                    <div className="text-left">
-                        <h2 className=" flex font-button  gap-4  font-bold items-center text-5xl  mb-4 ">
-                            <span className="text-primary "> Visit{" "}</span>Our Office
+        <div className=" flex items-center justify-center p-4">
+            <div className="container nx-auto w-full bg-white border border-secondary rounded-2xl shadow-2xl overflow-hidden">
+                <div className="grid grid-cols-1 lg:grid-cols-2">
+                    <div className="bg-secondary text-white p-8 lg:p-12">
+                        <h2 className="text-2xl lg:text-3xl font-bold mb-6">
+                            Contact Information
                         </h2>
-                        <p className="mt-2 text-base text-gray-600">
-                            We&#39;re located in Gulberg. Come by and let&#39;s meet!
+                        <p className="text-gray-300 mb-8 leading-relaxed">
+                            This statement reflects a dedication to customer satisfaction and a
+                            commitment to delivering outstanding service and support.
                         </p>
-                    </div>
-
-                    <div className="w-full h-96 rounded-md overflow-hidden shadow-md">
-                        <iframe
-                            title="Hafeez Center Map"
-                            width="100%"
-                            height="100%"
-                            style={{ border: 0 }}
-                            loading="lazy"
-                            allowFullScreen
-                            referrerPolicy="no-referrer-when-downgrade"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3401.461414053529!2d74.34500337621552!3d31.511484747580056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919056dad6e533d%3A0x6a72c370e71f26f1!2sKickstart%20%7C%20Gulberg%2C%2062-C2!5e0!3m2!1sen!2s!4v1753366764459!5m2!1sen!2s"
-                        />
-                    </div>
-                </div>
-
-                {/* Right side: Contact form */}
-                <form className="space-y-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-6">
-                        <div>
-                            <label htmlFor="firstName" className="block text-sm font-semibold text-gray-900">
-                                First name
-                            </label>
-                            <input
-                                id="firstName"
-                                name="firstName"
-                                type="text"
-                                autoComplete="given-name"
-                                className="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 "
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="lastName" className="block text-sm font-semibold text-gray-900">
-                                Last name
-                            </label>
-                            <input
-                                id="lastName"
-                                name="lastName"
-                                type="text"
-                                autoComplete="family-name"
-                                className="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 "
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2">
-                            <label htmlFor="company" className="block text-sm font-semibold text-gray-900">
-                                Company
-                            </label>
-                            <input
-                                id="company"
-                                name="company"
-                                type="text"
-                                autoComplete="organization"
-                                className="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 "
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2">
-                            <label htmlFor="email" className="block text-sm font-semibold text-gray-900">
-                                Email
-                            </label>
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                autoComplete="email"
-                                className="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-base outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 "
-                            />
-                        </div>
-
-                        <div className="sm:col-span-2">
-                            <label htmlFor="phoneNumber" className="block text-sm font-semibold text-gray-900">
-                                Phone number
-                            </label>
-                            <div className="mt-2.5 flex rounded-md bg-white outline outline-1 outline-gray-300 focus-within:outline-2 ">
-                                <div className="relative">
-                                    <select
-                                        id="country"
-                                        name="country"
-                                        className="appearance-none rounded-l-md py-2 pr-7 pl-3.5 text-base text-gray-500 focus:outline-none sm:text-sm"
-                                    >
-                                        <option>PK</option>
-                                        <option>US</option>
-                                        <option>UK</option>
-                                    </select>
-                                    <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 size-4 text-gray-500 pointer-events-none" />
+                        <div className="space-y-6 mb-12">
+                            <div className="flex items-center space-x-4">
+                                <div className="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                                    <MapPin className="w-5 h-5 text-white" />
                                 </div>
-                                <input
-                                    id="phoneNumber"
-                                    name="phoneNumber"
-                                    type="text"
-                                    placeholder="0300-1234567"
-                                    className="flex-1 py-2 px-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm"
-                                />
+                                <span className="text-gray-200">789 Oak Lane, Lakeside, TX 54321</span>
+                            </div>
+
+                            <div className="flex items-center space-x-4">
+                                <div className="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                                    <Phone className="w-5 h-5 text-white" />
+                                </div>
+                                <span className="text-gray-200">470-601-1911</span>
+                            </div>
+
+                            <div className="flex items-center space-x-4">
+                                <div className="w-10 h-10 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                                    <Mail className="w-5 h-5 text-white" />
+                                </div>
+                                <span className="text-gray-200">pagedone1234@gmail.com</span>
                             </div>
                         </div>
 
-                        <div className="sm:col-span-2">
-                            <label htmlFor="message" className="block text-sm font-semibold text-gray-900">
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows={4}
-                                className="mt-2.5 block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:outline-indigo-600"
-                            />
+                        {/* Social Media Icons */}
+                        <div className="flex space-x-4">
+                            <button className="w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full flex items-center justify-center transition-all duration-300">
+                                <Facebook className="w-5 h-5 text-white" />
+                            </button>
+                            <button className="w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full flex items-center justify-center transition-all duration-300">
+                                <Instagram className="w-5 h-5 text-white" />
+                            </button>
+                            <button className="w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full flex items-center justify-center transition-all duration-300">
+                                <Linkedin className="w-5 h-5 text-white" />
+                            </button>
+                            <button className="w-10 h-10 bg-white bg-opacity-10 hover:bg-opacity-20 rounded-full flex items-center justify-center transition-all duration-300">
+                                <Youtube className="w-5 h-5 text-white" />
+                            </button>
                         </div>
                     </div>
 
-                    <div>
-                        <button
-                            type="submit"
-                            className="w-full rounded-md bg-primary px-3.5 py-2.5 text-center  font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                        >
-                            Let&#39;s talk
-                        </button>
+                    {/* Right Side - Contact Form */}
+                    <div className="bg-white p-8 lg:p-12">
+                        <div className="space-y-6">
+                            {/* Name Field */}
+                            <div>
+                                <label className="block text-sm font-medium text-black mb-2">
+                                    Name <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    onBlur={() => setFocusedField(null)}
+                                    placeholder="Name"
+                                    className={`w-full px-4 py-3 bg-gray-50 border-2 rounded-lg transition-all duration-300
+                                              ${focusedField === 'name'
+                                        ? 'border-black shadow-md'
+                                        : 'border-gray-200 hover:border-gray-300'
+                                    }
+                                              focus:outline-none text-black placeholder:text-gray-400`}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-black mb-2">
+                                    Email <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    onBlur={() => setFocusedField(null)}
+                                    placeholder="Mail"
+                                    className={`w-full px-4 py-3 bg-gray-50 border-2 rounded-lg transition-all duration-300
+                                              ${focusedField === 'email'
+                                        ? 'border-black shadow-md'
+                                        : 'border-gray-200 hover:border-gray-300'
+                                    }
+                                              focus:outline-none text-black placeholder:text-gray-400`}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-black mb-2">
+                                    Email <span className="text-red-500">*</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    name="email"
+                                    onBlur={() => setFocusedField(null)}
+                                    placeholder="Mail"
+                                    className={`w-full px-4 py-3 bg-gray-50 border-2 rounded-lg transition-all duration-300
+                                              ${focusedField === 'email'
+                                        ? 'border-black shadow-md'
+                                        : 'border-gray-200 hover:border-gray-300'
+                                    }
+                                              focus:outline-none text-black placeholder:text-gray-400`}
+                                />
+                            </div>
+                            <div>
+                                <label className="block text-sm font-medium text-black mb-2">
+                                    Description <span className="text-red-500">*</span>
+                                </label>
+                                <textarea
+                                    name="description"
+                                    onBlur={() => setFocusedField(null)}
+                                    placeholder="Message"
+                                    className={`w-full px-4 py-3 bg-gray-50 border-2 rounded-lg transition-all duration-300 resize-none
+                                              ${focusedField === 'description'
+                                        ? 'border-black shadow-md'
+                                        : 'border-gray-200 hover:border-gray-300'
+                                    }
+                                              focus:outline-none text-black placeholder:text-gray-400`}
+                                />
+                            </div>
+                            <button className="w-full bg-primary  text-white font-medium py-3 px-6 rounded-lg
+                                        transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+                            >
+                                Send Message
+                            </button>
+                        </div>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     );

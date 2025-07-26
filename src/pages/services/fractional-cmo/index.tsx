@@ -11,6 +11,7 @@ import SuccessSnapshots from "@/components/HomePage/SuccessSnapshotsSection";
 import Testimonial from "@/components/HomePage/Testimonials";
 import ContactSalesForm from "@/components/Services/FractionalCMO/contactForm";
 import SkillSet from "@/components/Services/FractionalCMO/SkillSetSection";
+import Difference from "@/components/Services/FractionalCMO/DifferenceSection";
 
 export default function FractionalCMOServicePage() {
     const [show, setShow] = useState(false);
@@ -30,6 +31,8 @@ export default function FractionalCMOServicePage() {
                 <SuccessSnapshots/>
                 <Testimonial/>
                 <Banner/>
+                {/*<Difference/>*/}
+                <Difference/>
                 <PricingSection/>
                 <FAQSection faqs={[
                         {
