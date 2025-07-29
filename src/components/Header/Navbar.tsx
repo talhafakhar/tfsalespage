@@ -28,12 +28,42 @@ const Navbar: React.FC = () => {
         { href: '/contact', label: 'CONTACT' },
     ];
     const servicesDropdown = [
-        { label: "Fractional CMO", href: "/services/fractional-cmo", icon: User },
-        { label: "Fractional CTO", href: "/services/fractional-cto", icon: Code },
-        { label: "Fractional SDR", href: "/services/fractional-sdr", icon: Phone },
-        { label: "AaaS", href: "/services/aaaS", icon: Settings },
-        { label: "Sales Automation", href: "/services/sales-automation", icon: Zap },
-        { label: "Sales Consultation", href: "/services/sales-consultation", icon: MessageSquare },
+        {
+            label: "Fractional CMO",
+            href: "/services/fractional-cmo",
+            icon: User,
+            description: "Part-time marketing leadership to grow your brand."
+        },
+        {
+            label: "Fractional CTO",
+            href: "/services/fractional-cto",
+            icon: Code,
+            description: "Technical strategy and team management on demand."
+        },
+        {
+            label: "Fractional SDR",
+            href: "/services/fractional-sdr",
+            icon: Phone,
+            description: "Outbound sales reps to build your pipeline faster."
+        },
+        {
+            label: "AaaS",
+            href: "/services/aaaS",
+            icon: Settings,
+            description: "Automation-as-a-Service for scaling operations."
+        },
+        {
+            label: "Sales Automation",
+            href: "/services/sales-automation",
+            icon: Zap,
+            description: "Automate your sales workflow and outreach."
+        },
+        {
+            label: "Sales Consultation",
+            href: "/services/sales-consultation",
+            icon: MessageSquare,
+            description: "Expert guidance to improve your sales process."
+        }
     ];
     const [servicesExpanded, setServicesExpanded] = useState(false);
     const [isVisible, setIsVisible] = useState(false);
@@ -67,12 +97,12 @@ const Navbar: React.FC = () => {
                             <div key={index} className="relative">
                                 {link.hasDropdown ? (
                                     <div
-                                        className="relative"
+                                        className="relative w-full"
                                         onMouseEnter={() => setHoveredService(true)}
                                         onMouseLeave={() => setHoveredService(false)}
                                     >
                                         <button
-                                            className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center gap-1`}
+                                            className={`relative w-full px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center justify-center gap-1`}
                                         >
                                             <span className="relative z-10">{link.label}</span>
                                             <ChevronDown
@@ -85,23 +115,27 @@ const Navbar: React.FC = () => {
                                             <div className="absolute bottom-0 left-0 h-0.5 bg-primary rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-300 ease-out"></div>
                                         </button>
 
-                                        <div className={`absolute top-full left-0 mt-2 w-64 bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
-                                                hoveredService
-                                                    ? 'opacity-100 visible translate-y-0'
-                                                    : 'opacity-0 invisible -translate-y-2'
+                                        <div
+                                            className={`absolute left-1/2 transform -translate-x-1/2 top-16 mt-2 w-screen max-w-4xl bg-gray-900/95 backdrop-blur-sm border border-gray-700/50 rounded-xl shadow-2xl overflow-hidden transition-all duration-300 z-50 ${
+                                                hoveredService ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
                                             }`}
                                         >
-                                            <div className="py-2">
+                                            <div className="py-4 px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
                                                 {servicesDropdown.map((service, serviceIndex) => {
                                                     const IconComponent = service.icon;
                                                     return (
                                                         <Link
                                                             key={serviceIndex}
                                                             href={service.href}
-                                                            className="flex items-center gap-3 px-4 py-3 text-white hover:bg-primary/20 transition-all duration-200 group"
+                                                            className="flex items-start gap-4 px-4 py-4 text-white hover:bg-primary/10 transition-all duration-200 group rounded-lg"
                                                         >
-                                                            <IconComponent className="w-5 h-5 text-primary group-hover:text-primary transition-colors duration-200" />
-                                                            <span className="font-medium">{service.label}</span>
+                                                            <div className="flex-shrink-0">
+                                                                <IconComponent className="w-6 h-6 text-primary group-hover:text-primary transition-colors duration-200" />
+                                                            </div>
+                                                            <div className="flex flex-col min-w-0">
+                                                                <span className="font-semibold text-white text-sm">{service.label}</span>
+                                                                <span className="text-xs text-gray-400 line-clamp-2">{service.description}</span>
+                                                            </div>
                                                         </Link>
                                                     );
                                                 })}
@@ -113,7 +147,7 @@ const Navbar: React.FC = () => {
                                 ) : (
                                     <Link
                                         href={link.href}
-                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-white overflow-hidden`}
+                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-white overflow-hidden flex items-center justify-center`}
                                     >
                                         <span className="relative z-10">{link.label}</span>
                                         <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
@@ -211,7 +245,7 @@ const Navbar: React.FC = () => {
                             ? 'max-h-screen opacity-100 visible'
                             : 'max-h-0 opacity-0 invisible'
                     }`}>
-                    <div className="px-2 pt-2 pb-6 space-y-1  bg-black/95 backdrop-blur-md rounded-2xl mt-2  shadow-xl border border-gray-800/50">
+                    <div className="px-2 py-2 space-y-1  bg-black/95 backdrop-blur-md rounded-2xl mt-2  shadow-xl border border-gray-800/50">
                         {navLinks.map((link, index) => (
                             <div key={index}>
                                 {link.hasDropdown ? (
@@ -265,11 +299,6 @@ const Navbar: React.FC = () => {
 
                         <div className="pt-4 px-4">
                             <button className="w-full group relative py-2 bg-primary text-secondary font-button font-bold rounded overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-
-
-
-
-                                {/* Button content */}
                                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <span className="tracking-wide">GET STARTED</span>
 
@@ -318,9 +347,6 @@ const Navbar: React.FC = () => {
                     </svg>
                   </div>
                 </span>
-
-
-
                             </button>
                         </div>
                     </div>

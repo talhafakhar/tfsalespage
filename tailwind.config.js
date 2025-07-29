@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     content: [
         "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,11 +11,11 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'logo': ['Montserrat', 'Inter', 'system-ui', 'sans-serif'],
-                'nav': ['Inter', 'Roboto', 'system-ui', 'sans-serif'],
-                'button': ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
-                'heading': ['Playfair Display', 'Georgia', 'serif'],
-                'body': ['Inter', 'system-ui', 'sans-serif'],
+                'logo': ['Geist', 'Inter', 'system-ui', 'sans-serif'],
+                'nav': ['Satoshi', 'Inter', 'system-ui', 'sans-serif'],
+                'button': ['Manrope', 'system-ui', 'sans-serif'],
+                'heading': ['"Seymour One"', 'sans-serif'],
+                'righteous': ['"Righteous"', 'sans-serif'],
             },
             colors: {
                 'primary': "#F7CB40",

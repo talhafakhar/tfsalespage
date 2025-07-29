@@ -3,8 +3,8 @@ import {ArrowRight} from "lucide-react";
 
 const Banner = () => {
     return (
-        <div className='py-10 container mx-auto'>
-            <section className="relative rounded-3xl overflow-hidden flex flex-col md:flex-row items-center justify-between bg-black text-white min-h-[300px] md:min-h-[400px]">
+        <div className='py-10 container mx-auto px-2'>
+            <section className="relative rounded-2xl overflow-hidden flex flex-col md:flex-row items-center justify-between bg-black text-white min-h-[300px] md:min-h-[400px]">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{

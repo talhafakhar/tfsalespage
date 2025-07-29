@@ -210,7 +210,7 @@ const BenefitsSection: React.FC = () => {
                         transition={{ delay: 0.2 }}
                         className="text-5xl font-bold mb-4"
                     >
-                        Why Choose <span className="text-yellow-400">Fractional CMO</span>
+                        Why  <span className="text-yellow-400">Choose Us?</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 20 }}

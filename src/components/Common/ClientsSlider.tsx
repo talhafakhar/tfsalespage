@@ -34,7 +34,7 @@ const InfiniteLogoSlider = () => {
         <section className="relative w-full bg-black py-8 overflow-hidden">
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                    Trusted by Industry Leaders
+                    Trusted by 200+ B2B Companies
                 </h2>
                 <div className="relative">
                     <div className="overflow-hidden">

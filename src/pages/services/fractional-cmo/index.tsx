@@ -31,7 +31,6 @@ export default function FractionalCMOServicePage() {
                 <SuccessSnapshots/>
                 <Testimonial/>
                 <Banner/>
-                {/*<Difference/>*/}
                 <Difference/>
                 <PricingSection/>
                 <FAQSection faqs={[
@@ -88,37 +87,36 @@ export default function FractionalCMOServicePage() {
                 <Footer/>
             </div>
             {show && (
-            <div
-                className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-md shadow-md"
-                 style={{zIndex: "99999"}}>
-                <div className="max-w-xl mx-auto flex gap-8 items-center">
-                    <div className='flex gap-2 items-center'>
-                        <div className="border rounded-full bg-white">
-                            <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                        <div className="flex items-center gap-3">
+                            <div className="border rounded-full bg-white flex-shrink-0">
+                                <Image src="/assets/services/user.png" alt="avatar" width={50} height={50} />
+                            </div>
+                            <div className="text-xs">
+                                <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
+                                <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
+                                    <div className="animate-textLoop">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            Carlos Córdova
+                                        </div>
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            Web Developer
+                                        </div>
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            Software Engineer
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
                         </div>
-                        <div className="text-xs flex items-center gap-1 text-gray-600">
-                            <p className="text-base font-semibold">Hello 👋 I&apos;m</p>
-                            <section className="h-[24px] rounded overflow-hidden  inline-block">
-                                <div className="animate-textLoop rounded">
-                                    <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
-                                        Carlos Córdova
-                                    </div>
-                                    <div className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
-                                        Web Developer
-                                    </div>
-                                    <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.81rem]">
-                                        Software Engineer
-                                    </div>
-                                </div>
-                            </section>
-                        </div>
+                        <button className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
+                            Book a Call
+                        </button>
                     </div>
-                    <button className='bg-black text-white font-button rounded-md p-2 text-xs'>
-                        Book a Call
-                    </button>
                 </div>
-            </div>
-                )}
+
+            )}
         </div>
     );
 }

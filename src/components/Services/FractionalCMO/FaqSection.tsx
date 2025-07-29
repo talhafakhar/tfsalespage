@@ -28,9 +28,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
     return (
         <section className='bg-secondary'>
             <div className="max-w-4xl mx-auto px-4 py-10 md:py-20">
-                <h2 className=" flex font-button  gap-4 justify-center font-bold items-center text-5xl text-white mb-4 ">
-                    <span className="text-primary ">Frequently {" "}</span>Asked Questions
-
+                <h2 className="text-4xl sm:text-5xl font-bold text-center  mb-8 text-white leading-tight">
+                    Frequently{" "}<span className="text-primary">Asked Questions</span>
                 </h2>
                 <p className="text-white text-center mb-5">Your doubts, cleared in seconds</p>
 

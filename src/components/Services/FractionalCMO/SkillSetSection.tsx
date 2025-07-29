@@ -98,9 +98,8 @@ const tools = [
 
 const SkillSet: React.FC = () => {
     return (
-        <div className="py-16 px-4">
+        <div className="py-16 px-1 sm:px-4">
             <div className="max-w-7xl mx-auto">
-
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold  mb-8 leading-tight">
                         Our{" "}<span className="text-primary"> Tech Stack</span>

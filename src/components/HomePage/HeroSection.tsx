@@ -28,11 +28,11 @@ const HeroSection: React.FC = () => {
                 className="flex bg-black items-center min-h-screen bg-cover bg-center pt-24"
                 style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}
             >
-                <div className="container mx-auto px-4">
+                <div className="container mx-auto px-4 py-5">
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                         <div className="text-center ">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-4xl  md:text-6xl lg:text-7xl font-bold font-button text-white mb-6">
+                                <h1 className="text-4xl  md:text-6xl  lg:text-7xl font-righteous  font-bold text-white mb-6">
                                     Fractional Leadership <span className="text-primary flex justify-center ">Founder Strategy
                                     </span>  Team Training.
 

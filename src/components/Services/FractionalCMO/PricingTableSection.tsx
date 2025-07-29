@@ -16,7 +16,7 @@ const PricingSection = () => {
             <div className="max-w-5xl relative mx-auto">
                 <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
-                    <h2 className="text-5xl font-bold  mb-8 leading-tight">
+                    <h2 className="text-4xl sm:text-5xl font-bold  mb-8 leading-tight">
                         Pricing{" "}<span className="text-primary">Plans</span>
                     </h2>
                     <p className="leading-relaxed">
