@@ -83,9 +83,10 @@ const PricingSection = () => {
                         </div>
                         <FeatureList
                             features={
-                              [{
+                              [
+                                  {
                                 text: "Monthly 1-on-1 strategy calls",
-                            },
+                                },
                                 {
                                     text: "Ongoing sales problem solving",
                                 },

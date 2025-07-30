@@ -2,8 +2,14 @@
 import React, {useEffect, useState} from 'react';
 import Navbar from "@/components/Header/Navbar";
 import InfiniteLogoSlider from "@/components/Common/ClientsSlider";
-
-const HeroSection: React.FC = () => {
+type HeroSectionProps = {
+    title: string;
+    description: string;
+    buttonText: string;
+    titleTwo?: string;
+    stripe?:string;
+};
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description, buttonText, titleTwo,stripe }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [loadingCalendly, setLoadingCalendly] = useState(true);
     const [showCalendly, setShowCalendly] = useState(false);
@@ -20,9 +26,9 @@ const HeroSection: React.FC = () => {
     return (
         <>
             <Navbar/>
-            <div className="absolute top-36 -left-20 z-30 rotate-[-45deg]">
-                <div className="bg-primary text-secondary font-bold py-1 px-20 text-sm shadow-lg rounded-md">
-                    FRACTIONAL CMO
+            <div className="absolute top-32 -left-24 z-30 rotate-[-50deg]">
+                <div className="bg-primary italic font-bold py-1 px-20 text-sm shadow-lgrounded-md">
+                    {stripe}
                 </div>
             </div>
             <div className="flex bg-secondary items-center min-h-screen py-16 md:py-2 bg-cover bg-center " style={{backgroundImage: "url('/assets/services/bg-CMO-hero.webp')"}}>
@@ -31,25 +37,20 @@ const HeroSection: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center justify-between gap-10  ">
                         <div className="text-center md:text-start">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-5xl md:text-7xl font-righteous  font-bold text-white max-w-xl mb-6">
-                                    CMO Strategy. Seamless Growth Execution <span className='text-primary'> Acceleration</span>
+                                <h1 className="text-5xl md:text-7xl font-righteous  font-bold text-white max-w-2xl mb-6">
+                                    {title} <span className='text-primary'> {titleTwo}</span>
                                 </h1>
                             </div>
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <p className="my-3 text-white border-l-2 px-2 max-w-xl">
-                                        Stop watching opportunities slip away while competitors capture market share.
-                                        Get strategic
-                                        marketing leadership that drives real results, whether you&#39;re launching a
-                                        product or scaling a
-                                        service.
-                                </p>
+                                    {description}                                </p>
                             </div>
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center md:justify-start items-center mt-8">
                                     <button onClick={() => setShowCalendly(true)}
                                         className="group text-sm p-2 border border-white text-white font-button font-bold rounded-md overflow-hidden transition-all duration-700 transform hover:bg-primary  hover:scale-110 active:scale-95 hover:rotate-1">
                                         <span className="relative z-10 flex items-center space-x-2">
-                                            <span className="tracking-wide">Get Free 15 minutes consultation call</span>
+                                            <span className="tracking-wide">{buttonText}</span>
                                             <svg
                                                 className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
                                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,7 +85,9 @@ const HeroSection: React.FC = () => {
                 </div>
             </div>
             <hr/>
-            <InfiniteLogoSlider/>
+            <InfiniteLogoSlider
+              title="Trusted By Industry Leaders"
+            />
         </>
     );
 };

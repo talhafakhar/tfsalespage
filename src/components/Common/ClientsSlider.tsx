@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-const InfiniteLogoSlider = () => {
+const InfiniteLogoSlider = ({title}:any) => {
     const logos = [
         {
             name: "Sunbelt Rentals",
@@ -31,10 +31,10 @@ const InfiniteLogoSlider = () => {
     const duplicatedLogos = Array.from({ length: 100 }, () => logos).flat();
 
     return (
-        <section className="relative w-full bg-black py-8 overflow-hidden">
+        <section className="relative w-full bg-black py-6 overflow-hidden">
             <div className="container mx-auto px-4">
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-                    Trusted by 200+ B2B Companies
+                    {title}
                 </h2>
                 <div className="relative">
                     <div className="overflow-hidden">
@@ -50,8 +50,8 @@ const InfiniteLogoSlider = () => {
                                     key={`logo-${index}`}
                                     className="
                 flex-shrink-0
-                w-32 sm:w-40 md:w-48
-                h-16 sm:h-20 md:h-24
+                w-28 sm:w-36 md:w-40
+                h-12 sm:h-16 md:h-20
                 flex items-center justify-center
                 opacity-70 hover:opacity-100
                 transition duration-300
@@ -62,8 +62,8 @@ const InfiniteLogoSlider = () => {
                                     <Image
                                         src={logo.url}
                                         alt="Client Logo"
-                                        width={300}
-                                        height={300}
+                                        width={200}
+                                        height={200}
                                         className="max-w-full max-h-full object-contain"
                                     />
                                 </div>

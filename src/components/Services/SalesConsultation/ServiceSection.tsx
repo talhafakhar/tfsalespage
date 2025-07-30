@@ -1,5 +1,5 @@
 import React from 'react';
-import {Handshake, Rocket, Users} from "lucide-react";
+import {ArrowRight, Handshake, Rocket, Users} from "lucide-react";
 import {motion, Variants} from 'framer-motion';
 
 interface Benefit {
@@ -201,6 +201,23 @@ const Services: React.FC = () => {
                     {benefits.map((benefit, index) => (
                         <BenefitCard key={benefit.title} benefit={benefit} index={index}/>
                     ))}
+                </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                    className="mt-10 text-center"
+                >
+                    <button
+                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
+                    >
+                        Book A Free Sales Audit
+                        <span
+                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        >
+    <ArrowRight className="w-4 h-4" />
+  </span>
+                    </button>
                 </motion.div>
             </div>
         </section>

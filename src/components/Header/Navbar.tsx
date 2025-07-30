@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
         },
         {
             label: "AaaS",
-            href: "/services/aaaS",
+            href: "/services/aas",
             icon: Settings,
             description: "Automation-as-a-Service for scaling operations."
         },

@@ -3,10 +3,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface TimelineItem {
     id: string;
-    category: string;
-    icon: React.ComponentType<{ className?: string }>;
+    title: string;
+    icon: React.ElementType;
     items: string[];
-    color: string;
 }
 
 interface TimelineProps {
@@ -22,33 +21,34 @@ const Timeline: React.FC<TimelineProps> = ({
                                            }) => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(autoProgress);
-
     useEffect(() => {
-        if (!isPlaying) return;
+        if (!isPlaying || !items || items.length === 0) return;
 
         const interval = setInterval(() => {
             setActiveIndex((prev) => (prev + 1) % items.length);
         }, intervalMs);
 
         return () => clearInterval(interval);
-    }, [isPlaying, intervalMs, items.length]);
+    }, [isPlaying, intervalMs, items]);
 
     const handleItemClick = (index: number) => {
         setActiveIndex(index);
         setIsPlaying(false);
+        setTimeout(() => setIsPlaying(true), 10000);
     };
 
+    if (!items || items.length < 2) return null;
 
     return (
         <div className="w-full max-w-6xl mx-auto px-4">
-            <div className="relative mb-8">
+            <div className="relative mb-8 hidden sm:block">
                 <div className="absolute top-1/2 left-0 right-0 h-1 bg-border rounded-full transform -translate-y-1/2">
                     <motion.div
                         className="h-full bg-primary rounded-full"
                         initial={{ width: "0%" }}
                         animate={{
                             width: `${(activeIndex / (items.length - 1)) * 100}%`
-                        }}
+                    }}
                         transition={{ duration: 0.4, ease: "easeInOut" }}
                     />
                 </div>
@@ -84,10 +84,9 @@ const Timeline: React.FC<TimelineProps> = ({
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -50, scale: 0.9 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="bg-card rounded-2xl shadow-xl border border-border overflow-hidden"
+                    className="bg-card rounded-2xl shadow-xl border border-border overflow-hidden "
                 >
-                    <div className="p-8 md:p-12">
-                        {/* Header */}
+                    <div className="p-8 md:p-12 ">
                         <div className="flex items-center justify-center mb-8">
                             <motion.div
                                 className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mr-6"
@@ -100,7 +99,7 @@ const Timeline: React.FC<TimelineProps> = ({
                             </motion.div>
                             <div>
                                 <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                                    {items[activeIndex].category}
+                                    {items[activeIndex].title}
                                 </h2>
                                 <div className="w-20 h-1 bg-primary rounded-full" />
                             </div>

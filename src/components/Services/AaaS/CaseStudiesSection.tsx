@@ -2,10 +2,9 @@ import React, { useState, useEffect } from 'react';
 import {
     ChevronDown,
     TrendingUp,
-    Rocket,
-    DollarSign,
     CheckCircle,
-    Target, ArrowRight
+    Target, ArrowRight,
+    CalendarClock, ShoppingCart, MessageCircle
 } from 'lucide-react';
 
 interface SuccessStory {
@@ -23,68 +22,88 @@ interface SuccessStory {
     };
 }
 
-const SuccessSnapshots: React.FC = () => {
+const IndustryCaseStudy: React.FC = () => {
     const [expandedItem, setExpandedItem] = useState<number | null>(1);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     useEffect(() => {
         setIsVisible(true);
     }, []);
     const successStories: SuccessStory[] = [
+
         {
             id: 1,
             icon: TrendingUp,
-            metric: "300%",
-            achievement: "pipeline growth in 60 days",
+            metric: "80%",
+            achievement: "reduction in manual work ",
             timeline: "60 Days",
-            solution: "Cold Outreach Engine",
+            solution: "Automated Bookkeeping Agent ",
             details: {
-                challenge: "Struggling with inconsistent lead generation and low conversion rates from cold outreach efforts.",
-                approach: "Implemented our proprietary Cold Outreach Engine with personalized sequences, A/B testing, and advanced analytics.",
+                challenge: "Manual data entry and invoice processing consuming 20+ hours weekly with frequent errors and delays.",
+                approach: "Implemented custom AI agent for automated data extraction, invoice processing, and bookkeeping with real-time validation",
                 results: [
-                    "300% increase in qualified pipeline",
-                    "65% higher response rates",
-                    "40% reduction in cost per lead",
-                    "Automated follow-up sequences"
+                    "80% reduction in manual work",
+                    "95% accuracy improvement",
+                    "15 hours saved weekly",
+                    "Automated financial reporting"
+                ],
+                clientType: "Accounting Firm"
+            },
+        },
+        {
+            id: 2,
+            icon: MessageCircle,
+            metric: "70%",
+            achievement: "improvement via AI agent",
+            timeline: "Ongoing",
+            solution: "WhatsApp Lead Qualification Agent",
+            details: {
+                challenge: "Real estate agency was receiving 100+ WhatsApp leads daily with poor qualification and manual scoring, leading to missed opportunities.",
+                approach: "Deployed voice AI agent with intelligent questioning, automated lead scoring, and CRM integration.",
+                results: [
+                    "70% improvement in lead quality",
+                    "3x faster response time",
+                    "50% increase in qualified appointments",
+                    "Automated lead scoring system"
+                ],
+                clientType: "Real Estate Agency"
+            },
+        },
+        {
+            id: 5,
+            icon: CalendarClock,
+            metric: "60%",
+            achievement: "increase through AI booking",
+            timeline: "Ongoing",
+            solution: "Sales Demo Booking Agent",
+            details: {
+                challenge: "Sales team at B2B SaaS startup overwhelmed with low-quality demo requests, wasting time and reducing conversion rates.",
+                approach: "Built AI sales agent with qualification frameworks, calendar integration, and personalized booking sequences.",
+                results: [
+                    "60% increase in qualified demos",
+                    "40% reduction in sales workload",
+                    "25% higher conversion rate",
+                    "Automated calendar management"
                 ],
                 clientType: "B2B SaaS Startup"
             },
         },
         {
-            id: 2,
-            icon: Rocket,
-            metric: "$15K MRR",
-            achievement: "from MVP in 90 days",
-            timeline: "90 Days",
-            solution: "Fractional CTO Support",
+            id: 4,
+            icon: ShoppingCart,
+            metric: "45%",
+            achievement: "via AI order confirmation",
+            timeline: "Ongoing",
+            solution: "Order Confirmation Automation",
             details: {
-                challenge: "Technical founder needed expert guidance to scale MVP architecture and implement growth features.",
-                approach: "Provided fractional CTO services with technical strategy, team mentoring, and hands-on development support.",
+                challenge: "E-commerce platform faced high return rates from incorrect orders and miscommunication, hurting revenue and satisfaction.",
+                approach: "Built AI-powered pre-dispatch system to verify orders and automate customer communication.",
                 results: [
-                    "MVP to $15K MRR in 90 days",
-                    "Scalable architecture implemented",
-                    "Technical team productivity increased 200%",
-                    "Product-market fit achieved faster"
+                    "45% reduction in return orders",
+                    "30% improvement in satisfaction",
+                    "$50K monthly cost savings",
+                    "Automated order verification"
                 ],
-                clientType: "Tech Startup"
-            },
-        },
-        {
-            id: 3,
-            icon: DollarSign,
-            metric: "$200K+",
-            achievement: "saved annually with automation",
-            timeline: "12 Months",
-            solution: "Intelligent Sales Automation",
-            details: {
-                challenge: "Manual sales processes were consuming too much time and resources, limiting growth potential.",
-                approach: "Designed and implemented intelligent sales automation solutions with AI-powered workflows and analytics.",
-                results: [
-                    "Over $200,000 in annual savings",
-                    "80% reduction in manual tasks",
-                    "50% faster sales cycle",
-                    "Real-time performance insights"
-                ],
-                clientType: "Growing Enterprise"
+                clientType: "E-commerce Marketplace"
             },
         }
     ];
@@ -99,14 +118,13 @@ const SuccessSnapshots: React.FC = () => {
                 <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
                     <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
-                        What We&#39;ve Helped{' '}
+                        Real Results{' '}
                         <span className="text-primary">
-              Founders
+              Across Industries
             </span>
-                        {' '}Achieve
                     </h2>
                     <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                        Real results from real founders who transformed their businesses with our proven strategies and solutions.
+                        See how we've transformed businesses with custom AI agents
                     </p>
                 </div>
                 <div className="space-y-6">
@@ -234,21 +252,21 @@ const SuccessSnapshots: React.FC = () => {
                         );
                     })}
                 </div>
-<div className="mt-8 text-center">
-    <button
-        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-    >
-        Choose Fractional CMO Today
-        <span
-            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
-        >
+                <div className="mt-8 text-center">
+                    <button
+                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
+                    >
+                        Choose Fractional CMO Today
+                        <span
+                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        >
     <ArrowRight className="w-4 h-4" />
   </span>
-    </button>
-</div>
+                    </button>
+                </div>
             </div>
         </section>
     );
 };
 
-export default SuccessSnapshots;
+export default IndustryCaseStudy;

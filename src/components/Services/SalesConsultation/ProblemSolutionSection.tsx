@@ -382,10 +382,9 @@ const ProblemsSolutionSection: React.FC = () => {
     };
 
     return (
-        <div className=" bg-secondary py-8 md:py-15 px-4">
+        <div className=" bg-secondary py-10 px-4">
             <div className="container mx-auto  overflow-hidden">
-                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
+                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
                     <h2 className="text-5xl font-bold text-white mb-4 leading-tight">
                         Sales Problems {' '}
                         <span className="text-primary">

@@ -13,9 +13,8 @@ import IndustriesWeServe from "@/components/Services/SalesConsultation/industryS
 import {Process} from "@/components/Services/SalesConsultation/ProcessSection";
 import Services from "@/components/Services/SalesConsultation/ServiceSection";
 import SalesToolsSection from "@/components/Services/SalesConsultation/ToolsSection";
-import SalesChannelsSection from "@/components/Services/SalesConsultation/SalesChannelsSection";
 
-export default function SalesConsultationServicePage() {
+export default function FractionalSDRServicePage() {
     const [show, setShow] = useState(false);
     useEffect(() => {
         const timer = setTimeout(() => setShow(true), 5000);
@@ -27,7 +26,6 @@ export default function SalesConsultationServicePage() {
             <div>
                 <HeroSection/>
                 <WhyChooseUs/>
-<SalesChannelsSection/>
                 <SalesToolsSection/>
                 <Process/>
                 <Services/>
