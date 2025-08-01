@@ -9,7 +9,7 @@ import React, {useEffect, useState} from "react";
 import BenefitsSection from "@/components/Services/FractionalCMO/BenefitSection";
 import SuccessSnapshots from "@/components/HomePage/SuccessSnapshotsSection";
 import Testimonial from "@/components/HomePage/Testimonials";
-import ContactSalesForm from "@/components/Services/FractionalCMO/contactForm";
+import ContactForm from "@/components/Services/FractionalCMO/contactForm";
 import SkillSet from "@/components/Services/FractionalCMO/SkillSetSection";
 import Difference, {ColumnData} from "@/components/Services/FractionalCMO/DifferenceSection";
 import {
@@ -197,7 +197,36 @@ export default function FractionalCMOServicePage() {
                     ]}
                 />
                 <SuccessSnapshots/>
-                <Testimonial/>
+                <Testimonial
+                    testimonials={[
+                        {
+                            id: 1,
+                            text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",
+                            author: "Sarah",
+                            role: "CEO",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Digital Marketing Agency"
+                        },
+                        {
+                            id: 2,
+                            text: "Finally, automation that doesn't sound robotic! Our customers actually engage with the sequences, and our lifetime value increased by 145%",
+                            author: "Fariha",
+                            role: "Founder ",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Ecomerce Marketplace"
+                        },
+                        {
+                            id: 3,
+                            text: "The ROI was incredible. We generated an additional $280K in revenue within 6 months, and the automation saves us 20+ hours per week.",
+                            author: "Richard",
+                            role: "CMO",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Real Estate Agency"
+                        }
+                    ]}/>
                 <Banner
                     title="Ready to Scale"
                     description=" Get a complete marketing department led by an expert CMO starting next week."
@@ -327,7 +356,7 @@ export default function FractionalCMOServicePage() {
                         )
                     },
                 ]}/>
-                <ContactSalesForm/>
+                <ContactForm/>
                 <Footer/>
             </div>
             {show && (

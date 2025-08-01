@@ -12,6 +12,7 @@ type PricingCard = {
     badge?: string;
     highlighted?: boolean;
     features: PricingCardFeature[];
+    duration?: string;
 };
 
 type PricingSectionProps = {
@@ -21,7 +22,6 @@ type PricingSectionProps = {
 
 const PricingSection: React.FC<PricingSectionProps> = ({ description, plans }) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
-
     useEffect(() => {
         setIsVisible(true);
     }, []);
@@ -56,7 +56,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({ description, plans }) =
                                 <p className={`text-sm ${plan.highlighted ? 'text-gray-400' : ''}`}>{plan.subtitle}</p>
                                 <div className="mt-6">
                                     <span className={`text-4xl font-semibold ${plan.highlighted ? 'text-white' : ''}`}>{plan.price}</span>
-                                    <span className={`text-sm ml-1 ${plan.highlighted ? 'text-gray-400' : ''}`}>+tax/mo</span>
+                                    <span className={`text-sm ml-1 ${plan.highlighted ? 'text-gray-400' : ''}`}>{plan.duration ? "/h" : "+tax/mo"}</span>
                                 </div>
                                 <div>
                                     <span className={`text-xs ${plan.highlighted ? 'text-gray-400' : ''}`}>{plan.billing}</span>

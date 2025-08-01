@@ -23,7 +23,7 @@ import Banner from "@/components/HomePage/bannerSection";
 import Difference, {ColumnData} from "@/components/Services/FractionalCMO/DifferenceSection";
 import PricingSection from "@/components/Services/FractionalCMO/PricingTableSection";
 import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
-import ContactSalesForm from "@/components/Services/FractionalCMO/contactForm";
+import ContactForm from "@/components/Services/FractionalCMO/contactForm";
 import Footer from "@/components/Footer/footer";
 import IndustryCaseStudy from "@/components/Services/AaaS/CaseStudiesSection";
 import {OurProcess} from "@/components/Services/AaaS/OurProcessSection";
@@ -202,7 +202,36 @@ export default function AaaS() {
                     description="Schedule your AI generalist consultation and get custom automation solutions starting next week."
                     buttonText='Book Free AI Consultation'
                 />
-                <Testimonial/>
+                <Testimonial
+                    testimonials={[
+                        {
+                            id: 1,
+                            text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",
+                            author: "Sarah",
+                            role: "CEO",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Digital Marketing Agency"
+                        },
+                        {
+                            id: 2,
+                            text: "Finally, automation that doesn't sound robotic! Our customers actually engage with the sequences, and our lifetime value increased by 145%",
+                            author: "Fariha",
+                            role: "Founder ",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Ecomerce Marketplace"
+                        },
+                        {
+                            id: 3,
+                            text: "The ROI was incredible. We generated an additional $280K in revenue within 6 months, and the automation saves us 20+ hours per week.",
+                            author: "Richard",
+                            role: "CMO",
+                            rating: 5,
+                            image: "/assets/services/user.png",
+                            company: "Real Estate Agency"
+                        }
+                    ]}/>
                 <Difference
                     titleTwo='Hiring Staff'
                     titleThree='Agent as a Service'
@@ -335,7 +364,7 @@ export default function AaaS() {
                         },
                     ]}
                 />
-                <ContactSalesForm/>
+                <ContactForm/>
                 <Footer/>
             </div>
             {show && (

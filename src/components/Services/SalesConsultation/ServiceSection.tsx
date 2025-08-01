@@ -1,53 +1,6 @@
 import React from 'react';
-import {ArrowRight, Handshake, Rocket, Users} from "lucide-react";
+import {ArrowRight} from "lucide-react";
 import {motion, Variants} from 'framer-motion';
-
-interface Benefit {
-    title: string;
-    description: string;
-    icon: React.ElementType;
-    gradient: string;
-    features: string[];
-}
-
-
-const benefits: Benefit[] = [
-    {
-        title: "Sales 1-on-1 Consultation",
-        description: "Perfect for founders who need to learn sales basics",
-        icon: Handshake,
-        gradient: "from-yellow-400 via-yellow-300 to-white",
-        features: [
-            "Personal training for CEOs and executives",
-            "Build sales channels from zero",
-            "Learn to close deals yourself",
-        ],
-    },
-    {
-        title: "Sales Team Training",
-        description:
-            "Fix underperforming sales teams that cost money but don't bring results",
-        icon: Users,
-        gradient: "from-white via-yellow-200 to-yellow-400",
-        features: [
-            "Team skill assessment",
-            "Group training sessions",
-            "Improve team closing rates",
-        ],
-    },
-    {
-        title: "Sales Mentorship",
-        description: "Ongoing support to keep growing your sales",
-        icon: Rocket,
-        gradient: "from-yellow-300 via-white to-yellow-400",
-        features: [
-            "Monthly strategy calls",
-            "Problem-solving sessions",
-            "Long-term sales growth",
-        ],
-    },
-];
-
 const containerVariants: Variants = {
     hidden: {opacity: 0},
     visible: {
@@ -58,7 +11,6 @@ const containerVariants: Variants = {
         }
     }
 };
-
 const cardVariants: Variants = {
     hidden: {
         opacity: 0,
@@ -78,85 +30,24 @@ const cardVariants: Variants = {
         }
     }
 };
-
-interface BenefitCardProps {
-    benefit: Benefit;
-    index: number;
+interface Industry {
+    icon: React.ReactNode;
+    title: string;
+    features?:string;
+    description: React.ReactNode;
+    colorClass: string;
 }
-
-const BenefitCard: React.FC<BenefitCardProps> = ({benefit, index}) => {
-    return (
-        <motion.div
-            id={index.toString()}
-            variants={cardVariants}
-            whileHover={{
-                y: -12,
-                scale: 1.02,
-                transition: {type: "spring" as const, stiffness: 300, damping: 20}
-            }}
-            whileTap={{scale: 0.98}}
-            className="group relative overflow-hidden"
-            style={{perspective: '1000px'}}
-        >
-            <div
-                className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10 backdrop-blur-sm rounded border border-primary/20"></div>
-            <motion.div
-                className="absolute -inset-0.5 bg-primary rounded opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500 "
-                animate={{
-                    scale: [1, 1.05, 1],
-                }}
-                transition={{duration: 2, repeat: Infinity, ease: "easeInOut"}}
-            />
-
-            <div className="relative z-10 p-8 h-full flex flex-col">
-                <div className="relative mb-6">
-                    <motion.div
-                        className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded flex items-center justify-center shadow-lg border border-primary/30`}
-                        whileHover={{
-                            rotate: 5,
-                            scale: 1.05,
-                            transition: {type: "spring" as const, stiffness: 400, damping: 25}
-                        }}
-                    >
-                        <benefit.icon className="w-8 h-8 text-black drop-shadow-sm"/>
-                    </motion.div>
-
-                    <motion.div
-                        className="absolute inset-0 bg-primary rounded blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300"
-                    />
-                </div>
-                <motion.h3
-                    className="text-2xl font-bold mb-4 text-white"
-                    whileHover={{
-                        scale: 1.02,
-                        transition: {type: "spring" as const, stiffness: 400, damping: 25}
-                    }}
-                >
-                    {benefit.title}
-                </motion.h3>
-
-                <motion.p
-                    className="text-white text-sm leading-relaxed"
-                    initial={{opacity: 0.8}}
-                    whileHover={{opacity: 1}}
-                >
-                    {benefit.description}
-                </motion.p>
-                <motion.ul
-                    className="text-white mt-3 leading-relaxed px-5 list-disc"
-                    initial={{opacity: 0.8}}
-                    whileHover={{opacity: 1}}
-                >
-                    {benefit.features.map((item, idx) => (
-                        <li key={idx}>{item}</li>
-                    ))}
-                </motion.ul>
-            </div>
-        </motion.div>
-    );
-};
-
-const Services: React.FC = () => {
+interface ServicesProps {
+    industries: Industry[];
+}
+const Services: React.FC<ServicesProps> = ({ industries }) => {
+    const gridColsClass = (() => {
+        if (industries.length === 1) return "grid-cols-1";
+        if (industries.length === 2) return "grid-cols-2";
+        if (industries.length === 3) return "grid-cols-3";
+        if (industries.length === 4) return "grid-cols-2";
+        return "grid-cols-3";
+    })();
     return (
         <section className="relative bg-black text-white py-20 overflow-hidden">
             <motion.div
@@ -196,10 +87,74 @@ const Services: React.FC = () => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                    className={`grid ${gridColsClass} gap-8`}
                 >
-                    {benefits.map((benefit, index) => (
-                        <BenefitCard key={benefit.title} benefit={benefit} index={index}/>
+                    {industries.map((industry, index) => (
+                        <motion.div
+                            key={index}
+                            id={index.toString()}
+                            variants={cardVariants}
+                            whileHover={{
+                                y: -12,
+                                scale: 1.02,
+                                transition: { type: "spring", stiffness: 300, damping: 20 },
+                            }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group relative overflow-hidden"
+                            style={{ perspective: "1000px" }}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-br from-black/20 to-black/10 backdrop-blur-sm rounded border border-primary/20" />
+
+                            <motion.div
+                                className="absolute -inset-0.5 bg-primary rounded opacity-0 group-hover:opacity-20 blur-lg transition-opacity duration-500"
+                                animate={{ scale: [1, 1.05, 1] }}
+                                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                            />
+
+                            <div className="relative z-10 p-8 h-full flex flex-col">
+                                <div className="relative mb-6">
+                                    <motion.div
+                                        className={`w-16 h-16 bg-gradient-to-br ${industry.colorClass} rounded flex items-center justify-center shadow-lg border border-primary/30`}
+                                        whileHover={{
+                                            rotate: 5,
+                                            scale: 1.05,
+                                            transition: { type: "spring", stiffness: 400, damping: 25 },
+                                        }}
+                                    >
+                                        {industry.icon}
+                                    </motion.div>
+
+                                    <motion.div className="absolute inset-0 bg-primary rounded blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+                                </div>
+
+                                <motion.h3
+                                    className="text-2xl font-bold mb-4 text-white"
+                                    whileHover={{
+                                        scale: 1.02,
+                                        transition: { type: "spring", stiffness: 400, damping: 25 },
+                                    }}
+                                >
+                                    {industry.title}
+                                </motion.h3>
+                                <motion.p
+                                    className="mb-4 text-white"
+                                    whileHover={{
+                                        scale: 1.02,
+                                        transition: { type: "spring", stiffness: 400, damping: 25 },
+                                    }}
+                                >
+                                    {industry.features}
+                                </motion.p>
+
+                                <motion.div
+                                    className="text-white text-sm leading-relaxed"
+                                    initial={{ opacity: 0.8 }}
+                                    whileHover={{ opacity: 1 }}
+                                >
+                                    {industry.description}
+                                </motion.div>
+                            </div>
+                        </motion.div>
                     ))}
                 </motion.div>
                 <motion.div

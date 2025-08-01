@@ -1,38 +1,18 @@
 import {easeIn, motion, useInView} from "framer-motion";
-import {Building2, Cpu, Globe, Settings} from "lucide-react";
-import React, {useRef} from "react";
+import React, {ReactNode, useRef} from "react";
 import Image from "next/image";
-const IndustriesWeServe = () => {
+type IndustriesWeServeProps = {
+    description: string;
+    industries: {
+        icon: ReactNode;
+        title: string;
+        description: string;
+        colorClass: string;
+    }[];
+};
+const IndustriesWeServe:React.FC<IndustriesWeServeProps> = ({description,industries}) => {
     const sectionRef = useRef(null);
-
     const isInView = useInView(sectionRef, { once: true, margin: "-300px" });
-
-    const industries = [
-        {
-            icon: <Building2 className="w-8 h-8" strokeWidth={2}/>,
-            title: "B2B SaaS",
-            description: "Software companies that need steady customer growth",
-            colorClass: "bg-primary animate-fade-in",
-        },
-        {
-            icon: <Globe className="text-primary w-8 h-8" strokeWidth={2}/>,
-            title: "Digital Agencies",
-            description: "Marketing and web agencies wanting better client acquisition",
-            colorClass: "bg-secondary animate-fade-in",
-        },
-        {
-            icon: <Settings className=" w-8 h-8" strokeWidth={2}/>,
-            title: "Tech Services",
-            description: "IT and consulting firms looking to scale their business",
-            colorClass: "bg-primary animate-fade-in",
-        },
-        {
-            icon: <Cpu className="text-primary w-8 h-8" strokeWidth={2}/>,
-            title: "B2B Products",
-            description: "Agentic AI solutions, and micro-niche products needing sales systems",
-            colorClass: "bg-secondary animate-fade-in",
-        },
-    ];
     const fadeInUp = {
         hidden: {opacity: 0, y: 40},
         show: (i: number) => ({
@@ -50,8 +30,7 @@ const IndustriesWeServe = () => {
         <section ref={sectionRef} className="py-10 px-4  relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
-                <div
-                    className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="text-center mb-16 animate-fade-in">
@@ -59,7 +38,7 @@ const IndustriesWeServe = () => {
                         Industries <span className='text-primary'> We Serve</span>
                     </h2>
                     <p>
-                        We specialize in helping B2B companies across various industries achieve sales success through tailored strategies and proven methods.
+                        {description}
                     </p>
                 </div>
 
@@ -80,7 +59,8 @@ const IndustriesWeServe = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-semibold">{industry.title}</h3>
-                                    <p className="text-gray-600 mt-1">{industry.description}</p>
+                                    <p className="text-gray-600 mt-1">
+                                        {industry.description}</p>
                                 </div>
                             </motion.div>
                         ))}

@@ -1,45 +1,39 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { ClipboardCheck, AlertCircle, ClipboardList, Users, Repeat } from "lucide-react";
+import {LucideIcon} from "lucide-react";
 
-const features = [
-    {
-        id: '1',
-        icon: ClipboardCheck,
-        title: "Sales Check-Up",
-        description: "We look at everything – your emails, calls, website, team – and find what's stopping you from making sales.",
-        delay: "0ms",
-    },
-    {
-        id: '2',
-        icon: AlertCircle,
-        title: "Show You What's Wrong",
-        description: "We don't just say 'it's not working.' We show you exactly why leads aren't buying and where you're losing money.",
-        delay: "100ms",
-    },
-    {
-        id: '3',
-        icon: ClipboardList,
-        title: "Make Your Plan",
-        description: "We create a step-by-step training plan that fits your business, your team, and your specific problems.",
-        delay: "200ms",
-    },
-    {
-        id: '4',
-        icon: Users,
-        title: "Train You to Sell",
-        description: "We work with you personally through 1-on-1 sessions and train your team until everyone knows how to close deals.",
-        delay: "300ms",
-    },
-    {
-        id: '5',
-        icon: Repeat,
-        title: "Make Sure It Works",
-        description: "We don't disappear after training. We stay with you to make sure your new sales system keeps working and growing.",
-        delay: "400ms",
-    },
-];
-export const Process = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+type ProcessFeature = {
+    id: string;
+    icon: LucideIcon;
+    title: string;
+    description: string;
+    delay?: string;
+};
+
+type ProcessProps = {
+    title?: string;
+    titleTwo?: string;
+    description?: string;
+    features: ProcessFeature[];
+};
+export const Process:React.FC<ProcessProps> = ({title,titleTwo,description,features}) => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
@@ -58,10 +52,10 @@ export const Process = () => {
                     transition={{ duration: 0.6 }}
                 >
                     <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight  text-black">
-                        How We Help <span className="text-primary">You Sell</span>
+                        {title} <span className="text-primary">{titleTwo}</span>
                     </h2>
                     <p className="max-w-4xl mx-auto">
-                        We&#39;ve helped 90+ tech founders go from confused about sales to confident in closing deals. Here&#39;s exactly how we do it.
+                        {description}
                     </p>
                 </motion.div>
 

@@ -6,10 +6,11 @@ type HeroSectionProps = {
     title: string;
     description: string;
     buttonText: string;
+    buttonTextTwo?: string;
     titleTwo?: string;
     stripe?:string;
 };
-const HeroSection: React.FC<HeroSectionProps> = ({ title, description, buttonText, titleTwo,stripe }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ title, description, buttonText, titleTwo,stripe ,buttonTextTwo}) => {
     const [isVisible, setIsVisible] = useState(false);
     const [loadingCalendly, setLoadingCalendly] = useState(true);
     const [showCalendly, setShowCalendly] = useState(false);
@@ -46,9 +47,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, buttonTex
                                     {description}                                </p>
                             </div>
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center md:justify-start items-center mt-8">
-                                    <button onClick={() => setShowCalendly(true)}
-                                        className="group text-sm p-2 border border-white text-white font-button font-bold rounded-md overflow-hidden transition-all duration-700 transform hover:bg-primary  hover:scale-110 active:scale-95 hover:rotate-1">
+                                <div className="flex flex-col lg:flex-row gap-2  justify-center md:justify-start items-center mt-8">
+                                    <button onClick={() => setShowCalendly(true)} className={`group text-sm p-2 ${buttonTextTwo ? "bg-primary text-black" : "border border-white text-white hover:bg-primary "} font-button font-bold rounded-md overflow-hidden transition-all duration-700 transform  hover:scale-110 active:scale-95 hover:rotate-1`}>
                                         <span className="relative z-10 flex items-center space-x-2">
                                             <span className="tracking-wide">{buttonText}</span>
                                             <svg
@@ -59,6 +59,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, description, buttonTex
                                             </svg>
                                         </span>
                                     </button>
+                                    {buttonTextTwo &&(
+                                        <button className="text-sm p-2 border border-white text-white font-button font-bold rounded-md hover:border-primary overflow-hidden transition-all duration-700 transform">
+                                            {buttonTextTwo}
+                                        </button>
+                                    )}
+
                                 </div>
                             </div>
                         </div>

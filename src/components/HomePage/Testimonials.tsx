@@ -1,38 +1,21 @@
 import React, {useCallback, useEffect, useState} from 'react';
 import {ChevronLeft, ChevronRight, Quote, Star} from 'lucide-react';
 import Image from 'next/image';
-const Testimonial = () => {
+type TestimonialContent = {
+    id: number;
+    text: string;
+    author: string;
+    role: string;
+    rating: number;
+    image: string;
+    company: string;
+}
+type Testimonial = {
+    testimonials: TestimonialContent[]
+}
+const Testimonial:React.FC<Testimonial> = ({testimonials}) => {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    const testimonials = [
-        {
-            id: 1,
-            text: "Working with this team has been absolutely transformative for our business. Their attention to detail and innovative approach exceeded all our expectations.",
-            author: "Sarah Johnson",
-            role: "CEO, TechVision Inc",
-            rating: 5,
-            image: "/assets/man.png",
-            company: "TechVision Inc"
-        },
-        {
-            id: 2,
-            text: "The level of professionalism and expertise demonstrated throughout our project was remarkable. They delivered results that truly made a difference.",
-            author: "Michael Chen",
-            role: "Marketing Director, StartupFlow",
-            rating: 5,
-            image: "/assets/man.png",
-            company: "StartupFlow"
-        },
-        {
-            id: 3,
-            text: "Outstanding service and incredible results! They understood our vision perfectly and brought it to life in ways we never imagined possible.",
-            author: "Emily Rodriguez",
-            role: "Founder, Creative Studios",
-            rating: 5,
-            image: "/assets/man.png",
-            company: "Creative Studios"
-        }
-    ];
     const handleNext = useCallback(() => {
         if (isAnimating) return;
         setIsAnimating(true);
