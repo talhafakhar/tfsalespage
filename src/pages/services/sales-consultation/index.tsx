@@ -32,7 +32,7 @@ const industries = [
                 <li>Built systems the internal team seamlessly adopted</li>
             </ul>
         ),
-        icon: Handshake,
+        icon:  <Handshake />,
         gradient: "from-yellow-400 via-yellow-300 to-white",
         features:"Perfect for founders who need to learn sales basics",
     },
@@ -45,7 +45,7 @@ const industries = [
                 <li>Built systems the internal team seamlessly adopted</li>
             </ul>
         ),
-        icon: Users,
+        icon:  <Users />,
         gradient: "from-yellow-400 via-yellow-300 to-white",
         features: "Fix underperforming sales teams that cost money but don't bring results",
     },
@@ -58,7 +58,7 @@ const industries = [
                 <li>Built systems the internal team seamlessly adopted</li>
             </ul>
         ),
-        icon: Rocket,
+        icon:  <Rocket />,
         gradient: "from-yellow-300 via-white to-yellow-400",
         features: "Ongoing support to keep growing your sales" ,
     },

@@ -35,7 +35,7 @@ interface Industry {
     title: string;
     features?:string;
     description: React.ReactNode;
-    colorClass: string;
+    colorClass?: string;
 }
 interface ServicesProps {
     industries: Industry[];

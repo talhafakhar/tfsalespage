@@ -9,8 +9,9 @@ type FinalCTAsSection =  {
     description?: string;
     buttonText?: string;
     buttonTextTwo?: string;
+    quote?: string;
 }
-const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,buttonTextTwo}) => {
+const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,buttonTextTwo,quote}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -46,7 +47,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
     ];
 
     return (
-        <section className="bg-background py-20 px-4 relative overflow-hidden">
+        <section className="bg-background py-10 px-4 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0">
                 <div className="absolute top-20 right-20 w-96 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
@@ -69,7 +70,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                 animate={isVisible ? "visible" : "hidden"}
             >
                 <motion.div
-                    className="text-center mb-12"
+                    className="text-center mb-8"
                     variants={itemVariants}
                 >
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
@@ -94,10 +95,8 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                     <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
                         {description}
                     </p>
-
-                    {/* Benefits List */}
                     <motion.div
-                        className="flex flex-wrap justify-center gap-4 mb-8"
+                        className="flex flex-wrap justify-center gap-4 mb-5"
                         variants={itemVariants}
                     >
                         {benefits.map((benefit, index) => (
@@ -112,7 +111,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                     </motion.div>
 
                     <motion.span
-                        className="flex justify-center mb-2"
+                        className="flex justify-center"
                         animate={{ y: [0, 10, 0] }}
                         transition={{
                             duration: 1.5,
@@ -136,14 +135,17 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
     <ArrowRight className="w-4 h-4" />
   </span>
                     </button>
-                    <button
+                    {buttonTextTwo && ( <button
                         className="px-6 py-2.5 rounded-full border border-secondary font-semibold transition-transform duration-300 hover:scale-105 hover:border-primary focus:outline-none"
                     >
                         {buttonTextTwo}
 
-                    </button>
+                    </button>)}
                 </motion.div>
             </motion.div>
+            <p className="text-center italic font-semibold text-lg mt-3">
+                &#34;{quote}&#34;
+            </p>
         </section>
     );
 };

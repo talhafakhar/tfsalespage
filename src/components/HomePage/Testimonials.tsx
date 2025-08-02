@@ -53,9 +53,6 @@ const Testimonial:React.FC<Testimonial> = ({testimonials}) => {
                 <h2 className="text-5xl text-center font-bold  mb-8 leading-tight">
                     What Our{' '}<span className="text-primary">Clients Say</span>
                 </h2>
-                <p className="text-center text-lg mb-12">
-                    Hear from our satisfied clients about their experiences with our services.
-                </p>
                 <div className="relative mx-auto max-w-4xl">
                     <div className="border border-secondary rounded-3xl p-8 md:p-12  shadow-2xl relative overflow-hidden">
                         <div className="absolute -top-5 left-8 z-10">
