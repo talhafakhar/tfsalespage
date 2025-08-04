@@ -12,10 +12,8 @@ import Testimonial from "@/components/HomePage/Testimonials";
 import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
 import React, {useEffect, useState} from "react";
 import Image from "next/image";
-
 export default function Home() {
     const [show, setShow] = useState(false);
-
     useEffect(() => {
         const timer = setTimeout(() => setShow(true), 5000);
         return () => clearTimeout(timer);
