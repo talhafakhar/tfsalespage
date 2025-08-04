@@ -124,7 +124,7 @@ const IndustryCaseStudy: React.FC = () => {
             </span>
                     </h2>
                     <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                        See how we've transformed businesses with custom AI agents
+                        See how we&#39;ve transformed businesses with custom AI agents
                     </p>
                 </div>
                 <div className="space-y-6">
