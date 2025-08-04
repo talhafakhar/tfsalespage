@@ -1,6 +1,5 @@
 import React, {useState, useEffect, JSX} from 'react';
 import { GraduationCap, ArrowRight } from 'lucide-react';
-import Image from "next/image";
 
 interface ServiceItem {
     icon: JSX.Element;

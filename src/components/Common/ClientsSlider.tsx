@@ -1,6 +1,9 @@
 import React from 'react';
 import Image from 'next/image';
-const InfiniteLogoSlider = ({title}:any) => {
+type InfiniteLogoSlider = {
+    title: string;
+}
+const InfiniteLogoSlider:React.FC<InfiniteLogoSlider> = ({title}) => {
     const logos = [
         {
             name: "Sunbelt Rentals",

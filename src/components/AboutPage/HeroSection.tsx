@@ -31,7 +31,7 @@ const AboutHero = () => {
                     </div>
                     <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <p className="text-white mb-8 max-w-xl mx-auto">
-                            Look, we get it. You've got a killer product but can't afford a $200K+ CMO. You need a CTO but don't have 6 months to hire one. Your sales are stuck because you're doing everything yourself.                        </p>
+                            Look, we get it. You&#39;ve got a killer product but can&#39;t afford a $200K+ CMO. You need a CTO but don&#39;t have 6 months to hire one. Your sales are stuck because you&#39;re doing everything yourself.                        </p>
                     </div>
                     <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center  items-center mb-4">
