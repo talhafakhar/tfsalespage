@@ -95,6 +95,7 @@ const IndustriesWeServe:React.FC<IndustriesWeServeProps> = ({description,industr
                             alt=''
                             width='700'
                             height='700'
+                            loading="lazy"
                         />
                         </motion.div>
                 </div>

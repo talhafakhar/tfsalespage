@@ -26,6 +26,7 @@ import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
 import PricingPlanSection from "@/components/Services/SalesConsultation/PricingPlanSection";
 import PortfolioSection from "@/components/Services/SalesAutomation/CaseStudiesSextion";
 import SeparatorSection from "@/components/Services/SalesAutomation/Separator";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 export default function SalesAutomationServicePage() {
     const [show, setShow] = useState(false);
     useEffect(() => {
@@ -34,6 +35,117 @@ export default function SalesAutomationServicePage() {
     }, []);
     return (
         <div>
+            <NextSeo
+                title="Sales Consultation Services | TF Business Solution"
+                description="Unlock consistent revenue growth with expert sales consultation. We audit your current sales process, identify gaps, and design high-performing B2B sales strategies tailored to your goals."
+                canonical="https://tfbusinesssolution.com/services/sales-consultation"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Sales Consultation, B2B Sales Strategy, Sales Funnel Optimization, Revenue Growth Consulting, Sales Audit, Sales Coaching, Sales Enablement, Outbound Sales Review, Sales Scaling' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/sales-consultation',
+                    title: 'Sales Consultation Services | Improve Pipeline & Revenue with Expert Strategy',
+                    description: 'TF Business Solution provides expert sales consultations for startups and growing companies. From auditing your sales funnel to building an actionable outbound strategy — we help you scale revenue.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/sales-consultation-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Sales Consultation Services – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/sales-consultation/#webpage"
+                url="https://tfbusinesssolution.com/services/sales-consultation"
+                name="Sales Consultation Services | TF Business Solution"
+                description="Our sales consultation services help you streamline your sales process, improve team efficiency, and build predictable revenue pipelines with modern outbound and inbound tactics."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/sales-consultation?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+
+
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: "How is your sales automation different from other providers?",
+                        answer: (
+                            <p>
+                                We focus on sales psychology, not just technology. While others build basic
+                                workflows, we create automation that understands buyer behavior and applies proven
+                                psychological triggers to increase conversions.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 2,
+                        question: "How long does it take to see results?",
+                        answer: (
+                            <p>
+                                Most clients see initial improvements within 2-4 weeks of implementation. Full
+                                optimization typically occurs within 60-90 days as we gather data and refine the
+                                sequences.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 3,
+                        question: "Do you work with businesses in my industry?",
+                        answer: (
+                            <p>
+                                We work across multiple industries including SaaS, e-commerce, real estate,
+                                agencies, and professional services. Our psychology-based approach adapts to any
+                                business model.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 4,
+                        question: "What if the automation doesn't work for my business?",
+                        answer: (
+                            <p>
+                                We work closely with you to ensure success. Our approach includes continuous testing
+                                and optimization. If you&#39;re not satisfied, we&#39;ll revise the strategy until
+                                it works.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 5,
+                        question: "How much involvement is required from my team?",
+                        answer: (
+                            <p>
+                                Minimal during setup. We need input on your sales process and buyer personas, then
+                                handle implementation. Your team focuses on following up with qualified leads.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 6,
+                        question: "Can you integrate with our existing sales process?",
+                        answer: (
+                            <p>
+                                Absolutely. We audit your current process and enhance it with automation rather than
+                                replacing what already works. Integration is seamless and gradual.
+                            </p>
+                        ),
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Sales Automation '
@@ -304,27 +416,24 @@ export default function SalesAutomationServicePage() {
                 />
                 <Footer/>
             </div>
-            {show && (<div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
-                    <div
-                        className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+            {show && (
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <div className="border rounded-full bg-white flex-shrink-0">
-                                <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                                <Image loading="lazy" src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
                             </div>
                             <div className="text-xs">
                                 <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
                                 <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
                                     <div className="animate-textLoop">
-                                        <div
-                                            className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div
-                                            className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
-                                        <div
-                                            className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Software Engineer
                                         </div>
                                     </div>
@@ -332,11 +441,13 @@ export default function SalesAutomationServicePage() {
                             </div>
                         </div>
                         <button
-                            className="bg-black text-white font-button text-nowrap rounded-md px-2 py-1.5 text-xs sm:text-sm mt-2 sm:mt-0">
+                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                             Book a Call
                         </button>
                     </div>
-                </div>)}
+                </div>
+
+            )}
         </div>
     );
 }

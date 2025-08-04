@@ -67,6 +67,7 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                         src="/assets/services/3d.webp"
                         alt="3d"
                         width={600}
+                        loading="lazy"
                         height={600}
                         className="object-cover"
                     />

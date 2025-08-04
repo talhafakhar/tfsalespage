@@ -16,7 +16,7 @@ const ContactForm = () => {
                         </p>
                         <div className="flex items-center justify-center">
                             <Image
-                                src="/assets/services/contact-3d.webp" alt="Contact Us" width={400} height={400}/>
+                                src="/assets/services/contact-3d.webp" alt="Contact Us" loading="lazy" width={400} height={400}/>
                         </div>
                     </div>
 

@@ -145,7 +145,7 @@ const CallToActionCard = ({
             </button>
         </div>
         <div>
-            <Image src={icon} alt="icon" width={100} height={100} />
+            <Image src={icon} alt="icon" width={100} height={100} loading="lazy" />
         </div>
     </div>
 );

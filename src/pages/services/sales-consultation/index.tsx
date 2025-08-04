@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import HeroSection from "@/components/Services/HeroSection";
 import PricingSection from "@/components/Services/FractionalCMO/PricingTableSection";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 const industries = [
     {
         title: "Sales 1-on-1 Consultation",
@@ -73,6 +74,124 @@ export default function SalesConsultationServicePage() {
 
     return (
         <div>
+            <NextSeo
+                title="Sales Automation Services | TF Business Solution"
+                description="Automate your sales process from outreach to follow-up. Our Sales Automation service helps you build scalable systems for lead generation, CRM integration, and conversion tracking."
+                canonical="https://tfbusinesssolution.com/services/sales-automation"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Sales Automation, CRM Automation, Lead Nurturing, Automated Sales Funnel, Outbound Automation, B2B Automation, Email Sequences, Follow-Up Automation, Sales Pipeline Automation' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/sales-automation',
+                    title: 'Sales Automation Services | Automate Outreach & Scale Your Pipeline',
+                    description: 'TF Business Solution provides done-for-you sales automation systems — from CRM workflows and email sequences to outbound campaigns. Scale sales without scaling your team.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/sales-automation-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Sales Automation Services – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/sales-automation/#webpage"
+                url="https://tfbusinesssolution.com/services/sales-automation"
+                name="Sales Automation Services | TF Business Solution"
+                description="Our Sales Automation service enables you to automate lead gen, follow-ups, and CRM tasks. Drive more revenue with less manual work and more consistency."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/sales-automation?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: "How long does it take to see results?",
+                        answer: (
+                            <p>
+                                We&#39;re not selling templates or quick tricks. We build real frameworks that work for your business, fix what&#39;s broken in your current system, optimize your sales channels, and properly train your team. Most founders see improvements within 2-3 weeks because we focus on fixing actual problems, not just giving you scripts to copy.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 2,
+                        question: "Do you work with any specific industries?",
+                        answer: (
+                            <p>
+                                We work with all types of B2B companies - SaaS, agencies, consulting, tech services, and B2B products. Our methods work across industries because sales fundamentals are the same.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 3,
+                        question: "What if my sales team is completely new to selling?",
+                        answer: (
+                            <p>
+                                That&#39;s actually easier to work with! It&#39;s harder to fix bad sales habits than to build good ones from scratch. We&#39;ll start with the basics and build up their skills step by step.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 4,
+                        question: "Can you guarantee results?",
+                        answer: (
+                            <p>
+                                We can&#39;t guarantee specific numbers because every business is different. But we can guarantee you&#39;ll understand exactly what&#39;s wrong with your current sales and have a clear plan to fix it.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 5,
+                        question: "Do you provide ongoing support after training?",
+                        answer: (
+                            <p>
+                                Yes! All our plans include follow-up support. We don&#39;t just train and disappear - we make sure the new system actually works for your business.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 6,
+                        question: "What if we're already using a CRM or sales tools?",
+                        answer: (
+                            <p>
+                                Great! We work with whatever tools you already have. If needed, we&#39;ll recommend better tools, but we never force you to change everything at once.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 7,
+                        question: "How is this different from other sales training?",
+                        answer: (
+                            <p>
+                                Most sales training is generic theory. We audit YOUR specific business, find YOUR specific problems, and create solutions that work for YOUR situation. It&#39;s completely customized.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 8,
+                        question: "Can you help with both inbound and outbound sales?",
+                        answer: (
+                            <p>
+                                Absolutely. We help you build systems for getting leads (outbound) and converting the leads you already get (inbound). Most businesses need both to grow consistently.
+                            </p>
+                        ),
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Sales That Actually'
@@ -361,7 +480,7 @@ export default function SalesConsultationServicePage() {
                     <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <div className="border rounded-full bg-white flex-shrink-0">
-                                <Image src="/assets/services/user.png" alt="avatar" width={50} height={50} />
+                                <Image loading="lazy" src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
                             </div>
                             <div className="text-xs">
                                 <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
@@ -370,7 +489,7 @@ export default function SalesConsultationServicePage() {
                                         <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
                                         <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
@@ -380,7 +499,8 @@ export default function SalesConsultationServicePage() {
                                 </section>
                             </div>
                         </div>
-                        <button className="bg-black text-white font-button text-nowrap rounded-md px-2 py-1.5 text-xs sm:text-sm mt-2 sm:mt-0">
+                        <button
+                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                             Book a Call
                         </button>
                     </div>

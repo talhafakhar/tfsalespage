@@ -78,7 +78,7 @@ const HeroSection: React.FC = () => {
                                     <h3 className="text-lg font-medium text-white tracking-wide">
                                         We Partner With
                                     </h3>
-                                    <Image src="/assets/svg/downArrow.svg" alt="arrow" className='mt-3' width={24} height={24}/>
+                                    <Image src="/assets/svg/downArrow.svg" alt="arrow" className='mt-3' loading="lazy" width={24} height={24}/>
                                 </div>
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
                                     {partnerNames.map((name) => (
@@ -111,7 +111,9 @@ const HeroSection: React.FC = () => {
                 </div>
             </section>
             <hr/>
-            <InfiniteLogoSlider/>
+            <InfiniteLogoSlider
+                title="We Partner With Leading Brands"
+            />
         </div>
     );
 };

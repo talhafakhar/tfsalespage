@@ -27,6 +27,7 @@ import {
     TrendingUp,
     Users, Zap
 } from "lucide-react";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 const inHouseData: ColumnData = {
     title: "In-House CMO",
     color: "from-red-500 to-red-700",
@@ -66,6 +67,109 @@ export default function FractionalCMOServicePage() {
 
     return (
         <div>
+            <NextSeo
+                title="Fractional CMO Services | TF Business Solution"
+                description="Hire a seasoned Fractional CMO to drive marketing strategy, lead generation, and growth — without the full-time cost. Get leadership and execution combined."
+                canonical="https://tfbusinesssolution.com/services/fractional-cmo"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Fractional CMO, Marketing Strategy, Outsourced CMO, Part-Time CMO, Growth Marketing, B2B Marketing, CMO as a Service, Marketing Leadership' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/fractional-cmo',
+                    title: 'Fractional CMO Services | Marketing Leadership without Full-Time Cost',
+                    description: 'Scale your business with expert marketing leadership. Our Fractional CMO service provides high-impact strategy, execution oversight, and team leadership.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/fractional-cmo-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Fractional CMO Service – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/fractional-cmo/#webpage"
+                url="https://tfbusinesssolution.com/services/fractional-cmo"
+                name="Fractional CMO Services | TF Business Solution"
+                description="TF Business Solution’s Fractional CMO offering gives startups and growing companies access to top-tier marketing strategy, planning, and leadership — without the overhead."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/fractional-cmo?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: " How quickly can we start?",
+                        answer: (
+                            <p>
+                                Your fractional CMO and team can begin working within 1-2 weeks of signing the agreement
+                            </p>
+                        )
+                    },
+                    {
+                        id: 2,
+                        question: "What if we're not satisfied with a team member?",
+                        answer: (
+                            <p>
+                                We can replace any team member within 48 hours at no additional cost.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 3,
+                        question: "Do you work with specific industries?",
+                        answer: (
+                            <p>
+                                Yes, we have experience across SaaS, e-commerce, B2B services, and consumer products.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 4,
+                        question: "How is this different from hiring an agency?",
+                        answer: (
+                            <p>
+                                Our team works as your employees, not external vendors. You get dedicated focus and
+                                direct control.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 5,
+                        question: "Can we scale the team up or down?",
+                        answer: (
+                            <p>
+                                Absolutely. You can adjust team size and expertise based on your current needs and
+                                budget.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 6,
+                        question: " What happens to our marketing when we're ready to hire in-house?",
+                        answer: (
+                            <p>
+                                We provide complete documentation and can help transition to your internal team
+                                seamlessly
+                            </p>
+                        )
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Launch a Full Marketing Department'
@@ -360,10 +464,8 @@ export default function FractionalCMOServicePage() {
                 <Footer/>
             </div>
             {show && (
-                <div
-                    className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
-                    <div
-                        className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <div className="border rounded-full bg-white flex-shrink-0">
                                 <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
@@ -372,16 +474,13 @@ export default function FractionalCMOServicePage() {
                                 <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
                                 <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
                                     <div className="animate-textLoop">
-                                        <div
-                                            className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div
-                                            className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
-                                        <div
-                                            className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Software Engineer
                                         </div>
                                     </div>
@@ -394,6 +493,7 @@ export default function FractionalCMOServicePage() {
                         </button>
                     </div>
                 </div>
+
             )}
         </div>
     );

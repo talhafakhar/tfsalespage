@@ -56,8 +56,6 @@ const FoundersSection = () => {
                         Unlock the power of fractional leadership to drive growth without the overhead.
                     </p>
                 </div>
-
-                <div className="container mx-auto relative">
                 <div className="container mx-auto relative">
                     <div className="flex md:flex-row flex-col items-center  justify-center md:justify-between gap-1">
                         <div className="flex flex-col gap-4 w-full md:w-1/2">
@@ -169,12 +167,12 @@ const FoundersSection = () => {
                                 className="mx-auto"
                                 alt="man"
                                 width={600}
+                                loading="lazy"
                                 height={600}
                             />
                             </motion.div>
                     </div>
                     </div>
-                </div>
         </section>
     );
 };

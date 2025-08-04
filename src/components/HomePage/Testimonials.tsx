@@ -97,6 +97,7 @@ const Testimonial:React.FC<Testimonial> = ({testimonials}) => {
                                                     src={currentTest.image}
                                                     alt={currentTest.author}
                                                     fill
+                                                    loading="lazy"
                                                     className="object-cover"
                                                 />
                                             </div>

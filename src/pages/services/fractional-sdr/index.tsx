@@ -14,6 +14,7 @@ import SeparatorSection from "@/components/Services/SalesAutomation/Separator";
 import PricingPlanSection from "@/components/Services/SalesConsultation/PricingPlanSection";
 import SalesTeamSection from "@/components/Services/FractionalSDR/SalesTeamSection";
 import TeamIntegrationSection from "@/components/Services/FractionalSDR/IntegrationSection";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 
 const industries = [
     {
@@ -62,6 +63,107 @@ export default function FractionalSDRServicePage() {
 
     return (
         <div>
+            <NextSeo
+                title="Fractional SDR Services | TF Business Solution"
+                description="Get consistent lead generation with TF Business Solution's Fractional SDR services. We provide trained reps to fill your pipeline, qualify leads, and book appointments — without hiring in-house."
+                canonical="https://tfbusinesssolution.com/services/fractional-sdr"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Fractional SDR, SDR as a Service, Lead Generation, Sales Development, B2B Appointment Setting, Outsourced SDR, Inside Sales, B2B Pipeline Growth, Sales Outreach' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/fractional-sdr',
+                    title: 'Fractional SDR Services | Scalable Lead Generation for B2B Sales',
+                    description: 'TF Business Solution offers SDR-as-a-Service to generate leads, book meetings, and help B2B companies scale outbound sales without hiring full-time reps.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/fractional-sdr-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Fractional SDR Service – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/fractional-sdr/#webpage"
+                url="https://tfbusinesssolution.com/services/fractional-sdr"
+                name="Fractional SDR Services | TF Business Solution"
+                description="Our Fractional SDR team helps B2B companies generate qualified leads, build pipelines, and increase appointments through efficient sales outreach strategies."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/fractional-sdr?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: "How long does it take to see results from your fractional SDR team?",
+                        answer: (
+                            <p>
+                                We focus on building optimized sales systems, not generating immediate results.
+                                Typically, you&#39;ll have a complete sales framework, tested messaging, and documented
+                                processes within 60-90 days. The actual results depend on your internal team&#39;s
+                                execution of these systems.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 2,
+                        question: "What's the difference between fractional SDRs and hiring full-time sales people?",
+                        answer: (
+                            <p>
+                                Our fractional team builds your sales infrastructure without the hiring costs, training
+                                time, or long-term commitments. We create the systems, test the channels, and train your
+                                team - then you hire internally when you&#39;re ready to scale</p>
+                        )
+                    },
+                    {
+                        id: 3,
+                        question: "Do you guarantee specific results like meetings booked or leads generated?",
+                        answer: (
+                            <p>
+                                No, we don&#39;t guarantee specific outcomes. We optimize and test your sales channels,
+                                create proven frameworks, and build systems your internal team can execute. Your results
+                                depend on consistent execution of the processes we create.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 4,
+                        question: "What happens when we're ready to hire our own sales team?",
+                        answer: (
+                            <p>
+                                That&#39;s the goal! We document everything, create training materials, and provide a
+                                seamless handoff to your internal team. Most clients transition to their own SDRs within
+                                6-12 months with proven systems in place.
+                            </p>
+                        )
+                    },
+                    {
+                        id: 5,
+                        question: " Can you work with companies that have no existing sales process?",
+                        answer: (
+                            <p>
+
+                                Absolutely! Many of our best clients come to us with no sales infrastructure at all. We
+                                specialize in building complete sales systems from scratch, including ICP development,
+                                channel optimization, and process creation.
+                            </p>
+                        )
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Stop Burning Budget'
@@ -106,6 +208,82 @@ export default function FractionalSDRServicePage() {
                             colorClass: "bg-primary text-black",
                         },
                     ]}/>
+                <FAQPageJsonLd
+                    mainEntity={[
+                        {
+                            id: 1,
+                            question: "What happens during the AI generalist consultation?",
+                            answer: (
+                                <p>
+                                    Our AI experts analyze your current workflows, identify automation opportunities, calculate ROI, and create a custom POC strategy for your business.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 2,
+                            question: "How long does the POC development take?",
+                            answer: (
+                                <p>
+                                    Most POCs are built and validated within 1–2 weeks, allowing you to see results before full deployment.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 3,
+                            question: "What tools do you use to build AI agents?",
+                            answer: (
+                                <p>
+                                    We primarily use n8n for workflow automation, integrate with tools like Airtable, CRMs, and build custom APIs for complex requirements.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 4,
+                            question: "Do you provide training for our team?",
+                            answer: (
+                                <p>
+                                    Yes, every project includes demo sessions, user training, and comprehensive documentation for your team.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 5,
+                            question: "What kind of follow-up support do you offer?",
+                            answer: (
+                                <p>
+                                    All plans include follow-up support ranging from 30 days to 6 months, with performance monitoring and optimization.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 6,
+                            question: "Can you integrate with our existing software?",
+                            answer: (
+                                <p>
+                                    Yes, we specialize in integrating AI agents with existing tools like Airtable, Slack, CRMs, databases, and custom software via APIs.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 7,
+                            question: "What if the POC doesn't meet our expectations?",
+                            answer: (
+                                <p>
+                                    We refine the POC based on your feedback until it meets your requirements before moving to full development.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 8,
+                            question: "How do you ensure data security?",
+                            answer: (
+                                <p>
+                                    All data is encrypted, we follow strict security protocols, and can work within your compliance requirements including SOC2, GDPR, and HIPAA.
+                                </p>
+                            ),
+                        },
+                    ]}
+                />
                 <SeparatorSection/>
                 <Process
                     title="Our Proven"
@@ -320,10 +498,8 @@ export default function FractionalSDRServicePage() {
                 <Footer/>
             </div>
             {show && (
-                <div
-                    className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
-                    <div
-                        className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex items-center gap-3">
                             <div className="border rounded-full bg-white flex-shrink-0">
                                 <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
@@ -332,16 +508,13 @@ export default function FractionalSDRServicePage() {
                                 <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
                                 <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
                                     <div className="animate-textLoop">
-                                        <div
-                                            className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div
-                                            className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
-                                        <div
-                                            className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Software Engineer
                                         </div>
                                     </div>
@@ -349,11 +522,12 @@ export default function FractionalSDRServicePage() {
                             </div>
                         </div>
                         <button
-                            className="bg-black text-white font-button text-nowrap rounded-md px-2 py-1.5 text-xs sm:text-sm mt-2 sm:mt-0">
+                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                             Book a Call
                         </button>
                     </div>
                 </div>
+
 
             )}
         </div>

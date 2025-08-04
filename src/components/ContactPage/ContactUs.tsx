@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {Mail, MapPin, MessageSquare, Phone, Send, User, Users} from 'lucide-react';
-import CTASection from "@/components/ContactPage/TextSlider";
+import {ArrowRight, Mail, MapPin, MessageSquare, Phone, Send, User, Users} from 'lucide-react';
+import Image from "next/image";
 const ContactUsPage = () => {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -31,31 +31,18 @@ const ContactUsPage = () => {
     };
     return (
         <div>
-            <div className="text-center py-16 bg-white">
-                <p className="text-sm font-medium text-gray-600 tracking-wide uppercase mb-4">
+            <div className="text-center py-20 md:pt-28 pb-10 px-4 bg-white">
+                <h1 className="text-4xl md:text-5xl font-bold  mb-3">
+                    Get in <span className="text-primary">{" "}Touch</span>
+                </h1>
+                <p className="text-sm font-medium text-gray-600 tracking-wide uppercase ">
                     CONNECT WITH US. WE&#39;RE HERE TO HELP
                 </p>
-                <h1 className="text-5xl md:text-6xl font-bold text-black">
-                    Get in touch
-                </h1>
             </div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                    <div className="relative">
-                        <div className="rounded-2xl overflow-hidden shadow-2xl">
-                            {/*<img*/}
-                            {/*    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face"*/}
-                            {/*    alt="Professional consultant ready to help"*/}
-                            {/*    className="w-full h-[600px] object-cover"*/}
-                            {/*/>*/}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                        </div>
-                    </div>
-
-                    {/* Form Section */}
-                    <div className="bg-white rounded-2xl shadow-xl p-8">
+            <div className="max-w-7xl mx-auto px-4 pb-10">
+                <div className="flex justify-between items-center flex-col md:flex-row gap-8">
+                    <div className="bg-white rounded-2xl border shadow-xl p-8">
                         <div className="space-y-6">
-                            {/* Name Fields */}
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-semibold text-black mb-2">
@@ -130,8 +117,6 @@ const ContactUsPage = () => {
                                     </div>
                                 </div>
                             </div>
-
-                            {/* Subject */}
                             <div>
                                 <label className="block text-sm font-semibold text-black mb-2">
                                     Subject
@@ -150,7 +135,6 @@ const ContactUsPage = () => {
                                 </div>
                             </div>
 
-                            {/* Message */}
                             <div>
                                 <label className="block text-sm font-semibold text-black mb-2">
                                     Message
@@ -164,7 +148,6 @@ const ContactUsPage = () => {
                                 ></textarea>
                             </div>
 
-                            {/* Submit Button */}
                             <button
                                 onClick={handleSubmit}
                                 className="w-full bg-primary  text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
@@ -174,15 +157,15 @@ const ContactUsPage = () => {
                             </button>
                         </div>
                     </div>
+                    <div className="relative ">
+                        <div className="overflow-hidden">
+                            <Image src="/assets/contact/mail-astornot.webp" alt="Professional consultant ready to help" width={500} loading="lazy" height={500} />
+                        </div>
+                    </div>
                 </div>
-
-                {/* Contact Information Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
-                    {/* Visit Us */}
-                    <div
-                        className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                        <div
-                            className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="text-center p-8 bg-white rounded-2xl border shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                             <MapPin className="w-8 h-8 text-black"/>
                         </div>
                         <h3 className="text-xl font-bold text-black mb-4">Visit Us</h3>
@@ -191,12 +174,8 @@ const ContactUsPage = () => {
                             760 Grant Street, San Francisco
                         </p>
                     </div>
-
-                    {/* Call Us */}
-                    <div
-                        className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
-                        <div
-                            className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                    <div className="text-center p-8 bg-white rounded-2xl border shadow-lg hover:shadow-xl transition-shadow">
+                        <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                             <Phone className="w-8 h-8 text-black"/>
                         </div>
                         <h3 className="text-xl font-bold text-black mb-4">Call Us</h3>
@@ -207,10 +186,7 @@ const ContactUsPage = () => {
                             (123) 456-7890
                         </p>
                     </div>
-
-                    {/* Join Our Community */}
-                    <div
-                        className="text-center p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+                    <div className="text-center p-8 bg-white rounded-2xl border shadow-lg hover:shadow-xl transition-shadow">
                         <div
                             className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
                             <Users className="w-8 h-8 text-black"/>
@@ -223,8 +199,19 @@ const ContactUsPage = () => {
                         </p>
                     </div>
                 </div>
+                <div className=" flex justify-center mt-12">
+                    <button
+                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
+                    >
+                        Schedule a call
+                        <span
+                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        >
+    <ArrowRight className="w-4 h-4" />
+  </span>
+                    </button>
+                </div>
             </div>
-            <CTASection/>
         </div>
     );
 };

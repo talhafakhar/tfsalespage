@@ -63,7 +63,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({title, description, features})
                     {description}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto gap-6">
-                    {/* First 3 cards */}
                     {features.slice(0, 3).map((feature, index) => (
                         <FeatureCard
                             key={index}
@@ -74,7 +73,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({title, description, features})
                         />
                     ))}
 
-                    {/* Last 2 cards centered in row below */}
                     <div className="col-span-full flex justify-center max-w-3xl mx-auto gap-6">
                         {features.slice(3).map((feature, index) => (
                             <FeatureCard

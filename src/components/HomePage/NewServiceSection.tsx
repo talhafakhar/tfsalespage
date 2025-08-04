@@ -97,10 +97,11 @@ const ServicesSection: React.FC = () => {
                 }
             >
                 <Image
-                    src="/assets/home/astronot.png"
+                    src="/assets/home/astronot.webp"
                     alt="astronot"
                     width={700}
                     height={700}
+                    loading="lazy"
                 />
             </motion.div>
             <motion.div

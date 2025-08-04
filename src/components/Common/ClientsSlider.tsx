@@ -27,16 +27,14 @@ const InfiniteLogoSlider = ({title}:any) => {
             url: "https://dev.w3.org/SVG/tools/svgweb/samples/svg-files/easypeasy.svg",
         },
     ];
-
     const duplicatedLogos = Array.from({ length: 100 }, () => logos).flat();
-
     return (
-        <section className="relative w-full bg-black py-6 overflow-hidden">
-            <div className="container mx-auto px-4">
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
+        <section className="relative w-full bg-black py-8 overflow-hidden">
+            <div className="container mx-auto w-full flex  px-4">
+                <h2 className="text-2xl md:text-3xl font-bold border-r-[4px] w-[20%] text-white  italic text-center">
                     {title}
                 </h2>
-                <div className="relative">
+                <div className="relative w-[80%]">
                     <div className="overflow-hidden">
                         <div
                             className="
@@ -51,7 +49,7 @@ const InfiniteLogoSlider = ({title}:any) => {
                                     className="
                 flex-shrink-0
                 w-28 sm:w-36 md:w-40
-                h-12 sm:h-16 md:h-20
+                h-10 sm:h-14 md:h-16
                 flex items-center justify-center
                 opacity-70 hover:opacity-100
                 transition duration-300
@@ -63,6 +61,7 @@ const InfiniteLogoSlider = ({title}:any) => {
                                         src={logo.url}
                                         alt="Client Logo"
                                         width={200}
+                                        loading="lazy"
                                         height={200}
                                         className="max-w-full max-h-full object-contain"
                                     />

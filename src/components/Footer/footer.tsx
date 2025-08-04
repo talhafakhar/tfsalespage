@@ -65,9 +65,9 @@ const Footer: React.FC = () => {
             <div className='relative container mx-auto px-4'>
                 <div className="absolute right-0 top-16 hidden md:block">
                     <Image
-                        src="/assets/home/footer-bg.png"
+                        src="/assets/home/footer-bg.webp"
                         alt="astronot"
-                        width={750}
+                        width={750} loading="lazy"
                         height={750}
                     />
                 </div>
@@ -83,6 +83,7 @@ const Footer: React.FC = () => {
                                                 src="/assets/logo.webp"
                                                 alt="logo"
                                                 width={42}
+                                                loading="lazy"
                                                 height={42}
                                             />
                                         </div>

@@ -30,6 +30,7 @@ import {
     Users2,
     Zap
 } from "lucide-react";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 const inHouseData: ColumnData = {
     title: "In-House CMO",
     color: "from-red-500 to-red-700",
@@ -66,6 +67,97 @@ export default function FractionalCTO() {
     }, []);
     return (
         <div>
+            <NextSeo
+                title="Fractional CTO Services | TF Business Solution"
+                description="Access senior-level technical leadership without the full-time cost. Our Fractional CTO service helps startups and scaleups plan tech strategy, build teams, and launch products."
+                canonical="https://tfbusinesssolution.com/services/fractional-cto"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Fractional CTO, Part-Time CTO, CTO as a Service, Technical Strategy, Startup CTO, Technology Leadership, Product Development, Technical Consulting, SaaS CTO' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/fractional-cto',
+                    title: 'Fractional CTO Services | Strategic Technology Leadership',
+                    description: 'TF Business Solution provides expert Fractional CTO services to guide startups and growing companies with architecture planning, team building, and digital product launches.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/fractional-cto-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Fractional CTO Service – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/fractional-cto/#webpage"
+                url="https://tfbusinesssolution.com/services/fractional-cto"
+                name="Fractional CTO Services | TF Business Solution"
+                description="Our Fractional CTO service gives you access to senior tech leadership for technical strategy, architecture planning, and product management — all without hiring full-time."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/fractional-cto?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: "How quickly can we start development?",
+                        answer: (
+                            <p>
+                                Your fractional CTO and development team can begin working within 1–2 weeks of signing the agreement.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 2,
+                        question: "What if we need to pivot our product direction?",
+                        answer: (
+                            <p>
+                                We specialize in agile development and can adapt quickly to new requirements or market feedback.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 3,
+                        question: "Do you work with specific tech stacks?",
+                        answer: (
+                            <p>
+                                Yes, we have expertise across React, Node.js, Python, AWS, AI/ML frameworks, and modern development tools.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 4,
+                        question: "How is this different from hiring a development agency?",
+                        answer: (
+                            <p>
+                                Our team works as your employees, not external vendors. You get dedicated focus and direct control over your product.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 5,
+                        question: "What happens when we're ready to hire an in-house team?",
+                        answer: (
+                            <p>
+                                We provide complete code documentation and can help transition to your internal team seamlessly.
+                            </p>
+                        ),
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Smart CTO +'
@@ -340,39 +432,36 @@ export default function FractionalCTO() {
                 <Footer/>
             </div>
             {show && (
-                <div
-                    className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-md shadow-md"
-                    style={{zIndex: "99999"}}>
-                    <div className="max-w-xl mx-auto flex gap-8 items-center">
-                        <div className='flex gap-2 items-center'>
-                            <div className="border rounded-full bg-white">
-                                <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                        <div className="flex items-center gap-3">
+                            <div className="border rounded-full bg-white flex-shrink-0">
+                                <Image src="/assets/services/user.png" alt="avatar" width={50} loading="lazy" height={50}/>
                             </div>
-                            <div className="text-xs flex items-center gap-1 text-gray-600">
-                                <p className="text-base font-semibold">Hello 👋 I&apos;m</p>
-                                <section className="h-[24px] rounded overflow-hidden  inline-block">
-                                    <div className="animate-textLoop rounded">
-                                        <div
-                                            className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                            <div className="text-xs">
+                                <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
+                                <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
+                                    <div className="animate-textLoop">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div
-                                            className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
-                                        <div
-                                            className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.81rem]">
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Software Engineer
                                         </div>
                                     </div>
                                 </section>
                             </div>
                         </div>
-                        <button className='bg-black text-white font-button rounded-md p-2 text-xs'>
+                        <button
+                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                             Book a Call
                         </button>
                     </div>
                 </div>
+
             )}
         </div>
     );

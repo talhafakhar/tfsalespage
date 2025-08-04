@@ -22,6 +22,7 @@ module.exports = {
                 'secondary': "#000000"
             },
             animation: {
+                'scroll-left': 'scroll-left 35s linear infinite',
                 'glow-pulse': 'glow-pulse 2s ease-in-out infinite alternate',
                 'shimmer': 'shimmer 1.5s linear infinite',
                 'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite',
@@ -36,6 +37,10 @@ module.exports = {
                 textLoop: 'textLoop 5s ease-in-out infinite',
             },
             keyframes: {
+                'scroll-left': {
+                    '0%': { transform: 'translateX(0%)' },
+                    '100%': { transform: 'translateX(-100%)' },
+                },
                 'glow-pulse': {
                     '0%': {
                         boxShadow: '0 0 20px rgba(234, 179, 8, 0.6), 0 0 40px rgba(234, 179, 8, 0.2)',

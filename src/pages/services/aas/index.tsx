@@ -27,6 +27,7 @@ import ContactForm from "@/components/Services/FractionalCMO/contactForm";
 import Footer from "@/components/Footer/footer";
 import IndustryCaseStudy from "@/components/Services/AaaS/CaseStudiesSection";
 import {OurProcess} from "@/components/Services/AaaS/OurProcessSection";
+import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 const inHouseData: ColumnData = {
     title: "Hiring Staff",
     color: "from-red-500 to-red-700",
@@ -65,6 +66,124 @@ export default function AaaS() {
     }, []);
     return (
         <div>
+            <NextSeo
+                title="Agency as a Service (AaaS) | TF Business Solution"
+                description="AaaS by TF Business Solution gives you a complete, done-for-you team — from marketing and sales to tech and operations. Scale faster without hiring in-house."
+                canonical="https://tfbusinesssolution.com/services/aas"
+                additionalMetaTags={[
+                    { name: 'keywords', content: 'Agency as a Service, AaaS, Outsourced Team, Full-Service Agency, Managed Marketing, Business Growth Services, Growth-as-a-Service, Sales-as-a-Service, Digital Growth Team' },
+                    { name: 'author', content: 'TF Business Solution' },
+                    { name: 'robots', content: 'index, follow' },
+                ]}
+                openGraph={{
+                    type: 'article',
+                    url: 'https://tfbusinesssolution.com/services/aas',
+                    title: 'Agency as a Service (AaaS) | Full-Stack Growth Teams for Modern Business',
+                    description: 'TF Business Solution offers AaaS — an all-in-one team for marketing, tech, SDRs, and growth ops. No hiring, no overhead, just results.',
+                    images: [
+                        {
+                            url: 'https://tfbusinesssolution.com/images/aas-og.jpg',
+                            width: 1200,
+                            height: 630,
+                            alt: 'Agency as a Service (AaaS) – TF Business Solution',
+                        },
+                    ],
+                    site_name: 'TF Business Solution',
+                }}
+                twitter={{
+                    handle: '@TFBusiness',
+                    site: '@TFBusiness',
+                    cardType: 'summary_large_image',
+                }}
+            />
+
+            <WebPageJsonLd
+                id="https://tfbusinesssolution.com/services/aas/#webpage"
+                url="https://tfbusinesssolution.com/services/aas"
+                name="Agency as a Service (AaaS) | TF Business Solution"
+                description="TF Business Solution’s AaaS model provides you with a full-stack remote team — fractional CMO, SDRs, developers, and more — all aligned to scale your business without overhead."
+                potentialAction={{
+                    target: 'https://tfbusinesssolution.com/services/aas?q={search_term_string}',
+                    queryInput: 'required name=search_term_string',
+                }}
+            />
+
+            <FAQPageJsonLd
+                mainEntity={[
+                    {
+                        id: 1,
+                        question: "What happens during the AI generalist consultation?",
+                        answer: (
+                            <p>
+                                Our AI experts analyze your current workflows, identify automation opportunities, calculate ROI, and create a custom POC strategy for your business.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 2,
+                        question: "How long does the POC development take?",
+                        answer: (
+                            <p>
+                                Most POCs are built and validated within 1–2 weeks, allowing you to see results before full deployment.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 3,
+                        question: "What tools do you use to build AI agents?",
+                        answer: (
+                            <p>
+                                We primarily use n8n for workflow automation, integrate with tools like Airtable, CRMs, and build custom APIs for complex requirements.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 4,
+                        question: "Do you provide training for our team?",
+                        answer: (
+                            <p>
+                                Yes, every project includes demo sessions, user training, and comprehensive documentation for your team.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 5,
+                        question: "What kind of follow-up support do you offer?",
+                        answer: (
+                            <p>
+                                All plans include follow-up support ranging from 30 days to 6 months, with performance monitoring and optimization.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 6,
+                        question: "Can you integrate with our existing software?",
+                        answer: (
+                            <p>
+                                Yes, we specialize in integrating AI agents with existing tools like Airtable, Slack, CRMs, databases, and custom software via APIs.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 7,
+                        question: "What if the POC doesn't meet our expectations?",
+                        answer: (
+                            <p>
+                                We refine the POC based on your feedback until it meets your requirements before moving to full development.
+                            </p>
+                        ),
+                    },
+                    {
+                        id: 8,
+                        question: "How do you ensure data security?",
+                        answer: (
+                            <p>
+                                All data is encrypted, we follow strict security protocols, and can work within your compliance requirements including SOC2, GDPR, and HIPAA.
+                            </p>
+                        ),
+                    },
+                ]}
+            />
             <div>
                 <HeroSection
                     title='Build Smarter Scale'
@@ -368,36 +487,36 @@ export default function AaaS() {
                 <Footer/>
             </div>
             {show && (
-                <div
-                    className="fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-md shadow-md"
-                    style={{zIndex: "99999"}}>
-                    <div className="max-w-xl mx-auto flex gap-8 items-center">
-                        <div className='flex gap-2 items-center'>
-                            <div className="border rounded-full bg-white">
-                                <Image src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                        <div className="flex items-center gap-3">
+                            <div className="border rounded-full bg-white flex-shrink-0">
+                                <Image src="/assets/services/user.png" loading="lazy" alt="avatar" width={50} height={50}/>
                             </div>
-                            <div className="text-xs flex items-center gap-1 text-gray-600">
-                                <p className="text-base font-semibold">Hello 👋 I&apos;m</p>
-                                <section className="h-[24px] rounded overflow-hidden  inline-block">
-                                    <div className="animate-textLoop rounded">
-                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                            <div className="text-xs">
+                                <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
+                                <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
+                                    <div className="animate-textLoop">
+                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Carlos Córdova
                                         </div>
-                                        <div className="bg-primary text-white rounded font-semibold px-3 py-1 h-[2.81rem] mb-[2.81rem]">
+                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Web Developer
                                         </div>
-                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.81rem]">
+                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
                                             Software Engineer
                                         </div>
                                     </div>
                                 </section>
                             </div>
                         </div>
-                        <button className='bg-black text-white font-button rounded-md p-2 text-xs'>
+                        <button
+                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                             Book a Call
                         </button>
                     </div>
                 </div>
+
             )}
         </div>
     );
