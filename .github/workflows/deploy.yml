@@ -24,16 +24,16 @@ jobs:
             echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /usr/local/lsws/tfbizsol"
             
             # Move to target directory
-            sudo cd /usr/local/lsws/tfbizsol
+            cd /usr/local/lsws/tfbizsol
 
             echo "🔄 Fetching tag and resetting code"
-            sudo git fetch --all --tags
-            sudo git reset --hard ${{ github.event.inputs.tag }}
+            git fetch --all --tags
+            git reset --hard ${{ github.event.inputs.tag }}
 
             echo "📦 Installing dependencies & building"
-            sudo npm install --production
-            sudo npm run build
+            npm install --production
+            npm run build
 
             echo "🚀 Restarting PM2 process"
-            sudo pm2 restart tfbizsol
-            sudo pm2 save
+            pm2 restart tfbizsol
+            pm2 save
