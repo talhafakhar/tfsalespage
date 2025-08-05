@@ -1,0 +1,39 @@
+name: 🚀 Deploy to VPS (Manual Tag Deploy)
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Git tag to deploy (e.g., v1.2.3)'
+        required: true
+        type: string
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠 SSH and deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: 22
+          script: |
+            echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /usr/local/lsws/tfbizsolution"
+            
+            # Move to target directory
+            sudo cd /usr/local/lsws/tfbizsolution
+
+            echo "🔄 Fetching tag and resetting code"
+            sudo git fetch --all --tags
+            sudo git reset --hard ${{ github.event.inputs.tag }}
+
+            echo "📦 Installing dependencies & building"
+            sudo npm install --production
+            sudo npm run build
+
+            echo "🚀 Restarting PM2 process"
+            sudo pm2 restart tfbizsolution
+            sudo pm2 save
