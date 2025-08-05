@@ -31,9 +31,9 @@ jobs:
             git reset --hard ${{ github.event.inputs.tag }}
 
             echo "📦 Installing dependencies & building"
-            npm install --production
-            npm run build
+            /root/.nvm/versions/node/v20.18.0/bin/npm install --production
+            /root/.nvm/versions/node/v20.18.0/bin/npm run build
 
             echo "🚀 Restarting PM2 process"
-            pm2 restart tfbizsol
-            pm2 save
+            /root/.nvm/versions/node/v20.18.0/bin/pm2 restart tfbizsol
+            /root/.nvm/versions/node/v20.18.0/bin/pm2 save
