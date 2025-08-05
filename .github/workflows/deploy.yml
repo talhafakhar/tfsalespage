@@ -21,10 +21,10 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
           script: |
-            echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /usr/local/lsws/tfbizsolution"
+            echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /usr/local/lsws/tfbizsol"
             
             # Move to target directory
-            sudo cd /usr/local/lsws/tfbizsolution
+            sudo cd /usr/local/lsws/tfbizsol
 
             echo "🔄 Fetching tag and resetting code"
             sudo git fetch --all --tags
@@ -35,5 +35,5 @@ jobs:
             sudo npm run build
 
             echo "🚀 Restarting PM2 process"
-            sudo pm2 restart tfbizsolution
+            sudo pm2 restart tfbizsol
             sudo pm2 save
