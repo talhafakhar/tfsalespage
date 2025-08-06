@@ -86,7 +86,7 @@ const HeadlineSection: React.FC = () => {
 
             <div className="relative max-w-6xl mx-auto text-center">
                 <div className="mb-8">
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight font-clash leading-tight">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 tracking-tight font-clash leading-tight">
                         <div className={`transform transition-all duration-1000 delay-200 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                             <span className="block mb-2">Strategy.</span>
                         </div>

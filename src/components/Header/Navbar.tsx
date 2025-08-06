@@ -26,6 +26,7 @@ const Navbar: React.FC = () => {
         { href: '/about', label: 'ABOUT' },
         { href: '/services', label: 'SERVICES', hasDropdown: true },
         { href: '/contact', label: 'CONTACT' },
+        { href: '/blogs', label: 'BLOGS' },
     ];
     const servicesDropdown = [
         {
@@ -160,7 +161,9 @@ const Navbar: React.FC = () => {
                         ))}
                     </div>
                     <div className="hidden lg:block">
-                        <button className="group  font-button px-6 py-2 bg-primary text-secondary font-semibold rounded overflow-hidden transition-all duration-400 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                        <button
+                            onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
+                            className="group  font-button px-6 py-2 bg-primary text-secondary font-semibold rounded overflow-hidden transition-all duration-400 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                             <span className="relative z-10 flex items-center space-x-2">
                 <span className="tracking-wide">GET STARTED</span>
                                 <div className="relative">
@@ -299,7 +302,9 @@ const Navbar: React.FC = () => {
                         ))}
 
                         <div className="pt-4 px-4">
-                            <button className="w-full group relative py-2 bg-primary text-secondary font-button font-bold rounded overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                            <button
+                                onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
+                                className="w-full group relative py-2 bg-primary text-secondary font-button font-bold rounded overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                                 <span className="relative z-10 flex items-center justify-center space-x-2">
                   <span className="tracking-wide">GET STARTED</span>
 

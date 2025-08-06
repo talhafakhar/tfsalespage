@@ -18,13 +18,15 @@ const Banner: React.FC<BannerProps> =  ({title,description,buttonText}) => {
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"/>
 
                 <div className="relative z-10 w-full p-8 md:p-16">
-                    <h1 className="text-2xl md:text-4xl font-bold mb-6">
+                    <h2 className="text-2xl md:text-4xl font-bold mb-6">
                         {title}
-                    </h1>
+                    </h2>
                     <p className="text-xl md:text-2xl font-light mb-8">
                         {description}
                     </p>
-                    <button
+                    <a
+                        href="https://calendly.com/talhafakhar/discoverycall"
+                        target="_blank"
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         {buttonText}
@@ -33,7 +35,7 @@ const Banner: React.FC<BannerProps> =  ({title,description,buttonText}) => {
                         >
     <ArrowRight className="w-4 h-4" />
   </span>
-                    </button>
+                    </a>
 
                 </div>
             </section>

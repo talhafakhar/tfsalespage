@@ -22,12 +22,18 @@ export default function App({ Component, pageProps }: AppProps) {
   const [showSpinner, setShowSpinner] = useState(true)
 
   useEffect(() => {
-    const first = setTimeout(() => {
+    const handleLoad = () => {
       setIsShow(false)
-    }, 2500)
+    }
+
+    if (document.readyState === 'complete') {
+      handleLoad()
+    } else {
+      window.addEventListener('load', handleLoad)
+    }
 
     return () => {
-      clearTimeout(first)
+      window.removeEventListener('load', handleLoad)
     }
   }, [])
 

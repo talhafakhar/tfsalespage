@@ -27,7 +27,7 @@ export const TimelineFlowLayout = () => {
     const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
 
     return (
-        <section ref={sectionRef} className="bg-white py-20 px-4 overflow-hidden relative">
+        <section ref={sectionRef} className="bg-white py-10 px-2 sm:px-4 overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
@@ -39,7 +39,7 @@ export const TimelineFlowLayout = () => {
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight  text-black">
+                    <h2 className="text-5xl  font-bold mb-6 leading-tight  text-black">
                         Accelerating Your Success with a
                         <br/>
                         <span className="text-yellow-400">
@@ -53,7 +53,7 @@ export const TimelineFlowLayout = () => {
 
                 <div className="relative">
                     <motion.div
-                        className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-black/10"
+                        className="absolute left-1/2 transform hidden md:block -translate-x-1/2 w-1 h-full bg-black/10"
                         initial={{ scaleY: 0 }}
                         animate={isInView ? { scaleY: 1 } : {}}
                         transition={{ duration: 1, delay: 0.3 }}
@@ -67,30 +67,29 @@ export const TimelineFlowLayout = () => {
                         return (
                             <motion.div
                                 key={index}
-                                className={`relative flex items-center mb-20 ${isLeft ? 'justify-end' : 'justify-start'}`}
+                                className={`relative flex items-center mb-20 ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}
                                 initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ duration: 0.6, delay: 0.3 + index * 0.2 }}
                                 onMouseEnter={() => setHoveredIndex(index)}
                                 onMouseLeave={() => setHoveredIndex(null)}
                             >
-                                {/* Content */}
-                                <div className={`w-5/12 ${isLeft ? 'text-right pr-12' : 'text-left pl-12'}`}>
+                                <div className={`w-full md:w-5/12 ${isLeft ? 'text-center md:text-right md:pr-12' : 'text-center md:text-left md:pl-12'}`}>
                                     <motion.div
                                         className="relative"
                                         whileHover={{ scale: 1.02 }}
                                         transition={{ type: "spring", stiffness: 300 }}
                                     >
-                                        <h3 className="text-3xl font-bold text-black mb-4 flex items-center gap-3">
+                                        <h3 className={`text-3xl font-bold text-black mb-4 flex items-center  gap-3 ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
                                             {isLeft && <CheckCircle className="text-yellow-400" size={28} />}
                                             <span>{feature.title}</span>
                                             {!isLeft && <CheckCircle className="text-yellow-400" size={28} />}
                                         </h3>
-                                        <p className="text-black/70 text-lg leading-relaxed mb-4">
+                                        <p className={`text-black/70 text-lg items-center leading-relaxed mb-4 flex ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
                                             {feature.description}
                                         </p>
                                         <motion.div
-                                            className={`inline-flex items-center gap-2 text-black font-semibold cursor-pointer ${isLeft ? 'flex-row-reverse' : ''}`}
+                                            className={`inline-flex  items-center gap-2 text-black font-semibold cursor-pointer ${isLeft ? 'flex-row-reverse' : ''}`}
                                             animate={{ x: hoveredIndex === index ? (isLeft ? -10 : 10) : 0 }}
                                         >
                                             <span>Learn more</span>
@@ -99,7 +98,7 @@ export const TimelineFlowLayout = () => {
                                     </motion.div>
                                 </div>
                                 <motion.div
-                                    className="absolute left-1/2 transform -translate-x-1/2"
+                                    className="absolute left-1/2 transform -translate-x-1/2 hidden md:block"
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     <div className="relative">

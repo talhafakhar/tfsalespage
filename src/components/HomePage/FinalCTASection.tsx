@@ -37,10 +37,10 @@ const FinalCTASection: React.FC = () => {
             </div>
             <div className="max-w-7xl relative mx-auto">
                 <div className="flex gap-16 items-center justify-center">
-                    <div className={`transition-all duration-1000 delay-300 ${
+                    <div className={`transition-all text-center duration-1000 delay-300 ${
                         isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-8'
                     }`}>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-secondary leading-tight mb-6">Ready to Scale Without the{' '}<span className="text-primary">
+                        <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-secondary leading-tight mb-6">Ready to Scale Without the{' '}<span className="text-primary">
                 Executive Overhead?
                 </span></h2>
                         <p className=" mb-4 text-center leading-relaxed">Why Choose Fractional Leadership</p>
@@ -83,7 +83,9 @@ const FinalCTASection: React.FC = () => {
                     isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
                     <div className='mx-auto'>
-                        <button
+                        <a
+                            href="https://calendly.com/talhafakhar/discoverycall"
+                            target='_blank'
                             className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                         >
                             Schedule Your Free Strategy Session Today
@@ -92,7 +94,7 @@ const FinalCTASection: React.FC = () => {
                             >
     <ArrowRight className="w-4 h-4" />
   </span>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

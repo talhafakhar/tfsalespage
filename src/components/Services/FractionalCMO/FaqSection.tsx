@@ -7,10 +7,12 @@ interface FAQ {
     question: string;
     answer: React.ReactNode;
 }
+
 interface FAQSectionProps {
     faqs: FAQ[];
 }
-const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
+
+const FAQSection: React.FC<FAQSectionProps> = ({faqs}) => {
     const [activeItems, setActiveItems] = useState<number[]>([]);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     useEffect(() => {
@@ -53,7 +55,8 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                                     transition={{duration: 0.2}}
                                     className="  text-xl"
                                 >
-                                    <PlusCircle className={activeItems.includes(item.id) ? "text-primary" : "text-white"} />
+                                    <PlusCircle
+                                        className={activeItems.includes(item.id) ? "text-primary" : "text-white"}/>
 
                                 </motion.div>
                             </div>
@@ -76,18 +79,21 @@ const FAQSection: React.FC<FAQSectionProps> = ({ faqs }) => {
                         </motion.div>
                     ))}
                 </div>
-                <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <button
+                <div
+                    className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                    }`}>
+                    <a
+                        href="https://calendly.com/talhafakhar/discoverycall"
+                        target="_blank"
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         Book a Free Consultation
                         <span
                             className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
                         >
-    <ArrowRight className="w-4 h-4" />
+    <ArrowRight className="w-4 h-4"/>
   </span>
-                    </button>
+                    </a>
                 </div>
             </div>
 

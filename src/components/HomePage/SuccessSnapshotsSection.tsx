@@ -1,12 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import {
-    ChevronDown,
-    TrendingUp,
-    Rocket,
-    DollarSign,
-    CheckCircle,
-    Target, ArrowRight
-} from 'lucide-react';
+import React, {useEffect, useState} from 'react';
+import {ArrowRight, CheckCircle, ChevronDown, DollarSign, Rocket, Target, TrendingUp} from 'lucide-react';
 
 interface SuccessStory {
     id: number;
@@ -23,7 +16,10 @@ interface SuccessStory {
     };
 }
 
-const SuccessSnapshots: React.FC = () => {
+type SuccessSnapshotProps = {
+    buttonText?: string;
+}
+const SuccessSnapshots: React.FC<SuccessSnapshotProps> = ({buttonText}) => {
     const [expandedItem, setExpandedItem] = useState<number | null>(1);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     useEffect(() => {
@@ -96,9 +92,10 @@ const SuccessSnapshots: React.FC = () => {
     return (
         <section className="bg-secondary">
             <div className="container mx-auto py-10 px-4">
-                <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
+                <div
+                    className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                    }`}>
+                    <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
                         What We&#39;ve Helped{' '}
                         <span className="text-primary">
               Founders
@@ -106,7 +103,8 @@ const SuccessSnapshots: React.FC = () => {
                         {' '}Achieve
                     </h2>
                     <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
-                        Real results from real founders who transformed their businesses with our proven strategies and solutions.
+                        Real results from real founders who transformed their businesses with our proven strategies and
+                        solutions.
                     </p>
                 </div>
                 <div className="space-y-6">
@@ -119,7 +117,7 @@ const SuccessSnapshots: React.FC = () => {
                                 className={`transition-all duration-700 ${
                                     isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'
                                 }`}
-                                style={{ transitionDelay: `${300 + index * 200}ms` }}
+                                style={{transitionDelay: `${300 + index * 200}ms`}}
                             >
                                 <div
                                     className={`
@@ -132,9 +130,11 @@ const SuccessSnapshots: React.FC = () => {
                                         className="p-4 sm:p-5 cursor-pointer"
                                         onClick={() => toggleExpanded(story.id)}
                                     >
-                                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                                        <div
+                                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                                             <div className="flex items-center gap-4">
-                                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-lg bg-white/10 transition-all duration-500">
+                                                <div
+                                                    className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-lg bg-white/10 transition-all duration-500">
                                                     <IconComponent
                                                         size={24}
                                                         className={`transition-colors duration-300 ${
@@ -152,8 +152,9 @@ const SuccessSnapshots: React.FC = () => {
               </span>
                                                     </div>
                                                     <div>
-                                                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-white/10 text-slate-300">
-                                                            <Target size={14} />
+                                                        <div
+                                                            className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs sm:text-sm font-medium bg-white/10 text-slate-300">
+                                                            <Target size={14}/>
                                                             <span>{story.solution}</span>
                                                         </div>
                                                     </div>
@@ -184,9 +185,11 @@ const SuccessSnapshots: React.FC = () => {
                                     >
                                         <div className="px-4 sm:px-6 pb-6">
                                             <div className="border-t border-white pt-4">
-                                                <div className="flex flex-wrap justify-between items-start mb-4 sm:mb-6">
-                                                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white">
-                                                        <CheckCircle size={16} />
+                                                <div
+                                                    className="flex flex-wrap justify-between items-start mb-4 sm:mb-6">
+                                                    <div
+                                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white">
+                                                        <CheckCircle size={16}/>
                                                         <span>{story.details.clientType}</span>
                                                     </div>
                                                 </div>
@@ -217,8 +220,10 @@ const SuccessSnapshots: React.FC = () => {
                                                         </h4>
                                                         <ul className="space-y-3">
                                                             {story.details.results.map((result, idx) => (
-                                                                <li key={idx} className="flex items-start gap-2 text-sm text-slate-300">
-                                                                    <CheckCircle size={16} className="text-emerald-400 mt-0.5" />
+                                                                <li key={idx}
+                                                                    className="flex items-start gap-2 text-sm text-slate-300">
+                                                                    <CheckCircle size={16}
+                                                                                 className="text-emerald-400 mt-0.5"/>
                                                                     <span>{result}</span>
                                                                 </li>
                                                             ))}
@@ -234,18 +239,20 @@ const SuccessSnapshots: React.FC = () => {
                         );
                     })}
                 </div>
-<div className="mt-8 text-center">
-    <button
-        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-    >
-        Choose Fractional CMO Today
-        <span
-            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
-        >
-    <ArrowRight className="w-4 h-4" />
+                <div className="mt-8 text-center">
+                    <a
+                        href="https://calendly.com/talhafakhar/discoverycall"
+                        target="_blank"
+                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
+                    >
+                        {buttonText}
+                        <span
+                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        >
+    <ArrowRight className="w-4 h-4"/>
   </span>
-    </button>
-</div>
+                    </a>
+                </div>
             </div>
         </section>
     );

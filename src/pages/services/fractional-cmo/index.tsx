@@ -300,7 +300,9 @@ export default function FractionalCMOServicePage() {
                         },
                     ]}
                 />
-                <SuccessSnapshots/>
+                <SuccessSnapshots
+                buttonText="Choose Fractional CMO Today"
+                />
                 <Testimonial
                     testimonials={[
                         {

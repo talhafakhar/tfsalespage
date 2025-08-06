@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import Navbar from "@/components/Header/Navbar";
 import Image from "next/image";
 import InfiniteLogoSlider from "@/components/Common/ClientsSlider";
-
 const partnerNames: string[] = [
     "B2B SaaS Companies",
     "AI Startups",
@@ -32,7 +31,7 @@ const HeroSection: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                         <div className="text-center ">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-4xl  md:text-6xl  lg:text-7xl font-righteous  font-bold text-white mb-6">
+                                <h1 className="text-5xl  md:text-6xl  lg:text-7xl font-righteous  font-bold text-white mb-6">
                                     Fractional Leadership <span className="text-primary flex justify-center ">Founder Strategy
                                     </span>  Team Training.
 
@@ -47,7 +46,10 @@ const HeroSection: React.FC = () => {
 
                             <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center  items-center mb-4">
-                                    <button className="group text-sm p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
+                                    <a
+                                        href="https://calendly.com/talhafakhar/discoverycall"
+                                        target="_blank"
+                                        className="group text-sm p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
                                         <span className="relative z-10 flex items-center space-x-2">
                                             <span className="tracking-wide">Get Growth Advice</span>
                                             <svg
@@ -57,7 +59,7 @@ const HeroSection: React.FC = () => {
                                                       d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                                             </svg>
                                         </span>
-                                    </button>
+                                    </a>
                                     <button className="group p-2 border bg-white/20 text-sm border-primary text-primary font-button font-bold rounded-md transition-all duration-500">
                                         <span className="relative z-10 flex items-center space-x-2">
                                             <svg className="w-5 h-5 transform group-hover:scale-110 transition-transform duration-300"

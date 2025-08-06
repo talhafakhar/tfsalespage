@@ -50,7 +50,7 @@ const Testimonial:React.FC<Testimonial> = ({testimonials}) => {
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
             <div className=" relative max-w-7xl mx-auto px-6 z-10">
-                <h2 className="text-5xl text-center font-bold  mb-8 leading-tight">
+                <h2 className="text-4xl md:text-5xl text-center font-bold  mb-8 leading-tight">
                     What Our{' '}<span className="text-primary">Clients Say</span>
                 </h2>
                 <div className="relative mx-auto max-w-4xl">

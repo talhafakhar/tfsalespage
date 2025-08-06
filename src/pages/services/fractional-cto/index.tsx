@@ -287,7 +287,9 @@ export default function FractionalCTO() {
                             ]
                         }
                     ]}/>
-                <SuccessSnapshots/>
+                <SuccessSnapshots
+                    buttonText="Choose Fractional CTO Today"
+                />
                 <Testimonial
                     testimonials={[
                         {

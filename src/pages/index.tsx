@@ -54,7 +54,6 @@ export default function Home() {
                     cardType: 'summary_large_image',
                 }}
             />
-
             <OrganizationJsonLd
                 type="Organization"
                 id="https://tfbusinesssolution.com/#organization"
@@ -184,7 +183,9 @@ export default function Home() {
                             }
                         ]}
                     />
-                    <SuccessSnapshots/>
+                    <SuccessSnapshots
+                        buttonText="Book a Free Discovery Call"
+                    />
                     <FinalCTASection/>
                     <FAQSection
                         faqs={[
@@ -265,6 +266,7 @@ export default function Home() {
                                 </div>
                             </div>
                             <button
+                                onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                                 className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
                                 Book a Call
                             </button>

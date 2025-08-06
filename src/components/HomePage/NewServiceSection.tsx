@@ -50,7 +50,7 @@ const ServicesSection: React.FC = () => {
     const sectionRef = useRef(null);
     const isInView = useInView(sectionRef, { once: true, margin: "-300px" });
      return (
-        <section ref={sectionRef} className="relative px-4 py-20 bg-secondary overflow-hidden">
+        <section ref={sectionRef} className="relative px-4 py-10 bg-secondary overflow-hidden">
             <div className="absolute inset-0 bg-secondary" />
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <motion.div
@@ -71,7 +71,7 @@ const ServicesSection: React.FC = () => {
                 />
             </div>
             <motion.div
-                className="absolute top-5 right-0 pointer-events-none"
+                className="absolute top-5 right-0 pointer-events-none sm:block hidden"
                 initial={{ opacity: 0, y: 50 }}
                 transition={
                     isInView
@@ -112,30 +112,21 @@ const ServicesSection: React.FC = () => {
             >
                 <div>
                     <motion.div
-                        className="flex items-center justify-center space-x-4"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="text-center mb-2"
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.6 }}
                     >
-                        <div className="text-4xl tracking-widest">
-                            <span className="text-[16px] text-white">O U R</span>
-                        </div>
+                        <h2 className="text-5xl  font-bold mb-6 leading-tight  text-white">
+                          Our
+                            <span className="text-yellow-400">
+                            {" "}Services
+                        </span>
+                        </h2>
+                        <p className="text-lg  text-white/70 max-w-3xl mx-auto">
+                            We provide a range of services designed to help you scale your business with fractional leadership expertise.
+                        </p>
                     </motion.div>
-                    <motion.h1
-                        className="text-6xl font-bold mt-2 font-clash"
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                        transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                        <span className="text-white">Services</span>
-                    </motion.h1>
-                    <motion.div
-                        className="w-full h-0.5 bg-white mt-4"
-                        initial={{ scaleX: 0 }}
-                        animate={isInView ? { scaleX: 1 } : { scaleX: 0 }}
-                        transition={{ duration: 0.8, delay: 0.4 }}
-                        style={{ transformOrigin: "left" }}
-                    />
                 </div>
             </motion.div>
             <motion.div
