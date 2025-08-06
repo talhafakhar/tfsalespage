@@ -43,11 +43,12 @@ interface ServicesProps {
 const Services: React.FC<ServicesProps> = ({ industries }) => {
     const gridColsClass = (() => {
         if (industries.length === 1) return "grid-cols-1";
-        if (industries.length === 2) return "grid-cols-2";
-        if (industries.length === 3) return "grid-cols-3";
-        if (industries.length === 4) return "grid-cols-2";
-        return "grid-cols-3";
+        if (industries.length === 2) return "grid-cols-1 sm:grid-cols-2";
+        if (industries.length === 3) return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
+        if (industries.length === 4) return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-2";
+        return "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
     })();
+
     return (
         <section className="relative bg-black text-white py-20 overflow-hidden">
             <motion.div
@@ -87,7 +88,7 @@ const Services: React.FC<ServicesProps> = ({ industries }) => {
                     variants={containerVariants}
                     initial="hidden"
                     animate="visible"
-                    className={`grid ${gridColsClass} gap-8`}
+                    className={`grid ${gridColsClass}  gap-8`}
                 >
                     {industries.map((industry, index) => (
                         <motion.div
@@ -164,6 +165,7 @@ const Services: React.FC<ServicesProps> = ({ industries }) => {
                     className="mt-10 text-center"
                 >
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         Book A Free Sales Audit

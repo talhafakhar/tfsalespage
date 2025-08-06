@@ -108,7 +108,7 @@ const HowWeStarted = () => {
                         How We <span className="text-primary">Started</span>
                     </h2>
                     <p className="max-w-xl mx-auto text-lg">
-                        From firsthand pain to powerful purpose — why TF Business Solutions was born.
+                        From firsthand pain to powerful purpose why TF Business Solutions was born.
                     </p>
                 </motion.div>
                 <motion.div
@@ -127,13 +127,13 @@ const HowWeStarted = () => {
                         </p>
 
                         <div className="border-l-4 border-primary bg-primary/10 rounded-md p-6 text-gray-800 italic">
-                            “The breaking point? Seeing another promising startup shut down — not because the product was bad, but
+                            “The breaking point? Seeing another promising startup shut down not because the product was bad, but
                             because no one knew it existed.”
                         </div>
 
                         <p>
                             That’s when we said <span className="text-primary font-semibold">“enough”</span> and built
-                            <span className="font-semibold text-primary"> TF Business Solutions</span> — a leadership layer startups
+                            <span className="font-semibold text-primary"> TF Business Solutions</span> a leadership layer startups
                             can trust without breaking the bank.
                         </p>
                     </div>

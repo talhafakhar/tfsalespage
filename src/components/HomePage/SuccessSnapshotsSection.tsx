@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {ArrowRight, CheckCircle, ChevronDown, DollarSign, Rocket, Target, TrendingUp} from 'lucide-react';
+import {ArrowRight, CheckCircle, ChevronDown, Target} from 'lucide-react';
 
-interface SuccessStory {
+export interface SuccessStory {
     id: number;
     icon: React.ComponentType<{ size?: number; className?: string }>;
     metric: string;
@@ -18,72 +18,15 @@ interface SuccessStory {
 
 type SuccessSnapshotProps = {
     buttonText?: string;
-}
-const SuccessSnapshots: React.FC<SuccessSnapshotProps> = ({buttonText}) => {
+    stories: SuccessStory[];
+};
+const SuccessSnapshots: React.FC<SuccessSnapshotProps> = ({ buttonText, stories }) => {
     const [expandedItem, setExpandedItem] = useState<number | null>(1);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     useEffect(() => {
         setIsVisible(true);
     }, []);
-    const successStories: SuccessStory[] = [
-        {
-            id: 1,
-            icon: TrendingUp,
-            metric: "300%",
-            achievement: "pipeline growth in 60 days",
-            timeline: "60 Days",
-            solution: "Cold Outreach Engine",
-            details: {
-                challenge: "Struggling with inconsistent lead generation and low conversion rates from cold outreach efforts.",
-                approach: "Implemented our proprietary Cold Outreach Engine with personalized sequences, A/B testing, and advanced analytics.",
-                results: [
-                    "300% increase in qualified pipeline",
-                    "65% higher response rates",
-                    "40% reduction in cost per lead",
-                    "Automated follow-up sequences"
-                ],
-                clientType: "B2B SaaS Startup"
-            },
-        },
-        {
-            id: 2,
-            icon: Rocket,
-            metric: "$15K MRR",
-            achievement: "from MVP in 90 days",
-            timeline: "90 Days",
-            solution: "Fractional CTO Support",
-            details: {
-                challenge: "Technical founder needed expert guidance to scale MVP architecture and implement growth features.",
-                approach: "Provided fractional CTO services with technical strategy, team mentoring, and hands-on development support.",
-                results: [
-                    "MVP to $15K MRR in 90 days",
-                    "Scalable architecture implemented",
-                    "Technical team productivity increased 200%",
-                    "Product-market fit achieved faster"
-                ],
-                clientType: "Tech Startup"
-            },
-        },
-        {
-            id: 3,
-            icon: DollarSign,
-            metric: "$200K+",
-            achievement: "saved annually with automation",
-            timeline: "12 Months",
-            solution: "Intelligent Sales Automation",
-            details: {
-                challenge: "Manual sales processes were consuming too much time and resources, limiting growth potential.",
-                approach: "Designed and implemented intelligent sales automation solutions with AI-powered workflows and analytics.",
-                results: [
-                    "Over $200,000 in annual savings",
-                    "80% reduction in manual tasks",
-                    "50% faster sales cycle",
-                    "Real-time performance insights"
-                ],
-                clientType: "Growing Enterprise"
-            },
-        }
-    ];
+
 
     const toggleExpanded = (id: number): void => {
         setExpandedItem(expandedItem === id ? null : id);
@@ -108,7 +51,7 @@ const SuccessSnapshots: React.FC<SuccessSnapshotProps> = ({buttonText}) => {
                     </p>
                 </div>
                 <div className="space-y-6">
-                    {successStories.map((story, index) => {
+                    {stories.map((story, index) => {
                         const IconComponent = story.icon;
                         const isExpanded = expandedItem === story.id;
                         return (

@@ -10,8 +10,9 @@ type TransformProps = {
     titleTwo:string;
     description: string;
     buttonText: string;
+    src: string;
 };
-const Transform: React.FC<TransformProps> = ({title,titleTwo, description, buttonText}) => {
+const Transform: React.FC<TransformProps> = ({title,titleTwo, description, buttonText,src}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({triggerOnce: true, threshold: 0.2});
     useEffect(() => {
@@ -64,12 +65,12 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                     className="w-full"
                 >
                     <Image
-                        src="/assets/services/3d.webp"
+                        src={src}
                         alt="3d"
-                        width={600}
+                        width={500}
                         loading="lazy"
-                        height={600}
-                        className="object-cover"
+                        height={500}
+                        className="object-cover mx-auto"
                     />
                 </motion.div>
                 <motion.div
@@ -100,6 +101,7 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                         <div
                             className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center md:justify-start items-center mt-8">
                             <button
+                                onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                                 className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none">
                                 {buttonText}
                                 <span

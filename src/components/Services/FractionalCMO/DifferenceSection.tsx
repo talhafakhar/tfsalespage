@@ -199,6 +199,7 @@ const Difference: React.FC<DifferenceProps> = ({titleTwo,titleThree,description,
                 <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                 }`}>
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         Choose Fractional CMO Today

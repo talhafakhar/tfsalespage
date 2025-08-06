@@ -42,7 +42,7 @@ const IndustriesWeServe:React.FC<IndustriesWeServeProps> = ({description,industr
                     </p>
                 </div>
 
-                <div className='flex flex-col md:flex-row justify-between  items-center gap-1'>
+                <div className='flex flex-col md:flex-row justify-center md:justify-between  items-center gap-1'>
                     <div className="space-y-8">
                         {industries.map((industry, index) => (
                             <motion.div
@@ -92,8 +92,9 @@ const IndustriesWeServe:React.FC<IndustriesWeServeProps> = ({description,industr
                         >
                         <Image
                             src="/assets/services/cool-astronot.webp"
-                            alt=''
+                            alt='Cool Astronaut'
                             width='700'
+                            className="mx-auto"
                             height='700'
                             loading="lazy"
                         />

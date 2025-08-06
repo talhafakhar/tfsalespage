@@ -49,19 +49,19 @@ const Navbar: React.FC = () => {
         },
         {
             label: "AaaS",
-            href: "/services/aas",
+            href: "/services/ai-agent-as-a-service",
             icon: Settings,
             description: "Automation-as-a-Service for scaling operations."
         },
         {
             label: "Sales Automation",
-            href: "/services/sales-automation",
+            href: "/services/sales-automation-for-startups",
             icon: Zap,
             description: "Automate your sales workflow and outreach."
         },
         {
             label: "Sales Consultation",
-            href: "/services/sales-consultation",
+            href: "/services/b2b-sales-consultation",
             icon: MessageSquare,
             description: "Expert guidance to improve your sales process."
         }
@@ -102,6 +102,7 @@ const Navbar: React.FC = () => {
                                         className="relative w-full"
                                         onMouseEnter={() => setHoveredService(true)}
                                         onMouseLeave={() => setHoveredService(false)}
+                                        onClick={() => setHoveredService(!hoveredService)}
                                     >
                                         <button
                                             className={`relative w-full px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center justify-center gap-1`}
@@ -136,7 +137,7 @@ const Navbar: React.FC = () => {
                                                             </div>
                                                             <div className="flex flex-col min-w-0">
                                                                 <span className="font-semibold text-white text-sm">{service.label}</span>
-                                                                <span className="text-xs text-gray-400 line-clamp-2">{service.description}</span>
+                                                                <span className="text-xs text-gray-400">{service.description}</span>
                                                             </div>
                                                         </Link>
                                                     );

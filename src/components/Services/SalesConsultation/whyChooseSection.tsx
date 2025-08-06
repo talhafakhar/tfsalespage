@@ -85,9 +85,6 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({title, description, features})
                         ))}
                     </div>
                 </div>
-
-
-
             </div>
         </section>
     );

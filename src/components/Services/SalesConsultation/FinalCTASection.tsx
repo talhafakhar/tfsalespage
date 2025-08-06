@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import {
-    ArrowDown,
-    ArrowRight,
-    CheckCircle
-} from 'lucide-react';
-import { motion, type Variants } from 'framer-motion';
-type FinalCTAsSection =  {
+import React, {useEffect, useState} from 'react';
+import {ArrowDown, ArrowRight, CheckCircle} from 'lucide-react';
+import {motion, type Variants} from 'framer-motion';
+
+type FinalCTAsSection = {
     description?: string;
     buttonText?: string;
     buttonTextTwo?: string;
     quote?: string;
 }
-const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,buttonTextTwo,quote}) => {
+const FinalCTASection: React.FC<FinalCTAsSection> = ({description, buttonText, buttonTextTwo, quote}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -19,7 +16,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
     }, []);
 
     const containerVariants: Variants = {
-        hidden: { opacity: 0 },
+        hidden: {opacity: 0},
         visible: {
             opacity: 1,
             transition: {
@@ -30,7 +27,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
     };
 
     const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 30 },
+        hidden: {opacity: 0, y: 30},
         visible: {
             opacity: 1,
             y: 0,
@@ -50,9 +47,12 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
         <section className="bg-background py-10 px-4 relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0">
-                <div className="absolute top-20 right-20 w-96 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-20 left-20 w-96 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-primary/5 to-warning/5 rounded-full blur-3xl"></div>
+                <div
+                    className="absolute top-20 right-20 w-96 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+                <div
+                    className="absolute bottom-20 left-20 w-96 h-48 bg-primary/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-r from-primary/5 to-warning/5 rounded-full blur-3xl"></div>
             </div>
 
             {/* Decorative Grid */}
@@ -104,7 +104,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                                 key={index}
                                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted border border-border"
                             >
-                                <CheckCircle className="w-4 h-4 text-primary" />
+                                <CheckCircle className="w-4 h-4 text-primary"/>
                                 <span className="text-sm font-medium">{benefit}</span>
                             </div>
                         ))}
@@ -112,7 +112,7 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
 
                     <motion.span
                         className="flex justify-center"
-                        animate={{ y: [0, 10, 0] }}
+                        animate={{y: [0, 10, 0]}}
                         transition={{
                             duration: 1.5,
                             repeat: Infinity,
@@ -126,16 +126,18 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                     variants={itemVariants}
                 >
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         {buttonText}
                         <span
                             className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
                         >
-    <ArrowRight className="w-4 h-4" />
+    <ArrowRight className="w-4 h-4"/>
   </span>
                     </button>
-                    {buttonTextTwo && ( <button
+                    {buttonTextTwo && (<button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="px-6 py-2.5 rounded-full border border-secondary font-semibold transition-transform duration-300 hover:scale-105 hover:border-primary focus:outline-none"
                     >
                         {buttonTextTwo}
@@ -143,9 +145,12 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description,buttonText,but
                     </button>)}
                 </motion.div>
             </motion.div>
-            <p className="text-center italic font-semibold text-lg mt-3">
-                &#34;{quote}&#34;
-            </p>
+            {quote && (
+                <p className="text-center italic font-semibold text-lg mt-3">
+                    &#34;{quote}&#34;
+                </p>
+            )
+            }
         </section>
     );
 };

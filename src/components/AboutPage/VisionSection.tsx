@@ -58,17 +58,10 @@ const MissionVision = () => {
                             <h3 className="text-3xl lg:text-4xl font-bold  mb-4 text-primary ">
                                 Our Mission
                             </h3>
-                            <p className="text-sm text-gray-500 mb-4 font-medium">
-                                (The Simple Version)
-                            </p>
                             <p className="leading-relaxed font-medium">
                                 Get you the senior talent and trained teams you need to{" "}
                                 <span className="text-primary font-bold">actually make money</span>.
                             </p>
-                            <div className="flex items-center gap-2 cursor-pointer text-black hover:text-primary mt-8 font-medium tracking-colors duration-300">
-                                <span>Learn how we do it</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </div>
                         </div>
                     </motion.div>
                     <motion.div
@@ -90,9 +83,6 @@ const MissionVision = () => {
                             <h3 className="text-3xl lg:text-4xl font-bold  mb-4 ">
                                 Our Vision
                             </h3>
-                            <p className="text-sm text-gray-500 mb-4 font-medium">
-                                (Even Simpler)
-                            </p>
                             <p className="leading-relaxed font-medium">
                                 Build you{" "}
                                 <span className="text-primary font-bold">profitable systems</span>{" "}
@@ -100,10 +90,6 @@ const MissionVision = () => {
                                 <span className="text-primary font-bold">without us</span>.
                             </p>
 
-                            <div className="flex items-center gap-2 text-black hover:text-primary mt-8 font-medium  transition-all duration-300">
-                                <span>See our approach</span>
-                                <ArrowRight className="w-4 h-4" />
-                            </div>
                         </div>
                     </motion.div>
                 </div>

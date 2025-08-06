@@ -158,6 +158,7 @@ const TeamIntegration: React.FC = () => {
                         Ready to Integrate with Your Team?
                     </h3>
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-primary focus:outline-none"
                     >
                         Book a Free Consultation

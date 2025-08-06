@@ -61,7 +61,9 @@ const PricingSection: React.FC<PricingSectionProps> = ({ description, plans }) =
                                 <div>
                                     <span className={`text-xs ${plan.highlighted ? 'text-gray-400' : ''}`}>{plan.billing}</span>
                                 </div>
-                                <Button>Start Today</Button>
+                                <Button
+
+                                >Start Today</Button>
                             </div>
                             <FeatureList features={plan.features} highlighted={plan.highlighted} />
                         </Card>
@@ -95,9 +97,9 @@ const Card = ({ children, highlighted = false }: { children: React.ReactNode; hi
 );
 
 const Button = ({ children }: { children: React.ReactNode }) => (
-    <div className="flex mt-6 rounded bg-gradient-to-tr from-primary to-white border-primary border-2 shadow-lg mx-auto rgb-button will-change-transform">
+    <div  className="flex mt-6 rounded bg-gradient-to-tr from-primary to-white border-primary border-2 shadow-lg mx-auto rgb-button will-change-transform">
         <div className="flex-1 font-button text-md bg-white/90 px-6 py-2 hover:scale-105 rounded hover:-translate-y-2 transition duration-500 items-center flex justify-center hover:shadow-md will-change">
-            <button className="flex cursor-pointer items-center gap-1 will-change">
+            <button    onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')} className="flex cursor-pointer items-center gap-1 will-change">
                 <span className="will-change-transform">{children}</span>
                 <ArrowRight className="w-5" />
             </button>
@@ -140,7 +142,7 @@ const CallToActionCard = ({
         <div>
             <h3 className="text-2xl font-medium font-button italic text-gray-900 mb-3">{title}</h3>
             <p className="text-xs mb-6">{description}</p>
-            <button className={`${highlighted ? "bg-secondary text-white" : "border border-secondary"} py-1 font-nav px-2 rounded-md flex items-center`}>
+            <button    onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')} className={`${highlighted ? "bg-secondary text-white" : "border border-secondary"} py-1 font-nav px-2 rounded-md flex items-center`}>
                 {buttonText}
             </button>
         </div>

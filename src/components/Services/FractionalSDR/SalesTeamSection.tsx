@@ -117,6 +117,7 @@ const SalesTeamSection = () => {
                 </div>
                 <div className="text-center mt-16 ">
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         Book a Free Consultation

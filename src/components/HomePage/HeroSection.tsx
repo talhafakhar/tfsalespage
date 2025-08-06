@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
         <div>
             <Navbar/>
             <section
-                className="flex bg-black items-center min-h-screen bg-cover bg-center pt-24"
+                className="flex bg-black items-center min-h-screen bg-cover bg-center "
                 style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}
             >
                 <div className="container mx-auto px-4 py-5">

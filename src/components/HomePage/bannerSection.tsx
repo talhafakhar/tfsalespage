@@ -12,7 +12,7 @@ const Banner: React.FC<BannerProps> =  ({title,description,buttonText}) => {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: "url('/assets/home/banner.jpg')",
+                        backgroundImage: "url('/assets/home/banner-bg.webp')",
                     }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"/>

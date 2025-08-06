@@ -58,7 +58,7 @@ const ContactForm = () => {
                             </div>
                             <div>
                                 <label className="block text-sm font-medium text-black mb-2">
-                                    LinkedIn/X/Instagram <span className="text-red-500">*</span>
+                                    LinkedIn <span className="text-red-500">*</span>
                                 </label>
                                 <input
                                     type="text"

@@ -2,7 +2,7 @@ import Footer from "@/components/Footer/footer";
 import Transform from "@/components/Services/FractionalCMO/TransformSection";
 import BenefitsSection from "@/components/Services/FractionalCMO/BenefitSection";
 import SkillSet from "@/components/Services/FractionalCMO/SkillSetSection";
-import SuccessSnapshots from "@/components/HomePage/SuccessSnapshotsSection";
+import SuccessSnapshots, {SuccessStory} from "@/components/HomePage/SuccessSnapshotsSection";
 import Testimonial from "@/components/HomePage/Testimonials";
 import Banner from "@/components/HomePage/bannerSection";
 import Difference, {ColumnData} from "@/components/Services/FractionalCMO/DifferenceSection";
@@ -32,33 +32,110 @@ import {
 } from "lucide-react";
 import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 const inHouseData: ColumnData = {
-    title: "In-House CMO",
+    title: "In-House CTO",
     color: "from-red-500 to-red-700",
     icon: Building2,
     canvasType: 'negative',
     features: [
-        {text: "$200K+ annual salary plus benefits", icon: DollarSign, positive: false},
-        {text: "3-6 months hiring and onboarding time", icon: Clock, positive: false},
-        {text: "Need to hire entire team separately", icon: Target, positive: false},
-        {text: "Fixed costs regardless of performance", icon: Users, positive: false},
-        {text: "Difficult to replace if not working out", icon: TrendingUp, positive: false},
-        {text: "Limited to one person's expertise", icon: Building2, positive: false}
+        { text: "$250K+ annual salary plus equity", icon: DollarSign, positive: false },
+        { text: "4-8 months hiring and onboarding time", icon: Clock, positive: false },
+        { text: "Need to hire entire dev team separately", icon: Target, positive: false },
+        { text: "Fixed costs regardless of performance", icon: Users, positive: false },
+        { text: "Difficult to replace if not working out", icon: TrendingUp, positive: false },
+        { text: "Limited to one person's expertise", icon: Building2, positive: false }
     ]
 };
 const fractionalData: ColumnData = {
-    title: "Fractional CMO",
+    title: "Fractional CTO",
     color: "from-green-500 to-green-700",
     icon: Zap,
     canvasType: 'positive',
     features: [
-        {text: "Pay only for hours worked", icon: DollarSign, positive: true},
-        {text: "Start within 1-2 weeks maximum", icon: Clock, positive: true},
-        {text: "Complete team included from day one", icon: Target, positive: true},
-        {text: "Performance-based engagement model", icon: Users, positive: true},
-        {text: "Easy to adjust or replace team members", icon: TrendingUp, positive: true},
-        {text: "Access to diverse expert specialists", icon: Building2, positive: true}
+        { text: "Pay only for hours worked", icon: DollarSign, positive: true },
+        { text: "Start within 1-2 weeks maximum", icon: Clock, positive: true },
+        { text: "Complete development team included", icon: Target, positive: true },
+        { text: "Performance-based engagement model", icon: Users, positive: true },
+        { text: "Easy to adjust or replace team members", icon: TrendingUp, positive: true },
+        { text: "Access to diverse technical specialists", icon: Building2, positive: true }
     ]
 };
+const successStories: SuccessStory[] = [
+    {
+        id: 1,
+        icon: TrendingUp,
+        metric: '300%',
+        achievement: 'pipeline growth in 60 days',
+        timeline: '60 Days',
+        solution: 'Cold Outreach Engine',
+        details: {
+            challenge: 'Struggling with inconsistent lead generation',
+            approach: 'Implemented our proprietary Cold Outreach Engine',
+            results: [
+                '300% increase in qualified pipeline',
+                '65% higher response rates',
+                '40% reduction in cost per lead',
+                'Automated follow-up sequences',
+            ],
+            clientType: 'B2B SaaS Startup',
+        },
+    },
+    {
+        id: 2,
+        icon: Rocket,
+        metric: '$15K MRR',
+        achievement: 'from MVP in 90 days',
+        timeline: '90 Days',
+        solution: 'Fractional CTO Support',
+        details: {
+            challenge: 'Technical founder needed expert guidance',
+            approach: 'Provided fractional CTO services',
+            results: [
+                'MVP to $15K MRR in 90 days',
+                'Scalable architecture implemented',
+                'Technical team productivity increased 200%',
+                'Product-market fit achieved faster',
+            ],
+            clientType: 'Tech Startup',
+        },
+    },
+    {
+        id: 3,
+        icon: DollarSign,
+        metric: '$200K+',
+        achievement: 'saved annually with automation',
+        timeline: '12 Months',
+        solution: 'Intelligent Sales Automation',
+        details: {
+            challenge: 'Manual sales processes were consuming too much',
+            approach: 'Designed and implemented intelligent sales automation',
+            results: [
+                'Over $200,000 in annual savings',
+                '80% reduction in manual tasks',
+                '50% faster sales cycle',
+                'Real-time performance insights',
+            ],
+            clientType: 'Growing Enterprise',
+        },
+    },
+    {
+        id: 4,
+        icon: DollarSign,
+        metric: '$200K+',
+        achievement: 'saved annually with automation',
+        timeline: '12 Months',
+        solution: ' Tech Vision, No Execution Muscle',
+        details: {
+            challenge: 'Deployed Fractional CTO with dev team',
+            approach: 'Product roadmap, releases, QA cycles',
+            results: [
+                '3+ years of continued engagement',
+                'Founders focused on GTM, not tech',
+                'Platform shipped, improved, scaled consistently',
+            ],
+            clientType: 'Growing Enterprise',
+        },
+    },
+];
 export default function FractionalCTO() {
     const [show, setShow] = useState(false);
     useEffect(() => {
@@ -171,6 +248,7 @@ export default function FractionalCTO() {
                     titleTwo="Fail Building Products"
                     description=" Great ideas aren't enough. Most startups fail because they build slowly, over-engineer, or hire wrong talent. Product development requires strategy, architecture, AI integration, team management, and scalable systems. One developer can't handle everything. You need a complete tech team led by an experienced CTO."
                     buttonText="Build My Tech Team"
+                    src="/assets/services/cto-3d.webp"
                 />
                 <BenefitsSection
                     title="Complete"
@@ -289,6 +367,7 @@ export default function FractionalCTO() {
                     ]}/>
                 <SuccessSnapshots
                     buttonText="Choose Fractional CTO Today"
+                    stories={successStories}
                 />
                 <Testimonial
                     testimonials={[
@@ -298,7 +377,7 @@ export default function FractionalCTO() {
                             author: "Sarah",
                             role: "CEO",
                             rating: 5,
-                            image: "/assets/services/user.png",
+                            image: "/assets/services/girl.webp",
                             company: "Digital Marketing Agency"
                         },
                         {
@@ -307,7 +386,7 @@ export default function FractionalCTO() {
                             author: "Fariha",
                             role: "Founder ",
                             rating: 5,
-                            image: "/assets/services/user.png",
+                            image: "/assets/services/girl.webp",
                             company: "Ecomerce Marketplace"
                         },
                         {
@@ -316,7 +395,7 @@ export default function FractionalCTO() {
                             author: "Richard",
                             role: "CMO",
                             rating: 5,
-                            image: "/assets/services/user.png",
+                            image: "/assets/services/user.webp",
                             company: "Real Estate Agency"
                         }
                     ]}/>
@@ -326,8 +405,8 @@ export default function FractionalCTO() {
                     buttonText='Start My Product Journey'
                 />
                 <Difference
-                    titleTwo='Hiring an In-House CMO'
-                    titleThree='Fractional CMO'
+                    titleTwo='Hiring an In-House CTO'
+                    titleThree='Fractional CTO'
                     description=' Real results from real founders who transformed their businesses with our proven strategies and solutions.'
                     inHouseData={inHouseData}
                     fractionalData={fractionalData}
@@ -433,34 +512,47 @@ export default function FractionalCTO() {
                 <ContactForm/>
                 <Footer/>
             </div>
-            {show && (
-                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+             {show && (
+                <div
+                    className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
                     <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
-                        <div className="flex items-center gap-3">
-                            <div className="border rounded-full bg-white flex-shrink-0">
-                                <Image src="/assets/services/user.png" alt="avatar" width={50} loading="lazy" height={50}/>
+                        <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
+                            <div className="border rounded-full bg-white flex-shrink-0 md:block hidden">
+                                <Image loading="lazy" src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
                             </div>
-                            <div className="text-xs">
-                                <p className="text-sm font-semibold">Hello 👋 I&apos;m</p>
-                                <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
-                                    <div className="animate-textLoop">
-                                        <div className="bg-sky-500 text-white rounded font-semibold px-3 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
-                                            Carlos Córdova
+                            <div>
+                                <div className="text-xs">
+                                    <p className="text-sm font-semibold">Hello 👋 We&apos;re</p>
+                                    <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
+                                        <div className="animate-textLoop">
+                                            <div className="bg-sky-500 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                                Your Fractional Growth Team
+                                            </div>
+                                            <div className="bg-primary text-white rounded text-nowrap font-semibold px-1 py-3 h-[2.5rem] mt-2 mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                                Experts in Sales, Tech & Marketing
+                                            </div>
+                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                                The Team Behind 14+ Startup Wins
+                                            </div>
+                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                                Not Your Average Agency
+                                            </div>
+                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                                Here to Build What You Can’t Hire
+                                            </div>
                                         </div>
-                                        <div className="bg-primary text-white rounded font-semibold px-3 py-3 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
-                                            Web Developer
-                                        </div>
-                                        <div className="bg-red-700 text-white rounded font-semibold px-3 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
-                                            Software Engineer
-                                        </div>
-                                    </div>
-                                </section>
+                                    </section>
+                                </div>
+                                <div className="flex justify-center">
+                                    <button
+                                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
+                                        className="bg-secondary text-white font-button text-nowrap rounded-md px-2 py-1 text-xs sm:text-sm mt-2 sm:mt-0">
+                                        Book a Call
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <button
-                            className="bg-black text-white font-button text-nowrap rounded-md px-4 py-2 text-xs sm:text-sm mt-2 sm:mt-0">
-                            Book a Call
-                        </button>
+
                     </div>
                 </div>
 
