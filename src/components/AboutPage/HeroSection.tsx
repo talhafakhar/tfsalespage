@@ -4,12 +4,12 @@ import InfiniteLogoSlider from "@/components/Common/ClientsSlider";
 
 const AboutHero = () => {
     const scrollingTexts = [
-        "AI Vision",
-        "Smart Design",
-        "Visual Brilliance",
-        "AI Vision",
-        "Smart Design",
-        "Visual Brilliance"
+        "Fractional C-Level Executives",
+        "Startup Execution",
+        "Ai System",
+        "Fractional C-Level Executives",
+        "Startup Execution",
+        "Ai System",
     ];
     const [isVisible, setIsVisible] = useState(false);
     useEffect(() => {

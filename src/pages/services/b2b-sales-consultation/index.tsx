@@ -77,7 +77,7 @@ export default function SalesConsultationServicePage() {
             <NextSeo
                 title="Sales Automation Services | TF Business Solution"
                 description="Automate your sales process from outreach to follow-up. Our Sales Automation service helps you build scalable systems for lead generation, CRM integration, and conversion tracking."
-                canonical="https://tfbusinesssolution.com/services/sales-automation"
+                canonical="https://tfbusinesssolution.com/services/sales-automation-for-startups"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Sales Automation, CRM Automation, Lead Nurturing, Automated Sales Funnel, Outbound Automation, B2B Automation, Email Sequences, Follow-Up Automation, Sales Pipeline Automation' },
                     { name: 'author', content: 'TF Business Solution' },
@@ -85,12 +85,12 @@ export default function SalesConsultationServicePage() {
                 ]}
                 openGraph={{
                     type: 'article',
-                    url: 'https://tfbusinesssolution.com/services/sales-automation',
+                    url: 'https://tfbusinesssolution.com/services/sales-automation-for-startups',
                     title: 'Sales Automation Services | Automate Outreach & Scale Your Pipeline',
                     description: 'TF Business Solution provides done-for-you sales automation systems — from CRM workflows and email sequences to outbound campaigns. Scale sales without scaling your team.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/sales-automation-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/sales-automation-for-startups-og.jpg',
                             width: 1200,
                             height: 630,
                             alt: 'Sales Automation Services – TF Business Solution',
@@ -106,12 +106,12 @@ export default function SalesConsultationServicePage() {
             />
 
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/services/sales-automation/#webpage"
-                url="https://tfbusinesssolution.com/services/sales-automation"
+                id="https://tfbusinesssolution.com/services/sales-automation-for-startups/#webpage"
+                url="https://tfbusinesssolution.com/services/sales-automation-for-startups"
                 name="Sales Automation Services | TF Business Solution"
                 description="Our Sales Automation service enables you to automate lead gen, follow-ups, and CRM tasks. Drive more revenue with less manual work and more consistency."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/services/sales-automation?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/services/sales-automation-for-startups?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />

@@ -38,7 +38,7 @@ export default function SalesAutomationServicePage() {
             <NextSeo
                 title="Sales Consultation Services | TF Business Solution"
                 description="Unlock consistent revenue growth with expert sales consultation. We audit your current sales process, identify gaps, and design high-performing B2B sales strategies tailored to your goals."
-                canonical="https://tfbusinesssolution.com/services/sales-consultation"
+                canonical="https://tfbusinesssolution.com/services/b2b-sales-consultation"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Sales Consultation, B2B Sales Strategy, Sales Funnel Optimization, Revenue Growth Consulting, Sales Audit, Sales Coaching, Sales Enablement, Outbound Sales Review, Sales Scaling' },
                     { name: 'author', content: 'TF Business Solution' },
@@ -46,12 +46,12 @@ export default function SalesAutomationServicePage() {
                 ]}
                 openGraph={{
                     type: 'article',
-                    url: 'https://tfbusinesssolution.com/services/sales-consultation',
+                    url: 'https://tfbusinesssolution.com/services/b2b-sales-consultation',
                     title: 'Sales Consultation Services | Improve Pipeline & Revenue with Expert Strategy',
                     description: 'TF Business Solution provides expert sales consultations for startups and growing companies. From auditing your sales funnel to building an actionable outbound strategy — we help you scale revenue.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/sales-consultation-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/b2b-sales-consultation-og.jpg',
                             width: 1200,
                             height: 630,
                             alt: 'Sales Consultation Services – TF Business Solution',
@@ -67,12 +67,12 @@ export default function SalesAutomationServicePage() {
             />
 
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/services/sales-consultation/#webpage"
-                url="https://tfbusinesssolution.com/services/sales-consultation"
+                id="https://tfbusinesssolution.com/services/b2b-sales-consultation/#webpage"
+                url="https://tfbusinesssolution.com/services/b2b-sales-consultation"
                 name="Sales Consultation Services | TF Business Solution"
                 description="Our sales consultation services help you streamline your sales process, improve team efficiency, and build predictable revenue pipelines with modern outbound and inbound tactics."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/services/sales-consultation?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/services/b2b-sales-consultation?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />

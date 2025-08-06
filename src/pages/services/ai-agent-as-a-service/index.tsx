@@ -69,7 +69,7 @@ export default function AaaS() {
             <NextSeo
                 title="Agency as a Service (AaaS) | TF Business Solution"
                 description="AaaS by TF Business Solution gives you a complete, done-for-you team — from marketing and sales to tech and operations. Scale faster without hiring in-house."
-                canonical="https://tfbusinesssolution.com/services/aas"
+                canonical="https://tfbusinesssolution.com/services/ai-agent-as-a-service"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Agency as a Service, AaaS, Outsourced Team, Full-Service Agency, Managed Marketing, Business Growth Services, Growth-as-a-Service, Sales-as-a-Service, Digital Growth Team' },
                     { name: 'author', content: 'TF Business Solution' },
@@ -77,12 +77,12 @@ export default function AaaS() {
                 ]}
                 openGraph={{
                     type: 'article',
-                    url: 'https://tfbusinesssolution.com/services/aas',
+                    url: 'https://tfbusinesssolution.com/services/ai-agent-as-a-service',
                     title: 'Agency as a Service (AaaS) | Full-Stack Growth Teams for Modern Business',
                     description: 'TF Business Solution offers AaaS — an all-in-one team for marketing, tech, SDRs, and growth ops. No hiring, no overhead, just results.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/aas-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/ai-agent-as-a-service-og.jpg',
                             width: 1200,
                             height: 630,
                             alt: 'Agency as a Service (AaaS) – TF Business Solution',
@@ -98,12 +98,12 @@ export default function AaaS() {
             />
 
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/services/aas/#webpage"
-                url="https://tfbusinesssolution.com/services/aas"
+                id="https://tfbusinesssolution.com/services/ai-agent-as-a-service/#webpage"
+                url="https://tfbusinesssolution.com/services/ai-agent-as-a-service"
                 name="Agency as a Service (AaaS) | TF Business Solution"
                 description="TF Business Solution’s AaaS model provides you with a full-stack remote team — fractional CMO, SDRs, developers, and more — all aligned to scale your business without overhead."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/services/aas?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/services/ai-agent-as-a-service?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />
