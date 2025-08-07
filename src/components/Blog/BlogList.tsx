@@ -70,7 +70,7 @@ const BlogList: React.FC = () => {
         return (
             <div>
                 <Navbar />
-                <div className="min-h-screen">
+                <div>
                     <div className="container mx-auto px-4 py-20">
                         <div className="flex flex-col items-center justify-center min-h-64">
                             <motion.div
@@ -88,7 +88,7 @@ const BlogList: React.FC = () => {
         return (
             <div>
                 <Navbar />
-                <div className="min-h-screen bg-gradient-light">
+                <div>
                     <div className="container mx-auto px-4 py-20">
                         <motion.div
                             className="text-center"
@@ -99,13 +99,15 @@ const BlogList: React.FC = () => {
                             <div className="text-6xl mb-6">⚠️</div>
                             <h2 className="text-3xl font-bold text-foreground mb-4">Oops! Something went wrong</h2>
                             <p className="text-destructive text-lg mb-8 max-w-md mx-auto">{error}</p>
-                            <button
-                                onClick={() => loadBlogs(currentPage)}
-                                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                            >
-                                <RefreshCw className="mr-2" size={20} />
-                                Try Again
-                            </button>
+                           <div className="flex justify-center">
+                               <button
+                                   onClick={() => loadBlogs(currentPage)}
+                                   className="bg-primary px-2 py-1.5 rounded-md flex items-center gap-1"
+                               >
+                                   <RefreshCw className="mr-2" size={20} />
+                                   Try Again
+                               </button>
+                           </div>
                         </motion.div>
                     </div>
                 </div>
@@ -116,7 +118,7 @@ const BlogList: React.FC = () => {
         return (
             <div>
                 <Navbar />
-                <div className="min-h-screen bg-gradient-light">
+                <div>
                     <div className="container mx-auto px-4 py-20">
                         <motion.div
                             className="text-center"
