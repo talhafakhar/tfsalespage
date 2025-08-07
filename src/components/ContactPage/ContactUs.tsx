@@ -1,33 +1,16 @@
 import React, {useState} from 'react';
-import {ArrowRight, Mail, MapPin, MessageSquare, Phone, Send, User, Users} from 'lucide-react';
+import {ArrowRight, Linkedin, Mail, MapPin, Phone, Send, User, Users} from 'lucide-react';
 import Image from "next/image";
+import ReCAPTCHA from 'react-google-recaptcha';
+import 'react-phone-input-2/lib/style.css';
+import PhoneInput from 'react-phone-input-2';
 const ContactUsPage = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        phone: '',
-        email: '',
-        subject: '',
-        message: ''
-    });
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value,
-        }));
-    };
-
-    const handleSubmit = () => {
-        alert('Thank you for your message! We\'ll get back to you soon.');
-        setFormData({
-            firstName: '',
-            lastName: '',
-            phone: '',
-            email: '',
-            subject: '',
-            message: ''
-        });
+    const [focusedField, setFocusedField] = useState(null);
+    const [value, setValue] = useState('');
+    const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+    const handleRecaptchaChange = (value: string | null) => {
+        setRecaptchaValue(value);
+        console.log("reCAPTCHA value:", value);
     };
     return (
         <div>
@@ -46,54 +29,15 @@ const ContactUsPage = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
                                     <label className="block text-sm font-semibold text-black mb-2">
-                                        First Name
+                                       Name
                                     </label>
                                     <div className="relative">
-                                        <User
-                                            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
+                                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
                                         <input
                                             type="text"
-                                            name="firstName"
-                                            value={formData.firstName}
-                                            onChange={handleInputChange}
-                                            placeholder="First name"
-                                            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
-                                        />
-                                    </div>
-                                </div>
-                                <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                        Last Name
-                                    </label>
-                                    <div className="relative">
-                                        <User
-                                            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
-                                        <input
-                                            type="text"
-                                            name="lastName"
-                                            value={formData.lastName}
-                                            onChange={handleInputChange}
-                                            placeholder="Last Name"
-                                            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                        Phone
-                                    </label>
-                                    <div className="relative">
-                                        <Phone
-                                            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
-                                        <input
-                                            type="tel"
-                                            name="phone"
-                                            value={formData.phone}
-                                            onChange={handleInputChange}
-                                            placeholder="Phone"
-                                            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            name="name"
+                                            placeholder="Name"
+                                            className="w-full pl-12 pr-4 py-1.5 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
                                         />
                                     </div>
                                 </div>
@@ -107,47 +51,92 @@ const ContactUsPage = () => {
                                         <input
                                             type="email"
                                             name="email"
-                                            value={formData.email}
-                                            onChange={handleInputChange}
                                             placeholder="Email"
-                                            className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            className="w-full pl-12 pr-4  py-1.5 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label className="block text-sm font-semibold text-black mb-2">
+                                        Phone
+                                    </label>
+                                    <PhoneInput
+                                        country={'pk'}
+                                        value={value}
+                                        onChange={setValue}
+                                        inputProps={{
+                                            required: true,
+                                            autoFocus: false,
+                                            placeholder: 'Enter your phone number',
+                                        }}
+                                        inputStyle={{
+                                            width: '100%',
+                                            borderRadius: '0.55rem',
+                                            borderColor: '#d2cece',
+                                            padding: '16px',
+                                            paddingLeft: '48px'
+                                        }}
+                                        containerStyle={{ width: '100%' }}
+                                    />
+                                </div>
+
+                                <div>
+                                    <label className="block text-sm font-semibold text-black mb-2">
+                                        LinkedIn
+                                    </label>
+                                    <div className="relative">
+                                        <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            placeholder="Please enter URL"
+                                            className="w-full pl-12 pr-4  py-1 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
                                         />
                                     </div>
                                 </div>
                             </div>
                             <div>
                                 <label className="block text-sm font-semibold text-black mb-2">
-                                    Subject
+                                    NDA Required
                                 </label>
                                 <div className="relative">
-                                    <MessageSquare
-                                        className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
-                                    <input
-                                        type="text"
-                                        name="subject"
-                                        value={formData.subject}
-                                        onChange={handleInputChange}
-                                        placeholder="Subject"
-                                        className="w-full pl-12 pr-4 py-3 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
-                                    />
+                                    <select
+                                        onBlur={() => setFocusedField(null)}
+                                        className={`w-full px-4  py-1.5  border-2 rounded-lg transition-all duration-300
+                                              ${focusedField === 'name'
+                                            ? 'border-black shadow-md'
+                                            : 'border-gray-200 hover:border-gray-300'
+                                        }
+                                            focus:outline-none text-black placeholder:text-gray-400`}
+                                    >
+                                        <option value="" disabled selected>
+                                            Select an option
+                                        </option>
+                                        <option value="yes">Yes, NDA required</option>
+                                        <option value="no">No, NDA not needed</option>
+                                        <option value="no">Not sure</option>
+                                    </select>
                                 </div>
                             </div>
-
                             <div>
                                 <label className="block text-sm font-semibold text-black mb-2">
                                     Message
                                 </label>
                                 <textarea
                                     name="message"
-                                    value={formData.message}
-                                    onChange={()=>handleInputChange}
                                     placeholder="Tell us about your project"
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
                                 ></textarea>
                             </div>
-
+                            <div className="pt-2">
+                                <ReCAPTCHA
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                                    onChange={handleRecaptchaChange}
+                                />
+                            </div>
                             <button
-                                onClick={handleSubmit}
                                 className="w-full bg-primary  text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
                             >
                                 <Send className="w-5 h-5"/>
