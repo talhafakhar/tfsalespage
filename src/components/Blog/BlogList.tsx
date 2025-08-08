@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {BlogPost, BlogResponse} from "@/types/blog";
-import { fetchBlogs } from '@/lib/strapi';
+import { fetchBlogs  } from '@/lib/strapi';
 import BlogCard from "@/components/Blog/BlogCard";
 import Navbar from "@/components/Header/Navbar";
 import { motion } from 'framer-motion';
@@ -14,7 +14,7 @@ const BlogList: React.FC = () => {
     const loadBlogs = async (page: number) => {
         try {
             setLoading(true);
-            const response: BlogResponse = await fetchBlogs(page, 10);
+            const response: BlogResponse = await fetchBlogs (page, 10);
             setBlogs(response.data);
             setTotalPages(response.meta.pagination.pageCount);
             setCurrentPage(page);

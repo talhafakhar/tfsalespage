@@ -2,7 +2,7 @@ import React from 'react';
 import {GetStaticPaths, GetStaticProps} from 'next';
 import {ArticleJsonLd, BreadcrumbJsonLd, NextSeo} from 'next-seo';
 import {BlogPost} from '@/types/blog';
-import {fetchBlogBySlug, fetchBlogs} from '@/lib/strapi';
+import {fetchBlogBySlugBuildTime, fetchBlogsBuildTime} from '@/lib/strapi';
 import BlogDetail from "@/components/Blog/BlogDetail";
 import Footer from "@/components/Footer/footer";
 import Navbar from "@/components/Header/Navbar";
@@ -121,21 +121,18 @@ const BlogPostPage: React.FC<BlogPostPageProps> = ({blog}) => {
         </>
     );
 };
-
 export const getStaticPaths: GetStaticPaths = async () => {
     try {
-        const response = await fetchBlogs(1, 100);
-
+        const response = await fetchBlogsBuildTime(1, 100);
         const paths = response.data.map((blog) => ({
-            params: {slug: blog.slug},
+            params: { slug: blog.slug },
         }));
-
         return {
             paths,
             fallback: 'blocking',
         };
     } catch (error) {
-        console.error('Error generating static paths:', error);
+        console.error( error);
         return {
             paths: [],
             fallback: 'blocking',
@@ -143,24 +140,32 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 };
 
-export const getStaticProps: GetStaticProps = async ({params}) => {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    console.log('🎯 getStaticProps started for slug:', params?.slug);
+
     try {
         const slug = params?.slug as string;
 
         if (!slug) {
+            console.log('❌ No slug provided');
             return {
                 notFound: true,
             };
         }
 
-        const blog = await fetchBlogBySlug(slug);
+        console.log('📡 Calling fetchBlogBySlugBuildTime for:', slug);
+        const blog = await fetchBlogBySlugBuildTime(slug);
+
+        console.log('📋 fetchBlogBySlugBuildTime result:', blog ? 'Found blog' : 'No blog found');
 
         if (!blog) {
+            console.log('❌ Blog not found for slug:', slug);
             return {
                 notFound: true,
             };
         }
 
+        console.log('✅ Returning blog data for:', slug);
         return {
             props: {
                 blog,
@@ -168,7 +173,7 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
             revalidate: 60,
         };
     } catch (error) {
-        console.error('Error fetching blog post:', error);
+        console.error('❌ Error fetching blog post:', error);
         return {
             notFound: true,
         };
