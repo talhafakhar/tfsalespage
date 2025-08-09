@@ -50,7 +50,7 @@ const InfiniteLogoSlider:React.FC<InfiniteLogoSlider> = ({title}) => {
                                 return (
                                     <div
                                         key={`logo-${index}`}
-                                        className="flex-shrink-0 w-20 sm:w-28 md:w-36 lg:w-40 h-10 sm:h-14 md:h-16 flex items-center justify-center opacity-70   hover:opacity-100 transition duration-300  hover:grayscale-0 transform hover:scale-105"
+                                        className="flex-shrink-0 w-20 sm:w-28 md:w-36 lg:w-40 h-10 sm:h-14 md:h-16 flex items-center justify-center opacity-70 hover:opacity-100 transition duration-300 grayscale hover:grayscale-0 transform hover:scale-105"
                                     >
                                         {isSvg ? (
                                             <img

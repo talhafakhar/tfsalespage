@@ -196,16 +196,10 @@ const Difference: React.FC<DifferenceProps> = ({titleTwo,titleThree,description,
                     <ComparisonCard data={inHouseData} delay={0.2} />
                     <ComparisonCard data={fractionalData} delay={0.4} />
                 </div>
-                <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <button
-                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
-                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-                    >
-                        Choose Fractional CMO Today
-                        <span
-                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
-                        >
+                <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'}`}>
+                    <button onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')} className="group inline-flex items-center px-6 py-2.5 rounded-full bg-primary text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none">
+                        Get Fractional Support today
+                        <span className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1">
     <ArrowRight className="w-4 h-4" />
   </span>
                     </button>

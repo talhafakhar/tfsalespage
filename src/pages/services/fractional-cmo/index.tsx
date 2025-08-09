@@ -396,7 +396,7 @@ export default function FractionalCMOServicePage() {
                     ]}/>
                 <Banner
                     title="Ready to Scale"
-                    description=" Get a complete marketing department led by an expert CMO starting next week."
+                    description="Get a complete team led by an expert C-Level Executive starting next week"
                     buttonText='Start My Growth Journey'
                 />
                 <Difference

@@ -119,7 +119,6 @@ const Footer: React.FC = () => {
                                         <div>
                                             <p className="font-medium">hello@tfbusinesssolutions.com</p>
                                             <p className="font-medium">hello@talhafakhar.com</p>
-                                            <p className="font-medium">anum@tfbusinesssolutions.com</p>
                                             <p className="text-sm text-slate-400">Get in touch</p>
                                         </div>
                                     </div>
@@ -143,8 +142,8 @@ const Footer: React.FC = () => {
                                             <MapPin size={18}/>
                                         </div>
                                         <div>
-                                            <p className="font-medium">5900 Balcones Drive, STE 4000 Austin TX, USA 78731</p>
                                             <p className="font-medium">62-C2, Gulberg 3 , Lahore</p>
+                                            <p className="text-sm text-slate-400">Office</p>
                                         </div>
                                     </div>
                                 </div>
