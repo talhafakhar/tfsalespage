@@ -15,6 +15,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
     const [isVisible, setIsVisible] = useState(false);
     const [loadingCalendly, setLoadingCalendly] = useState(true);
     const [showCalendly, setShowCalendly] = useState(false);
+    const [bgImage, setBgImage] = useState("/assets/services/bg-CMO-hero.webp");
 
     useEffect(() => {
         setIsVisible(true);
@@ -24,7 +25,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
         script.async = true;
         head?.appendChild(script);
     }, []);
-
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth <= 767) {
+                setBgImage("/assets/services/mobile-bg.webp");
+            } else {
+                setBgImage("/assets/services/bg-CMO-hero.webp");
+            }
+        }
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
     return (
         <div className="relative min-h-screen bg-secondary overflow-hidden z-20">
             <Navbar/>
@@ -35,12 +47,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
             </div>
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{backgroundImage: "url('/assets/services/bg-CMO-hero.webp')"}}
+                style={{ backgroundImage: `url('${bgImage}')` }}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary to-secondary/40"></div>
             </div>
             <div className="relative z-20 min-h-screen flex items-center ">
-                <div className={`container mx-auto px-4 sm:px-6 lg:px-8  ${showCalendly ?"pt-40 pb-10" : "pt-0 pb-0"}`}>
+                <div className={`container mx-auto px-4 sm:px-6 lg:px-8 mt-20  ${showCalendly ?"pt-40 pb-10" : "pt-0 pb-0"}`}>
                     <div className="flex flex-col lg:flex-row items-center justify-center md:justify-between gap-8 lg:gap-12">
                         <div className="text-start">
                             <div

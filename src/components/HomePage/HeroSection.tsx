@@ -23,11 +23,8 @@ const HeroSection: React.FC = () => {
     return (
         <div>
             <Navbar/>
-            <section
-                className="flex bg-black items-center min-h-screen bg-cover bg-center "
-                style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}
-            >
-                <div className="container mx-auto px-4 py-5">
+            <section className="flex bg-secondary items-center min-h-screen bg-cover bg-center mt-10 md:mt-1" style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}>
+                <div className="container mx-auto px-4 py-10 mt-5 md:mt-16">
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                         <div className="text-center ">
                             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>

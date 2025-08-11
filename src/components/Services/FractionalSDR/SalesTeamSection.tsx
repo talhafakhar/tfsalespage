@@ -63,13 +63,13 @@ const SalesTeamSection = () => {
                     </p>
                 </div>
 
-                <div className="space-y-10">
+                <div className="space-y-2">
                     {teamMembers.map((member, index) => {
                         const isEven = index % 2 === 0;
                         return (
                             <div
                                 key={index}
-                                className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-16 ${
+                                className={`flex flex-col lg:flex-row items-center gap-5 lg:gap-16 ${
                                     isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'
                                 }`}
                             >

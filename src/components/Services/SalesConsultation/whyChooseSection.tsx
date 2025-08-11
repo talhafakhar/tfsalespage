@@ -73,7 +73,7 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({title, description, features})
                         />
                     ))}
 
-                    <div className="col-span-full flex justify-center max-w-3xl mx-auto gap-6">
+                    <div className="col-span-full flex md:flex-row flex-col justify-center max-w-3xl mx-auto gap-6">
                         {features.slice(3).map((feature, index) => (
                             <FeatureCard
                                 key={index + 3}

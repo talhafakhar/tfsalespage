@@ -21,19 +21,19 @@ const AboutHero = () => {
 
         <div>
             <Navbar/>
-            <section  className="bg-black pt-40  min-h-screen bg-cover bg-center " style={{ backgroundImage: "url('/assets/about/about-bg.webp')" }}>
-                <div className="relative container mx-auto text-center px-4  z-10 pb-10 md:pb-34 ">
-                    <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+            <section  className="bg-black  min-h-screen bg-cover bg-center " style={{ backgroundImage: "url('/assets/about/about-bg.webp')" }}>
+                <div className="relative  text-center  z-20 pt-40">
+                    <div className={`transform container px-4 mx-auto transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <h1 className="text-5xl  md:text-6xl  lg:text-7xl font-righteous  font-bold text-white mb-6">
                             We Fix the Startup  <span className="text-primary flex justify-center ">Leadership Problem
                                     </span>  Creatively & Seamlessly
                         </h1>
                     </div>
-                    <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                    <div className={`transform container px-4  mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <p className="text-white mb-8 max-w-xl mx-auto">
                             Look, we get it. You&#39;ve got a killer product but can&#39;t afford a $200K+ CMO. You need a CTO but don&#39;t have 6 months to hire one. Your sales are stuck because you&#39;re doing everything yourself.                        </p>
                     </div>
-                    <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                    <div className={`transform container px-4 mx-auto transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                         <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center  items-center mb-4">
                             <button
                                 onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
@@ -51,74 +51,72 @@ const AboutHero = () => {
                             </button>
                         </div>
                     </div>
-                </div>
-                <div className="relative z-20">
-                    <div className="absolute inset-0 h-14 bg-white py-3 overflow-hidden transform  top-[55px] rotate-[6deg] md:rotate-[4deg] origin-center">
-                        <div className="flex whitespace-nowrap">
-                            <div className="flex animate-scroll-left">
-                                {scrollingTexts.map((text, index) => (
-                                    <div key={index} className="flex items-center mx-12">
+                    <div className="relative z-20 sm:block hidden">
+                        <div className="absolute inset-0 h-14 bg-white py-3 overflow-hidden transform  top-[55px] rotate-[6deg] md:rotate-[4deg] origin-center">
+                            <div className="flex whitespace-nowrap">
+                                <div className="flex animate-scroll-left">
+                                    {scrollingTexts.map((text, index) => (
+                                        <div key={index} className="flex items-center mx-12">
                   <span className="text-hero-purple font-bold text-xl md:text-2xl lg:text-3xl">
                     {text}
                   </span>
-                                        <span
-                                            className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
+                                            <span
+                                                className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
                     ✱
                   </span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex animate-scroll-left">
-                                {scrollingTexts.map((text, index) => (
-                                    <div key={`duplicate-${index}`} className="flex items-center mx-12">
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex animate-scroll-left">
+                                    {scrollingTexts.map((text, index) => (
+                                        <div key={`duplicate-${index}`} className="flex items-center mx-12">
                   <span className="text-hero-purple font-bold text-xl md:text-2xl lg:text-3xl">
                     {text}
                   </span>
-                                        <span
-                                            className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
+                                            <span
+                                                className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
                     ✱
                   </span>
-                                    </div>
-                                ))}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="absolute inset-0 h-14 bg-primary py-3 overflow-hidden transform -rotate-[6deg] md:-rotate-[4deg] origin-center translate-y-16">
-                        <div className="flex whitespace-nowrap">
-                            <div className="flex animate-scroll-left" style={{animationDirection: 'reverse'}}>
-                                {scrollingTexts.map((text, index) => (
-                                    <div key={index} className="flex items-center mx-12">
+                        <div className="absolute inset-0 h-14 bg-primary py-3 overflow-hidden transform -rotate-[6deg] md:-rotate-[4deg] origin-center translate-y-16">
+                            <div className="flex whitespace-nowrap">
+                                <div className="flex animate-scroll-left" style={{animationDirection: 'reverse'}}>
+                                    {scrollingTexts.map((text, index) => (
+                                        <div key={index} className="flex items-center mx-12">
                   <span className="text-hero-purple font-bold text-xl md:text-2xl lg:text-3xl">
                     {text}
                   </span>
-                                        <span
-                                            className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
+                                            <span
+                                                className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
                     ✱
                   </span>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="flex animate-scroll-left" style={{animationDirection: 'reverse'}}>
-                                {scrollingTexts.map((text, index) => (
-                                    <div key={`duplicate-${index}`} className="flex items-center mx-12">
+                                        </div>
+                                    ))}
+                                </div>
+                                <div className="flex animate-scroll-left" style={{animationDirection: 'reverse'}}>
+                                    {scrollingTexts.map((text, index) => (
+                                        <div key={`duplicate-${index}`} className="flex items-center mx-12">
                   <span className="text-hero-purple font-bold text-xl md:text-2xl lg:text-3xl">
                     {text}
                   </span>
-                                        <span
-                                            className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
+                                            <span
+                                                className="text-hero-purple text-2xl md:text-3xl lg:text-4xl ml-6">
                     ✱
                   </span>
-                                    </div>
-                                ))}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
             <hr/>
-            <InfiniteLogoSlider
-              title="We Partner With Leading Brands"
-            />
+            <InfiniteLogoSlider title="We Partner With Leading Brands"/>
         </div>
     );
 };

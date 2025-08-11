@@ -42,7 +42,7 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
 
     return (
         <section className="py-5 px-6" ref={ref}>
-            <div className="container mx-auto grid md:grid-cols-2 gap-5 items-center">
+            <div className="container mx-auto flex md:flex-row flex-col-reverse gap-5 w-full items-center">
                 <motion.div
                     initial="hidden"
                     animate={
@@ -62,7 +62,7 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                         ease: "easeInOut",
                     }}
                     variants={sectionVariant}
-                    className="w-full"
+                    className="md:w-1/2 w-full"
                 >
                     <Image
                         src={src}
@@ -77,6 +77,7 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                     initial="hidden"
                     animate={controls}
                     variants={textVariant}
+                    className="md:w-1/2 w-full"
                 >
                     <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
                         {title} <br/>{titleTwo}

@@ -294,7 +294,7 @@ export default function FractionalSDRServicePage() {
                         {
                             id: "1",
                             icon: Target,
-                            title: "Step 1: ICP Research",
+                            title: "ICP Research",
                             description:
                                 "Our Research Executive extracts qualified leads and conducts deep market analysis according to your Ideal Customer Profile, ensuring every prospect matches your criteria.",
                             delay: "0ms",
@@ -302,7 +302,7 @@ export default function FractionalSDRServicePage() {
                         {
                             id: "2",
                             icon: ShieldCheck,
-                            title: "Step 2: Authority Building",
+                            title: "Authority Building",
                             description:
                                 "We develop psychology-driven messaging, optimize B2B channels, set up email warmups and data systems, and build your LinkedIn/Twitter authority to position you as the industry leader.",
                             delay: "100ms",
@@ -310,7 +310,7 @@ export default function FractionalSDRServicePage() {
                         {
                             id: "3",
                             icon: MailSearch,
-                            title: "Step 3: Campaign Creation",
+                            title: "Campaign Creation",
                             description:
                                 "Our SDR develops personalized sequences and A/B tests messaging across channels, ensuring maximum engagement and response rates from your target audience.",
                             delay: "200ms",
@@ -318,7 +318,7 @@ export default function FractionalSDRServicePage() {
                         {
                             id: "4",
                             icon: SendHorizonal,
-                            title: "Step 4: Multi-Channel Execution",
+                            title: "Multi-Channel Execution",
                             description:
                                 "Expert SDRs execute campaigns across LinkedIn, email, and social platforms while our Account Executive handles high-value ABM outreach to key prospects.",
                             delay: "300ms",
@@ -326,7 +326,7 @@ export default function FractionalSDRServicePage() {
                         {
                             id: "5",
                             icon: Repeat,
-                            title: "Step 5: Seamless Transition",
+                            title: "Seamless Transition",
                             description:
                                 "We document all processes, train your internal team, and ensure smooth handoff so your sales operations continue without missing a beat.",
                             delay: "400ms",

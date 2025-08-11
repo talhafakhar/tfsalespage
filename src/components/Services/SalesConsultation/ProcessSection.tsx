@@ -88,7 +88,7 @@ export const Process:React.FC<ProcessProps> = ({title,titleTwo,description,featu
                                         transition={{ type: "spring", stiffness: 300 }}
                                     >
                                         <h3 className="text-lg font-bold  mb-1 flex justify-center items-center gap-2">
-                                            <span className="text-primary font-bold text-xl md:text-5xl">
+                                            <span className="text-primary font-bold text-2xl md:text-5xl">
                                                 {feature.id}
                                             </span> {feature.title}
                                         </h3>
