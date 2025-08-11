@@ -104,6 +104,7 @@ const ServicesSection: React.FC = () => {
                     loading="lazy"
                 />
             </motion.div>
+            <div className="absolute inset-0 bg-black/60 pointer-events-none" />
             <motion.div
                 className="relative container mx-auto flex z-9999 md:flex-row flex-col justify-center  items-center mb-16 gap-10"
                 initial={{ opacity: 0, y: 50 }}
