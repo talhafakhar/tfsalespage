@@ -127,8 +127,8 @@ export default function FractionalCMOServicePage() {
     return (
         <div>
             <NextSeo
-                title="Fractional CMO Services | TF Business Solution"
-                description="Hire a seasoned Fractional CMO to drive marketing strategy, lead generation, and growth — without the full-time cost. Get leadership and execution combined."
+                title="Fractional CMO – Full Marketing Team in Days"
+                description="Get a seasoned CMO and full team to grow your brand, leads, and revenue—without the cost of hiring full-time staff."
                 canonical="https://tfbusinesssolution.com/services/fractional-cmo"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Fractional CMO, Marketing Strategy, Outsourced CMO, Part-Time CMO, Growth Marketing, B2B Marketing, CMO as a Service, Marketing Leadership' },
@@ -138,8 +138,8 @@ export default function FractionalCMOServicePage() {
                 openGraph={{
                     type: 'article',
                     url: 'https://tfbusinesssolution.com/services/fractional-cmo',
-                    title: 'Fractional CMO Services | Marketing Leadership without Full-Time Cost',
-                    description: 'Scale your business with expert marketing leadership. Our Fractional CMO service provides high-impact strategy, execution oversight, and team leadership.',
+                    title: 'Fractional CMO – Full Marketing Team in Days',
+                    description: 'Get a seasoned CMO and full team to grow your brand, leads, and revenue—without the cost of hiring full-time staff.',
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/fractional-cmo-og.jpg',
@@ -160,8 +160,8 @@ export default function FractionalCMOServicePage() {
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/services/fractional-cmo/#webpage"
                 url="https://tfbusinesssolution.com/services/fractional-cmo"
-                name="Fractional CMO Services | TF Business Solution"
-                description="TF Business Solution’s Fractional CMO offering gives startups and growing companies access to top-tier marketing strategy, planning, and leadership — without the overhead."
+                name="Fractional CMO – Full Marketing Team in Days"
+                description="Get a seasoned CMO and full team to grow your brand, leads, and revenue—without the cost of hiring full-time staff."
                 potentialAction={{
                     target: 'https://tfbusinesssolution.com/services/fractional-cmo?q={search_term_string}',
                     queryInput: 'required name=search_term_string',

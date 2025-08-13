@@ -82,8 +82,8 @@ export default function Home() {
     return (
         <>
             <NextSeo
-                title="TF Business Solution | AaaS, Fractional CMO/CTO/SDR & Sales Automation"
-                description="TF Business Solution helps companies grow faster with Agency as a Service (AaaS), Fractional CMO/CTO/SDR, Sales Automation, and Strategic Consulting."
+                title="Fractional Leadership – CMO, CTO & Sales Experts"
+                description=" Access C-level marketing, sales, and tech leaders to scale faster, cut costs, and implement proven growth systems."
                 canonical="https://tfbusinesssolution.com/"
                 facebook={{
                     appId: '1234567890',
@@ -97,8 +97,8 @@ export default function Home() {
                 openGraph={{
                     type: 'website',
                     url: 'https://tfbusinesssolution.com/',
-                    title: 'TF Business Solution – AaaS & Fractional Growth Services',
-                    description: 'Explore our Agency as a Service (AaaS), Fractional CMO/CTO/SDR offerings, and sales automation tools tailored for ambitious businesses.',
+                    title: 'Fractional Leadership – CMO, CTO & Sales Experts',
+                    description: 'Access C-level marketing, sales, and tech leaders to scale faster, cut costs, and implement proven growth systems.',
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/og-image.jpg',
@@ -146,8 +146,8 @@ export default function Home() {
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/#webpage"
                 url="https://tfbusinesssolution.com/"
-                name="TF Business Solution | AaaS & Fractional Leadership Services"
-                description="TF Business Solution offers AaaS (Agency as a Service), Fractional CMO/CTO/SDR, Sales Automation, and consulting to help businesses scale effectively and affordably."
+                name="Fractional Leadership – CMO, CTO & Sales Experts"
+                description=" Access C-level marketing, sales, and tech leaders to scale faster, cut costs, and implement proven growth systems."
                 potentialAction={{
                     target: 'https://tfbusinesssolution.com/?q={search_term_string}',
                     queryInput: 'required name=search_term_string',

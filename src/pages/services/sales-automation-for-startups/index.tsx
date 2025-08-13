@@ -36,25 +36,28 @@ export default function SalesAutomationServicePage() {
     return (
         <div>
             <NextSeo
-                title="Sales Consultation Services | TF Business Solution"
-                description="Unlock consistent revenue growth with expert sales consultation. We audit your current sales process, identify gaps, and design high-performing B2B sales strategies tailored to your goals."
-                canonical="https://tfbusinesssolution.com/services/b2b-sales-consultation"
+                title="Sales Automation Service – Convert More Leads"
+                description="Automate sales with psychology-driven workflows that boost conversions and save hours. Book your free sales automation audit."
+                canonical="https://tfbusinesssolution.com/services/sales-automation-for-startups"
                 additionalMetaTags={[
-                    { name: 'keywords', content: 'Sales Consultation, B2B Sales Strategy, Sales Funnel Optimization, Revenue Growth Consulting, Sales Audit, Sales Coaching, Sales Enablement, Outbound Sales Review, Sales Scaling' },
+                    {
+                        name: 'keywords',
+                        content: 'Sales Automation for Startups, Startup Sales Strategy, Lead Generation for Startups, Sales Funnel Optimization, Revenue Growth for Startups, Sales Audit, Sales Coaching, Sales Enablement, Outbound Sales for Startups, Sales Scaling for Startups'
+                    },
                     { name: 'author', content: 'TF Business Solution' },
                     { name: 'robots', content: 'index, follow' },
                 ]}
                 openGraph={{
                     type: 'article',
-                    url: 'https://tfbusinesssolution.com/services/b2b-sales-consultation',
-                    title: 'Sales Consultation Services | Improve Pipeline & Revenue with Expert Strategy',
-                    description: 'TF Business Solution provides expert sales consultations for startups and growing companies. From auditing your sales funnel to building an actionable outbound strategy — we help you scale revenue.',
+                    url: 'https://tfbusinesssolution.com/services/sales-automation-for-startups',
+                    title: ' Sales Automation Service – Convert More Leads',
+                    description: 'Automate sales with psychology-driven workflows that boost conversions and save hours. Book your free sales automation audit.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/b2b-sales-consultation-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/sales-automation-for-startups-og.jpg',
                             width: 1200,
                             height: 630,
-                            alt: 'Sales Consultation Services – TF Business Solution',
+                            alt: 'Sales Automation Services – TF Business Solution',
                         },
                     ],
                     site_name: 'TF Business Solution',
@@ -67,12 +70,12 @@ export default function SalesAutomationServicePage() {
             />
 
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/services/b2b-sales-consultation/#webpage"
-                url="https://tfbusinesssolution.com/services/b2b-sales-consultation"
-                name="Sales Consultation Services | TF Business Solution"
-                description="Our sales consultation services help you streamline your sales process, improve team efficiency, and build predictable revenue pipelines with modern outbound and inbound tactics."
+                id="https://tfbusinesssolution.com/services/sales-automation-for-startups/#webpage"
+                url="https://tfbusinesssolution.com/services/sales-automation-for-startups"
+                name="Sales Automation Service – Convert More Leads"
+                description="Automate sales with psychology-driven workflows that boost conversions and save hours. Book your free sales automation audit."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/services/b2b-sales-consultation?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/services/sales-automation-for-startups?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />

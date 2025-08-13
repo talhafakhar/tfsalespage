@@ -146,8 +146,8 @@ export default function FractionalCTO() {
     return (
         <div>
             <NextSeo
-                title="Fractional CTO Services | TF Business Solution"
-                description="Access senior-level technical leadership without the full-time cost. Our Fractional CTO service helps startups and scaleups plan tech strategy, build teams, and launch products."
+                title="Fractional CTO – Build & Scale Products Faster"
+                description="Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays."
                 canonical="https://tfbusinesssolution.com/services/fractional-cto"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Fractional CTO, Part-Time CTO, CTO as a Service, Technical Strategy, Startup CTO, Technology Leadership, Product Development, Technical Consulting, SaaS CTO' },
@@ -157,8 +157,8 @@ export default function FractionalCTO() {
                 openGraph={{
                     type: 'article',
                     url: 'https://tfbusinesssolution.com/services/fractional-cto',
-                    title: 'Fractional CTO Services | Strategic Technology Leadership',
-                    description: 'TF Business Solution provides expert Fractional CTO services to guide startups and growing companies with architecture planning, team building, and digital product launches.',
+                    title: 'Fractional CTO – Build & Scale Products Faster',
+                    description: ' Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays.',
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/fractional-cto-og.jpg',
@@ -179,8 +179,8 @@ export default function FractionalCTO() {
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/services/fractional-cto/#webpage"
                 url="https://tfbusinesssolution.com/services/fractional-cto"
-                name="Fractional CTO Services | TF Business Solution"
-                description="Our Fractional CTO service gives you access to senior tech leadership for technical strategy, architecture planning, and product management — all without hiring full-time."
+                name="Fractional CTO – Build & Scale Products Faster"
+                description=" Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays."
                 potentialAction={{
                     target: 'https://tfbusinesssolution.com/services/fractional-cto?q={search_term_string}',
                     queryInput: 'required name=search_term_string',

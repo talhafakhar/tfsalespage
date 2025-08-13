@@ -64,8 +64,8 @@ export default function FractionalSDRServicePage() {
     return (
         <div>
             <NextSeo
-                title="Fractional SDR Services | TF Business Solution"
-                description="Get consistent lead generation with TF Business Solution's Fractional SDR services. We provide trained reps to fill your pipeline, qualify leads, and book appointments — without hiring in-house."
+                title="Fractional SDR Service – Scalable Lead Generation"
+                description=" Expert SDRs to build outreach systems, qualify leads, and scale your sales pipeline without hiring full-time staff."
                 canonical="https://tfbusinesssolution.com/services/fractional-sdr"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Fractional SDR, SDR as a Service, Lead Generation, Sales Development, B2B Appointment Setting, Outsourced SDR, Inside Sales, B2B Pipeline Growth, Sales Outreach' },
@@ -75,8 +75,8 @@ export default function FractionalSDRServicePage() {
                 openGraph={{
                     type: 'article',
                     url: 'https://tfbusinesssolution.com/services/fractional-sdr',
-                    title: 'Fractional SDR Services | Scalable Lead Generation for B2B Sales',
-                    description: 'TF Business Solution offers SDR-as-a-Service to generate leads, book meetings, and help B2B companies scale outbound sales without hiring full-time reps.',
+                    title: 'Fractional SDR Service – Scalable Lead Generation',
+                    description: ' Expert SDRs to build outreach systems, qualify leads, and scale your sales pipeline without hiring full-time staff.',
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/fractional-sdr-og.jpg',
@@ -97,8 +97,8 @@ export default function FractionalSDRServicePage() {
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/services/fractional-sdr/#webpage"
                 url="https://tfbusinesssolution.com/services/fractional-sdr"
-                name="Fractional SDR Services | TF Business Solution"
-                description="Our Fractional SDR team helps B2B companies generate qualified leads, build pipelines, and increase appointments through efficient sales outreach strategies."
+                name="Fractional SDR Service – Scalable Lead Generation"
+                description=" Expert SDRs to build outreach systems, qualify leads, and scale your sales pipeline without hiring full-time staff."
                 potentialAction={{
                     target: 'https://tfbusinesssolution.com/services/fractional-sdr?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
