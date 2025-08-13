@@ -1,5 +1,5 @@
 import React, { useRef, } from "react";
-import {motion, useInView} from "framer-motion";
+import {motion} from "framer-motion";
 import { Monitor, PenTool, Users, Rocket, Settings, Bot, Sparkles, TrendingUp, Zap } from "lucide-react";
 import Image from "next/image";
 
@@ -48,7 +48,6 @@ const services = [
 
 const ServicesSection: React.FC = () => {
     const sectionRef = useRef(null);
-    const isInView = useInView(sectionRef, { once: true, margin: "-300px" });
      return (
         <section ref={sectionRef} className="relative px-4 py-10 bg-secondary overflow-hidden">
             <div className="absolute inset-0 bg-secondary" />
@@ -56,45 +55,22 @@ const ServicesSection: React.FC = () => {
                 <motion.div
                     className="absolute top-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
                     animate={{
-                        x: isInView ? 0 : -100,
-                        opacity: isInView ? 1 : 0
+                        x:  0 ,
+                        opacity: 1
                     }}
                     transition={{ duration: 1, delay: 0.2 }}
                 />
                 <motion.div
                     className="absolute bottom-20 right-20 w-80 h-80 bg-primary/5 rounded-full blur-3xl"
                     animate={{
-                        x: isInView ? 0 : 100,
-                        opacity: isInView ? 1 : 0
+                        x: 0 ,
+                        opacity: 1
                     }}
                     transition={{ duration: 1, delay: 0.3 }}
                 />
             </div>
-            <motion.div
+            <div
                 className="absolute top-5 right-0 pointer-events-none sm:block hidden"
-                initial={{ opacity: 0, y: 50 }}
-                transition={
-                    isInView
-                        ? {
-                            duration: 2,
-                            repeat: Infinity,
-                            repeatType: "loop",
-                            ease: "easeInOut",
-                        }
-                        : {
-                            duration: 0.8,
-                        }
-                }
-                animate={
-                    isInView
-                        ? {
-                            opacity: 1,
-                            y: [0, -20, 0],
-                        }
-                        : {
-                            opacity: 1,
-                        }
-                }
             >
                 <Image
                     src="/assets/home/astronot.webp"
@@ -103,19 +79,19 @@ const ServicesSection: React.FC = () => {
                     height={700}
                     loading="lazy"
                 />
-            </motion.div>
+            </div>
             <div className="absolute inset-0 bg-black/60 pointer-events-none" />
             <motion.div
                 className="relative container mx-auto flex z-9999 md:flex-row flex-col justify-center  items-center mb-16 gap-10"
                 initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
             >
                 <div>
                     <motion.div
                         className="text-center mb-2"
                         initial={{ opacity: 0, y: 30 }}
-                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
                         <h2 className="text-5xl  font-bold mb-6 leading-tight  text-white">
@@ -133,7 +109,7 @@ const ServicesSection: React.FC = () => {
             <motion.div
                 className="relative container z-99999 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 initial="hidden"
-                animate={isInView ? "show" : "hidden"}
+                animate={"show"}
                 variants={{
                     hidden: {},
                     show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
