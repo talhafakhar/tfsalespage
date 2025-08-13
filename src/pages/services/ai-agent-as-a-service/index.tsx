@@ -78,8 +78,8 @@ export default function AaaS() {
                 openGraph={{
                     type: 'article',
                     url: 'https://tfbusinesssolution.com/services/ai-agent-as-a-service',
-                    title="Agent as a Service Custom AI Agents for Automation",
-                    description="Build custom AI agents to automate workflows in sales, support, and operations. Start with a free AI consultation today.",
+                    title:"Agent as a Service Custom AI Agents for Automation",
+                    description:"Build custom AI agents to automate workflows in sales, support, and operations. Start with a free AI consultation today.",
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/ai-agent-as-a-service-og.jpg',
