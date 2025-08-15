@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import { Righteous, Seymour_One } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import GlobalLoading from '@/components/Common/GlobalLoading'
+import ConsentBanner from "@/components/Common/CookieConsent";
 
 const righteous = Righteous({
   subsets: ['latin'],
@@ -52,6 +53,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className={`${righteous.variable} ${seymourOne.variable}`}>
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Component {...pageProps} />
+            <ConsentBanner/>
         </div>
       </div>
   )
