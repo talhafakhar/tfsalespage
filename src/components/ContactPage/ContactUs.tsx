@@ -5,12 +5,61 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import 'react-phone-input-2/lib/style.css';
 import PhoneInput from 'react-phone-input-2';
 const ContactUsPage = () => {
-    const [focusedField, setFocusedField] = useState(null);
-    const [value, setValue] = useState('');
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        linkedin: '',
+        nda: '',
+        message: '',
+    });
     const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
+    const [loading, setLoading] = useState(false);
+    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const [focusedField, setFocusedField] = useState<string | null>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
     const handleRecaptchaChange = (value: string | null) => {
         setRecaptchaValue(value);
-        console.log(recaptchaValue)
+    };
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setLoading(true);
+        setSuccessMsg('');
+        setErrorMsg('');
+
+        if (!recaptchaValue) {
+            setErrorMsg('Please complete the reCAPTCHA.');
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const res = await fetch('/api/contact/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...formData }),
+            });
+
+            const data = await res.json();
+
+            if (data.ok) {
+                setSuccessMsg(data.message || 'Form submitted successfully!');
+                setFormData({ name: '', email: '', phone: '', linkedin: '', nda: '', message: '' });
+                setRecaptchaValue(null);
+            } else {
+                setErrorMsg(data.message || 'Something went wrong.');
+            }
+        } catch (err) {
+            console.error(err);
+            setErrorMsg('Failed to submit the form.');
+        } finally {
+            setLoading(false);
+        }
     };
     return (
         <div>
@@ -25,50 +74,49 @@ const ContactUsPage = () => {
             <div className="max-w-7xl mx-auto px-4 pb-10">
                 <div className="flex justify-between items-center flex-col md:flex-row gap-8">
                     <div className="bg-white rounded-2xl border shadow-xl p-8">
-                        <div className="space-y-6">
+                        <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                       Name
-                                    </label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Name</label>
                                     <div className="relative">
-                                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
+                                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
                                             type="text"
                                             name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
                                             placeholder="Name"
                                             className="w-full pl-12 pr-4 py-1.5 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            required
                                         />
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                        Email
-                                    </label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Email</label>
                                     <div className="relative">
-                                        <Mail
-                                            className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
+                                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
                                             type="email"
                                             name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
                                             placeholder="Email"
-                                            className="w-full pl-12 pr-4  py-1.5 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            className="w-full pl-12 pr-4 py-1.5 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            required
                                         />
                                     </div>
                                 </div>
                             </div>
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                        Phone
-                                    </label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Phone</label>
                                     <PhoneInput
                                         country={'pk'}
-                                        value={value}
-                                        onChange={setValue}
+                                        value={formData.phone}
+                                        onChange={(phone) => setFormData({ ...formData, phone })}
                                         inputProps={{
                                             required: true,
-                                            autoFocus: false,
                                             placeholder: 'Enter your phone number',
                                         }}
                                         inputStyle={{
@@ -76,73 +124,82 @@ const ContactUsPage = () => {
                                             borderRadius: '0.55rem',
                                             borderColor: '#d2cece',
                                             padding: '16px',
-                                            paddingLeft: '48px'
+                                            paddingLeft: '48px',
                                         }}
                                         containerStyle={{ width: '100%' }}
                                     />
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">
-                                        LinkedIn
-                                    </label>
+                                    <label className="block text-sm font-semibold text-black mb-2">LinkedIn</label>
                                     <div className="relative">
-                                        <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5"/>
+                                        <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
-                                            type="email"
-                                            name="email"
+                                            type="url"
+                                            name="linkedin"
+                                            value={formData.linkedin}
+                                            onChange={handleChange}
                                             placeholder="Please enter URL"
-                                            className="w-full pl-12 pr-4  py-1 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
+                                            className="w-full pl-12 pr-4 py-1 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
                                         />
                                     </div>
                                 </div>
                             </div>
+
                             <div>
-                                <label className="block text-sm font-semibold text-black mb-2">
-                                    NDA Required
-                                </label>
+                                <label className="block text-sm font-semibold text-black mb-2">NDA Required</label>
                                 <div className="relative">
                                     <select
+                                        name="nda"
+                                        value={formData.nda}
+                                        onChange={handleChange}
+                                        onFocus={() => setFocusedField('nda')}
                                         onBlur={() => setFocusedField(null)}
-                                        className={`w-full px-4  py-1.5  border-2 rounded-lg transition-all duration-300
-                                              ${focusedField === 'name'
-                                            ? 'border-black shadow-md'
-                                            : 'border-gray-200 hover:border-gray-300'
-                                        }
-                                            focus:outline-none text-black placeholder:text-gray-400`}
+                                        className={`w-full px-4 py-1.5 border-2 rounded-lg transition-all duration-300 ${
+                                            focusedField === 'nda' ? 'border-black shadow-md' : 'border-gray-200 hover:border-gray-300'
+                                        } focus:outline-none text-black placeholder:text-gray-400`}
                                     >
-                                        <option value="" disabled selected>
+                                        <option value="" disabled>
                                             Select an option
                                         </option>
                                         <option value="yes">Yes, NDA required</option>
                                         <option value="no">No, NDA not needed</option>
-                                        <option value="no">Not sure</option>
+                                        <option value="not_sure">Not sure</option>
                                     </select>
                                 </div>
                             </div>
+
                             <div>
-                                <label className="block text-sm font-semibold text-black mb-2">
-                                    Message
-                                </label>
+                                <label className="block text-sm font-semibold text-black mb-2">Message</label>
                                 <textarea
                                     name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
                                     placeholder="Tell us about your project"
                                     className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-primary focus:outline-none transition-colors resize-none"
+                                    required
                                 ></textarea>
+
                             </div>
+
                             <div className="pt-2">
                                 <ReCAPTCHA
                                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                                     onChange={handleRecaptchaChange}
                                 />
+                                {errorMsg && <p className="text-red-500 mt-1 text-sm">{errorMsg}</p>}
+                                {successMsg && <p className="text-green-500 mt-1 text-sm">{successMsg}</p>}
                             </div>
+
                             <button
-                                className="w-full bg-primary  text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl"
+                                type="submit"
+                                disabled={loading}
+                                className="w-full bg-primary text-black font-bold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                <Send className="w-5 h-5"/>
-                                Submit message
+                                {loading ? 'Submitting...' : 'Submit message'}
+                                {!loading && <Send className="w-5 h-5" />}
                             </button>
-                        </div>
+                        </form>
                     </div>
                     <div className="relative ">
                         <div className="overflow-hidden">
