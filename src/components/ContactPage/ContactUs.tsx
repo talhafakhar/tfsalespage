@@ -214,8 +214,7 @@ const ContactUsPage = () => {
                         </div>
                         <h3 className="text-xl font-bold text-black mb-4">Visit Us</h3>
                         <p className="text-gray-600 leading-relaxed">
-                            6587 Roller Derby Lane, Canada, and<br/>
-                            760 Grant Street, San Francisco
+                            62-C2, Gulberg 3 , Lahore
                         </p>
                     </div>
                     <div className="text-center p-8 bg-white rounded-2xl border shadow-lg hover:shadow-xl transition-shadow">
@@ -227,7 +226,10 @@ const ContactUsPage = () => {
                             Call us and we&#39;ll get back to you soon.
                         </p>
                         <p className="text-black font-semibold text-lg">
-                            (123) 456-7890
+                            +1 506 700 4391
+                        </p>
+                        <p className="text-black font-semibold text-lg">
+                            +92 339 8880 386
                         </p>
                     </div>
                     <div className="text-center p-8 bg-white rounded-2xl border shadow-lg hover:shadow-xl transition-shadow">
@@ -238,13 +240,15 @@ const ContactUsPage = () => {
                         <h3 className="text-xl font-bold text-black mb-4">Join Our Community</h3>
                         <p className="text-gray-600">
                             Connect with <span
-                            className="text-primary font-semibold">like-minded professionals</span><br/>
+                            className="text-primary font-semibold">StartUPulse</span><br/>
                             and stay updated.
                         </p>
                     </div>
                 </div>
                 <div className=" flex justify-center mt-12">
                     <button
+                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
+
                         className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                     >
                         Schedule a call
