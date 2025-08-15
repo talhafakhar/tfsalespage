@@ -10,7 +10,7 @@ const ContactUsPage = () => {
     const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
     const handleRecaptchaChange = (value: string | null) => {
         setRecaptchaValue(value);
-        console.log("reCAPTCHA value:", value);
+        console.log(recaptchaValue)
     };
     return (
         <div>
