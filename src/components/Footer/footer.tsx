@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                 {label: "Fractional CMO", href: "/services/fractional-cto"},
                 {label: "Fractional CTO", href: "/services/fractional-cto"},
                 {label: "Fractional SDR", href: "/services/fractional-sdr"},
-                {label: "AAS",   href: "/services/ai-agent-as-a-service",},
+                {label: "Agent as a service (AaaS)",   href: "/services/ai-agent-as-a-service",},
                 {label: "Sales Automation",  href: "/services/sales-automation-for-startups"},
                 {label: "Sales Consultation", href: "/services/b2b-sales-consultation"},
             ]

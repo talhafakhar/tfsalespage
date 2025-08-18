@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
             description: "Outbound sales reps to build your pipeline faster."
         },
         {
-            label: "Add Agent as a Service (AaaS)",
+            label: "Agent as a Service (AaaS)",
             href: "/services/ai-agent-as-a-service",
             icon: Settings,
             description: "Automation-as-a-Service for scaling operations."
