@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({
-            secret: process.env.RECAPTCHA_SECRET_KEY!,
+            secret: process.env.RECAPTCHA_SECRET_KEY || '6Lfnf68rAAAAADaTqPR6mo2AbbkOyXw1pxvfJ8G6',
             response: token
         })
     });
