@@ -139,33 +139,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
         };
     }
 };
-
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    console.log('🎯 getStaticProps started for slug:', params?.slug);
-
     try {
         const slug = params?.slug as string;
-
         if (!slug) {
-            console.log('❌ No slug provided');
+            console.log('❌ getStaticProps: No slug provided');
             return {
                 notFound: true,
             };
         }
-
-        console.log('📡 Calling fetchBlogBySlugBuildTime for:', slug);
         const blog = await fetchBlogBySlugBuildTime(slug);
-
-        console.log('📋 fetchBlogBySlugBuildTime result:', blog ? 'Found blog' : 'No blog found');
-
         if (!blog) {
-            console.log('❌ Blog not found for slug:', slug);
             return {
                 notFound: true,
             };
         }
-
-        console.log('✅ Returning blog data for:', slug);
         return {
             props: {
                 blog,
