@@ -18,7 +18,9 @@ const ContactUsPage = () => {
     const [successMsg, setSuccessMsg] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [focusedField, setFocusedField] = useState<string | null>(null);
-
+    const [modalMsg, setModalMsg] = useState<string>('');
+    const [isSuccess, setIsSuccess] = useState<boolean>(false);
+    const [showModal, setShowModal] = useState<boolean>(false);
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
@@ -29,11 +31,11 @@ const ContactUsPage = () => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setSuccessMsg('');
-        setErrorMsg('');
 
         if (!recaptchaValue) {
-            setErrorMsg('Please complete the reCAPTCHA.');
+            setModalMsg('⚠️ Please complete the reCAPTCHA.');
+            setIsSuccess(false);
+            setShowModal(true);
             setLoading(false);
             return;
         }
@@ -42,29 +44,34 @@ const ContactUsPage = () => {
             const res = await fetch('/api/contact/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ...formData,
-                    token: recaptchaValue
-                }),
+                body: JSON.stringify({ ...formData, token: recaptchaValue }),
             });
 
             const data = await res.json();
 
             if (data.ok) {
-                setSuccessMsg(data.message || 'Form submitted successfully!');
-                setFormData({ name: '', email: '', phone: '', linkedin: '', nda: '', message: '' });
-                setRecaptchaValue(null);
+                setModalMsg(data.message || '✅ Form submitted successfully!');
+                setIsSuccess(true);
+                setShowModal(true);
             } else {
-                setErrorMsg(data.message || 'Something went wrong.');
+                setModalMsg(data.message || '❌ Something went wrong.');
+                setIsSuccess(false);
+                setShowModal(true);
             }
         } catch (err) {
             console.error(err);
-            setErrorMsg('Failed to submit the form.');
-            setTimeout(() => {
-                setErrorMsg('');
-            }, 5000);
+            setModalMsg('❌ Failed to submit the form.');
+            setIsSuccess(false);
+            setShowModal(true);
         } finally {
             setLoading(false);
+        }
+    };
+    const handleModalClose = () => {
+        setShowModal(false);
+        if (isSuccess) {
+            setFormData({ name: '', email: '', phone: '', linkedin: '', nda: '', message: '' });
+            setRecaptchaValue(null);
         }
     };
     setTimeout(() => {
@@ -86,7 +93,7 @@ const ContactUsPage = () => {
                         <form className="space-y-6" onSubmit={handleSubmit}>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">Name</label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Name<span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
@@ -101,7 +108,7 @@ const ContactUsPage = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">Email</label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Email<span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
@@ -119,7 +126,7 @@ const ContactUsPage = () => {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">Phone</label>
+                                    <label className="block text-sm font-semibold text-black mb-2">Phone<span className="text-red-500">*</span></label>
                                     <PhoneInput
                                         country={'pk'}
                                         value={formData.phone}
@@ -140,13 +147,15 @@ const ContactUsPage = () => {
                                 </div>
 
                                 <div>
-                                    <label className="block text-sm font-semibold text-black mb-2">LinkedIn</label>
+                                    <label className="block text-sm font-semibold text-black mb-2">LinkedIn<span className="text-red-500">*</span></label>
                                     <div className="relative">
                                         <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                                         <input
                                             type="url"
                                             name="linkedin"
                                             value={formData.linkedin}
+                                            pattern="^(https?:\/\/)?(www\.)?linkedin\.com\/.*$"
+                                            title="Please enter a valid LinkedIn profile URL"
                                             onChange={handleChange}
                                             placeholder="Please enter URL"
                                             className="w-full pl-12 pr-4 py-1 border-2 border-gray-200 rounded-xl focus:border-yellow-400 focus:outline-none transition-colors"
@@ -156,7 +165,7 @@ const ContactUsPage = () => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-black mb-2">NDA Required</label>
+                                <label className="block text-sm font-semibold text-black mb-2">NDA Required<span className="text-red-500">*</span></label>
                                 <div className="relative">
                                     <select
                                         name="nda"
@@ -179,7 +188,7 @@ const ContactUsPage = () => {
                             </div>
 
                             <div>
-                                <label className="block text-sm font-semibold text-black mb-2">Message</label>
+                                <label className="block text-sm font-semibold text-black mb-2">Message<span className="text-red-500">*</span></label>
                                 <textarea
                                     name="message"
                                     value={formData.message}
@@ -209,6 +218,21 @@ const ContactUsPage = () => {
                                 {!loading && <Send className="w-5 h-5" />}
                             </button>
                         </form>
+                        {showModal && (
+                            <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+                                <div className="bg-white p-6 rounded-xl shadow-xl w-[90%] max-w-sm text-center">
+                                    <p className={`mb-4 text-lg font-semibold ${isSuccess ? 'text-green-600' : 'text-red-600'}`}>
+                                        {modalMsg}
+                                    </p>
+                                    <button
+                                        onClick={handleModalClose}
+                                        className="bg-primary px-4 py-1.5 rounded font-bold hover:scale-105 transition"
+                                    >
+                                        OK
+                                    </button>
+                                </div>
+                            </div>
+                        )}
                     </div>
                     <div className="relative ">
                         <div className="overflow-hidden">
