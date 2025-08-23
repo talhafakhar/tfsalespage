@@ -1,17 +1,18 @@
-import type { NextConfig } from 'next';
+import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  images: {
-    remotePatterns: [
-      {
-        protocol: 'http',
-        hostname: 'localhost',
-        port: '1337',
-        pathname: '/uploads/**',
-      },
-    ],
-  },
+    reactStrictMode: true,
+    images: {
+        domains: ['api.tfbusinesssolutions.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'api.tfbusinesssolutions.com',
+                port: '',
+                pathname: '/uploads/**',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
