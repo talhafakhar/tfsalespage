@@ -15,15 +15,10 @@ const ContactUsPage = () => {
     });
     const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-    const [successMsg, setSuccessMsg] = useState('');
-    const [errorMsg, setErrorMsg] = useState('');
     const [focusedField, setFocusedField] = useState<string | null>(null);
     const [modalMsg, setModalMsg] = useState<string>('');
     const [isSuccess, setIsSuccess] = useState<boolean>(false);
     const [showModal, setShowModal] = useState<boolean>(false);
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
 
     const handleRecaptchaChange = (value: string | null) => {
         setRecaptchaValue(value);
@@ -74,9 +69,14 @@ const ContactUsPage = () => {
             setRecaptchaValue(null);
         }
     };
-    setTimeout(() => {
-        setSuccessMsg('');
-    }, 5000);
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        let value = e.target.value;
+        if (e.target.name === "linkedin" && value && !/^https?:\/\//i.test(value)) {
+            value = "https://" + value;
+        }
+        setFormData({ ...formData, [e.target.name]: value });
+    };
+
     return (
         <div>
             <div className="text-center py-20 md:pt-28 pb-10 px-4 bg-white">
@@ -205,8 +205,6 @@ const ContactUsPage = () => {
                                     sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6Lfnf68rAAAAAP0HqFUTRHYuz9-cGedGg1_RdD-q'}
                                     onChange={handleRecaptchaChange}
                                 />
-                                {errorMsg && <p className="text-red-500 mt-1 text-sm">{errorMsg}</p>}
-                                {successMsg && <p className="text-green-500 mt-1 text-sm">{successMsg}</p>}
                             </div>
 
                             <button
