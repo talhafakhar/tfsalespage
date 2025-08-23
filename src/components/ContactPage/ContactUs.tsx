@@ -42,7 +42,10 @@ const ContactUsPage = () => {
             const res = await fetch('/api/contact/send', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...formData }),
+                body: JSON.stringify({
+                    ...formData,
+                    token: recaptchaValue
+                }),
             });
 
             const data = await res.json();
@@ -57,10 +60,16 @@ const ContactUsPage = () => {
         } catch (err) {
             console.error(err);
             setErrorMsg('Failed to submit the form.');
+            setTimeout(() => {
+                setErrorMsg('');
+            }, 5000);
         } finally {
             setLoading(false);
         }
     };
+    setTimeout(() => {
+        setSuccessMsg('');
+    }, 5000);
     return (
         <div>
             <div className="text-center py-20 md:pt-28 pb-10 px-4 bg-white">
@@ -184,7 +193,7 @@ const ContactUsPage = () => {
 
                             <div className="pt-2">
                                 <ReCAPTCHA
-                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || '6Lfnf68rAAAAAP0HqFUTRHYuz9-cGedGg1_RdD-q'}
                                     onChange={handleRecaptchaChange}
                                 />
                                 {errorMsg && <p className="text-red-500 mt-1 text-sm">{errorMsg}</p>}

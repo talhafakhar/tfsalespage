@@ -30,7 +30,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             return res.status(400).json({ ok: false, message: 'reCAPTCHA verification failed' });
         }
         await resend.emails.send({
-            from: 'no-reply@yourdomain.com',
+            from: 'onboarding@resend.dev',
             to: 'thetalhafakhar@gmail.com',
             subject: `New Contact Form Submission from ${name}`,
             html: `
