@@ -34,17 +34,48 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             to: 'thetalhafakhar@gmail.com',
             subject: `New Contact Form Submission from ${name}`,
             html: `
-        <h2>Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Phone:</strong> ${phone}</p>
-        <p><strong>LinkedIn:</strong> ${linkedin}</p>
-        <p><strong>NDA Required:</strong> ${nda}</p>
-        <p><strong>Message:</strong><br/> ${message}</p>
+       <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 20px;">
+  <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 12px; padding: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+    
+    <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 16px; color: #111827;">
+      Contact Form Submission
+    </h2>
+    
+    <p style="font-size: 14px; color: #374151; margin: 8px 0;">
+      <strong style="color:#111827;">Name:</strong> ${name}
+    </p>
+    
+    <p style="font-size: 14px; color: #374151; margin: 8px 0;">
+      <strong style="color:#111827;">Email:</strong> ${email}
+    </p>
+    
+    <p style="font-size: 14px; color: #374151; margin: 8px 0;">
+      <strong style="color:#111827;">Phone:</strong> ${phone}
+    </p>
+    
+    <p style="font-size: 14px; color: #374151; margin: 8px 0;">
+      <strong style="color:#111827;">LinkedIn:</strong> ${linkedin}
+    </p>
+    
+    <p style="font-size: 14px; color: #374151; margin: 8px 0;">
+      <strong style="color:#111827;">NDA Required:</strong> ${nda}
+    </p>
+    
+    <p style="font-size: 14px; color: #374151; margin: 12px 0 4px;">
+      <strong style="color:#111827;">Message:</strong>
+    </p>
+    <div style="font-size: 14px; color: #374151; line-height: 1.6; background:#f3f4f6; padding:12px; border-radius:8px;">
+      ${message}
+    </div>
+    
+  </div>
+</div>
+
       `,
         });
 
-        return res.status(200).json({ ok: true, message: 'Form submitted successfully' });
+        return res.status(200).json({ ok: true,            message: 'Thank you! Your message has been sent successfully. We will get back to you soon.',
+        });
 
     } catch (error) {
         console.error('API error:', error);
