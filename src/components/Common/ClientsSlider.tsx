@@ -58,6 +58,8 @@ const InfiniteLogoSlider:React.FC<InfiniteLogoSlider> = ({title}) => {
                                                 alt={logo.name}
                                                 className="max-w-full max-h-full object-contain"
                                                 loading="lazy"
+                                                width={200}
+                                                height={200}
                                             />
                                         ) : (
                                             <Image

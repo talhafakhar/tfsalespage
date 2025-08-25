@@ -212,7 +212,6 @@ const BlogDetail: React.FC<BlogCardProps> = ({ blog }) => {
                                         transition={{ duration: 0.5, delay: index * 0.1 }}
                                     >
                                         <Tag className="mb-6 text-lg leading-relaxed">
-                                            {/*eslint-disable-next-line @typescript-eslint/no-explicit-any*/}
                                             {block.children.map((child: any, i: number) => {
                                                 let InlineTag: keyof JSX.IntrinsicElements = "span";
                                                 if (child.bold) InlineTag = "strong";
