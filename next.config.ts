@@ -4,14 +4,10 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['api.tfbusinesssolutions.com'],
         remotePatterns: [
-            {
-                protocol: 'https',
-                hostname: 'api.tfbusinesssolutions.com',
-                port: '',
-                pathname: '/uploads/**',
-            },
+            { protocol: 'https', hostname: 'api.tfbusinesssolutions.com' },
+            { protocol: 'https', hostname: 'tfbusinesssolution.com' },
+            { protocol: 'http', hostname: 'localhost', port: '1337' },
         ],
     },
 };
