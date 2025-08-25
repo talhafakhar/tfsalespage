@@ -1,5 +1,5 @@
 import {easeOut, motion} from "framer-motion";
-import { Target, Eye, ArrowRight } from "lucide-react";
+import { Target, Eye } from "lucide-react";
 import React from "react";
 
 const MissionVision = () => {
