@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
             initialBlogs: data.data,
             pagination: data.meta.pagination,
         },
-        revalidate: 300, // ISR: at most every 5 minutes
+        revalidate: 300,
     };
 };
 
