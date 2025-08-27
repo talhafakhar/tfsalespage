@@ -15,6 +15,7 @@ module.exports = {
                 'button': ['Manrope', 'system-ui', 'sans-serif'],
                 'heading': ['"Seymour One"', 'sans-serif'],
                 'righteous': ['"Righteous"', 'sans-serif'],
+                "nunito": ['"Nunito"', 'sans-serif'],
             },
             colors: {
                 'primary': "#F7CB40",

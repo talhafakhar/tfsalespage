@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { Righteous, Seymour_One } from 'next/font/google'
+import { Righteous, Seymour_One,Nunito } from 'next/font/google'
 import { useEffect, useState } from 'react'
 import GlobalLoading from '@/components/Common/GlobalLoading'
 import ConsentBanner from "@/components/Common/CookieConsent";
@@ -15,6 +15,11 @@ const seymourOne = Seymour_One({
   subsets: ['latin'],
   variable: '--font-seymour',
   weight: '400',
+})
+const nunito = Nunito({
+  subsets: ['latin'],
+  variable: '--font-nunito',
+  weight: ['400', '600', '700','800','900'],
 })
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -50,7 +55,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-      <div className={`${righteous.variable} ${seymourOne.variable}`}>
+      <div className={`${righteous.variable} ${seymourOne.variable} ${nunito.variable}`}>
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Component {...pageProps} />
             <ConsentBanner/>
