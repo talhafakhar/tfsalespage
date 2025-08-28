@@ -30,7 +30,12 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog,key }) => {
                                 src={fullImageUrl}
                                 alt={imageAlt}
                                 fill
-                                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                style={{
+                                    maxWidth: '100%',
+                                    width: '100%',
+                                    height: '100%'
+                                }}
                             />
                             <div className="absolute top-4 right-4 z-20">
                                 <Link href={`/blogs/${blog.slug}`}
