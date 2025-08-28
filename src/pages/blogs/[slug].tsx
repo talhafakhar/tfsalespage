@@ -28,7 +28,6 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
             revalidate: 300, // ISR: at most every 5 min
         };
     } catch (e) {
-        // Don’t fail to build if Strapi is temporarily down
         console.error('Error fetching blog post:', e);
         return {notFound: true, revalidate: 60};
     }
