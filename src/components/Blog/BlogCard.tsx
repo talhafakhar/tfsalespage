@@ -28,17 +28,18 @@ const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
             <div>
                 {fullImageUrl && (
                     <div className="relative h-56 overflow-hidden">
-                        <div
-                            className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/30 to-gray-900/40 z-10"/>
-                        <div className="w-full h-full relative">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/30 to-gray-900/40 z-10"/>
+                        <div className="relative w-full aspect-[16/9] overflow-hidden group">
                             <Image
                                 src={fullImageUrl}
                                 alt={imageAlt}
-                                width={400}
-                                height={400}
-                                className="w-full h-full  object-contain transition-transform duration-700 group-hover:scale-105"
+                                fill
+                                className="object-contain transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
+
+
+
                         <div className="absolute top-4 right-4 z-20">
                             <Link href={`/blogs/${blog.slug}`}
                                   className="w-10 h-10 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110">
