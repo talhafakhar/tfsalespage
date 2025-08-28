@@ -97,7 +97,7 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog }) => {
                                         alt={blog.title}
                                         width={800}
                                         height={500}
-                                        className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                                        className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
                                         priority
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                                     />
