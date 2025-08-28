@@ -2,7 +2,7 @@ import {Smartphone} from "lucide-react";
 import React from "react";
 export default function TakeFirstStepBanner() {
     return (
-        <section className="relative font-nunito bg-[url('/assets/home/banner-background.webp')] bg-cover bg-center text-white py-16 px-4">
+        <section className="relative bg-[#54595F] font-nunito bg-[url('/assets/home/banner-background.webp')] bg-cover bg-center text-white py-16 px-4">
             <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
 
             <div className="max-w-4xl mx-auto text-center relative z-10">

@@ -19,7 +19,7 @@ export default function ConsultingSection() {
         </svg>
     );
     return (
-        <section className="relative py-16 bg-black text-white overflow-hidden" style={{backgroundImage: "url('/assets/home/business-consulting.webp')"}}>
+        <section className="relative py-16 bg-[#54595F] text-white overflow-hidden" style={{backgroundImage: "url('/assets/home/business-consulting.webp')"}}>
             <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
             <div className="container mx-auto px-4 relative z-99999">
                 <h2 className="text-4xl md:text-[80px] max-w-3xl mx-auto text-center mb-12 font-nunito leading-snug" style={{fontWeight: 900}}>

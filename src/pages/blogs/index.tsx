@@ -71,7 +71,6 @@ export default function BlogsIndex({ initialBlogs, pagination }: Props) {
 
             <Navbar />
             <main className="min-h-screen pt-24 relative">
-                {/* your background blobs, as before */}
                 <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                     <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                     <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>

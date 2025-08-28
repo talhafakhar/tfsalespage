@@ -55,7 +55,6 @@ export default function BlogList({ initialBlogs, pagination, currentPage }: Prop
 
             {totalPages > 1 && (
                 <div className="flex justify-center items-center mt-12 gap-2">
-                    {/* Previous */}
                     <Link
                         href={currentPage > 1 ? (currentPage - 1 === 1 ? '/blogs' : `/blogs/page/${currentPage - 1}`) : '#'}
                         aria-disabled={currentPage === 1}
@@ -68,8 +67,6 @@ export default function BlogList({ initialBlogs, pagination, currentPage }: Prop
                         <ChevronLeft size={16} />
                         Previous
                     </Link>
-
-                    {/* Numbers */}
                     <div className="flex gap-1">
                         {getPageNumbers(currentPage, totalPages).map((p, i) => {
                             if (p === '...') {
@@ -94,8 +91,6 @@ export default function BlogList({ initialBlogs, pagination, currentPage }: Prop
                             );
                         })}
                     </div>
-
-                    {/* Next */}
                     <Link
                         href={currentPage < totalPages ? `/blogs/page/${currentPage + 1}` : '#'}
                         aria-disabled={currentPage === totalPages}

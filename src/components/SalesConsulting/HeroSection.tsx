@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
     return (
         <div>
             <Navbar/>
-            <section className="flex bg-secondary items-center min-h-screen bg-cover bg-center mt-10 md:mt-1" style={{backgroundImage: "url('/assets/home/bg-hero.webp')"}}>
+            <section className="flex bg-[#54595F] items-center min-h-screen bg-cover bg-center mt-10 md:mt-1" style={{backgroundImage: "url('/assets/home/bg-hero.webp')"}}>
                 <div className="container mx-auto px-4 py-10 mt-5 md:mt-16">
                     <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
                         <div className="text-center ">

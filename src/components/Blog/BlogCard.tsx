@@ -25,7 +25,7 @@ const BlogCard: React.FC<BlogCardProps> = ({ blog,key }) => {
                 <div>
                     {fullImageUrl && (
                         <div className="relative h-56 overflow-hidden">
-                            <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-yellow-500/30 to-gray-900/40 z-10"/>
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/30 to-gray-900/40 z-10"/>
                             <Image
                                 src={fullImageUrl}
                                 alt={imageAlt}

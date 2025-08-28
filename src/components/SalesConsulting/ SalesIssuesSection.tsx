@@ -42,7 +42,7 @@ const cards = [
 
 export default function SalesIssuesSection() {
     return (
-            <section className="relative font-nunito bg-[url('/assets/home/Why-You-Might-Not.webp')] bg-cover bg-center text-white py-10 px-4">
+            <section className="relative bg-[#54595F] font-nunito bg-[url('/assets/home/Why-You-Might-Not.webp')] bg-cover bg-center text-white py-10 px-4">
 
             <div className="absolute inset-0 bg-black opacity-80 z-0"></div>
 
@@ -59,65 +59,54 @@ export default function SalesIssuesSection() {
                 </p>
             </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto  relative z-99999">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto relative z-10 px-4">
                     {cards.slice(0, 3).map((card, idx) => (
                         <div
                             key={idx}
-                            className="bg-white text-black p-5 rounded-xl shadow-md flex flex-col justify-between min-h-[300px]"
+                            className="bg-white text-black p-5 rounded-xl shadow-md flex flex-col justify-between min-h-[300px] w-full"
                         >
                             <div>
                                 <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
                                 <div className="flex items-start gap-2 mb-2">
-                                    <div>
-                                        <p className="font-medium">
-                                            <span className="font-bold">The Issue:</span> {card.issue}
-                                        </p>
-                                    </div>
-                                    <XCircle className="text-red-500 mt-1" size={80} />
+                                    <p className="font-medium">
+                                        <span className="font-bold">The Issue:</span> {card.issue}
+                                    </p>
+                                    <XCircle className="text-red-500 mt-1 shrink-0" size={40} />
                                 </div>
                                 <hr className="my-3 border-black" />
                                 <div className="flex items-start gap-2">
-                                    <div>
-                                        <p className="font-medium">
-                                            <span className="font-bold">The Solution:</span> {card.solution}
-                                        </p>
-                                    </div>
-                                    <CheckCircle className="text-green-500 mt-1" size={100} />
+                                    <p className="font-medium">
+                                        <span className="font-bold">The Solution:</span> {card.solution}
+                                    </p>
+                                    <CheckCircle className="text-green-500 mt-1 shrink-0" size={40} />
                                 </div>
                             </div>
                         </div>
                     ))}
-                    <div className="col-span-3 flex justify-center gap-6">
-                        {cards.slice(3).map((card, idx) => (
-                            <div
-                                key={idx}
-                                className="bg-white text-black p-5 rounded-xl shadow-md flex flex-col justify-between min-h-[300px] w-full md:w-1/3"
-                            >
-                                <div>
-                                    <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
-                                    <div className="flex items-start gap-2 mb-2">
-                                        <div>
-                                            <p className="font-medium">
-                                                <span className="font-bold">The Issue:</span> {card.issue}
-                                            </p>
-                                        </div>
-                                        <XCircle className="text-red-500 mt-1" size={80} />
-                                    </div>
-                                    <hr className="my-3 border-black" />
-                                    <div className="flex items-start gap-2">
-                                        <div>
-                                            <p className="font-medium">
-                                                <span className="font-bold">The Solution:</span> {card.solution}
-                                            </p>
-                                        </div>
-                                        <CheckCircle className="text-green-500 mt-1" size={100} />
-                                    </div>
+                    {cards.slice(3).map((card, idx) => (
+                        <div
+                            key={idx}
+                            className="bg-white text-black p-5 rounded-xl shadow-md flex flex-col justify-between min-h-[300px] w-full"
+                        >
+                            <div>
+                                <h3 className="text-2xl font-bold mb-2">{card.title}</h3>
+                                <div className="flex items-start gap-2 mb-2">
+                                    <p className="font-medium">
+                                        <span className="font-bold">The Issue:</span> {card.issue}
+                                    </p>
+                                    <XCircle className="text-red-500 mt-1 shrink-0" size={40} />
+                                </div>
+                                <hr className="my-3 border-black" />
+                                <div className="flex items-start gap-2">
+                                    <p className="font-medium">
+                                        <span className="font-bold">The Solution:</span> {card.solution}
+                                    </p>
+                                    <CheckCircle className="text-green-500 mt-1 shrink-0" size={40} />
                                 </div>
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
-
             </section>
     );
 }
