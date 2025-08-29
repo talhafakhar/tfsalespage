@@ -2,7 +2,7 @@ import React, { useRef, } from "react";
 import {motion} from "framer-motion";
 import { Monitor, PenTool, Users, Rocket, Settings, Bot, Sparkles, TrendingUp, Zap } from "lucide-react";
 import Image from "next/image";
-
+import Link from "next/link";
 const services = [
     {
         id: "virtual-cmo",
@@ -122,86 +122,86 @@ const ServicesSection: React.FC = () => {
                     show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
                 }}
             >
-                {services.map((service, index) => (
-                    <motion.Link
-                        href={service.link}
-                        key={service.id}
-                        className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary"
-                        whileHover={{
-                            scale: 1.03,
-                            rotate: 0.5,
-                            transition: { type: "spring", stiffness: 400 }
-                        }}
-                        variants={{
-                            hidden: {
-                                opacity: 0,
-                                y: 40,
-                                rotateX: -15
-                            },
-                            show: {
-                                opacity: 1,
-                                y: 0,
-                                rotateX: 0,
-                                transition: {
-                                    type: "spring",
-                                    stiffness: 100,
-                                    damping: 15
-                                }
-                            }
-                        }}
-                    >
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                        {service.tag && (
-                            <motion.div
-                                className="absolute top-4 right-4 z-10"
-                                initial={{ opacity: 0, scale: 0 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
-                            >
-                                <div className="flex items-center gap-1 px-3 py-1 bg-primary text-secondary text-xs font-bold rounded-full shadow-lg">
-                                    {service.tag.icon}
-                                    <span>{service.tag.text}</span>
-                                </div>
-                            </motion.div>
-                        )}
-
+                {services.map((service,index ) => (
+                    <Link key={service.index} href={service.link} >
                         <motion.div
-                            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 opacity-0"
-                            whileHover={{ opacity: 1 }}
-                            transition={{ duration: 0.3 }}
-                        />
+                            key={service.id}
+                            className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary"
+                            whileHover={{
+                                scale: 1.03,
+                                rotate: 0.5,
+                                transition: { type: "spring", stiffness: 400 }
+                            }}
+                            variants={{
+                                hidden: {
+                                    opacity: 0,
+                                    y: 40,
+                                    rotateX: -15
+                                },
+                                show: {
+                                    opacity: 1,
+                                    y: 0,
+                                    rotateX: 0,
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 100,
+                                        damping: 15
+                                    }
+                                }
+                            }}
+                        >
+                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            {service.tag && (
+                                <motion.div
+                                    className="absolute top-4 right-4 z-10"
+                                    initial={{ opacity: 0, scale: 0 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
+                                >
+                                    <div className="flex items-center gap-1 px-3 py-1 bg-primary text-secondary text-xs font-bold rounded-full shadow-lg">
+                                        {service.tag.icon}
+                                        <span>{service.tag.text}</span>
+                                    </div>
+                                </motion.div>
+                            )}
 
-                        <div className="relative p-8 h-full flex flex-col justify-between min-h-[280px]">
-                            <div>
-                                <div className="flex items-center justify-center mb-4">
-                                    <motion.div
-                                        className="p-4 bg-primary/20 rounded-full relative"
-                                        whileHover={{
-                                            scale: 1.2,
-                                            rotate: 5
-                                        }}
-                                        transition={{ type: "spring", stiffness: 300 }}
-                                    >
-                                        <div className="text-primary">{service.icon}</div>
-                                    </motion.div>
+                            <motion.div
+                                className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 opacity-0"
+                                whileHover={{ opacity: 1 }}
+                                transition={{ duration: 0.3 }}
+                            />
+
+                            <div className="relative p-8 h-full flex flex-col justify-between min-h-[280px]">
+                                <div>
+                                    <div className="flex items-center justify-center mb-4">
+                                        <motion.div
+                                            className="p-4 bg-primary/20 rounded-full relative"
+                                            whileHover={{
+                                                scale: 1.2,
+                                                rotate: 5
+                                            }}
+                                            transition={{ type: "spring", stiffness: 300 }}
+                                        >
+                                            <div className="text-primary">{service.icon}</div>
+                                        </motion.div>
+                                    </div>
+                                    <h3 className="text-2xl font-bold text-white text-center font-manrope mb-3">
+                                        {service.title}
+                                    </h3>
                                 </div>
-                                <h3 className="text-2xl font-bold text-white text-center font-manrope mb-3">
-                                    {service.title}
-                                </h3>
+
+                                <motion.p
+                                    className="text-white/70 text-sm text-center font-dm-sans leading-relaxed"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ delay: 0.5 + index * 0.1 }}
+                                >
+                                    {service.description}
+                                </motion.p>
+
                             </div>
-
-                            <motion.p
-                                className="text-white/70 text-sm text-center font-dm-sans leading-relaxed"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ delay: 0.5 + index * 0.1 }}
-                            >
-                                {service.description}
-                            </motion.p>
-
-                        </div>
-                    </motion.Link>
+                        </motion.div>
+                    </Link>
                 ))}
             </motion.div>
         </section>
