@@ -62,7 +62,6 @@ export default function SalesConsultationServicePage() {
                     queryInput: 'required name=search_term_string',
                 }}
             />
-
             <HeroSection/>
             <ConsultingSection/>
             <WhySalesWrong/>

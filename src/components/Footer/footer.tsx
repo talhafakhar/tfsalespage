@@ -24,6 +24,7 @@ const Footer: React.FC = () => {
                 {label: "Agent as a service (AaaS)",   href: "/services/ai-agent-as-a-service",},
                 {label: "Sales Automation",  href: "/services/sales-automation-for-startups"},
                 {label: "Sales Consultation", href: "/services/b2b-sales-consultation"},
+                {label: "Sales Consulting", href: "/sales-consulting"},
             ]
         },
     ];

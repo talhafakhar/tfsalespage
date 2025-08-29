@@ -66,7 +66,7 @@ export default function FoundersSection() {
                 </div>
 
                 <div className="flex justify-center ">
-                    <div className="bg-black w-10 h-10 rounded-full flex items-center justify-center">
+                    <div className="bg-black w-10 h-10 rounded-full flex items-center justify-center hover:bg-primary transition-colors duration-300 cursor-pointer">
 <ArrowDown/>
                     </div>
                 </div>

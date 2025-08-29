@@ -48,7 +48,6 @@ function ProtocolDroid({
     className?: string;
     armRotation?: number;
 }) {
-    // A tasteful C‑3PO‑style protocol droid (original SVG; no IP assets used)
     return (
         <motion.svg
             viewBox="0 0 360 360"
@@ -69,12 +68,9 @@ function ProtocolDroid({
                 </linearGradient>
             </defs>
 
-            {/* Head */}
             <g>
                 <ellipse cx="180" cy="80" rx="56" ry="62" fill="url(#gold)" stroke="#2b2b2b" strokeWidth="3" />
-                {/* Brow ridge */}
                 <rect x="132" y="62" width="96" height="7" rx="3.5" fill="url(#goldDark)" opacity="0.9" />
-                {/* Eyes (blink) */}
                 <motion.circle
                     cx="160"
                     cy="84"
@@ -114,26 +110,16 @@ function ProtocolDroid({
                 <rect x="98" y="158" width="26" height="86" rx="13" fill="url(#goldDark)" />
                 <circle cx="111" cy="246" r="12" fill="url(#goldDark)" />
             </g>
-
-            {/* Right arm (pointing) */}
             <motion.g
                 style={{ transformOrigin: "246px 172px" }}
                 animate={{ rotate: [armRotation, armRotation - 6, armRotation] }}
                 transition={{ repeat: Infinity, duration: 2.2, ease: "easeInOut" }}
-            >
-                {/* Upper arm pivot at ~246,172 */}
-                <rect x="232" y="158" width="28" height="40" rx="14" fill="url(#goldDark)" />
-                {/* Forearm */}
+            ><rect x="232" y="158" width="28" height="40" rx="14" fill="url(#goldDark)" />
                 <rect x="256" y="170" width="66" height="18" rx="9" fill="url(#gold)" />
-                {/* Hand & finger */}
                 <circle cx="326" cy="179" r="9" fill="#111827" />
                 <rect x="318" y="173" width="18" height="6" rx="3" fill="#111827" />
             </motion.g>
-
-            {/* Waist ring */}
             <rect x="138" y="270" width="84" height="12" rx="6" fill="url(#goldDark)" />
-
-            {/* Hips/legs (cropped for composition) */}
             <g opacity="0.8">
                 <rect x="146" y="286" width="28" height="44" rx="10" fill="url(#goldDark)" />
                 <rect x="186" y="286" width="28" height="44" rx="10" fill="url(#goldDark)" />
@@ -146,19 +132,15 @@ export default function Custom404() {
     return (
         <div className="min-h-screen flex flex-col bg-[#0B0C10] text-white relative overflow-hidden">
             <Navbar />
-
-            {/* Starfield backdrop */}
             <Starfield />
-
             <main className="flex-1 relative z-10 flex flex-col items-center pt-40 pb-16 px-6">
-                {/* Headline */}
                 <motion.h1
                     className="text-5xl md:text-7xl font-extrabold tracking-tight text-center mb-4"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    You’ve entered the <span className="bg-gradient-to-r from-yellow-400 to-amber-600 bg-clip-text text-transparent">Empty Space</span>
+                    You’ve entered the <span className="text-primary">Empty Space</span>
                 </motion.h1>
 
                 <motion.p
@@ -169,18 +151,12 @@ export default function Custom404() {
                 >
                     Sensors register only silence and the cold vacuum. No beacons. No echoes. <span className="text-white font-semibold">Return to base at once.</span>
                 </motion.p>
-
-                {/* Robot + Button container */}
                 <div className="relative w-[340px] h-[360px] md:w-[420px] md:h-[420px]">
-                    {/* The droid */}
                     <ProtocolDroid className="w-full h-full" />
-
-                    {/* Home button placed in front of the pointing hand (fine‑tune left/top if needed) */}
                     <motion.div
                         className="absolute"
                         style={{
-                            // This anchors the button near the fingertip at (326,179) in the SVG viewBox
-                            left: "68%", // tweak a little if your header/footer shifts layout
+                            left: "68%",
                             top: "48%",
                             transform: "translate(-50%, -50%)",
                         }}
@@ -190,8 +166,8 @@ export default function Custom404() {
                     >
                         <Link
                             href="/"
-                            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold shadow-lg transition-transform
-                         bg-gradient-to-r from-yellow-400 to-amber-600 text-black hover:scale-105"
+                            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold shadow-lg text-nowrap transition-transform
+                         bg-primary text-black hover:scale-105"
                         >
                             Return Home
                         </Link>
