@@ -34,7 +34,7 @@ module.exports = {
                 'fade-in': 'fade-in 0.7s ease-out forwards',
                 'fade-out': 'fade-out 0.7s ease-out forwards',
                 'slide-up': 'slide-up 0.5s ease-out forwards',
-                textLoop: 'textLoop 5s ease-in-out infinite',
+                textLoop: 'textLoop 10s ease-in-out infinite',
             },
             keyframes: {
                 'scroll-left': {
@@ -108,11 +108,12 @@ module.exports = {
                     '100%': { transform: 'translateY(0)', opacity: 1 },
                 },
                 textLoop: {
-                    '0%, 10%': { marginTop: '0rem' },
-                    '20%, 30%': { marginTop: '-2.81rem' },
-                    '40%, 60%': { marginTop: '-5.62rem' },
-                    '70%, 80%': { marginTop: '-2.81rem' },
-                    '90%, 100%': { marginTop: '0rem' },
+                    '0%, 16.66%': { marginTop: '0rem' },
+                    '16.66%, 33.33%': { marginTop: '-2rem' },
+                    '33.33%, 50%': { marginTop: '-5rem' },
+                    '50%, 66.66%': { marginTop: '-7rem' },
+                    '66.66%, 83.33%': { marginTop: '-10rem' },
+                    '83.33%, 100%': { marginTop: '-12rem' },
                 },
 
             },

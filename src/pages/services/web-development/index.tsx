@@ -137,7 +137,7 @@ const successStories: SuccessStory[] = [
         },
     },
 ];
-export default function FractionalCTO() {
+export default function WebDevelopment() {
     const [show, setShow] = useState(false);
     useEffect(() => {
         const timer = setTimeout(() => setShow(true), 5000);
@@ -238,18 +238,19 @@ export default function FractionalCTO() {
             />
             <div>
                 <HeroSection
-                    title='Smart CTO +'
-                    titleTwo="Full-stack team in 2 weeks"
-                    description="Skip the costly search. Get a proven CMO + team aligned with your brand, your goals, and your growth targets."
-                    buttonText="Get Your CMO Team"
-                    stripe="FRACTIONAL CTO"
+                    title='Fast, Reliable'
+                    titleTwo="Full-Stack Web Development"
+                    description="We build modern, responsive websites with full-stack expertise, delivering high-quality solutions quickly to help your business grow online efficiently."
+                    buttonText="Let’s Build Together"
+                    stripe="WEB DEVELOPMENT"
+                    imageUrl="/assets/services/webDevelopmentBg.webp"
                 />
                 <Transform
                     title="Why 80% of Startups"
                     titleTwo="Fail Building Products"
-                    description=" Great ideas aren't enough. Most startups fail because they build slowly, over-engineer, or hire wrong talent. Product development requires strategy, architecture, AI integration, team management, and scalable systems. One developer can't handle everything. You need a complete tech team led by an experienced CTO."
-                    buttonText="Build My Tech Team"
-                    src="/assets/services/cto-3d.webp"
+                    description=" Building a website isn’t just about code. It requires scalable architecture, seamless UX/UI design, performance optimization, and secure systems. Our expert web development team delivers fully functional, responsive, and high-performing websites tailored to your business goals."
+                    buttonText="Get My Free Consultation"
+                    src="/assets/services/like.webp"
                     width={400}
                 />
                 <BenefitsSection
@@ -464,57 +465,57 @@ export default function FractionalCTO() {
                 />
                 <FAQSection
                     faqs = {[
-                    {
-                        id: 1,
-                        question: "How quickly can we start development?",
-                        answer: (
-                        <p>
-                        Your fractional CTO and development team can begin working within 1–2 weeks of signing the agreement.
-                        </p>
-                        ),
-                    },
-                    {
-                        id: 2,
-                        question: "What if we need to pivot our product direction?",
-                        answer: (
-                        <p>
-                        We specialize in agile development and can adapt quickly to new requirements or market feedback.
-                        </p>
-                        ),
-                    },
-                    {
-                        id: 3,
-                        question: "Do you work with specific tech stacks?",
-                        answer: (
-                        <p>
-                        Yes, we have expertise across React, Node.js, Python, AWS, AI/ML frameworks, and modern development tools.
-                        </p>
-                        ),
-                    },
-                    {
-                        id: 4,
-                        question: "How is this different from hiring a development agency?",
-                        answer: (
-                        <p>
-                        Our team works as your employees, not external vendors. You get dedicated focus and direct control over your product.
-                        </p>
-                        ),
-                    },
-                    {
-                        id: 5,
-                        question: "What happens when we're ready to hire an in-house team?",
-                        answer: (
-                        <p>
-                        We provide complete code documentation and can help transition to your internal team seamlessly.
-                        </p>
-                        ),
-                    },
+                        {
+                            id: 1,
+                            question: "How quickly can we start development?",
+                            answer: (
+                                <p>
+                                    Your fractional CTO and development team can begin working within 1–2 weeks of signing the agreement.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 2,
+                            question: "What if we need to pivot our product direction?",
+                            answer: (
+                                <p>
+                                    We specialize in agile development and can adapt quickly to new requirements or market feedback.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 3,
+                            question: "Do you work with specific tech stacks?",
+                            answer: (
+                                <p>
+                                    Yes, we have expertise across React, Node.js, Python, AWS, AI/ML frameworks, and modern development tools.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 4,
+                            question: "How is this different from hiring a development agency?",
+                            answer: (
+                                <p>
+                                    Our team works as your employees, not external vendors. You get dedicated focus and direct control over your product.
+                                </p>
+                            ),
+                        },
+                        {
+                            id: 5,
+                            question: "What happens when we're ready to hire an in-house team?",
+                            answer: (
+                                <p>
+                                    We provide complete code documentation and can help transition to your internal team seamlessly.
+                                </p>
+                            ),
+                        },
                     ]}
                 />
                 <ContactForm/>
                 <Footer/>
             </div>
-             {show && (
+            {show && (
                 <div
                     className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
                     <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">

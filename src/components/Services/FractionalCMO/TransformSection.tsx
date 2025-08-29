@@ -11,8 +11,9 @@ type TransformProps = {
     description: string;
     buttonText: string;
     src: string;
+    width?: number;
 };
-const Transform: React.FC<TransformProps> = ({title,titleTwo, description, buttonText,src}) => {
+const Transform: React.FC<TransformProps> = ({title,titleTwo, description, buttonText,src,width}) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({triggerOnce: true, threshold: 0.2});
     useEffect(() => {
@@ -67,9 +68,9 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                     <Image
                         src={src}
                         alt="3d"
-                        width={500}
+                        width={width}
                         loading="lazy"
-                        height={500}
+                        height={400}
                         className="object-cover mx-auto"
                     />
                 </motion.div>

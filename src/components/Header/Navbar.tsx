@@ -64,6 +64,12 @@ const Navbar: React.FC = () => {
             href: "/services/b2b-sales-consultation",
             icon: MessageSquare,
             description: "Expert guidance to improve your sales process."
+        },
+        {
+            label: "Web Development",
+            href: "/services/web-development",
+            icon: Code,
+            description: "Custom websites and web apps to elevate your online presence."
         }
     ];
     const [servicesExpanded, setServicesExpanded] = useState(false);

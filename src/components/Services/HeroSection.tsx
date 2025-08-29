@@ -10,8 +10,17 @@ type HeroSectionProps = {
     buttonTextTwo?: string;
     titleTwo?: string;
     stripe?: string;
+    imageUrl?: string;
 };
-const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText, titleTwo, stripe, buttonTextTwo}) => {
+const HeroSection: React.FC<HeroSectionProps> = ({
+                                                     title,
+                                                     description,
+                                                     buttonText,
+                                                     titleTwo,
+                                                     stripe,
+                                                     buttonTextTwo,
+                                                     imageUrl
+                                                 }) => {
     const [isVisible, setIsVisible] = useState(false);
     const [loadingCalendly, setLoadingCalendly] = useState(true);
     const [showCalendly, setShowCalendly] = useState(false);
@@ -33,6 +42,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
                 setBgImage("/assets/services/bg-CMO-hero.webp");
             }
         }
+
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
@@ -47,13 +57,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
             </div>
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                style={{ backgroundImage: `url('${bgImage}')` }}
+                style={{backgroundImage: `url('${imageUrl ? imageUrl : bgImage}')`}}
             >
                 <div className="absolute inset-0 bg-gradient-to-r from-secondary to-secondary/40"></div>
             </div>
             <div className="relative z-20 min-h-screen flex items-center ">
-                <div className={`container mx-auto px-4 sm:px-6 lg:px-8 mt-20  ${showCalendly ?"pt-40 pb-10" : "pt-0 pb-0"}`}>
-                    <div className="flex flex-col lg:flex-row items-center justify-center md:justify-between gap-8 lg:gap-12">
+                <div
+                    className={`container mx-auto px-4 sm:px-6 lg:px-8 mt-20  ${showCalendly ? "pt-40 pb-10" : "pt-0 pb-0"}`}>
+                    <div
+                        className="flex flex-col lg:flex-row items-center justify-center md:justify-between gap-8 lg:gap-12">
                         <div className="text-start">
                             <div
                                 className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
@@ -96,10 +108,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({title, description, buttonText
                             </div>
                         </div>
                         {showCalendly && (
-                            <div className=" lg:w-1/2 w-full  h-[500px] lg:h-[600px] relative z-10 flex items-center justify-center">
+                            <div
+                                className=" lg:w-1/2 w-full  h-[500px] lg:h-[600px] relative z-10 flex items-center justify-center">
                                 {loadingCalendly && (
-                                    <div className="absolute inset-0 flex items-center justify-center z-20 bg-white rounded-xl">
-                                        <div className="animate-spin rounded-full h-12 w-12 border-t-4 border-yellow-400 border-solid"></div>
+                                    <div
+                                        className="absolute inset-0 flex items-center justify-center z-20 bg-white rounded-xl">
+                                        <div
+                                            className="animate-spin rounded-full h-12 w-12 border-t-4 border-yellow-400 border-solid"></div>
                                     </div>
                                 )}
                                 <div className="w-full h-full rounded-xl overflow-hidden shadow-xl bg-white relative">

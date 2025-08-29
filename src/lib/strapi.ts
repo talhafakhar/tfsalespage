@@ -22,6 +22,7 @@ async function sFetch<T>(path: string): Promise<T> {
     }
     return res.json() as Promise<T>;
 }
+
 export async function getBlogs(page = 1, pageSize = 10): Promise<BlogResponse> {
     return sFetch<BlogResponse>(
         `/api/blogs?populate=feature_image&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`
@@ -42,4 +43,20 @@ export async function getLatestSlugs(limit = 50): Promise<string[]> {
         `/api/blogs?fields=slug&pagination[page]=1&pagination[pageSize]=${limit}&sort=publishedAt:desc`
     );
     return (data.data ?? []).map((x: any) => x?.attributes?.slug ?? x?.slug).filter(Boolean);
+}
+
+export async function getBlogSlugsForSitemap(): Promise<Array<{slug: string; updatedAt: string}>> {
+    try {
+        const data = await sFetch<any>(
+            `/api/blogs?fields[0]=slug&fields[1]=updatedAt&pagination[pageSize]=1000&sort=publishedAt:desc`
+        );
+
+        return (data.data ?? []).map((blog: any) => ({
+            slug: blog?.attributes?.slug ?? blog?.slug,
+            updatedAt: blog?.attributes?.updatedAt ?? blog?.updatedAt ?? new Date().toISOString(),
+        })).filter((blog: any) => blog.slug);
+    } catch (error) {
+        console.error('Error fetching blog slugs for sitemap:', error);
+        return [];
+    }
 }

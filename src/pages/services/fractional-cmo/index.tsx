@@ -243,6 +243,7 @@ export default function FractionalCMOServicePage() {
                     description="Having a market-fit product isn't enough. Most startups fail because their target audience never discovers them. Marketing requires strategy, execution, design, ads, content, and community building. One person can't master everything. You need a complete team led by an experienced CMO who understands growth."
                     buttonText="Build My Marketing Team"
                     src="/assets/services/3d.webp"
+                    width={500}
                 />
                 <BenefitsSection
                     title="Complete"
@@ -531,28 +532,31 @@ export default function FractionalCMOServicePage() {
                     className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
                     <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
-                            <div className="border rounded-full bg-white flex-shrink-0 md:block hidden">
-                                <Image loading="lazy" src="/assets/services/user.png" alt="avatar" width={50} height={50}/>
+                            <div className="flex-shrink-0 md:block hidden">
+                                <Image loading="lazy" src="/assets/services/user.webp" alt="avatar" width={40} height={40}/>
                             </div>
                             <div>
                                 <div className="text-xs">
                                     <p className="text-sm font-semibold">Hello 👋 We&apos;re</p>
-                                    <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
-                                        <div className="animate-textLoop">
-                                            <div className="bg-sky-500 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                    <section className="h-[2.5rem] overflow-hidden inline-block">
+                                        <div className="animate-textLoop flex flex-col gap-2">
+                                            <div className="bg-sky-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
                                                 Your Fractional Growth Team
                                             </div>
-                                            <div className="bg-primary text-white rounded text-nowrap font-semibold px-1 py-3 h-[2.5rem] mt-2 mb-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            <div className="bg-primary text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
                                                 Experts in Sales, Tech & Marketing
                                             </div>
-                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            <div className="bg-red-700 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
                                                 The Team Behind 14+ Startup Wins
                                             </div>
-                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            <div className="bg-purple-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
                                                 Not Your Average Agency
                                             </div>
-                                            <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
+                                            <div className="bg-indigo-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
                                                 Here to Build What You Can’t Hire
+                                            </div>
+                                            <div className="bg-green-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Web Development Experts
                                             </div>
                                         </div>
                                     </section>

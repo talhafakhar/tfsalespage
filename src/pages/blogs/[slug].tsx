@@ -9,10 +9,9 @@ type Props = { blog: BlogPost };
 
 export const getStaticPaths: GetStaticPaths = async () => {
     try {
-        const slugs = await getLatestSlugs(50); // pre-render newest 50
+        const slugs = await getLatestSlugs(50);
         return {paths: slugs.map((slug) => ({params: {slug}})), fallback: 'blocking'};
     } catch {
-        // If CMS is unreachable at build-time, allow on-demand generation
         return {paths: [], fallback: 'blocking'};
     }
 };
@@ -25,7 +24,7 @@ export const getStaticProps: GetStaticProps<Props> = async ({params}) => {
 
         return {
             props: {blog},
-            revalidate: 300, // ISR: at most every 5 min
+            revalidate: 300,
         };
     } catch (e) {
         console.error('Error fetching blog post:', e);

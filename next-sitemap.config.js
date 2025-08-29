@@ -1,0 +1,52 @@
+/** @type {import('next-sitemap').IConfig} */
+module.exports = {
+    siteUrl: process.env.NEXT_PUBLIC_SITE_URL || 'https://tfbusinesssolutions.com',
+    generateRobotsTxt: true,
+    exclude: [
+        '/sales-consulting',
+        '/api/*',
+        '/_next/*',
+        '/admin/*',
+        '/_error',
+        '/404',
+        '/500',
+        '/blogs/[slug]',
+        '/server-sitemap.xml',
+        '/server-sitemap-index.xml'
+    ],
+    robotsTxtOptions: {
+        policies: [
+            {
+                userAgent: '*',
+                allow: '/',
+                disallow: ['/sales-consulting/', '/api/', '/_next/', '/admin/']
+            }
+        ],
+        additionalSitemaps: [
+            'https://tfbusinesssolutions.com/server-sitemap.xml',
+        ]
+    },
+    transform: async (config, path) => {
+        const priorities = {
+            '/': 1.0,
+            '/about': 0.8,
+            '/contact': 0.8,
+            '/services': 0.9,
+            '/blogs': 0.7,
+        };
+
+        const changeFreqs = {
+            '/': 'daily',
+            '/blogs': 'weekly',
+            '/contact': 'monthly',
+            '/about': 'monthly'
+        };
+
+        return {
+            loc: path,
+            changefreq: changeFreqs[path] || (path.includes('/blogs/') ? 'weekly' : 'monthly'),
+            priority: priorities[path] || (path.includes('/blogs/') ? 0.6 : 0.5),
+            lastmod: new Date().toISOString(),
+        };
+    },
+};
