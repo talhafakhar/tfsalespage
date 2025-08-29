@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { XCircle, CheckCircle } from "lucide-react";
 import React from "react";
 
