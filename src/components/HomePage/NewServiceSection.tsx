@@ -123,7 +123,7 @@ const ServicesSection: React.FC = () => {
                 }}
             >
                 {services.map((service,index ) => (
-                    <Link key={service.index} href={service.link} >
+                    <Link key={service.id} href={service.link} >
                         <motion.div
                             key={service.id}
                             className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary"
