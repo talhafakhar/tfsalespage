@@ -46,7 +46,7 @@ module.exports = {
         return {
             loc: path,
             changefreq: changeFreqs[path] || 'monthly',
-            priority: priorities[path] || (path.includes('/blogs/') ? 0.6 : 0.5),
+            priority: priorities[path] || 0.5,
             lastmod: lastmodMonthly,
         };
     },
