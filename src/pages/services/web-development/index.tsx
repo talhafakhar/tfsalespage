@@ -5,8 +5,6 @@ import SkillSet from "@/components/Services/FractionalCMO/SkillSetSection";
 import SuccessSnapshots, {SuccessStory} from "@/components/HomePage/SuccessSnapshotsSection";
 import Testimonial from "@/components/HomePage/Testimonials";
 import Banner from "@/components/HomePage/bannerSection";
-import Difference, {ColumnData} from "@/components/Services/FractionalCMO/DifferenceSection";
-import PricingSection from "@/components/Services/FractionalCMO/PricingTableSection";
 import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
 import ContactForm from "@/components/Services/FractionalCMO/contactForm";
 import Image from "next/image";
@@ -15,8 +13,6 @@ import HeroSection from "@/components/Services/HeroSection";
 import {
     BrainCircuit,
     Briefcase,
-    Building2,
-    Clock,
     DollarSign,
     MessageCircleHeart,
     Palette,
@@ -28,38 +24,12 @@ import {
     TrendingUp,
     Users,
     Users2,
-    Zap
+
 } from "lucide-react";
 import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
 import FinalCTASection from "@/components/Services/SalesConsultation/FinalCTASection";
-const inHouseData: ColumnData = {
-    title: "In-House CTO",
-    color: "from-red-500 to-red-700",
-    icon: Building2,
-    canvasType: 'negative',
-    features: [
-        { text: "$250K+ annual salary plus equity", icon: DollarSign, positive: false },
-        { text: "4-8 months hiring and onboarding time", icon: Clock, positive: false },
-        { text: "Need to hire entire dev team separately", icon: Target, positive: false },
-        { text: "Fixed costs regardless of performance", icon: Users, positive: false },
-        { text: "Difficult to replace if not working out", icon: TrendingUp, positive: false },
-        { text: "Limited to one person's expertise", icon: Building2, positive: false }
-    ]
-};
-const fractionalData: ColumnData = {
-    title: "Fractional CTO",
-    color: "from-green-500 to-green-700",
-    icon: Zap,
-    canvasType: 'positive',
-    features: [
-        { text: "Pay only for hours worked", icon: DollarSign, positive: true },
-        { text: "Start within 1-2 weeks maximum", icon: Clock, positive: true },
-        { text: "Complete development team included", icon: Target, positive: true },
-        { text: "Performance-based engagement model", icon: Users, positive: true },
-        { text: "Easy to adjust or replace team members", icon: TrendingUp, positive: true },
-        { text: "Access to diverse technical specialists", icon: Building2, positive: true }
-    ]
-};
+
+
 const successStories: SuccessStory[] = [
     {
         id: 1,
@@ -147,25 +117,25 @@ export default function WebDevelopment() {
     return (
         <div>
             <NextSeo
-                title="Fractional CTO – Build & Scale Products Faster"
-                description="Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays."
-                canonical="https://tfbusinesssolution.com/services/fractional-cto"
+                title="Web Development Services – Build Fast, Secure & Scalable Websites"
+                description="Get a modern, responsive, and high-performing website tailored to your business goals. We handle design, development, and deployment for startups and enterprises."
+                canonical="https://tfbusinesssolution.com/services/web-development"
                 additionalMetaTags={[
-                    { name: 'keywords', content: 'Fractional CTO, Part-Time CTO, CTO as a Service, Technical Strategy, Startup CTO, Technology Leadership, Product Development, Technical Consulting, SaaS CTO' },
+                    { name: 'keywords', content: 'Web Development, Website Design, Frontend Development, Backend Development, Full-Stack Web Development, Responsive Websites, Next.js Development, Tailwind CSS, CMS Development, SEO-Friendly Websites' },
                     { name: 'author', content: 'TF Business Solution' },
                     { name: 'robots', content: 'index, follow' },
                 ]}
                 openGraph={{
-                    type: 'article',
-                    url: 'https://tfbusinesssolution.com/services/fractional-cto',
-                    title: 'Fractional CTO – Build & Scale Products Faster',
-                    description: ' Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays.',
+                    type: 'website',
+                    url: 'https://tfbusinesssolution.com/services/web-development',
+                    title: 'Web Development Services – Build Fast, Secure & Scalable Websites',
+                    description: 'Get a modern, responsive, and high-performing website tailored to your business goals. We handle design, development, and deployment for startups and enterprises.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/fractional-cto-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/web-development-og.jpg',
                             width: 1200,
                             height: 630,
-                            alt: 'Fractional CTO Service – TF Business Solution',
+                            alt: 'Web Development Service – TF Business Solution',
                         },
                     ],
                     site_name: 'TF Business Solution',
@@ -176,60 +146,53 @@ export default function WebDevelopment() {
                     cardType: 'summary_large_image',
                 }}
             />
+
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/services/fractional-cto/#webpage"
-                url="https://tfbusinesssolution.com/services/fractional-cto"
-                name="Fractional CTO – Build & Scale Products Faster"
-                description=" Get a product-driven CTO and tech team to launch MVPs, integrate AI, and scale your product without hiring delays."
+                id="https://tfbusinesssolution.com/services/web-development/#webpage"
+                url="https://tfbusinesssolution.com/services/web-development"
+                name="Web Development Services – Build Fast, Secure & Scalable Websites"
+                description="Get a modern, responsive, and high-performing website tailored to your business goals. We handle design, development, and deployment for startups and enterprises."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/services/fractional-cto?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/services/web-development?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />
+
             <FAQPageJsonLd
                 mainEntity={[
                     {
                         id: 1,
-                        question: "How quickly can we start development?",
+                        question: "How quickly can my website go live?",
                         answer: (
                             <p>
-                                Your fractional CTO and development team can begin working within 1–2 weeks of signing the agreement.
+                                Most projects start within a week of signing and can launch in as little as 4–6 weeks, depending on scope.
                             </p>
                         ),
                     },
                     {
                         id: 2,
-                        question: "What if we need to pivot our product direction?",
+                        question: "Can you redesign my existing website?",
                         answer: (
                             <p>
-                                We specialize in agile development and can adapt quickly to new requirements or market feedback.
+                                Absolutely! We specialize in website redesigns — improving design, performance, SEO, and user experience while keeping your brand identity.
                             </p>
                         ),
                     },
                     {
                         id: 3,
-                        question: "Do you work with specific tech stacks?",
+                        question: "Will my website be mobile-friendly?",
                         answer: (
                             <p>
-                                Yes, we have expertise across React, Node.js, Python, AWS, AI/ML frameworks, and modern development tools.
+                                Yes — every site we build is fully responsive and optimized for mobile, tablet, and desktop devices.
                             </p>
                         ),
                     },
                     {
                         id: 4,
-                        question: "How is this different from hiring a development agency?",
+                        question: "Do you provide ongoing support after launch?",
                         answer: (
                             <p>
-                                Our team works as your employees, not external vendors. You get dedicated focus and direct control over your product.
-                            </p>
-                        ),
-                    },
-                    {
-                        id: 5,
-                        question: "What happens when we're ready to hire an in-house team?",
-                        answer: (
-                            <p>
-                                We provide complete code documentation and can help transition to your internal team seamlessly.
+                                Yes, we offer maintenance packages including updates, security monitoring, backups, and feature enhancements to keep your website running smoothly.
                             </p>
                         ),
                     },
