@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
   </span>
                                 </Link>
                                 <p className="text-slate-300 leading-relaxed mb-8 text-lg">
-                                    TF Business Solutions offers Fractional CMO, CTO, and SDR services for startups. We help founders scale with sales automation, AI agents, and expert-led team training without the overhead of full-time hires.
+                                    TF Business Solutions offers Fractional CMO, CTO, SDR and web development services for startups. We help founders scale with sales automation, AI agents, and expert-led team training without the overhead of full-time hires.
                                 </p>
 
                                 <div className="space-y-4 mb-8">

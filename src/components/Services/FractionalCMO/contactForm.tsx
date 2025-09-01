@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Image from "next/image";
 
-const ContactForm = () => {
+const ContactForm = ({description}) => {
     const [focusedField, setFocusedField] = useState(null);
     return (
         <div className=" flex items-center justify-center p-4">
@@ -12,7 +12,7 @@ const ContactForm = () => {
                             Ready to Scale Your Business?
                         </h2>
                         <p className="text-gray-300  leading-relaxed">
-                            Get fractional C-level executives and complete teams working as your employees. We deliver outstanding results without the agency markup or overhead.
+                            {description ? description : "Get fractional C-level executives and complete teams working as your employees. We deliver outstanding results without the agency markup or overhead." }
                         </p>
                         <div className="flex items-center justify-center">
                             <Image

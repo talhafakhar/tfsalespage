@@ -31,6 +31,7 @@ import {
     Zap
 } from "lucide-react";
 import {FAQPageJsonLd, NextSeo, WebPageJsonLd} from "next-seo";
+import FinalCTASection from "@/components/Services/SalesConsultation/FinalCTASection";
 const inHouseData: ColumnData = {
     title: "In-House CTO",
     color: "from-red-500 to-red-700",
@@ -63,77 +64,77 @@ const successStories: SuccessStory[] = [
     {
         id: 1,
         icon: TrendingUp,
-        metric: '300%',
-        achievement: 'pipeline growth in 60 days',
-        timeline: '60 Days',
-        solution: 'Cold Outreach Engine',
+        metric: '200%',
+        achievement: 'increase in website traffic',
+        timeline: '90 Days',
+        solution: 'SEO-Optimized Redesign',
         details: {
-            challenge: 'Struggling with inconsistent lead generation',
-            approach: 'Implemented our proprietary Cold Outreach Engine',
+            challenge: 'Outdated website with poor search visibility',
+            approach: 'Redesigned the website with modern UI, SEO best practices, and optimized performance',
             results: [
-                '300% increase in qualified pipeline',
-                '65% higher response rates',
-                '40% reduction in cost per lead',
-                'Automated follow-up sequences',
+                '200% increase in organic traffic',
+                'Higher Google rankings for core keywords',
+                'Bounce rate reduced by 45%',
+                'Conversions boosted with improved UX',
             ],
-            clientType: 'B2B SaaS Startup',
+            clientType: 'E-Commerce Brand',
         },
     },
     {
         id: 2,
         icon: Rocket,
-        metric: '$15K MRR',
-        achievement: 'from MVP in 90 days',
-        timeline: '90 Days',
-        solution: 'Fractional CTO Support',
+        metric: '6 Weeks',
+        achievement: 'to launch a new online store',
+        timeline: '6 Weeks',
+        solution: 'Custom E-Commerce Development',
         details: {
-            challenge: 'Technical founder needed expert guidance',
-            approach: 'Provided fractional CTO services',
+            challenge: 'Needed to quickly move from offline to online sales',
+            approach: 'Built a scalable e-commerce site with secure payments and inventory integration',
             results: [
-                'MVP to $15K MRR in 90 days',
-                'Scalable architecture implemented',
-                'Technical team productivity increased 200%',
-                'Product-market fit achieved faster',
+                'Fully functional store launched in 6 weeks',
+                'Smooth checkout and mobile-first experience',
+                '50% increase in average order value',
+                'Easy backend management for products',
             ],
-            clientType: 'Tech Startup',
+            clientType: 'Retail Business',
         },
     },
     {
         id: 3,
         icon: DollarSign,
-        metric: '$200K+',
-        achievement: 'saved annually with automation',
+        metric: '$120K+',
+        achievement: 'saved annually after optimization',
         timeline: '12 Months',
-        solution: 'Intelligent Sales Automation',
+        solution: 'Website Performance Revamp',
         details: {
-            challenge: 'Manual sales processes were consuming too much',
-            approach: 'Designed and implemented intelligent sales automation',
+            challenge: 'Slow, unoptimized site was causing high hosting costs and lost sales',
+            approach: 'Refactored codebase, optimized images, and implemented CDN + caching',
             results: [
-                'Over $200,000 in annual savings',
-                '80% reduction in manual tasks',
-                '50% faster sales cycle',
-                'Real-time performance insights',
+                'Saved over $120K in infrastructure costs',
+                'Page load speed improved by 70%',
+                'Improved Core Web Vitals scores',
+                'Higher conversion rates with faster UX',
             ],
-            clientType: 'Growing Enterprise',
+            clientType: 'Growing SaaS Company',
         },
     },
     {
         id: 4,
         icon: DollarSign,
-        metric: '3+',
-        achievement: 'years Product Leadership Without a Full-Time CTO',
-        timeline: 'EdTech Startup',
-        solution: 'Fractional CTO Engagement',
+        metric: '3+ Years',
+        achievement: 'ongoing website management & growth',
+        timeline: 'Ongoing',
+        solution: 'Full-Service Web Development',
         details: {
-            challenge: 'Non-technical founders struggled with inconsistent product development due to unreliable freelancers and lack of strategic tech leadership.\n',
-            approach: ' Deployed a dedicated Fractional CTO and dev team to manage the entire product lifecycle — roadmap, development, releases, QA, and ongoing iteration',
+            challenge: 'Non-technical founders needed long-term support for scaling their website',
+            approach: 'Provided continuous development, maintenance, feature updates, and security monitoring',
             results: [
-                '3+ years of continued engagement',
-                'Seamless roadmap execution and delivery',
-                ' Zero tech delays or dependency on unreliable freelancers',
-                ' Founders shifted full focus to GTM and sales',
+                '3+ years of continuous website growth',
+                'Zero downtime with proactive monitoring',
+                'New features rolled out seamlessly',
+                'Founders focused fully on marketing & sales',
             ],
-            clientType: 'EdTech Startup',
+            clientType: 'EdTech Platform',
         },
     },
 ];
@@ -175,7 +176,6 @@ export default function WebDevelopment() {
                     cardType: 'summary_large_image',
                 }}
             />
-
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/services/fractional-cto/#webpage"
                 url="https://tfbusinesssolution.com/services/fractional-cto"
@@ -186,7 +186,6 @@ export default function WebDevelopment() {
                     queryInput: 'required name=search_term_string',
                 }}
             />
-
             <FAQPageJsonLd
                 mainEntity={[
                     {
@@ -246,131 +245,139 @@ export default function WebDevelopment() {
                     imageUrl="/assets/services/webDevelopmentBg.webp"
                 />
                 <Transform
-                    title="Why 80% of Startups"
-                    titleTwo="Fail Building Products"
-                    description=" Building a website isn’t just about code. It requires scalable architecture, seamless UX/UI design, performance optimization, and secure systems. Our expert web development team delivers fully functional, responsive, and high-performing websites tailored to your business goals."
+                    title="Web Development"
+                    titleTwo="That Scales with You"
+                    description="Web development isn’t just putting pages online. It involves strategic planning, intuitive navigation, engaging visuals, reliable integrations, and strong security. Our team delivers modern, responsive, and user-friendly websites designed to showcase your brand and drive results."
                     buttonText="Get My Free Consultation"
                     src="/assets/services/like.webp"
                     width={400}
                 />
                 <BenefitsSection
                     title="Complete"
-                    titleTwo="Tech Department"
-                    description="Everything you need to build and scale products"
+                    titleTwo="Web Development"
+                    description="Everything you need to design, build, and grow your online presence"
                     cardContent={[
                         {
-                            title: "MVP Development",
-                            description: "Launch products fast with lean builds that validate concepts and impress investors.",
+                            title: "Custom Websites",
+                            description: "Responsive, SEO-friendly websites tailored to your brand and business goals.",
                             icon: Rocket,
-                            gradient: "from-yellow-400 via-yellow-300 to-white"
+                            gradient: "from-primary via-yellow-300 to-white"
                         },
                         {
-                            title: "AI Integration",
-                            description: "Custom AI agents for sales, support, operations using tailored no-code solutions.",
+                            title: "E-Commerce Solutions",
+                            description: "Scalable online stores with secure payments, inventory management, and smooth UX.",
                             icon: BrainCircuit,
-                            gradient: "from-white via-yellow-200 to-yellow-400"
+                            gradient: "from-primary via-yellow-300 to-white"
                         },
                         {
-                            title: "SaaS Development",
-                            description: "End-to-end product development from wireframes to cloud deployment and testing.",
+                            title: "Web Applications",
+                            description: "Interactive web apps built with modern frameworks for speed, scalability, and reliability.",
                             icon: ServerCog,
-                            gradient: "from-yellow-300 via-white to-yellow-400"
+                            gradient: "from-primary via-yellow-300 to-white"
                         },
                         {
-                            title: "Team Building",
-                            description: "Hire and manage timezone-aligned engineers, PMs, and DevOps with culture fit.",
+                            title: "CMS Development",
+                            description: "Custom or headless CMS setups that make content management effortless and flexible.",
                             icon: Users2,
-                            gradient: "from-yellow-400 via-yellow-200 to-white"
+                            gradient: "from-primary via-yellow-300 to-white"
                         },
                         {
-                            title: "Strategic Leadership",
-                            description: "Support investor calls, sprint planning, and align tech with revenue goals.",
+                            title: "Performance Optimization",
+                            description: "Faster load times, responsive layouts, and smooth navigation for higher conversions.",
                             icon: Target,
-                            gradient: "from-white via-yellow-300 to-yellow-500"
+                            gradient: "from-primary via-yellow-300 to-white"
                         },
                         {
-                            title: "Compliance Ready",
-                            description: "We’ve built HIPAA- and SOC2-ready systems for startups in healthcare, fintech, and edtech.",
+                            title: "Security & Compliance",
+                            description: "Enterprise-grade protection with SSL, firewalls, backups, and GDPR-ready systems.",
                             icon: ShieldCheck,
-                            gradient: "from-yellow-500 via-yellow-300 to-white"
+                            gradient: "from-primary via-yellow-300 to-white"
                         }
                     ]}
                 />
+
                 <SkillSet
-                    title='Your'
-                    titleTwo='CTO Stack'
-                    description='Meet the experts who will transform your product development'
+                    title="Your"
+                    titleTwo="Web Dev Stack"
+                    description="The skills and expertise that power high-performing websites and apps"
                     mapContent={[
                         {
-                            id: 'mvp-poc',
-                            title: 'MVP & POC',
+                            id: 'custom-websites',
+                            title: 'Custom Websites',
                             icon: Briefcase,
                             items: [
-                                'Rapid Prototyping',
-                                'Market Validation Testing',
-                                'Investor-Ready Demos',
-                                'Lean Development'
+                                'Responsive Design',
+                                'SEO Optimization',
+                                'Cross-Browser Compatibility',
+                                'Conversion-Focused Layouts'
                             ]
                         },
                         {
-                            id: 'ai-development',
-                            title: 'AI Development',
+                            id: 'frontend-development',
+                            title: 'Frontend Development',
                             icon: Users,
                             items: [
-                                'Custom AI Agents',
-                                'No-Code AI Solutions',
-                                'Automation Systems',
-                                'Machine Learning Integration'
+                                'React & Next.js',
+                                'Tailwind CSS & Material UI',
+                                'Animations & Interactivity',
+                                'Accessible Interfaces'
                             ]
                         },
                         {
-                            id: 'saas-products',
-                            title: 'SaaS Products',
+                            id: 'backend-development',
+                            title: 'Backend Development',
                             icon: ThumbsUp,
                             items: [
-                                'Full-Stack Development',
-                                'Cloud Architecture',
+                                'Node.js & Express',
                                 'API Development',
-                                'Database Design'
+                                'Database Design',
+                                'Authentication Systems'
                             ]
                         },
                         {
-                            id: 'team-management',
-                            title: 'Team Management',
+                            id: 'cms-solutions',
+                            title: 'CMS Solutions',
                             icon: Palette,
                             items: [
-                                'Developer Hiring',
-                                'Project Management',
-                                'Code Reviews',
-                                'Agile Implementation'
+                                'WordPress & Headless CMS',
+                                'Content Workflows',
+                                'Custom Plugins',
+                                'Scalable Architecture'
                             ]
                         },
                         {
-                            id: 'scalable-systems',
-                            title: 'Scalable Systems',
+                            id: 'performance-optimization',
+                            title: 'Performance Optimization',
                             icon: TrendingUp,
                             items: [
-                                'Performance Optimization',
-                                'Security Implementation',
-                                'DevOps & CI/CD',
-                                'Infrastructure Management'
+                                'Faster Load Speeds',
+                                'Core Web Vitals',
+                                'Caching & CDNs',
+                                'Mobile-First Strategy'
                             ]
                         },
                         {
-                            id: 'compliance-security',
-                            title: 'Compliance & Security',
+                            id: 'security-compliance',
+                            title: 'Security & Compliance',
                             icon: MessageCircleHeart,
                             items: [
-                                'SOC2 Implementation',
-                                'GDPR Compliance',
-                                'HIPAA Requirements',
-                                'Security Audits'
+                                'SSL & HTTPS',
+                                'Data Protection',
+                                'GDPR Readiness',
+                                'Vulnerability Testing'
                             ]
                         }
-                    ]}/>
+                    ]}
+                />
+
                 <SuccessSnapshots
-                    buttonText="Choose Fractional CTO Today"
+                    buttonText="Get My Free Web Consultation"
                     stories={successStories}
+                />
+                <Banner
+                    title="Ready to Go Online?"
+                    description="Launch a fast, secure, and modern website with our expert web development team."
+                    buttonText="Book a Free Strategy Call"
                 />
                 <Testimonial
                     testimonials={[
@@ -402,117 +409,60 @@ export default function WebDevelopment() {
                             company: "Real Estate Agency"
                         }
                     ]}/>
-                <Banner
-                    title="Ready to Build?"
-                    description="Get a complete tech team led by an expert CTO starting next week."
-                    buttonText='Start My Product Journey'
-                />
-                <Difference
-                    titleTwo='Hiring an In-House CTO'
-                    titleThree='Fractional CTO'
-                    description=' Real results from real founders who transformed their businesses with our proven strategies and solutions.'
-                    inHouseData={inHouseData}
-                    fractionalData={fractionalData}
-                />
-                <PricingSection
-                    description="Our pricing plans are as flexible as our development experts. Let an experienced CTO develop a strategy for your product."
-                    plans={[
-                        {
-                            title: "Startup Launch",
-                            subtitle: "Perfect for VC-backed companies building MVP",
-                            price: "$3,999",
-                            billing: "Paid Monthly",
-                            features: [
-                                { text: "Fractional CTO (25 hours/month)" },
-                                { text: "2 senior developers" },
-                                { text: "MVP & POC development" },
-                                { text: "Weekly progress reports" },
-                                { text: "Direct team communication" },
-                                { text: "Pause or cancel anytime" },
-                            ],
-                        },
-                        {
-                            title: "Scale & Growth",
-                            subtitle: "Complete development team for growing products",
-                            price: "$7,999",
-                            billing: "Paid Monthly",
-                            badge: "Most popular",
-                            features: [
-                                { text: "Fractional CTO (40 hours/month)" },
-                                { text: "4 development specialists" },
-                                { text: "Full SaaS product development" },
-                                { text: "AI integration capabilities" },
-                                { text: "Priority support & communication" },
-                                { text: "Pause or cancel anytime" },
-                            ],
-                        },
-                        {
-                            title: "Enterprise Innovation",
-                            subtitle: "Comprehensive tech solution for established businesses",
-                            price: "$9,999",
-                            billing: "Paid Monthly",
-                            highlighted: true,
-                            features: [
-                                { text: "Dedicated CTO (50 hours/month)" },
-                                { text: "6+ technical specialists" },
-                                { text: "Custom architecture planning" },
-                                { text: "Compliance-ready development" },
-                                { text: "Advanced security & scalability" },
-                                { text: "Pause or cancel anytime" },
-                            ],
-                        },
-                    ]}
-                />
+
+
                 <FAQSection
                     faqs = {[
                         {
                             id: 1,
-                            question: "How quickly can we start development?",
+                            question: "How quickly can my website go live?",
                             answer: (
                                 <p>
-                                    Your fractional CTO and development team can begin working within 1–2 weeks of signing the agreement.
+                                    Most projects start within a week of signing and can launch in as little as 4–6 weeks, depending on scope.
                                 </p>
                             ),
                         },
                         {
                             id: 2,
-                            question: "What if we need to pivot our product direction?",
+                            question: "Can you redesign my existing website?",
                             answer: (
                                 <p>
-                                    We specialize in agile development and can adapt quickly to new requirements or market feedback.
+                                    Absolutely! We specialize in website redesigns — improving design, performance, SEO, and user experience while keeping your brand identity.
                                 </p>
                             ),
                         },
                         {
                             id: 3,
-                            question: "Do you work with specific tech stacks?",
+                            question: "Will my website be mobile-friendly?",
                             answer: (
                                 <p>
-                                    Yes, we have expertise across React, Node.js, Python, AWS, AI/ML frameworks, and modern development tools.
+                                    Yes — every site we build is fully responsive and optimized for mobile, tablet, and desktop devices.
                                 </p>
                             ),
                         },
                         {
                             id: 4,
-                            question: "How is this different from hiring a development agency?",
+                            question: "Do you provide ongoing support after launch?",
                             answer: (
                                 <p>
-                                    Our team works as your employees, not external vendors. You get dedicated focus and direct control over your product.
-                                </p>
-                            ),
-                        },
-                        {
-                            id: 5,
-                            question: "What happens when we're ready to hire an in-house team?",
-                            answer: (
-                                <p>
-                                    We provide complete code documentation and can help transition to your internal team seamlessly.
+                                    Yes, we offer maintenance packages including updates, security monitoring, backups, and feature enhancements to keep your website running smoothly.
                                 </p>
                             ),
                         },
                     ]}
+
                 />
-                <ContactForm/>
+                <ContactForm
+                 description="Ready to build a high-performing website that drives results? Schedule a free consultation with our web development experts to discuss your project and get a custom quote."
+                />
+                <FinalCTASection
+                    title="Let’s Build a Website"
+                    titleTwo="That Grows Your Business"
+                    description="Book a free 30-minute web strategy call and discover how we can design, build, and optimize your website for growth."
+                    buttonText="Book Free Web Strategy Call"
+                    buttonTextTwo="Email Us Your Project"
+                />
+
                 <Footer/>
             </div>
             {show && (

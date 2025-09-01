@@ -3,12 +3,14 @@ import {ArrowDown, ArrowRight, CheckCircle} from 'lucide-react';
 import {motion, type Variants} from 'framer-motion';
 
 type FinalCTAsSection = {
+    title?:string;
+    titleTwo?:string;
     description?: string;
     buttonText?: string;
     buttonTextTwo?: string;
     quote?: string;
 }
-const FinalCTASection: React.FC<FinalCTAsSection> = ({description, buttonText, buttonTextTwo, quote}) => {
+const FinalCTASection: React.FC<FinalCTAsSection> = ({title,titleTwo,description, buttonText, buttonTextTwo, quote}) => {
     const [isVisible, setIsVisible] = useState<boolean>(false);
 
     useEffect(() => {
@@ -74,9 +76,9 @@ const FinalCTASection: React.FC<FinalCTAsSection> = ({description, buttonText, b
                     variants={itemVariants}
                 >
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                        Ready To Fix{' '}
+                        {title ? title : "Ready To Fix"}{' '}
                         <span className="text-primary relative">
-                            Your Sales?
+                              {titleTwo ? titleTwo : " Your Sales?"}{' '}
                             <svg
                                 className="absolute -bottom-2 left-0 w-full h-3"
                                 viewBox="0 0 300 12"

@@ -32,7 +32,7 @@ const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
                                 src={fullImageUrl}
                                 alt={imageAlt}
                                 fill
-                                className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                className="object-cover object-center w-full h-full transition-transform duration-700 group-hover:scale-105"
                             />
                         </div>
                         <div className="absolute top-4 right-4 z-20">
