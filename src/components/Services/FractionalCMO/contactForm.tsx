@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Image from "next/image";
 
-const ContactForm = ({description}) => {
+const ContactForm = ({description}:any) => {
     const [focusedField, setFocusedField] = useState(null);
     return (
         <div className=" flex items-center justify-center p-4">
