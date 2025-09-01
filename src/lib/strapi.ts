@@ -1,7 +1,7 @@
 import type { BlogPost, BlogResponse } from '@/types/blog';
 
 const STRAPI_URL = process.env.STRAPI_URL ?? 'https://api.tfbusinesssolutions.com';
-const API_TOKEN = process.env.STRAPI_API_TOKEN || 'b406b382ca1329ac35c9b0df167b8bc6ddf7cc2d2b6d4480124e105aaa1a8abe29389ffe02a84eb5705eeee4d6c87a130b9880fa199e1e55e4391c1838aaf9140f607fae69ad667546f4bc20b898f24f8176bf602833a13b5b156857a8eb3b1ab7e5599a7323e616f5bb6c0f25dd278ba9597866e5558b194ac1e37f0a526ca6';
+const API_TOKEN = process.env.STRAPI_API_TOKEN || '9f611561bef82ecbb630c86b284f79a94dae6cd7b842c7e93cb8d43a2219cd366e9d59af16be468c24955ebc8128580411687a89c9874c98836968055218f592eb4fd5553783717a7e329d73f5e6e9ce04cf3e63604da184f48589b5602d38c9795d015ab800c1b4226481986b1580d6303221aa0c2fe7f6aa52b253ea79581b';
 
 if (!API_TOKEN) {
     console.warn('⚠️ STRAPI_API_TOKEN is not set; Strapi calls may fail at build/revalidate.');
