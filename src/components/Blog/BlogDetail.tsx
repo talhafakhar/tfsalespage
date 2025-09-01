@@ -90,13 +90,17 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog }) => {
 
                     {fullImageUrl && (
                         <motion.div className="mb-16 group" variants={fadeInUp}>
-                            <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-white p-4 group">
-                                <div className="relative overflow-hidden rounded-2xl w-full h-[300px] md:h-[400px] lg:h-[500px]">
+                            <div className="relative overflow-hidden rounded-3xl  shadow-2xl bg-white group h-[300px] md:h-[400px] lg:h-[500px]">
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center filter blur-[4px] scale-105"
+                                    style={{backgroundImage: `url(${fullImageUrl})`}}
+                                />
+                                <div className="relative overflow-hidden rounded-2xl w-full h-full">
                                     <Image
                                         src={fullImageUrl}
                                         alt={blog.title}
                                         fill
-                                        className="object-cover w-full h-full transition-transform duration-700 ease-out group-hover:scale-105"
+                                        className="object-contain transition-transform duration-700 ease-out group-hover:scale-105"
                                         priority
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

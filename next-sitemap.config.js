@@ -10,6 +10,7 @@ module.exports = {
         '/_error',
         '/404',
         '/500',
+        '/blogs',
         '/blogs/[slug]',
         '/server-sitemap.xml',
         '/server-sitemap-index.xml'
@@ -32,12 +33,10 @@ module.exports = {
             '/about': 0.8,
             '/contact': 0.8,
             '/services': 0.9,
-            '/blogs': 0.7,
         };
 
         const changeFreqs = {
             '/': 'daily',
-            '/blogs': 'weekly',
             '/contact': 'monthly',
             '/about': 'monthly'
         };

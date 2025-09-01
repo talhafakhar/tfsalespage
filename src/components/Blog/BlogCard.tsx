@@ -22,29 +22,39 @@ const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
     };
     const parsedTags = blog.tags ? blog.tags.replace(/"/g, '').split(', ') : [];
     return (
-        <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2" style={{animation: `fadeInUp 0.6s ease-out ${key * 0.1}s both`}}>
+        <div
+            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2"
+            style={{animation: `fadeInUp 0.6s ease-out ${key * 0.1}s both`}}>
             <div>
                 {fullImageUrl && (
-                    <div className="relative w-full   overflow-hidden rounded-lg">
+                    <div className="relative  overflow-hidden rounded-lg h-64">
+                        <div
+                            className="absolute inset-0 bg-cover bg-center filter blur-[4px] scale-105"
+                            style={{backgroundImage: `url(${fullImageUrl})`}}
+                        />
+
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-primary/30 to-gray-900/40 z-10"/>
-                        <div className="relative w-full h-52 group">
+
+                        <div className="relative  h-full z-20">
                             <Image
                                 src={fullImageUrl}
                                 alt={imageAlt}
                                 fill
-                                className="object-cover object-center w-full h-full transition-transform duration-700 group-hover:scale-105"
+                                className="object-contain transition-transform duration-700 group-hover:scale-105 rounded-lg"
                             />
                         </div>
-                        <div className="absolute top-4 right-4 z-20">
+
+                        <div className="absolute top-4 right-4 z-30">
                             <Link
                                 href={`/blogs/${blog.slug}`}
                                 className="w-10 h-10 bg-yellow-400 hover:bg-yellow-500 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
                             >
-                                <Eye size={16} className="text-black" />
+                                <Eye size={16} className="text-black"/>
                             </Link>
                         </div>
                     </div>
                 )}
+
                 <div className="p-6 space-y-4">
                     <div className="flex flex-wrap gap-2">
                         {parsedTags.map((tag, index) => (
