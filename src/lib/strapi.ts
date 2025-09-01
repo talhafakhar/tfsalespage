@@ -9,7 +9,7 @@ if (!API_TOKEN) {
 export async function sFetch<T>(endpoint: string): Promise<T> {
     const res = await fetch(`${STRAPI_URL}${endpoint}`, {
         headers: {
-            Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+            Authorization: `Bearer ${API_TOKEN}`,
             'Content-Type': 'application/json',
         },
     });
