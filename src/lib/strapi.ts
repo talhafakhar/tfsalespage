@@ -6,23 +6,20 @@ const API_TOKEN = process.env.STRAPI_API_TOKEN || 'b406b382ca1329ac35c9b0df167b8
 if (!API_TOKEN) {
     console.warn('⚠️ STRAPI_API_TOKEN is not set; Strapi calls may fail at build/revalidate.');
 }
+export async function sFetch<T>(endpoint: string): Promise<T> {
+    const res = await fetch(`${STRAPI_URL}${endpoint}`, {
+        headers: {
+            Authorization: `Bearer ${process.env.STRAPI_API_TOKEN}`,
+            'Content-Type': 'application/json',
+        },
+    });
 
-function h() {
-    return {
-        Authorization: `Bearer ${API_TOKEN}`,
-        'Content-Type': 'application/json',
-    };
-}
-
-async function sFetch<T>(path: string): Promise<T> {
-    const res = await fetch(`${STRAPI_URL}${path}`, { headers: h() });
     if (!res.ok) {
-        const body = await res.text();
-        throw new Error(`Strapi ${res.status}: ${body}`);
+        throw new Error(`Failed to fetch ${endpoint}: ${res.status}`);
     }
-    return res.json() as Promise<T>;
-}
 
+    return res.json();
+}
 export async function getBlogs(page = 1, pageSize = 10): Promise<BlogResponse> {
     return sFetch<BlogResponse>(
         `/api/blogs?populate=feature_image&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`
