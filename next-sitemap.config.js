@@ -20,7 +20,7 @@ module.exports = {
             {
                 userAgent: '*',
                 allow: '/',
-                disallow: ['/sales-consulting/', '/api/', '/_next/', '/admin/']
+                disallow: ['/sitemap-0.xml', '/sales-consulting/', '/api/', '/_next/', '/admin/']
             }
         ],
         additionalSitemaps: [
@@ -28,6 +28,7 @@ module.exports = {
         ]
     },
     transform: async (config, path) => {
+        if (path.startsWith('/blogs')) return null;
         const priorities = {
             '/': 1.0,
             '/about': 0.8,
@@ -40,12 +41,13 @@ module.exports = {
             '/contact': 'monthly',
             '/about': 'monthly'
         };
-
+        const lastmodDate = new Date();
+        const lastmodMonthly = `${lastmodDate.getFullYear()}-${String(lastmodDate.getMonth() + 1).padStart(2, '0')}`;
         return {
             loc: path,
-            changefreq: changeFreqs[path] || (path.includes('/blogs/') ? 'weekly' : 'monthly'),
+            changefreq: changeFreqs[path] || 'monthly',
             priority: priorities[path] || (path.includes('/blogs/') ? 0.6 : 0.5),
-            lastmod: new Date().toISOString(),
+            lastmod: lastmodMonthly,
         };
     },
 };
