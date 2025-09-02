@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 export const revalidate = 60 * 60;
 export async function GET() {
     try {
-        const API_TOKEN = process.env.API_TOKEN;
+        const API_TOKEN = process.env.STRAPI_API_TOKEN || "9f611561bef82ecbb630c86b284f79a94dae6cd7b842c7e93cb8d43a2219cd366e9d59af16be468c24955ebc8128580411687a89c9874c98836968055218f592eb4fd5553783717a7e329d73f5e6e9ce04cf3e63604da184f48589b5602d38c9795d015ab800c1b4226481986b1580d6303221aa0c2fe7f6aa52b253ea79581b";
         const STRAPI_URL = process.env.STRAPI_URL || "https://api.tfbusinesssolutions.com";
 
         const res = await fetch(
