@@ -12,7 +12,6 @@ export async function GET() {
                     Authorization: `Bearer ${API_TOKEN}`,
                     'Content-Type': 'application/json',
                 },
-                next: { revalidate: 60 },
                 cache: "no-store",
             }
         );
