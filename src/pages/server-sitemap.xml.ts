@@ -13,6 +13,7 @@ export async function GET() {
                     'Content-Type': 'application/json',
                 },
                 next: { revalidate: 60 },
+                cache: "no-store",
             }
         );
 
