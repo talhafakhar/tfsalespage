@@ -33,7 +33,7 @@ export async function GET() {
                 (blog:any) => `
           <url>
             <loc>https://tfbusinesssolutions.com/blogs/${blog.slug}</loc>
-            <lastmod>${new Date(blog.updatedAt).toISOString()}</lastmod>
+          <lastmod>${new Date(blog.updatedAt).toISOString().split('T')[0]}</lastmod>
             <changefreq>weekly</changefreq>
             <priority>0.7</priority>
           </url>
