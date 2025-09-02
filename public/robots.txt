@@ -1,6 +1,7 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /sitemap-0.xml
 Disallow: /sales-consulting/
 Disallow: /api/
 Disallow: /_next/
