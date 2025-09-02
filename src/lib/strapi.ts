@@ -13,9 +13,12 @@ export async function sFetch<T>(
     const res = await fetch(`${STRAPI_URL}${endpoint}`, {
         headers: {
             'Content-Type': 'application/json',
+            Authorization: `Bearer ${API_TOKEN}`,
             ...(options?.headers || {}),
         },
         ...options,
+        cache: 'no-store',
+
     });
 
     if (!res.ok) {
