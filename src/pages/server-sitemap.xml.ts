@@ -3,14 +3,16 @@ export const revalidate = 60 * 60;
 export async function GET() {
     try {
         const API_TOKEN = process.env.API_TOKEN;
+        const STRAPI_URL = process.env.STRAPI_URL || "https://api.tfbusinesssolutions.com";
 
         const res = await fetch(
-            `${process.env.STRAPI_URL}/api/blogs?fields[0]=slug&fields[1]=updatedAt&pagination[pageSize]=1000&sort=publishedAt:desc`,
+            `${STRAPI_URL}/api/blogs?fields[0]=slug&fields[1]=updatedAt&pagination[pageSize]=1000&sort=publishedAt:desc`,
             {
                 headers: {
                     Authorization: `Bearer ${API_TOKEN}`,
                     'Content-Type': 'application/json',
                 },
+                next: { revalidate: 60 },
             }
         );
 
