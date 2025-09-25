@@ -69,11 +69,11 @@ export default function PartnersSection() {
                             {/*    height={80}*/}
                             {/*    className="object-contain grayscale"*/}
                             {/*/>*/}
-                            <img
-                                src={partner.src}
-                                alt={partner.alt}
-                                className="object-contain grayscale max-h-20"
-                            />
+                            {/*<img*/}
+                            {/*    src={partner.src}*/}
+                            {/*    alt={partner.alt}*/}
+                            {/*    className="object-contain grayscale max-h-20"*/}
+                            {/*/>*/}
                         </div>
                     ))}
                 </div>
