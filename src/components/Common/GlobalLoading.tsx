@@ -1,4 +1,3 @@
-// components/Common/GlobalLoading.tsx
 import React from 'react';
 
 interface GlobalLoadingProps {
@@ -25,8 +24,6 @@ const GlobalLoading: React.FC<GlobalLoadingProps> = ({ isVisible, onAnimationEnd
                 </div>
                 <div className="absolute inset-0 w-20 h-20 rounded-full bg-primary/20 animate-ping"></div>
             </div>
-
-            {/* Loading text */}
             <div className="absolute bottom-1/3 left-1/2 transform -translate-x-1/2">
                 <div className="flex space-x-1">
                     {['L', 'o', 'a', 'd', 'i', 'n', 'g'].map((letter, index) => (

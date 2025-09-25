@@ -10,9 +10,10 @@ interface FAQ {
 
 interface FAQSectionProps {
     faqs: FAQ[];
+    fromOurCommunityPage?:boolean
 }
 
-const FAQSection: React.FC<FAQSectionProps> = ({faqs}) => {
+const FAQSection: React.FC<FAQSectionProps> = ({faqs,fromOurCommunityPage}) => {
     const [activeItems, setActiveItems] = useState<number[]>([]);
     const [isVisible, setIsVisible] = useState<boolean>(false);
     useEffect(() => {
@@ -30,7 +31,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({faqs}) => {
     return (
         <section className='bg-secondary'>
             <div className="max-w-4xl mx-auto px-4 py-10">
-                <h2 className="text-4xl sm:text-5xl font-bold text-center  mb-8 text-white leading-tight">
+                <h2 className={`${fromOurCommunityPage ?  "text-3xl sm:text-4xl" : "text-4xl sm:text-5xl"} font-bold text-center  mb-8 text-white leading-tight`}>
                     Frequently{" "}<span className="text-primary">Asked Questions</span>
                 </h2>
                 <p className="text-white text-center mb-5">Your doubts, cleared in seconds</p>
@@ -79,22 +80,21 @@ const FAQSection: React.FC<FAQSectionProps> = ({faqs}) => {
                         </motion.div>
                     ))}
                 </div>
-                <div
-                    className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
+                    <div className={`text-center mt-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                     }`}>
-                    <a
-                        href="https://calendly.com/talhafakhar/discoverycall"
-                        target="_blank"
-                        className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-                    >
-                        Book a Free Consultation
-                        <span
-                            className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                        <a
+                            href="https://calendly.com/talhafakhar/discoverycall"
+                            target="_blank"
+                            className="group inline-flex items-center px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
                         >
+                            Book a Free Consultation
+                            <span
+                                className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
+                            >
     <ArrowRight className="w-4 h-4"/>
   </span>
-                    </a>
-                </div>
+                        </a>
+                    </div>
             </div>
 
         </section>);

@@ -11,15 +11,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
         const { slug, paths } = (req.body ?? {}) as { slug?: string; paths?: string[] };
-
-        // Always refresh list
         await res.revalidate('/blogs');
         await res.revalidate('/blogs/page/1');
-
-        // Refresh detail page if provided
         if (slug) await res.revalidate(`/blogs/${slug}`);
-
-        // Optional explicit paths
         if (Array.isArray(paths)) {
             for (const p of paths) await res.revalidate(p);
         }

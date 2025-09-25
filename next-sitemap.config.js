@@ -34,12 +34,16 @@ module.exports = {
             '/about': 0.8,
             '/contact': 0.8,
             '/services': 0.9,
+            '/our-community': 0.7,
+            '/client-reviews': 0.6,
         };
 
         const changeFreqs = {
             '/': 'daily',
             '/contact': 'monthly',
-            '/about': 'monthly'
+            '/about': 'monthly',
+            '/our-community': 'monthly',
+            '/client-reviews': 'monthly',
         };
         const lastmodDate = new Date();
         const lastmodMonthly = `${lastmodDate.getFullYear()}-${String(lastmodDate.getMonth() + 1).padStart(2, '0')}`;

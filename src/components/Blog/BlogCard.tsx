@@ -22,9 +22,7 @@ const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
     };
     const parsedTags = blog.tags ? blog.tags.replace(/"/g, '').split(', ') : [];
     return (
-        <div
-            className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2"
-            style={{animation: `fadeInUp 0.6s ease-out ${key * 0.1}s both`}}>
+        <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl border border-gray-100 transition-all duration-500 hover:-translate-y-2" style={{animation: `fadeInUp 0.6s ease-out ${key * 0.1}s both`}}>
             <div>
                 {fullImageUrl && (
                     <div className="relative  overflow-hidden rounded-lg h-64">

@@ -1,4 +1,5 @@
-import '@/styles/globals.css'
+import "@/styles/globals.css";
+import "@/styles/fonts.css";
 import type { AppProps } from 'next/app'
 import { Righteous, Seymour_One,Nunito } from 'next/font/google'
 import { useEffect, useState } from 'react'
@@ -55,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }
 
   return (
-      <div className={`${righteous.variable} ${seymourOne.variable} ${nunito.variable}`}>
+      <div className={`${righteous.variable} ${seymourOne.variable} ${nunito.variable} font-syne`}>
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
           <Component {...pageProps} />
             <ConsentBanner/>

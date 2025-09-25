@@ -10,6 +10,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
+                syne: ["Syne", "sans-serif"],
                 'logo': ['Geist', 'Inter', 'system-ui', 'sans-serif'],
                 'nav': ['Satoshi', 'Inter', 'system-ui', 'sans-serif'],
                 'button': ['Manrope', 'system-ui', 'sans-serif'],

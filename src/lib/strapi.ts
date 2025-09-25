@@ -27,14 +27,11 @@ export async function sFetch<T>(
 
     return res.json();
 }
-
-
 export async function getBlogs(page = 1, pageSize = 10): Promise<BlogResponse> {
     return sFetch<BlogResponse>(
         `/api/blogs?populate=feature_image&pagination[page]=${page}&pagination[pageSize]=${pageSize}&sort=publishedAt:desc`
     );
 }
-
 export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
     const q = new URLSearchParams();
     q.set('filters[slug][$eq]', slug);
@@ -43,7 +40,6 @@ export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
     const data = await sFetch<BlogResponse>(`/api/blogs?${q.toString()}`);
     return (data.data?.[0] as BlogPost) ?? null;
 }
-
 export async function getLatestSlugs(limit = 50): Promise<string[]> {
     const data = await sFetch<any>(
         `/api/blogs?fields=slug&pagination[page]=1&pagination[pageSize]=${limit}&sort=publishedAt:desc`

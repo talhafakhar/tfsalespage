@@ -26,6 +26,8 @@ const Navbar: React.FC = () => {
         { href: '/about', label: 'ABOUT' },
         { href: '/services', label: 'SERVICES', hasDropdown: true },
         { href: '/contact', label: 'CONTACT' },
+        { href: '/our-community', label: 'OUR COMMUNITY'},
+        { href: '/client-review', label: 'CLIENTS REVIEWS'},
         { href: '/blogs', label: 'BLOGS' },
     ];
     const servicesDropdown = [
@@ -111,7 +113,7 @@ const Navbar: React.FC = () => {
                                         onClick={() => setHoveredService(!hoveredService)}
                                     >
                                         <button
-                                            className={`relative w-full px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center justify-center gap-1`}
+                                            className={`relative w-full px-2.5 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-gray-300 hover:text-white overflow-hidden flex items-center justify-center gap-1`}
                                         >
                                             <span className="relative z-10">{link.label}</span>
                                             <ChevronDown
@@ -156,12 +158,12 @@ const Navbar: React.FC = () => {
                                 ) : (
                                     <Link
                                         href={link.href}
-                                        className={`relative px-4 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-white overflow-hidden flex items-center justify-center`}
+                                        className={`relative px-2.5 py-2 rounded-lg font-nav font-medium transition-all duration-300 group text-white overflow-hidden flex items-center justify-center`}
                                     >
                                         <span className="relative z-10">{link.label}</span>
                                         <div className="absolute inset-0 bg-primary/20 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300"></div>
                                         <div className="absolute bottom-0 left-0 w-full h-0.5 rounded-full"></div>
-                                        <div className="absolute bottom-0 left-0 h-0.5 bg-primary via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-800 ease-out"></div>
+                                        <div className="absolute bottom-0 left-0 h-0.5 bg-primary via-primary-500 to-primary-600 rounded-full w-0 group-hover:w-full group-hover:animate-progress-fill transition-all duration-300 ease-out"></div>
                                     </Link>
                                 )}
                             </div>
