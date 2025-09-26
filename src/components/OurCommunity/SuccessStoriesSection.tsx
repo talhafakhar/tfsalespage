@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { Play } from "lucide-react";
-import Image from "next/image";
 
 const SuccessStoriesSection = () => {
     const stories = [
@@ -8,19 +7,19 @@ const SuccessStoriesSection = () => {
             name: "Sarah Chen",
             company: "TechFlow",
             story: "From idea to $10M valuation in 18 months",
-            thumbnail: "https://via.placeholder.com/400x250.png?text=Video+Thumbnail",
+            video: "/assets/testimonial_1.mp4",
         },
         {
             name: "Marcus Rodriguez",
             company: "GreenTech Solutions",
             story: "Revolutionizing renewable energy sector",
-            thumbnail: "https://via.placeholder.com/400x250.png?text=Video+Thumbnail",
+            video: "/assets/testimonial_1.mp4",
         },
         {
             name: "Aisha Patel",
             company: "HealthConnect",
             story: "Connecting patients with healthcare providers globally",
-            thumbnail: "https://via.placeholder.com/400x250.png?text=Video+Thumbnail",
+            video: "/assets/testimonial_1.mp4",
         },
     ];
 
@@ -50,19 +49,17 @@ const SuccessStoriesSection = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ delay: index * 0.2 }}
                             viewport={{ once: true }}
-                            className="bg-white/5 p-6 rounded-xl  border border-primary/30  "
+                            className="bg-white/5 p-6 rounded-xl border border-primary/30"
                         >
                             <div className="relative mb-4">
-                                <Image
-                                    width={300}
-                                    height={200}
-                                    src="/assets/home/graph.webp"
-                                    alt="Video Thumbnail"
+                                {/* Video instead of Image */}
+                                <video
+                                    src={story.video}
                                     className="w-full h-48 object-cover rounded-lg"
+                                    controls
+                                    preload="metadata"
                                 />
-                                <button className="absolute inset-0 flex items-center justify-center bg-black/40 rounded-lg hover:bg-black/60 transition">
-                                    <Play className="text-white" size={32} />
-                                </button>
+
                             </div>
 
                             <h3 className="text-xl font-bold text-white mb-2">

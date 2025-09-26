@@ -1,21 +1,20 @@
 "use client";
 // import Image from "next/image";
 const partners = [
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Hilton-Logo.png", alt: "" },
-    { src: "https://logos-world.net/wp-content/uploads/2023/02/Fairmont-Logo.png", alt: "" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Waldorf-Astoria-Logo.png", alt: "" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/12/SLS-Hotel-Logo.png", alt: "" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Conrad-Hotels-Logo.png", alt: "" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Days-Inn-Logo.png", alt: "" },
+    { src: "https://logos-world.net/wp-content/uploads/2020/11/Hilton-Logo.png", alt: "Logo 1" },
+    { src: "https://logos-world.net/wp-content/uploads/2023/02/Fairmont-Logo.png", alt: "Logo 1" },
+    { src: "https://logos-world.net/wp-content/uploads/2020/11/Waldorf-Astoria-Logo.png", alt: "Logo 1" },
+    { src: "https://logos-world.net/wp-content/uploads/2020/12/SLS-Hotel-Logo.png", alt: "Logo 1" },
+    { src: "https://logos-world.net/wp-content/uploads/2020/11/Conrad-Hotels-Logo.png", alt: "Logo 1" },
+    { src: "https://logos-world.net/wp-content/uploads/2020/11/Days-Inn-Logo.png", alt: "Logo 1" },
 ];
-
 
 export default function PartnersSection() {
     return (
         <section className=" py-16">
             <div className="max-w-7xl mx-auto px-4  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="flex flex-col justify-between mb-4 gap-y-20">
-                    <span className="w-8 h-8 ">
+                    <span className="w-14 h-14 ">
  <svg
      xmlns="http://www.w3.org/2000/svg"
      xmlSpace="preserve"
@@ -68,11 +67,6 @@ export default function PartnersSection() {
                             {/*    width={150}*/}
                             {/*    height={80}*/}
                             {/*    className="object-contain grayscale"*/}
-                            {/*/>*/}
-                            {/*<img*/}
-                            {/*    src={partner.src}*/}
-                            {/*    alt={partner.alt}*/}
-                            {/*    className="object-contain grayscale max-h-20"*/}
                             {/*/>*/}
                         </div>
                     ))}

@@ -35,7 +35,7 @@ module.exports = {
             '/contact': 0.8,
             '/services': 0.9,
             '/our-community': 0.7,
-            '/client-reviews': 0.6,
+            '/client-review': 0.6,
         };
 
         const changeFreqs = {
@@ -43,7 +43,7 @@ module.exports = {
             '/contact': 'monthly',
             '/about': 'monthly',
             '/our-community': 'monthly',
-            '/client-reviews': 'monthly',
+            '/client-review': 'monthly',
         };
         const lastmodDate = new Date();
         const lastmodMonthly = `${lastmodDate.getFullYear()}-${String(lastmodDate.getMonth() + 1).padStart(2, '0')}`;

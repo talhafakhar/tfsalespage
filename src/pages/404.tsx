@@ -135,7 +135,7 @@ export default function Custom404() {
             <Starfield />
             <main className="flex-1 relative z-10 flex flex-col items-center pt-40 pb-16 px-6">
                 <motion.h1
-                    className="text-5xl md:text-7xl font-extrabold tracking-tight text-center mb-4"
+                    className="text-4xl md:text-6xl font-bold tracking-tight text-center mb-4"
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
