@@ -71,9 +71,9 @@ const BlogDetail: React.FC<BlogDetailProps> = ({ blog }) => {
                         <motion.div className="flex flex-wrap items-center gap-6 text-gray-600 mb-8" variants={fadeInUp}>
                             <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                <span className="text-sm font-medium">Published {formatDate(blog.publishedAt)}</span>
+                                <span className="text-sm font-medium">Published {formatDate(blog.published)}</span>
                             </div>
-                            {blog.updatedAt && blog.updatedAt !== blog.publishedAt && (
+                            {blog.updatedAt && blog.updatedAt !== blog.published && (
                                 <div className="flex items-center gap-2">
                                     <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                                     <span className="text-sm font-medium">Updated {formatDate(blog.updatedAt)}</span>

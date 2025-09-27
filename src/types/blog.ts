@@ -9,11 +9,10 @@ export interface BlogPost {
     excerpt: string;
     slug: string;
     tags: string;
-    publishedAt: string;
     published: string;
     createdAt: string;
     updatedAt: string;
-    feature_image?: {
+    feature_image: {
         url: string;
     };
 }

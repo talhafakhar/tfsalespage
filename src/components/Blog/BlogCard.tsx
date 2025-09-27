@@ -10,6 +10,7 @@ interface BlogCardProps {
 }
 
 const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
+    console.log(blog)
     const imageUrl = blog.feature_image?.url;
     const fullImageUrl = imageUrl ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${imageUrl}` : null;
     const imageAlt = blog.title;
@@ -75,7 +76,7 @@ const BlogCard: React.FC<BlogCardProps> = ({blog, key}) => {
                 <div className="px-6 pb-6 flex items-center justify-between">
                     <div className="flex items-center gap-2 text-sm text-gray-500">
                         <Calendar size={14}/>
-                        <span className="font-medium">{formatDate(blog.publishedAt)}</span>
+                        <span className="font-medium">{formatDate(blog.published)}</span>
                     </div>
 
                     <Link

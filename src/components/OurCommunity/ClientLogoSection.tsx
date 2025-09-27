@@ -1,5 +1,7 @@
 "use client";
 // import Image from "next/image";
+import React from "react";
+
 const partners = [
     { src: "https://logos-world.net/wp-content/uploads/2020/11/Hilton-Logo.png", alt: "Logo 1" },
     { src: "https://logos-world.net/wp-content/uploads/2023/02/Fairmont-Logo.png", alt: "Logo 1" },
@@ -11,8 +13,11 @@ const partners = [
 
 export default function PartnersSection() {
     return (
-        <section className=" py-16">
-            <div className="max-w-7xl mx-auto px-4  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section className=" py-16 px-4 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+            </div>
+            <div className="max-w-7xl mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
                 <div className="flex flex-col justify-between mb-4 gap-y-20">
                     <span className="w-14 h-14 ">
  <svg
