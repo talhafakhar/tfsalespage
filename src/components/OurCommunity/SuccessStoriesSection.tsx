@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Play } from "lucide-react";
 
 const SuccessStoriesSection = () => {
     const stories = [

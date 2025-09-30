@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { Zap, Star, Users, CheckCircle, ArrowRight } from "lucide-react";
+import { Zap, Star, Users, CheckCircle } from "lucide-react";
 const features = [
     {
         icon: Zap,
