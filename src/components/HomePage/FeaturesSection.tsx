@@ -32,7 +32,7 @@ export const TimelineFlowLayout = () => {
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
-            <div className=" relative container mx-auto">
+            <div className="relative max-w-7xl mx-auto">
                 <motion.div
                     className="text-center mb-20"
                     initial={{ opacity: 0, y: 30 }}
@@ -80,21 +80,14 @@ export const TimelineFlowLayout = () => {
                                         whileHover={{ scale: 1.02 }}
                                         transition={{ type: "spring", stiffness: 300 }}
                                     >
-                                        <h3 className={`text-3xl font-bold text-black mb-4 flex items-center  gap-3 ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
-                                            {isLeft && <CheckCircle className="text-yellow-400" size={28} />}
+                                        <h3 className={`text-3xl font-semibold mb-4 flex items-center  gap-3 ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
+                                            {isLeft && <CheckCircle className="text-primary md:text-start" size={28} />}
                                             <span>{feature.title}</span>
-                                            {!isLeft && <CheckCircle className="text-yellow-400" size={28} />}
+                                            {!isLeft && <CheckCircle className="text-primary md:text-end" size={28} />}
                                         </h3>
-                                        <p className={`text-black/70 text-lg items-center leading-relaxed mb-4 flex ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
+                                        <p className={`text-black/60  items-center leading-relaxed mb-4 flex ${isLeft ? 'justify-center md:justify-end' : 'justify-center md:justify-start'}`}>
                                             {feature.description}
                                         </p>
-                                        <motion.div
-                                            className={`inline-flex  items-center gap-2 text-black font-semibold cursor-pointer ${isLeft ? 'flex-row-reverse' : ''}`}
-                                            animate={{ x: hoveredIndex === index ? (isLeft ? -10 : 10) : 0 }}
-                                        >
-                                            <span>Learn more</span>
-                                            <ArrowRight className={`${isLeft ? 'rotate-180' : ''}`} size={16} />
-                                        </motion.div>
                                     </motion.div>
                                 </div>
                                 <motion.div

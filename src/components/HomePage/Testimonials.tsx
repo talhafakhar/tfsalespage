@@ -44,12 +44,12 @@ const Testimonial:React.FC<Testimonial> = ({testimonials}) => {
     const currentTest = testimonials[currentTestimonial];
 
     return (
-        <section className="relative bg-white py-10 px-4">
+        <section className="relative overflow-hidden py-10 px-6">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
-            <div className=" relative max-w-7xl mx-auto px-6 z-10">
+            <div className=" relative max-w-7xl mx-auto  z-10">
                 <h2 className="text-4xl md:text-5xl text-center font-bold  mb-8 leading-tight">
                     What Our{' '}<span className="text-primary">Clients Say</span>
                 </h2>

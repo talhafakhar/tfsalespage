@@ -11,8 +11,9 @@ import Banner from "@/components/HomePage/bannerSection";
 import Testimonial from "@/components/HomePage/Testimonials";
 import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
 import React, {useEffect, useState} from "react";
-import Image from "next/image";
 import {DollarSign, Rocket, TrendingUp} from "lucide-react";
+import Image from "next/image";
+
 const successStories: SuccessStory[] = [
     {
         id: 1,
@@ -89,10 +90,13 @@ export default function Home() {
                     appId: '1234567890',
                 }}
                 additionalMetaTags={[
-                    { name: 'keywords', content: 'Agency as a Service, AaaS, Fractional CMO, Fractional CTO, Fractional SDR, Sales Automation, Business Consulting, Growth Marketing, B2B Services' },
-                    { property: 'dc:creator', content: 'TF Business Solution' },
-                    { name: 'author', content: 'TF Business Solution' },
-                    { name: 'robots', content: 'index, follow' },
+                    {
+                        name: 'keywords',
+                        content: 'Agency as a Service, AaaS, Fractional CMO, Fractional CTO, Fractional SDR, Sales Automation, Business Consulting, Growth Marketing, B2B Services'
+                    },
+                    {property: 'dc:creator', content: 'TF Business Solution'},
+                    {name: 'author', content: 'TF Business Solution'},
+                    {name: 'robots', content: 'index, follow'},
                 ]}
                 openGraph={{
                     type: 'website',
@@ -153,7 +157,6 @@ export default function Home() {
                     queryInput: 'required name=search_term_string',
                 }}
             />
-
             <FAQPageJsonLd
                 mainEntity={[
                     {
@@ -202,55 +205,52 @@ export default function Home() {
                 ]}
             />
             <div>
-                <div>
-                    <HeroSection/>
-                    <HeadlineSection/>
-                    <NewServicesSection/>
-                    <TimelineFlowLayout/>
-                    <Banner
-                        title="Ready to Scale"
-                        description="Get a complete team led by an expert C-Level Executive starting next week"
-                        buttonText='Start My Growth Journey'
-                    />
-                    <FoundersSection/>
-                    <Testimonial
-                        testimonials={[
-                            {
-                                id: 1,
-                                text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",
-                                author: "Sarah",
-                                role: "CEO",
-                                rating: 5,
-                                image: "/assets/services/girl.webp",
-                                company: "Digital Marketing Agency"
-                            },
-                            {
-                                id: 2,
-                                text: "Finally, automation that doesn't sound robotic! Our customers actually engage with the sequences, and our lifetime value increased by 145%",
-                                author: "Fariha",
-                                role: "Founder ",
-                                rating: 5,
-                                image: "/assets/services/girl.webp",
-                                company: "Ecomerce Marketplace"
-                            },
-                            {
-                                id: 3,
-                                text: "The ROI was incredible. We generated an additional $280K in revenue within 6 months, and the automation saves us 20+ hours per week.",
-                                author: "Richard",
-                                role: "CMO",
-                                rating: 5,
-                                image: "/assets/services/user.webp",
-                                company: "Real Estate Agency"
-                            }
-                        ]}
-                    />
-                    <SuccessSnapshots
-                        buttonText="Choose Fractional CMO Today"
-                        stories={successStories}
-                    />
-                    <FinalCTASection/>
-                    <FAQSection
-                        faqs={[
+                <HeroSection/>
+                <HeadlineSection/>
+                <NewServicesSection/>
+                <TimelineFlowLayout/>
+                <Banner
+                    title="Ready to Scale"
+                    description="Get a complete team led by an expert C-Level Executive starting next week"
+                    buttonText='Start My Growth Journey'
+                />
+                <FoundersSection/>
+                <Testimonial testimonials={[
+                    {
+                        id: 1,
+                        text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",
+                        author: "Sarah",
+                        role: "CEO",
+                        rating: 5,
+                        image: "/assets/services/girl.webp",
+                        company: "Digital Marketing Agency"
+                    },
+                    {
+                        id: 2,
+                        text: "Finally, automation that doesn't sound robotic! Our customers actually engage with the sequences, and our lifetime value increased by 145%",
+                        author: "Fariha",
+                        role: "Founder ",
+                        rating: 5,
+                        image: "/assets/services/girl.webp",
+                        company: "Ecomerce Marketplace"
+                    },
+                    {
+                        id: 3,
+                        text: "The ROI was incredible. We generated an additional $280K in revenue within 6 months, and the automation saves us 20+ hours per week.",
+                        author: "Richard",
+                        role: "CMO",
+                        rating: 5,
+                        image: "/assets/services/user.webp",
+                        company: "Real Estate Agency"
+                    }
+                ]}/>
+                <SuccessSnapshots
+                    buttonText="Choose Fractional CMO Today"
+                    stories={successStories}
+                />
+                <FinalCTASection/>
+                <FAQSection
+                    faqs={[
                         {
                             id: 1,
                             question: "What is fractional leadership and how does it work?",
@@ -295,55 +295,55 @@ export default function Home() {
                             )
                         },
                     ]}
-                    />
-                    <Footer/>
-                </div>
-                {show && (
-                    <div
-                        className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
-                        <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
-                            <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
-                                <div className="flex-shrink-0 md:block hidden">
-                                    <Image loading="lazy" src="/assets/services/user.webp" alt="avatar" width={40} height={40}/>
-                                </div>
-                                <div>
-                                    <div className="text-xs">
-                                        <p className="text-sm font-semibold">Hello 👋 We&apos;re</p>
-                                        <section className="h-6 sm:h-[24px] rounded overflow-hidden inline-block">
-                                            <div className="animate-textLoop">
-                                                <div className="bg-sky-500 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] mb-[2.5rem] text-[0.75rem] sm:text-xs">
-                                                    Your Fractional Growth Team
-                                                </div>
-                                                <div className="bg-primary text-white rounded text-nowrap font-semibold px-1 py-3 h-[2.5rem] mt-2 mb-[2.5rem] text-[0.75rem] sm:text-xs">
-                                                    Experts in Sales, Tech & Marketing
-                                                </div>
-                                                <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
-                                                    The Team Behind 14+ Startup Wins
-                                                </div>
-                                                <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
-                                                    Not Your Average Agency
-                                                </div>
-                                                <div className="bg-red-700 text-white rounded text-nowrap font-semibold px-1 py-1 h-[2.5rem] text-[0.75rem] sm:text-xs">
-                                                    Here to Build What You Can’t Hire
-                                                </div>
+                />
+                <Footer/>
+            </div>
+            {show && (
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
+                        <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
+                            <div className="flex-shrink-0 md:block hidden">                                <Image loading="lazy" src="/assets/services/user.webp" alt="avatar" width={40} height={40}/>
+                            </div>
+                            <div>
+                                <div className="text-xs">
+                                    <p className="text-sm font-semibold">Hello 👋 We&apos;re</p>
+                                    <section className="h-[2.5rem] overflow-hidden inline-block">
+                                        <div className="animate-textLoop flex flex-col gap-2">
+                                            <div className="bg-sky-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Your Fractional Growth Team
                                             </div>
-                                        </section>
-                                    </div>
-                                    <div className="flex justify-center">
-                                        <button
-                                            onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
-                                            className="bg-secondary text-white font-button text-nowrap rounded-md px-2 py-1 text-xs sm:text-sm mt-2 sm:mt-0">
-                                            Book a Call
-                                        </button>
-                                    </div>
+                                            <div className="bg-primary text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Experts in Sales, Tech & Marketing
+                                            </div>
+                                            <div className="bg-red-700 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                The Team Behind 14+ Startup Wins
+                                            </div>
+                                            <div className="bg-purple-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Not Your Average Agency
+                                            </div>
+                                            <div className="bg-indigo-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Here to Build What You Can’t Hire
+                                            </div>
+                                            <div className="bg-green-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
+                                                Web Development Experts
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div className="flex justify-center">
+                                    <button
+                                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
+                                        className="bg-secondary text-white font-button text-nowrap rounded-md px-2 py-1 text-xs sm:text-sm mt-2 sm:mt-0">
+                                        Book a Call
+                                    </button>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
 
-                )}
-            </div>
+                    </div>
+                </div>
+
+            )}
         </>
     );
 }

@@ -90,7 +90,7 @@ const HowWeStarted = () => {
         }
     }, [isCounterVisible]);
     return (
-        <section className="py-10 px-6 relative z-10">
+        <section className="py-10 px-6 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
@@ -104,10 +104,10 @@ const HowWeStarted = () => {
                     custom={0}
                     className="text-center mb-8"
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    <h2 className="text-4xl md:text-5xl font-bold  mb-4">
                         How We <span className="text-primary">Started</span>
                     </h2>
-                    <p className="max-w-xl mx-auto text-lg">
+                    <p>
                         From firsthand pain to powerful purpose why TF Business Solutions was born.
                     </p>
                 </motion.div>

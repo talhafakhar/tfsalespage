@@ -78,6 +78,7 @@ const Footer: React.FC = () => {
 
     return (
         <footer className="bg-secondary border-t text-white relative overflow-hidden">
+
             <div className='relative container mx-auto px-4'>
                 <div className="absolute right-0 top-16 hidden md:block">
                     <Image
@@ -87,7 +88,7 @@ const Footer: React.FC = () => {
                         height={750}
                     />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-black to-black/20"/>
+                <div className="absolute inset-0 bg-black/70"/>
                 <div className="relative">
                     <div className="py-16">
                         <div className="grid lg:grid-cols-4 gap-12">
@@ -151,7 +152,7 @@ const Footer: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="lg:col-span-1">
+                            <div className="lg:col-span-2">
                               <div className="grid grid-cols-1 md:grid-cols-2 ">
                                   {footerSections.map((section, sectionIndex) => (
                                       <div key={sectionIndex}>

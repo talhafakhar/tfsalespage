@@ -60,13 +60,13 @@ const WhatWeActuallyDo: React.FC = () => {
     ];
 
     return (
-        <section className="bg-secondary py-10 px-4 relative overflow-hidden">
+        <section className="bg-secondary py-10 px-4">
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className={`text-center mb-20 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                    <h2 className="text-4xl md:text-5xl font-black mb-8 text-white leading-tight">
+                    <h2 className="text-4xl md:text-5xl  mb-8 text-white leading-tight">
                         What We{' '}<span className="text-primary">Actually</span>{' '}Do
                     </h2>
-                    <p className=" text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                    <p className="text-gray-300 max-w-4xl mx-auto leading-relaxed">
                         We give you the C-level executives and teams you need, working as your employees , not some agency juggling 20 other clients
                     </p>
                 </div>
@@ -164,17 +164,12 @@ const WhatWeActuallyDo: React.FC = () => {
                         <div className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl"></div>
 
                         <div className="relative border rounded-3xl p-4  text-center overflow-hidden">
-                            <div className="absolute inset-0 opacity-10">
-                                <div className="absolute top-10 left-10 w-32 h-32 border border-white rounded-full animate-spin" style={{animationDuration: '20s'}}></div>
-                                <div className="absolute bottom-10 right-10 w-24 h-24 border border-white rounded-full animate-spin" style={{animationDuration: '15s', animationDirection: 'reverse'}}></div>
-                                <div className="absolute top-1/2 left-1/4 w-16 h-16 border border-white rounded-full animate-pulse"></div>
-                            </div>
                             <div className="relative z-10">
                                 <div className="w-24 h-24 border rounded-3xl flex items-center justify-center mx-auto mb-8 ">
                                     <GraduationCap className="w-12 h-12 text-primary" />
                                 </div>
 
-                                <h3 className="text-4xl font-black text-white mb-4">
+                                <h3 className="text-4xl  text-white mb-4">
                                     Team Training
                                 </h3>
 

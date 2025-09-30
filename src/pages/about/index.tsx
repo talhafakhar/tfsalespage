@@ -67,8 +67,7 @@ const About: React.FC = () => {
             <AboutDealSection/>
             <Footer/>
              {show && (
-                <div
-                    className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
+                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
                     <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
                         <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
                             <div className="flex-shrink-0 md:block hidden">                                <Image loading="lazy" src="/assets/services/user.webp" alt="avatar" width={40} height={40}/>
@@ -111,7 +110,6 @@ const About: React.FC = () => {
 
                     </div>
                 </div>
-
             )}
         </>
     )

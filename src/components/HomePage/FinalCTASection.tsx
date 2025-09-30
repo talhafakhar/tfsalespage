@@ -30,12 +30,12 @@ const FinalCTASection: React.FC = () => {
         { icon: BarChart3, text: "Scalable Results", delay: "1000ms" }
     ];
     return (
-        <section className="bg-white py-20 px-4 relative">
+        <section className="py-16 px-6 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
-            <div className="max-w-7xl relative mx-auto">
+            <div className="max-w-7xl relative mx-auto z-10">
                 <div className="flex gap-16 items-center justify-center">
                     <div className={`transition-all text-center duration-1000 delay-300 ${
                         isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-8'

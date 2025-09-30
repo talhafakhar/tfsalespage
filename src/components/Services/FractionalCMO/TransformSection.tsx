@@ -80,14 +80,13 @@ const Transform: React.FC<TransformProps> = ({title,titleTwo, description, butto
                     variants={textVariant}
                     className="md:w-1/2 w-full"
                 >
-                    <h2 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-semibold leading-tight mb-6">
                         {title} <br/>{titleTwo}
                     </h2>
                     <p className="text-lg mb-6">
                         {description}
                     </p>
 
-                    {/* Button */}
                     <motion.div
                         initial="hidden"
                         animate={controls}

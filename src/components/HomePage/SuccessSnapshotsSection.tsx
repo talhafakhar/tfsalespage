@@ -34,7 +34,7 @@ const SuccessSnapshots: React.FC<SuccessSnapshotProps> = ({ buttonText, stories 
 
     return (
         <section className="bg-secondary">
-            <div className="container mx-auto py-10 px-4">
+            <div className="max-w-7xl mx-auto py-16 px-4">
                 <div
                     className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
                     }`}>

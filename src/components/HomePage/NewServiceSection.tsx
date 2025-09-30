@@ -6,7 +6,7 @@ import Link from "next/link";
 const services = [
     {
         id: "virtual-cmo",
-        title: "Virtual CMO Services",
+        title: "Virtual CMO",
         icon: <Rocket className="w-12 h-12" />,
         description: `Your marketing lacks strategic direction and consistent lead generation. We build demand-generation strategies, brand positioning, and conversion-focused campaigns that create predictable revenue engines. You get C-level marketing expertise without the full-time cost..`,
         tag: { text: "Popular", icon: <TrendingUp className="w-3 h-3" /> },
@@ -14,7 +14,7 @@ const services = [
     },
     {
         id: "virtual-cto",
-        title: "Virtual CTO Services",
+        title: "Virtual CTO",
         icon: <Monitor className="w-12 h-12" />,
         description: `Your tech infrastructure can't support growth or attract investors. We launch products, scale tech teams, implement AI solutions, and establish robust infrastructure for funding readiness. You get enterprise-level technology leadership at a fraction of the price.,
         
@@ -23,7 +23,7 @@ const services = [
     },
     {
         id: "fractional-sdr",
-        title: "Fractional SDR Services",
+        title: "Fractional SDR",
         icon: <Users className="w-12 h-12" />,
         description: ` Your sales pipeline is inconsistent and your team lacks proven processes. We build high-performing outbound engines from scratch with messaging, prospecting, and automation that keeps your calendar full. You get predictable revenue without hiring expensive sales directors.`,
         tag: { text: "New", icon: <Sparkles className="w-3 h-3" /> },
@@ -49,14 +49,14 @@ const services = [
         icon: <Bot className="w-12 h-12" />,
         description: `Customer support and lead qualification are eating your resources. We deploy intelligent AI agents for sales, onboarding, and support that work 24/7. You get scalable operations without expanding headcount.`,
         tag: { text: "AI Powered", icon: <Zap className="w-3 h-3" /> },
-        link: "/services/agent-as-a-service"
+        link: "/services/ai-agent-as-a-service"
     }
 ];
 
 const ServicesSection: React.FC = () => {
     const sectionRef = useRef(null);
      return (
-        <section ref={sectionRef} className="relative px-4 py-10 bg-secondary overflow-hidden">
+        <section ref={sectionRef} className="relative px-4 py-16 bg-secondary overflow-hidden">
             <div className="absolute inset-0 bg-secondary" />
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <motion.div
@@ -76,9 +76,7 @@ const ServicesSection: React.FC = () => {
                     transition={{ duration: 1, delay: 0.3 }}
                 />
             </div>
-            <div
-                className="absolute top-5 right-0 pointer-events-none sm:block hidden"
-            >
+            <div className="absolute top-20 right-0 pointer-events-none sm:block hidden">
                 <Image
                     src="/assets/home/astronot.webp"
                     alt="astronot"
@@ -89,7 +87,7 @@ const ServicesSection: React.FC = () => {
             </div>
             <div className="absolute inset-0 bg-black/60 pointer-events-none" />
             <motion.div
-                className="relative container mx-auto flex z-9999 md:flex-row flex-col justify-center  items-center mb-16 gap-10"
+                className="relative max-w-7xl mx-auto flex z-9999 md:flex-row flex-col justify-center  items-center mb-16 gap-10"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
@@ -114,7 +112,7 @@ const ServicesSection: React.FC = () => {
                 </div>
             </motion.div>
             <motion.div
-                className="relative container z-99999 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                className="relative max-w-7xl z-99999 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
                 initial="hidden"
                 animate={"show"}
                 variants={{
@@ -122,86 +120,78 @@ const ServicesSection: React.FC = () => {
                     show: { transition: { staggerChildren: 0.1, delayChildren: 0.3 } }
                 }}
             >
-                {services.map((service,index ) => (
-                    <Link key={service.id} href={service.link} >
-                        <motion.div
-                            key={service.id}
-                            className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary"
-                            whileHover={{
-                                scale: 1.03,
-                                rotate: 0.5,
-                                transition: { type: "spring", stiffness: 400 }
-                            }}
-                            variants={{
-                                hidden: {
-                                    opacity: 0,
-                                    y: 40,
-                                    rotateX: -15
-                                },
-                                show: {
-                                    opacity: 1,
-                                    y: 0,
-                                    rotateX: 0,
-                                    transition: {
-                                        type: "spring",
-                                        stiffness: 100,
-                                        damping: 15
-                                    }
+                {services.map((service, index) => (
+                    <motion.div
+                        key={service.id}
+                        className="relative border border-white rounded-xl overflow-hidden group cursor-pointer shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl hover:border-primary h-full flex flex-col"
+                        whileHover={{
+                            scale: 1.03,
+                            rotate: 0.5,
+                            transition: { type: "spring", stiffness: 400 }
+                        }}
+                        variants={{
+                            hidden: {
+                                opacity: 0,
+                                y: 40,
+                                rotateX: -15
+                            },
+                            show: {
+                                opacity: 1,
+                                y: 0,
+                                rotateX: 0,
+                                transition: {
+                                    type: "spring",
+                                    stiffness: 100,
+                                    damping: 15
                                 }
-                            }}
+                            }
+                        }}
+                    >
+                        <Link
+                            href={service.link}
+                            className="absolute inset-0 z-20"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            {service.tag && (
-                                <motion.div
-                                    className="absolute top-4 right-4 z-10"
-                                    initial={{ opacity: 0, scale: 0 }}
-                                    animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
-                                >
-                                    <div className="flex items-center gap-1 px-3 py-1 bg-primary text-secondary text-xs font-bold rounded-full shadow-lg">
-                                        {service.tag.icon}
-                                        <span>{service.tag.text}</span>
-                                    </div>
-                                </motion.div>
-                            )}
+                            <span className="sr-only">{service.title}</span>
+                        </Link>
 
+                        {service.tag && (
                             <motion.div
-                                className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 opacity-0"
-                                whileHover={{ opacity: 1 }}
-                                transition={{ duration: 0.3 }}
-                            />
-
-                            <div className="relative p-8 h-full flex flex-col justify-between min-h-[280px]">
-                                <div>
-                                    <div className="flex items-center justify-center mb-4">
-                                        <motion.div
-                                            className="p-4 bg-primary/20 rounded-full relative"
-                                            whileHover={{
-                                                scale: 1.2,
-                                                rotate: 5
-                                            }}
-                                            transition={{ type: "spring", stiffness: 300 }}
-                                        >
-                                            <div className="text-primary">{service.icon}</div>
-                                        </motion.div>
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white text-center font-manrope mb-3">
-                                        {service.title}
-                                    </h3>
+                                className="absolute top-4 right-4 z-10"
+                                initial={{ opacity: 0, scale: 0 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 + index * 0.1, type: "spring", stiffness: 500 }}
+                            >
+                                <div className="flex items-center gap-1 px-3 py-1 bg-primary text-secondary text-xs font-bold rounded-full shadow-lg">
+                                    {service.tag.icon}
+                                    <span>{service.tag.text}</span>
                                 </div>
+                            </motion.div>
+                        )}
 
-                                <motion.p
-                                    className="text-white/70 text-sm text-center font-dm-sans leading-relaxed"
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ delay: 0.5 + index * 0.1 }}
-                                >
-                                    {service.description}
-                                </motion.p>
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
+                        <motion.div
+                            className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 opacity-0"
+                            whileHover={{ opacity: 1 }}
+                            transition={{ duration: 0.3 }}
+                        />
+
+                        <div className="relative p-8 flex-1 flex flex-col">
+                            <div className="flex items-center justify-center mb-4">
+                                <div className="p-4 bg-primary/20 rounded-full">
+                                    <div className="text-primary">{service.icon}</div>
+                                </div>
                             </div>
-                        </motion.div>
-                    </Link>
+                            <h3 className="text-2xl font-semibold text-white text-center mb-3">
+                                {service.title}
+                            </h3>
+                            <p className="text-white/70 text-sm text-center leading-relaxed flex-1">
+                                {service.description}
+                            </p>
+                        </div>
+                    </motion.div>
                 ))}
             </motion.div>
         </section>
