@@ -21,21 +21,21 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 22
           script: |
-            export PATH="/root/.nvm/versions/node/v20.18.0/bin:$PATH"
+            export PATH="/home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin:$PATH"
             
-            echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /usr/local/lsws/tfbizsol"
+            echo "🚀 Deploying tag ${{ github.event.inputs.tag }} to /home/tfbusinesssolutions/htdocs/tfbusinesssolutions.com"
             
             # Move to target directory
-            cd /usr/local/lsws/tfbizsol
+            cd /home/tfbusinesssolutions/htdocs/tfbusinesssolutions.com
 
             echo "🔄 Fetching tag and resetting code"
             git fetch --all --tags
             git reset --hard ${{ github.event.inputs.tag }}
 
             echo "📦 Installing dependencies & building"
-            /root/.nvm/versions/node/v20.18.0/bin/npm install --production
-            /root/.nvm/versions/node/v20.18.0/bin/npm run build
+            /home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin/npm install --production
+            /home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin/npm run build
 
             echo "🚀 Restarting PM2 process"
-            /root/.nvm/versions/node/v20.18.0/bin/pm2 restart tfbizsol
-            /root/.nvm/versions/node/v20.18.0/bin/pm2 save
+            /home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin/pm2 restart tfbizsol || /home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin/pm2 start npm --name tfbizsol -- start
+            /home/tfbusinesssolutions/.nvm/versions/node/v22.20.0/bin/pm2 save
