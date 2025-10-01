@@ -20,8 +20,8 @@ export default function TfPortfolio() {
                 openGraph={{
                     type: 'article',
                     url: 'https://tfbusinesssolution.com/portfolio',
-                    title: 'Sales Consulting & Training – Boost B2B Sales Fast',
-                    description: 'Get proven sales systems, 1-on-1 coaching, and team training to increase B2B sales. Book your free sales audit today.',
+                    title: '',
+                    description: '',
                     images: [
                         {
                             url: 'https://tfbusinesssolution.com/images/portfolio-og.jpg',
