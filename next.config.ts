@@ -9,10 +9,3 @@ const nextConfig: NextConfig = {
         ],
     },
 };
-export default withSentryConfig(nextConfig, {
-  org: "2btech-llc-tp",
-  project: "tfbusinesssolutions", silent: !process.env.CI,
-  widenClientFileUpload: true,
-  tunnelRoute: "/monitoring", disableLogger: true,
-  automaticVercelMonitors: true,
-});
