@@ -1,24 +1,36 @@
 import React from 'react';
-import { Lightbulb, Users, Rocket} from 'lucide-react';
+import { Lightbulb, Users, UserCheck, BookOpen, Megaphone} from 'lucide-react';
 import Image from "next/image";
 import { motion } from "framer-motion";
 const AboutSection = () => {
     const features = [
         {
-            title: "Innovation Hub",
-            desc: "Foster creativity and breakthrough ideas",
+            title: "Peer Exchange",
+            desc: "Roundtables, masterminds, and office hours for shared learning and real-world insights",
             icon: Lightbulb
         },
         {
-            title: "Mentorship Network",
-            desc: "Connect with industry experts",
+            title: "Events & Webinars",
+            desc: "Expert-led virtual and onsite sessions covering growth, fundraising, and scaling",
             icon: Users
         },
         {
-            title: "Growth Acceleration",
-            desc: "Scale with proven strategies",
-            icon: Rocket
-        }
+            title: "Mentorship Access",
+            desc: "One-on-one guidance from seasoned founders, operators, and advisors",
+            icon: UserCheck
+        },
+        {
+            title: "Resources Hu",
+            desc: "Exclusive playbooks, templates, and toolkits to accelerate execution",
+            icon: BookOpen
+        },
+        {
+            title: "Founders’ Showcase",
+            desc: "Spotlights and demo days that amplify visibility and credibility",
+            icon: Megaphone
+        },
+
+
     ];
 
     return (
@@ -33,7 +45,7 @@ const AboutSection = () => {
                         Meet <span className="text-yellow-400">StartUPulse</span>
                     </h2>
                     <p className="text-lg max-w-3xl mx-auto">
-                        The dynamic platform connecting entrepreneurs worldwide with resources, mentorship, and community to turn startup dreams into reality.
+                        The dynamic community connecting entrepreneurs with peer support, mentorship, and resources to turn startup ideas into thriving ventures.
                     </p>
                 </div>
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -68,7 +80,16 @@ const AboutSection = () => {
                         <Image src="/assets/svg/community.svg" alt="About StartUPulse" width={500} height={500}/>
                     </div>
                 </div>
-
+                <div className="text-center mt-10">
+                    <a
+                        href="https://startupulse.org/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
+                    >
+                       Visit StartUPulse
+                    </a>
+                </div>
             </div>
         </section>
     );

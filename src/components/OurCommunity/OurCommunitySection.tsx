@@ -61,10 +61,10 @@ function CountUpCard({
 
 const CommunitySection = () => {
     const stats = [
-        { icon: Users, value: 10000, suffix: "+", title: "Members", desc: "Active entrepreneurs worldwide" },
-        { icon: TrendingUp, value: 500, suffix: "+", title: "Startups", desc: "Successfully launched" },
-        { icon: Award, value: 50, suffix: "+", title: "Mentors", desc: "Industry experts available" },
-        { icon: ExternalLink, value: 100, suffix: "+", title: "Events", desc: "Networking opportunities" },
+        { icon: Users, value: 500, suffix: "+", title: "Members", desc: "Active entrepreneurs worldwide" },
+        { icon: TrendingUp, value: 445, suffix: "+", title: "Startups", desc: "Successfully launched" },
+        { icon: Award, value: 14, suffix: "+", title: "Events", desc: "INetworking opportunities" },
+        { icon: ExternalLink, value: 2, suffix: "+", title: "Workshops", desc: "Skill-building sessions" },
     ];
 
     return (
@@ -81,7 +81,7 @@ const CommunitySection = () => {
                         Our <span className="text-primary">Community</span>
                     </h2>
                     <p className="text-gray-300">
-                        Join thousands of entrepreneurs, innovators, and industry leaders who are building the future together.
+                        Join a thriving network of founders and C-suite leaders who are shaping the future together
                     </p>
                 </motion.div>
 

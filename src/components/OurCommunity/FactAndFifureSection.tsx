@@ -1,40 +1,44 @@
-import { ShoppingCart,Users,Wifi,Globe,Smartphone} from 'lucide-react';
+import { Users, TrendingUp, UserCheck, Lightbulb, Network} from 'lucide-react';
 import Image from "next/image";
 
 const FactsSection = () => {
     const stats = [
         {
-            number: '8.05 Bn',
-            description: 'World population in 2025 (UN data)',
+            number: "Founder-Led Network",
+            description:
+                "A trusted space where startup founders and C-suite leaders connect, collaborate, and grow together.",
             icon: <Users className="w-5 h-5" />,
-            variant: 'dark' as const,
+            variant: "dark" as const,
         },
         {
-            number: '$104 Tn',
-            description: 'Global GDP in 2025 (IMF projection)',
-            icon: <Globe className="w-5 h-5" />,
-            variant: 'yellow' as const,
+            number: "Startup Ecosystem Reach",
+            description:
+                "Bringing together early-stage and scaling ventures from diverse industries under one community.",
+            icon: <Network className="w-5 h-5" />,
+            variant: "yellow" as const,
         },
         {
-            number: '5.44 Bn',
-            description: 'Internet users worldwide in 2025',
-            icon: <Wifi className="w-5 h-5" />,
-            variant: 'dark' as const,
+            number: "Collaborative Growth",
+            description:
+                "Curated events, workshops, and meetups that inspire innovation and encourage knowledge-sharing.",
+            icon: <Lightbulb className="w-5 h-5" />,
+            variant: "dark" as const,
         },
         {
-            number: '2.14 Bn',
-            description: 'Global digital buyers expected in 2025',
-            icon: <ShoppingCart className="w-5 h-5" />,
-            variant: 'yellow' as const,
+            number: "Expert Access",
+            description:
+                "Opportunities to learn directly from mentors, investors, and seasoned industry specialists.",
+            icon: <UserCheck className="w-5 h-5" />,
+            variant: "yellow" as const,
         },
         {
-            number: '50%',
-            description: 'Share of online payments made via mobile',
-            icon: <Smartphone className="w-5 h-5" />,
-            variant: 'dark' as const,
+            number: "Real Impact",
+            description:
+                "Member startups gaining visibility, building partnerships, and accelerating their journey.",
+            icon: <TrendingUp className="w-5 h-5" />,
+            variant: "dark" as const,
         },
     ];
-
     return (
         <div className="px-4 py-16">
             <div className="max-w-7xl mx-auto">

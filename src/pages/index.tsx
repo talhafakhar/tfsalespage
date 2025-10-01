@@ -215,7 +215,8 @@ export default function Home() {
                     buttonText='Start My Growth Journey'
                 />
                 <FoundersSection/>
-                <Testimonial testimonials={[
+                <Testimonial
+                    testimonials={[
                     {
                         id: 1,
                         text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",

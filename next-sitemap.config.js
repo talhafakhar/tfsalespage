@@ -34,7 +34,7 @@ module.exports = {
             '/about': 0.8,
             '/contact': 0.8,
             '/services': 0.9,
-            '/our-community': 0.7,
+            '/startupulse': 0.7,
             '/client-review': 0.6,
         };
 
@@ -42,7 +42,7 @@ module.exports = {
             '/': 'daily',
             '/contact': 'monthly',
             '/about': 'monthly',
-            '/our-community': 'monthly',
+            '/startupulse': 'monthly',
             '/client-review': 'monthly',
         };
         const lastmodDate = new Date();

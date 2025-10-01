@@ -21,13 +21,13 @@ const HeroSection: React.FC = () => {
                                     className="text-5xl md:text-6xl lg:text-7xl max-w-2xl font-righteous font-bold text-white mb-6"
 
                                 >
-                                    Welcome to Start<span className="text-primary">UP</span>ulse Our Community
+                                    Welcome to Start<span className="text-primary">UP</span>ulse Community
                                 </h1>
 
                             </div>
                             <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
                                 <p className="text-white mb-8 max-w-xl mx-auto">
-                                    Empowering entrepreneurs and startups to pulse with innovation and growth
+                                    StartUPulse is a founder-led community uniting entrepreneurs and startups so you never build alone.
                                 </p>
                             </div>
                             <div className={`transform transition-all duration-1000 delay-500 ${
@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
                                 }`}>
                                 <div className="flex justify-center items-center">
                                     <a
-                                        href="https://calendly.com/talhafakhar/discoverycall"
+                                        href="https://docs.google.com/forms/d/e/1FAIpQLSflejD89SgZHzLcdfO0BS3RwjnBMMbcbjykt03VKJNM6G1qZQ/viewform"
                                         target="_blank"
                                         className="relative group  px-6 py-3 bg-primary   font-bold rounded-xl overflow-hidden transition-all duration-700 hover:scale-110 active:scale-95"
                                     >

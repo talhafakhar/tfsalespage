@@ -25,10 +25,10 @@ const Navbar: React.FC = () => {
         { href: '/', label: 'HOME' },
         { href: '/about', label: 'ABOUT' },
         { href: '/services', label: 'SERVICES', hasDropdown: true },
-        { href: '/contact', label: 'CONTACT' },
-        { href: '/our-community', label: 'OUR COMMUNITY'},
+        { href: '/startupulse', label: 'OUR COMMUNITY'},
         { href: '/client-review', label: 'CLIENTS REVIEWS'},
         { href: '/blogs', label: 'BLOGS' },
+        { href: '/contact', label: 'CONTACT' },
     ];
     const servicesDropdown = [
         {

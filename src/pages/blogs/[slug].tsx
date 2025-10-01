@@ -55,7 +55,7 @@ export default function BlogPostPage({blog}: Props) {
                     images: fullImageUrl ? [{url: fullImageUrl, width: 1200, height: 630, alt: blog.title}] : [],
                     site_name: 'TF Business Solution',
                     article: {
-                        publishedTime: blog.publishedAt,
+                        publishedTime: blog.published,
                         modifiedTime: blog.updatedAt,
                         authors: ['TF Business Solution'],
                         tags,

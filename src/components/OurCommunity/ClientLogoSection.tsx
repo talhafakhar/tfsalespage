@@ -55,8 +55,7 @@ export default function PartnersSection() {
                             Our Partners that make us stronger
                         </h2>
                         <p className="text-gray-600">
-                            We cooperate with top partners and provide access to over 1m
-                            properties in 180 countries.
+                            We collaborate with partners who help us deliver impactful experiences for founders and leaders.
                         </p>
                     </div>
                 </div>

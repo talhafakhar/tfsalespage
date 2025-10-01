@@ -29,6 +29,10 @@ const InfiniteLogoSlider:React.FC<InfiniteLogoSlider> = ({title}) => {
             name: "Serve Co",
             url: "/assets/serve_co_logo.webp",
         },
+        {
+            name: "Strategist Hub",
+            url: "/assets/strategisthub.svg",
+        },
     ];
     const duplicatedLogos = Array.from({ length: 100 }, () => logos).flat();
     return (

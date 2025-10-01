@@ -17,7 +17,7 @@ export default function OurCommunity() {
             <NextSeo
                 title="Our Community | TF Business Solution"
                 description=" Join the TF Business Solution community of growth-minded entrepreneurs and professionals. Access exclusive resources, events, and insights to help your business thrive."
-                canonical="https://tfbusinesssolution.com/our-community"
+                canonical="https://tfbusinesssolution.com/startupulse"
                 additionalMetaTags={[
                     { name: 'keywords', content: 'Our Community, TF Business Solution Community, Business Growth Network, Entrepreneur Network, Professional Development, Business Resources, Growth-Minded Entrepreneurs, Business Events, Networking Opportunities' },
                     { name: 'author', content: 'TF Business Solution' },
@@ -25,12 +25,12 @@ export default function OurCommunity() {
                 ]}
                 openGraph={{
                     type: 'profile',
-                    url: 'https://tfbusinesssolution.com/our-community',
+                    url: 'https://tfbusinesssolution.com/startupulse',
                     title: 'Our Community | TF Business Solution',
                     description: 'Join the TF Business Solution community of growth-minded entrepreneurs and professionals. Access exclusive resources, events, and insights to help your business thrive.',
                     images: [
                         {
-                            url: 'https://tfbusinesssolution.com/images/our-community-og.jpg',
+                            url: 'https://tfbusinesssolution.com/images/startupulse-og.jpg',
                             width: 1200,
                             height: 630,
                             alt: 'TF Business Solution Team – Our Community',
@@ -46,12 +46,12 @@ export default function OurCommunity() {
             />
 
             <WebPageJsonLd
-                id="https://tfbusinesssolution.com/our-community/#webpage"
-                url="https://tfbusinesssolution.com/our-community"
+                id="https://tfbusinesssolution.com/startupulse/#webpage"
+                url="https://tfbusinesssolution.com/startupulse"
                 name="Our Community | TF Business Solution"
                 description="Join the TF Business Solution community of growth-minded entrepreneurs and professionals. Access exclusive resources, events, and insights to help your business thrive."
                 potentialAction={{
-                    target: 'https://tfbusinesssolution.com/our-community?q={search_term_string}',
+                    target: 'https://tfbusinesssolution.com/startupulse?q={search_term_string}',
                     queryInput: 'required name=search_term_string',
                 }}
             />
