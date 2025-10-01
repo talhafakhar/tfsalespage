@@ -77,7 +77,7 @@ const AboutSection = () => {
                         })}
                     </div>
                     <div>
-                        <Image src="/assets/svg/community.svg" alt="About StartUPulse" width={500} height={500}/>
+                        <Image src="/assets/svg/community.svg" alt="About StartUPulse" width={600} height={500}/>
                     </div>
                 </div>
                 <div className="text-center mt-10">
@@ -85,7 +85,7 @@ const AboutSection = () => {
                         href="https://startupulse.org/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-block bg-primary text-white font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-yellow-400 transition-colors"
+                        className="inline-block bg-primary text-balck font-semibold px-8 py-3 rounded-lg shadow-lg hover:bg-yellow-400 transition-colors"
                     >
                        Visit StartUPulse
                     </a>

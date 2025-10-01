@@ -1,23 +1,21 @@
 "use client";
-// import Image from "next/image";
+import Image from "next/image";
 import React from "react";
-
 const partners = [
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Hilton-Logo.png", alt: "Logo 1" },
-    { src: "https://logos-world.net/wp-content/uploads/2023/02/Fairmont-Logo.png", alt: "Logo 1" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Waldorf-Astoria-Logo.png", alt: "Logo 1" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/12/SLS-Hotel-Logo.png", alt: "Logo 1" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Conrad-Hotels-Logo.png", alt: "Logo 1" },
-    { src: "https://logos-world.net/wp-content/uploads/2020/11/Days-Inn-Logo.png", alt: "Logo 1" },
-];
-
+    { src: "/assets/home/1.png", alt: "Friends of Figma" },
+    { src: "/assets/home/2.png", alt: "Kickstart" },
+    { src: "/assets/home/3.png", alt: "Gym Passport" },
+    { src: "/assets/home/4.png", alt: "co for good" },
+    { src: "/assets/home/5.png", alt: "startup grand" },
+    { src: "/assets/home/6.png", alt: "Internation school of choueifat" },
+    { src: "/assets/home/7.png", alt: "Internation school of choueifat" },
+    { src: "/assets/home/8.png", alt: "Internation school of choueifat" },
+    ]
+;
 export default function PartnersSection() {
     return (
-        <section className=" py-16 px-4 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
-            </div>
-            <div className="max-w-7xl mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+        <section className=" py-10 px-4 ">
+            <div className="max-w-7xl mx-auto  grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div className="flex flex-col justify-between mb-4 gap-y-20">
                     <span className="w-14 h-14 ">
  <svg
@@ -59,19 +57,19 @@ export default function PartnersSection() {
                         </p>
                     </div>
                 </div>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                     {partners.map((partner, index) => (
                         <div
                             key={index}
-                            className="flex items-center justify-center p-4  rounded-xl shadow-sm"
+                            className="flex items-center justify-center p-4 "
                         >
-                            {/*<Image*/}
-                            {/*    src={partner.src}*/}
-                            {/*    alt={partner.alt}*/}
-                            {/*    width={150}*/}
-                            {/*    height={80}*/}
-                            {/*    className="object-contain grayscale"*/}
-                            {/*/>*/}
+                            <Image
+                                src={partner.src}
+                                alt={partner.alt}
+                                width={120}
+                                loading="lazy"
+                                height={100}
+                            />
                         </div>
                     ))}
                 </div>

@@ -3,16 +3,16 @@ import { motion } from "framer-motion";
 const SuccessStoriesSection = () => {
     const stories = [
         {
-            name: "Sarah Chen",
-            company: "TechFlow",
-            story: "From idea to $10M valuation in 18 months",
-            video: "/assets/testimonial_1.mp4",
+            name: "Wasim",
+            company: "MEPLANET+",
+            story: "Totally recommend to boost your business.",
+            video: "/assets/home/testimonial_TF.mp4",
         },
         {
-            name: "Marcus Rodriguez",
-            company: "GreenTech Solutions",
-            story: "Revolutionizing renewable energy sector",
-            video: "/assets/testimonial_1.mp4",
+            name: "Abdullah",
+            company: "Serve&Co",
+            story: "Talha Help me solve my sales problems.",
+            video: "/assets/home/TF_business_solutions.mp4",
         },
         {
             name: "Aisha Patel",

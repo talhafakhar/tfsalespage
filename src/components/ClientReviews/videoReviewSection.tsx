@@ -4,14 +4,14 @@ import Link from "next/link";
 export default function TestimonialSlider() {
     const stories = [
         {
-            name: "Sarah Chen",
-            company: "TechFlow",
-            video: "/assets/testimonial_1.mp4",
+            name: "Wasim",
+            company: "MEPLANET+",
+            video: "/assets/home/testimonial_TF.mp4",
         },
         {
-            name: "Marcus Rodriguez",
-            company: "GreenTech Solutions",
-            video: "/assets/testimonial_1.mp4",
+            name: "Abdullah",
+            company: "Serve&Co",
+            video: "/assets/home/TF_business_solutions.mp4",
         },
         {
             name: "Aisha Patel",
@@ -19,6 +19,7 @@ export default function TestimonialSlider() {
             video: "/assets/testimonial_1.mp4",
         },
     ];
+
     return (
         <section className="py-20 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
@@ -63,7 +64,6 @@ export default function TestimonialSlider() {
                         </motion.div>
                     ))}
                 </div>
-                {/*add button*/}
                 <div className="text-center mt-12">
                     <Link
                         href="https://calendly.com/talhafakhar/discoverycall"

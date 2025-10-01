@@ -77,7 +77,7 @@ const FactsSection = () => {
                     <div>
                         <Image
                             src="/assets/fact.webp" alt="Facts and Figures" width={500} height={500}
-                            className="w-full h-auto rounded-l-full border border-black max-w-md lg:max-w-lg"/>
+                            className="w-full h-auto rounded-l-full border border-black max-w-lg md:max-w-xl lg:max-w-2xl"/>
                     </div>
                 </div>
                 <div className="space-y-8 pt-14">

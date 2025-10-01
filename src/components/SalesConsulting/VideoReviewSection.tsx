@@ -125,7 +125,6 @@ const VideoTestimonials = () => {
                             </h3>
                         </div>
 
-                        {/* Box 3 */}
                         <div className=" border-r-[5px] border-primary  text-white bg-[#54595F] shadow-md p-6">
                             <h3 className="font-bold text-end text-2xl  mb-2">The Power of Commitment</h3>
                             <p className="text-end">
