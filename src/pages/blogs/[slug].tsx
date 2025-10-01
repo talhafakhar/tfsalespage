@@ -73,7 +73,7 @@ export default function BlogPostPage({blog}: Props) {
                 url={canonical}
                 title={blog.title}
                 images={fullImageUrl ? [fullImageUrl] : []}
-                datePublished={blog.publishedAt}
+                datePublished={blog.published}
                 authorName="TF Business Solution"
                 publisherName="TF Business Solution"
                 publisherLogo="https://tfbusinesssolution.com/images/logo.png"
