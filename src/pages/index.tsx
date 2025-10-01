@@ -1,85 +1,15 @@
 import HeroSection from "@/components/HomePage/HeroSection";
-import FoundersSection from "@/components/HomePage/BuildForFounderSection";
-import SuccessSnapshots, {SuccessStory} from "@/components/HomePage/SuccessSnapshotsSection";
-import FinalCTASection from "@/components/HomePage/FinalCTASection";
 import Footer from "@/components/Footer/footer";
 import {FAQPageJsonLd, NextSeo, OrganizationJsonLd, WebPageJsonLd} from "next-seo";
-import HeadlineSection from "@/components/HomePage/HeadlineSection";
-import NewServicesSection from "@/components/HomePage/NewServiceSection";
-import {TimelineFlowLayout} from "@/components/HomePage/FeaturesSection";
-import Banner from "@/components/HomePage/bannerSection";
-import Testimonial from "@/components/HomePage/Testimonials";
-import FAQSection from "@/components/Services/FractionalCMO/FaqSection";
-import React, {useEffect, useState} from "react";
-import {DollarSign, Rocket, TrendingUp} from "lucide-react";
-import Image from "next/image";
+import React from "react";
+import PainSection from "@/components/HomePage/PainSection";
+import SolutionSection from "@/components/HomePage/SolutionSection";
+import PricingSection from "@/components/HomePage/PricingSection";
+import SuccessSnapshots from "@/components/HomePage/CaseStudiesSection";
+import WhyTFBusiness from "@/components/HomePage/whySection";
+import FinalCTA from "@/components/HomePage/FinalCTASection";
 
-const successStories: SuccessStory[] = [
-    {
-        id: 1,
-        icon: TrendingUp,
-        metric: '300%',
-        achievement: 'pipeline growth in 60 days',
-        timeline: '60 Days',
-        solution: 'Cold Outreach Engine',
-        details: {
-            challenge: 'Struggling with inconsistent lead generation',
-            approach: 'Implemented our proprietary Cold Outreach Engine',
-            results: [
-                '300% increase in qualified pipeline',
-                '65% higher response rates',
-                '40% reduction in cost per lead',
-                'Automated follow-up sequences',
-            ],
-            clientType: 'B2B SaaS Startup',
-        },
-    },
-    {
-        id: 2,
-        icon: Rocket,
-        metric: '$15K MRR',
-        achievement: 'from MVP in 90 days',
-        timeline: '90 Days',
-        solution: 'Fractional CTO Support',
-        details: {
-            challenge: 'Technical founder needed expert guidance',
-            approach: 'Provided fractional CTO services',
-            results: [
-                'MVP to $15K MRR in 90 days',
-                'Scalable architecture implemented',
-                'Technical team productivity increased 200%',
-                'Product-market fit achieved faster',
-            ],
-            clientType: 'Tech Startup',
-        },
-    },
-    {
-        id: 3,
-        icon: DollarSign,
-        metric: '$200K+',
-        achievement: 'saved annually with automation',
-        timeline: '12 Months',
-        solution: 'Intelligent Sales Automation',
-        details: {
-            challenge: 'Manual sales processes were consuming too much',
-            approach: 'Designed and implemented intelligent sales automation',
-            results: [
-                'Over $200,000 in annual savings',
-                '80% reduction in manual tasks',
-                '50% faster sales cycle',
-                'Real-time performance insights',
-            ],
-            clientType: 'Growing Enterprise',
-        },
-    },
-];
 export default function Home() {
-    const [show, setShow] = useState(false);
-    useEffect(() => {
-        const timer = setTimeout(() => setShow(true), 5000);
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
         <>
             <NextSeo
@@ -146,7 +76,6 @@ export default function Home() {
                     addressCountry: 'US',
                 }}
             />
-
             <WebPageJsonLd
                 id="https://tfbusinesssolution.com/#webpage"
                 url="https://tfbusinesssolution.com/"
@@ -206,144 +135,43 @@ export default function Home() {
             />
             <div>
                 <HeroSection/>
-                <HeadlineSection/>
-                <NewServicesSection/>
-                <TimelineFlowLayout/>
-                <Banner
-                    title="Ready to Scale"
-                    description="Get a complete team led by an expert C-Level Executive starting next week"
-                    buttonText='Start My Growth Journey'
-                />
-                <FoundersSection/>
-                <Testimonial testimonials={[
-                    {
-                        id: 1,
-                        text: "Their sales psychology approach completely transformed our conversion rates. We went from 2% to 8% email-to-demo conversion in just 3 months",
-                        author: "Sarah",
-                        role: "CEO",
-                        rating: 5,
-                        image: "/assets/services/girl.webp",
-                        company: "Digital Marketing Agency"
-                    },
-                    {
-                        id: 2,
-                        text: "Finally, automation that doesn't sound robotic! Our customers actually engage with the sequences, and our lifetime value increased by 145%",
-                        author: "Fariha",
-                        role: "Founder ",
-                        rating: 5,
-                        image: "/assets/services/girl.webp",
-                        company: "Ecomerce Marketplace"
-                    },
-                    {
-                        id: 3,
-                        text: "The ROI was incredible. We generated an additional $280K in revenue within 6 months, and the automation saves us 20+ hours per week.",
-                        author: "Richard",
-                        role: "CMO",
-                        rating: 5,
-                        image: "/assets/services/user.webp",
-                        company: "Real Estate Agency"
-                    }
-                ]}/>
-                <SuccessSnapshots
-                    buttonText="Choose Fractional CMO Today"
-                    stories={successStories}
-                />
-                <FinalCTASection/>
-                <FAQSection
-                    faqs={[
+                <PainSection/>
+                <SolutionSection/>
+                <PricingSection
+                    plans={[
                         {
-                            id: 1,
-                            question: "What is fractional leadership and how does it work?",
-                            answer: (
-                                <p>
-                                    Fractional leadership means bringing in experienced C-level executives (CMO, CTO,
-                                    CSO) on a part-time or project basis. You get senior-level expertise without the
-                                    cost or commitment of a full-time hire.
-                                </p>
-                            )
+                            title: "1:1 Coaching for Founders",
+                            subtitle: "Personalized coaching to help founders scale smarter",
+                            price: "$49",
+                            billing: "20 hrs minimum",
+                            features: [
+                                { text: "Tailored coaching roadmap" },
+                                { text: "Weekly strategy calls" },
+                                { text: "Accountability check-ins" },
+                                { text: "Access to founder resources" },
+                            ],
                         },
                         {
-                            id: 2,
-                            question: "How is this different from hiring a consultant or freelancer?",
-                            answer: (
-                                <p>
-                                    We don’t just advise. We work directly with your team, take ownership of KPIs, build
-                                    systems, and deliver measurable outcomes. Think of us as an embedded executive, not
-                                    just external help.
-                                </p>
-                            )
-                        },
-                        {
-                            id: 3,
-                            question: "What types of companies do you work with?",
-                            answer: (
-                                <p>
-                                    We work with growing agencies, startups, B2B service providers, and digital product
-                                    companies that want to scale efficiently without hiring full-time leadership.
-
-                                </p>
-                            )
-                        },
-                        {
-                            id: 4,
-                            question: "How quickly can we get started?",
-                            answer: (
-                                <p>
-                                    You can schedule a free discovery call today. Once aligned, we typically start
-                                    within 3 to 5 business days with a strategic roadmap and onboarding.
-                                </p>
-                            )
+                            title: "Team Training",
+                            subtitle: "Boost team skills with structured AI & sales training",
+                            price: "$40",
+                            billing: "20 hrs minimum (2 members)",
+                            highlighted: true,
+                            badge: "Best value",
+                            features: [
+                                { text: "Hands-on team workshops" },
+                                { text: "Sales playbook development" },
+                                { text: "Role-specific coaching" },
+                                { text: "Progress tracking & reporting" },
+                            ],
                         },
                     ]}
                 />
+                <SuccessSnapshots/>
+                <WhyTFBusiness/>
+                <FinalCTA/>
                 <Footer/>
             </div>
-            {show && (
-                <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 bg-white px-1 sm:px-4 py-3 rounded-md shadow-md   z-[99999]">
-                    <div className="flex flex-col sm:flex-row items-center sm:gap-6 gap-2 max-w-xl mx-auto text-center sm:text-left">
-                        <div className="flex md:flex-row flex-col items-center gap-3 sm:p-0 p-1">
-                            <div className="flex-shrink-0 md:block hidden">                                <Image loading="lazy" src="/assets/services/user.webp" alt="avatar" width={40} height={40}/>
-                            </div>
-                            <div>
-                                <div className="text-xs">
-                                    <p className="text-sm font-semibold">Hello 👋 We&apos;re</p>
-                                    <section className="h-[2.5rem] overflow-hidden inline-block">
-                                        <div className="animate-textLoop flex flex-col gap-2">
-                                            <div className="bg-sky-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                Your Fractional Growth Team
-                                            </div>
-                                            <div className="bg-primary text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                Experts in Sales, Tech & Marketing
-                                            </div>
-                                            <div className="bg-red-700 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                The Team Behind 14+ Startup Wins
-                                            </div>
-                                            <div className="bg-purple-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                Not Your Average Agency
-                                            </div>
-                                            <div className="bg-indigo-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                Here to Build What You Can’t Hire
-                                            </div>
-                                            <div className="bg-green-500 text-white rounded font-semibold px-2 py-1 h-[2rem] flex items-center">
-                                                Web Development Experts
-                                            </div>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div className="flex justify-center">
-                                    <button
-                                        onClick={() => window.open('https://calendly.com/talhafakhar/discoverycall', '_blank')}
-                                        className="bg-secondary text-white font-button text-nowrap rounded-md px-2 py-1 text-xs sm:text-sm mt-2 sm:mt-0">
-                                        Book a Call
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            )}
         </>
     );
 }

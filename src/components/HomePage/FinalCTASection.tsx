@@ -1,105 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import {
-    ArrowDown,
-    ArrowRight, BarChart3, LineChart,
-    PiggyBank,
-    Puzzle,
-    Rocket, ShieldCheck,
-} from 'lucide-react';
-import { motion } from 'framer-motion';
+import { CheckCircle2, ArrowRight } from "lucide-react";
+import React from "react";
 
-interface Benefit {
-    icon: React.ComponentType<{ size?: number; className?: string }>;
-    text: string;
-    delay: string;
-}
-
-const FinalCTASection: React.FC = () => {
-    const [isVisible, setIsVisible] = useState<boolean>(false);
-
-    useEffect(() => {
-        setIsVisible(true);
-    }, []);
-
-    const benefits: Benefit[] = [
-        { icon: PiggyBank, text: "60% Cost Savings", delay: "200ms" },
-        { icon: Rocket, text: "Immediate Impact", delay: "400ms" },
-        { icon: LineChart, text: "Proven Systems", delay: "600ms" },
-        { icon: ShieldCheck, text: "Zero Risk", delay: "800ms" },
-        { icon: Puzzle, text: "Complete Integration", delay: "1000ms" },
-        { icon: BarChart3, text: "Scalable Results", delay: "1000ms" }
-    ];
+const FinalCTA: React.FC = () => {
     return (
-        <section className="py-16 px-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-                <div className="absolute top-20 right-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
-            </div>
-            <div className="max-w-7xl relative mx-auto z-10">
-                <div className="flex gap-16 items-center justify-center">
-                    <div className={`transition-all text-center duration-1000 delay-300 ${
-                        isVisible ? 'opacity-100 transform translate-x-0' : 'opacity-0 transform -translate-x-8'
-                    }`}>
-                        <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold text-secondary leading-tight mb-6">Ready to Scale Without the{' '}<span className="text-primary">
-                Executive Overhead?
-                </span></h2>
-                        <p className=" mb-4 text-center leading-relaxed">Why Choose Fractional Leadership</p>
-                        <motion.span
-                            className="flex justify-center mb-2"
-                            animate={{ y: [0, 10, 0] }}
-                            transition={{
-                                duration: 1.5,
-                                repeat: Infinity,
-                                ease: "easeInOut"
-                            }}
-                        ><ArrowDown/></motion.span>
-                        <div className="grid grid-cols-1 md:grid-cols-2 text-center gap-3 mb-8">
-                            {benefits.map((benefit, index) => {
-                                const IconComponent = benefit.icon;
-                                return (
-                                    <div
-                                        key={index}
-                                        className={`flex items-center gap-3 p-3 rounded-xl bg-white border border-primary transition-all duration-300 hover:shadow-md  translate-y-4`}
-                                        style={{ transitionDelay: benefit.delay }}
-                                    >
-                                        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-md">
-                                            <IconComponent size={16} className="text-black"/>
-                                        </div>
-                                        <span className="text-md font-semibold text-secondary">{benefit.text}</span>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </div>
+        <section className="bg-secondary text-white py-20 px-6">
+            <div className="max-w-7xl mx-auto text-center">
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 ">
+                    Are You Ready to Build a{" "}
+                    <span className="text-primary">
+            Sales Engine That Scales?
+          </span>
+                </h2>
+                <ul className="space-y-4 flex mb-12 text-left justify-center gap-10 flex-wrap">
+                    {[
+                        "Free Sales Audit",
+                        "ROI-Focused Strategy",
+                        "Templates & Training",
+                    ].map((point, idx) => (
+                        <li key={idx} className="flex  items-center gap-2">
+                            <CheckCircle2 className="w-6 h-6 text-green-400 drop-shadow-md flex-shrink-0" />
+                            <span className="text-gray-200 text-lg">{point}</span>
+                        </li>
+                    ))}
+                </ul>
+                <button
+                    onClick={() =>
+                        window.open("https://calendly.com/talhafakhar/discoverycall", "_blank")
+                    }
+                    className="px-8 py-3 bg-primary  font-bold text-black rounded text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition transform inline-flex items-center gap-2"
+                >
+                    Book Your Discovery Session
+                    <ArrowRight className="w-6 h-6" />
+                </button>
 
-                </div>
-                <div className={`text-center mt-10 transition-all duration-1000 delay-600 ${
-                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <p className="text-gray-600 mb-6">Stop losing revenue to leadership gaps. Start scaling with fractional expertise.
-                    </p>
-                </div>
-                <div className={`flex flex-col sm:flex-row justify-center mt-5 gap-4 transition-all duration-1000 delay-800 ${
-                    isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-8'
-                }`}>
-                    <div className='mx-auto'>
-                        <a
-                            href="https://calendly.com/talhafakhar/discoverycall"
-                            target='_blank'
-                            className="group inline-flex items-center px-2 md:px-6 py-2.5 rounded-full bg-yellow-400 text-black font-semibold transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 focus:outline-none"
-                        >
-                            Schedule Your Free Strategy Session Today
-                            <span
-                                className="ml-3 inline-flex w-7 h-7 rounded-full bg-black text-white items-center justify-center transition-all duration-300 group-hover:translate-x-1"
-                            >
-    <ArrowRight className="w-4 h-4" />
-  </span>
-                        </a>
-                    </div>
-                </div>
+                <p className="mt-8 text-gray-400 text-base">
+                    Prefer to start small?{" "}
+                    <button
+                        onClick={() =>
+                            window.open("https://calendly.com/talhafakhar/discoverycall", "_blank")
+                        }
+                        className="underline underline-offset-4 font-medium hover:text-yellow-400 transition"
+                    >
+                        Start with a Free Sales Audit
+                    </button>
+                </p>
             </div>
         </section>
     );
 };
 
-export default FinalCTASection;
+export default FinalCTA;

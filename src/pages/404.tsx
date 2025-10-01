@@ -1,10 +1,8 @@
-// pages/404.tsx
 import React, { useMemo } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Header/Navbar";
 import Footer from "@/components/Footer/footer";
-
 function Starfield() {
     const stars = useMemo(
         () =>
@@ -127,7 +125,6 @@ function ProtocolDroid({
         </motion.svg>
     );
 }
-
 export default function Custom404() {
     return (
         <div className="min-h-screen flex flex-col bg-[#0B0C10] text-white relative overflow-hidden">
@@ -172,8 +169,6 @@ export default function Custom404() {
                             Return Home
                         </Link>
                     </motion.div>
-
-                    {/* A soft glow around the button to draw the eye */}
                     <motion.div
                         className="absolute -z-10"
                         style={{ left: "68%", top: "48%", transform: "translate(-50%, -50%)" }}

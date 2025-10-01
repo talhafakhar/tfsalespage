@@ -1,106 +1,169 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
+import { Clock, Users, TrendingUp, Star } from "lucide-react";
 import Navbar from "@/components/Header/Navbar";
-import Image from "next/image";
-import InfiniteLogoSlider from "@/components/Common/ClientsSlider";
-const partnerNames: string[] = [
-    "B2B SaaS Companies",
-    "AI Startups",
-    "HealthTech Innovators",
-    "FinTech Leaders",
-    "Online Marketplaces",
-    "Tech-Enabled Services"
-];
 
-const HeroSection: React.FC = () => {
+const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({
+        hours: 23,
+        minutes: 59,
+        seconds: 59,
+    });
+
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true);
         }, 100);
+
+        const timer = setInterval(() => {
+            setTimeLeft((prev) => {
+                if (prev.seconds > 0) {
+                    return { ...prev, seconds: prev.seconds - 1 };
+                } else if (prev.minutes > 0) {
+                    return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+                } else if (prev.hours > 0) {
+                    return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+                }
+                return prev;
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
     }, []);
 
-
     return (
-        <div>
-            <Navbar/>
-            <section className="flex bg-secondary items-center min-h-screen bg-cover bg-center mt-10 md:mt-1" style={{ backgroundImage: "url('/assets/home/bg-hero.webp')" }}>
-                <div className="container mx-auto px-4 py-10 mt-5 md:mt-16">
-                    <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
-                        <div className="text-center ">
-                            <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <h1 className="text-5xl  md:text-6xl  lg:text-7xl font-righteous  font-bold text-white mb-6">
-                                    Fractional Leadership <span className="text-primary flex justify-center ">Founder Strategy
-                                    </span>  Team Training.
-
-                                </h1>
+        <div className="bg-black">
+            <Navbar />
+            <section className="min-h-screen relative bg-black bg-cover bg-center" style={{ backgroundImage: "url('/assets/home/sales-bg.webp')" }}>
+                <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="container mx-auto relative z-10 px-4 pt-12 md:pt-20">
+                    <div
+                        className={`transform transition-all duration-1000 ${
+                            isVisible
+                                ? "translate-y-0 opacity-100"
+                                : "translate-y-10 opacity-0"
+                        }`}
+                    >
+                        <div className="bg-red-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg inline-flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8 text-sm sm:text-base">
+                            <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
+                            <span className="font-bold whitespace-nowrap">
+                Limited Spots Available - Expires In:
+              </span>
+                            <div className="flex space-x-2">
+                                {["hours", "minutes", "seconds"].map((unit) => (
+                                    <div
+                                        key={unit}
+                                        className="bg-black px-2 sm:px-3 py-1 rounded text-center"
+                                    >
+                    <span className="text-lg sm:text-2xl font-bold">
+                      {String(timeLeft[unit as keyof typeof timeLeft]).padStart(
+                          2,
+                          "0"
+                      )}
+                    </span>
+                                        <span className="text-[10px] sm:text-xs block uppercase">
+                      {unit.slice(0, 3)}
+                    </span>
+                                    </div>
+                                ))}
                             </div>
+                        </div>
+                    </div>
+                    <div className="max-w-4xl mx-auto text-center">
+                        <div
+                            className={`transform transition-all duration-1000 delay-200 ${
+                                isVisible
+                                    ? "translate-y-0 opacity-100"
+                                    : "translate-y-10 opacity-0"
+                            }`}
+                        >
+                            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight">
+                                Sell Like Crazy Even If You Are Just A{" "}
+                                <span className="text-yellow-400 relative">Beginner!</span>
+                            </h1>
+                        </div>
 
-                            <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <p className="text-white mb-8 max-w-xl mx-auto">
-                                    CMO, CTO, and CSO support to scale sales, marketing & tech.
-                                </p>
-                            </div>
+                        <div
+                            className={`transform transition-all duration-1000 delay-400 ${
+                                isVisible
+                                    ? "translate-y-0 opacity-100"
+                                    : "translate-y-10 opacity-0"
+                            }`}
+                        >
+                            <p className="text-base sm:text-lg text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto">
+                                Are you a person with a lot of knowledge regarding the technical
+                                aspects of your business but do not know how to market them to
+                                your customers to make sales?
+                                <span className="text-yellow-400 font-bold">
+                  {" "}
+                                    What I am about to share will make you a sales machine even if
+                  you are a complete beginner.
+                </span>
+                            </p>
+                        </div>
 
-                            <div className={`transform transition-all duration-1000 delay-500 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-                                <div className="flex flex-col lg:flex-row gap-2 sm:gap-6 justify-center  items-center mb-4">
-                                    <a
-                                        href="https://calendly.com/talhafakhar/discoverycall"
-                                        target="_blank"
-                                        className="group text-sm p-2 bg-primary text-secondary font-button font-bold rounded-md overflow-hidden transition-all duration-700 hover:animate-glow-pulse transform hover:scale-110 active:scale-95 hover:rotate-1">
-                                        <span className="relative z-10 flex items-center space-x-2">
-                                            <span className="tracking-wide">Get Growth Advice</span>
-                                            <svg
-                                                className="w-6 h-6 transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"
-                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5}
-                                                      d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                            </svg>
-                                        </span>
-                                    </a>
+                        <div
+                            className={`transform transition-all duration-1000 delay-500 ${
+                                isVisible
+                                    ? "translate-y-0 opacity-100"
+                                    : "translate-y-10 opacity-0"
+                            }`}
+                        >
+                            <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
+                                <div className="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full">
+                                    <Users className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
+                                    <span className="text-white text-sm sm:text-base font-semibold">
+                    500+ Clients Helped
+                  </span>
                                 </div>
-                            </div>
-
-                            <div className={`transform transition-all duration-1000 delay-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'}`}>
-                                <div className="text-center justify-center flex gap-2 mb-4">
-                                    <h3 className="text-lg font-medium text-white tracking-wide">
-                                        We Partner With
-                                    </h3>
-                                    <Image src="/assets/svg/downArrow.svg" alt="arrow" className='mt-3' loading="lazy" width={24} height={24}/>
+                                <div className="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full">
+                                    <Star className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400 fill-yellow-400" />
+                                    <span className="text-white text-sm sm:text-base font-semibold">
+                    4.9/5 Rating
+                  </span>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto">
-                                    {partnerNames.map((name) => (
-                                        <div
-                                            key={name}
-                                            className={`
-                                            hover:border-primary
-                                                group relative
-                                                bg-gray-800/40 
-                                                border border-white
-                                                rounded
-                                                px-2 py-2
-                                                text-center
-                                                transition-all ease-out
-                                                cursor-default
-                                                backdrop-blur-sm
-                                                transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'}
-                                            `}
-                                        >
-                                            <span className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors duration-300 tracking-wide">
-                                                {name}
-                                            </span>
-                                        </div>
-                                    ))}
+                                <div className="flex items-center space-x-2 bg-white bg-opacity-10 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full">
+                                    <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 text-green-400" />
+                                    <span className="text-white text-sm sm:text-base font-semibold">
+                    3x Average Revenue Increase
+                  </span>
                                 </div>
                             </div>
                         </div>
-
+                        <div className={`transform transition-all duration-1000 delay-700 ${
+                                isVisible
+                                    ? "translate-y-0 opacity-100"
+                                    : "translate-y-10 opacity-0"
+                            }`}>
+                            <a
+                                href="https://calendly.com/talhafakhar/discoverycall"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group inline-block w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-primary font-semibold rounded transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/50 text-sm sm:text-base"
+                            >
+                <span className="relative z-10 flex items-center justify-center space-x-2 sm:space-x-3">
+                  <span className="tracking-wide text-center">
+                    CLAIM YOUR FREE DISCOVERY CALL NOW
+                  </span>
+                  <svg
+                      className="hidden sm:block w-5 h-5 sm:w-6 sm:h-6 transform group-hover:translate-x-2 transition-all duration-300"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                  >
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
-            <hr/>
-            <InfiniteLogoSlider
-                title="We Partner With Leading Brands"
-            />
         </div>
     );
 };

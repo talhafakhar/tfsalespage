@@ -1,0 +1,836 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="with blog">
+      <change afterPath="$PROJECT_DIR$/public/assets/home/founder.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/home/sellLikeCrazy.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/CaseStudiesSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/PainSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/PricingSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/SolutionSection.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/tf-landing-page.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next-sitemap.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Capture.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/Capture_2.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/TF_review_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/about-bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/emp.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/fire.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/mail.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/multiple-hand.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/about/team.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/contact/mail-astornot.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/desktopLogo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/fact.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/13662824_5295526-scaled.jpg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/Screenshot_2023-12-13_at_1.11.37_PM.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/TF_business_solutions.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-Should-Founders-2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-Should-Founders-4-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-You-Might-Not.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/astronot.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/banner-background.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/banner-bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/bg-hero.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/black-stone-texture-dark-slate-background-top-view.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/business-consulting.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/footer-bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/graph.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/image-1-1.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/image-2.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/image-3.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/laptop.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/question_mark.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/rigth-man.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/startupulseBg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/target.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/home/testimonial_TF.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/mesha.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/musings.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/pak-wheel.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/pandora.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/programmer.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/review.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/serve_co_logo.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/3d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/account.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/bdm.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/bg-CMO-hero.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/cash.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/contact-3d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/cool-astronot.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/cto-3d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/girl.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/like.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/mobile-bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/pattern-bg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/phone.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/researcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/sales.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/user.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/services/webDevelopmentBg.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/community.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/svg/downArrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/testimonial_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap-0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentry.edge.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sentry.server.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/DealSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/HeroSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/HowStartedSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/Not LikeSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/VisionSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/WhatWeDoSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogCard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogDetail.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogList.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientReviews/clientReviewsSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ClientReviews/videoReviewSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/ClientsSlider.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/CookieConsent.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/GlobalLoading.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Common/Timeline.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ContactPage/ContactUs.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/BuildForFounderSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/FeaturesSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/HeadlineSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/NewServiceSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/SuccessSnapshotsSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Testimonials.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/bannerSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/AboutStartupulseSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/ClientLogoSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/FactAndFifureSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/HeroSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/OurCommunitySection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/ReadyToJoinSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/SuccessStoriesSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/ SalesIssuesSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/Banner.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/ConsultancyOffer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/FoundersSalesSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HappyClientSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HelpSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HeroSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/SalesStrategySection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/StorySection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/VideoReviewSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhoIsThisFor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhoSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhySection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/AaaS/CaseStudiesSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/AaaS/OurProcessSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/BenefitSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/DifferenceSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/FaqSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/PricingTableSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/SkillSetSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/ToolSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/TransformSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/contactForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalSDR/IntegrationSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalSDR/SalesTeamSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/HeroSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesAutomation/CaseStudiesSextion.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesAutomation/Separator.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/FinalCTASection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/PricingPlanSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ProblemSolutionSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ProcessSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/SalesChannelsSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ServiceSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ToolsSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/industrySection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/whyChooseSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instrumentation-client.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/instrumentation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/sitemap.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/strapi.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/about/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/blogs.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/contact/send.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/recaptcha/contact.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/recaptcha/verify.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/revalidate.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blogs/[slug].tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/blogs/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/client-review/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/contact/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/our-community/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/sales-consulting/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/server-sitemap-index.xml.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/server-sitemap.xml.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/ai-agent-as-a-service/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/b2b-sales-consultation/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-cmo/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-cto/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-sdr/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/sales-automation-for-startups/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services/web-development/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/blog.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;assignee&quot;: &quot;billalkhanzada&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;assignee&quot;: &quot;billalkhanzada&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/talhafakhar/tfsalespage.git",
+    "accountId": "b6f6c9ad-11de-4aeb-9de9-463590c22c33"
+  }
+}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2zDUyFAl2fR3FmtdwJalhzDDbcI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "js.debugger.nextJs.config.created.client": "true",
+    "js.debugger.nextJs.config.created.server": "true",
+    "last_opened_file_path": "//wsl.localhost/Ubuntu-24.04/root/tf-sales/public/assets/home",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "wsl://Ubuntu-24.04@/home/developer/.nvm/versions/node/v20.17.0/bin/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "ts.external.directory.path": "\\\\wsl.localhost\\Ubuntu-24.04\\root\\tf-sales\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "AiIgnore"
+    ]
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.intellij.reactbuddy.reactComponents" value="false" />
+        <entry key="com.intellij.reactbuddy.reactInspector" value="false" />
+        <entry key="com.intellij.reactbuddy.storybook" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\tf-sales\public\assets\home" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\src\styles" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\public" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\src\pages\client-reviews" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\public\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\public\assets" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\public\assets\home" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\public\assets\services" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\src\pages" />
+      <recent name="\\wsl.localhost\Ubuntu-24.04\root\TF\src\pages\services" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Next.js: server-side">
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: debug client-side" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: server-side" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="" />
+      <created>1751265389894</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1751265389894</updated>
+      <workItem from="1751265392494" duration="27756000" />
+      <workItem from="1752647889612" duration="51522000" />
+      <workItem from="1752821009383" duration="36143000" />
+      <workItem from="1753271217587" duration="496000" />
+      <workItem from="1753340280668" duration="26000" />
+      <workItem from="1753361658496" duration="7361000" />
+      <workItem from="1753521998863" duration="25361000" />
+      <workItem from="1753783953683" duration="32856000" />
+      <workItem from="1753943611914" duration="20018000" />
+      <workItem from="1754115596407" duration="33034000" />
+      <workItem from="1754318210157" duration="1802000" />
+      <workItem from="1754465548023" duration="4464000" />
+      <workItem from="1754470177560" duration="20769000" />
+      <workItem from="1754561041750" duration="20011000" />
+      <workItem from="1754731896768" duration="3796000" />
+      <workItem from="1754898009226" duration="140000" />
+      <workItem from="1754898191596" duration="4184000" />
+      <workItem from="1754917414460" duration="3757000" />
+      <workItem from="1755094076682" duration="946000" />
+      <workItem from="1755095186866" duration="40000" />
+      <workItem from="1755095290096" duration="293000" />
+      <workItem from="1755096054174" duration="5814000" />
+      <workItem from="1755247981986" duration="3597000" />
+      <workItem from="1755524882338" duration="428000" />
+      <workItem from="1755929040766" duration="10989000" />
+      <workItem from="1756124126319" duration="7318000" />
+      <workItem from="1756193847982" duration="7051000" />
+      <workItem from="1756282447848" duration="229000" />
+      <workItem from="1756285197049" duration="13902000" />
+      <workItem from="1756362028932" duration="562000" />
+      <workItem from="1756362637448" duration="25140000" />
+      <workItem from="1756453128185" duration="153000" />
+      <workItem from="1756461676501" duration="12375000" />
+      <workItem from="1756707805938" duration="3033000" />
+      <workItem from="1756723245563" duration="13333000" />
+      <workItem from="1756815418051" duration="43000" />
+      <workItem from="1756882957982" duration="230000" />
+      <workItem from="1756883252275" duration="26000" />
+      <workItem from="1756887085958" duration="3028000" />
+      <workItem from="1756968381009" duration="1289000" />
+      <workItem from="1756980934470" duration="2759000" />
+      <workItem from="1756985036408" duration="2169000" />
+      <workItem from="1757065583438" duration="4321000" />
+      <workItem from="1757926534889" duration="27000" />
+      <workItem from="1757926574054" duration="109000" />
+      <workItem from="1757930732870" duration="128000" />
+      <workItem from="1758533805563" duration="50000" />
+      <workItem from="1758796131433" duration="28338000" />
+      <workItem from="1758956326155" duration="6217000" />
+      <workItem from="1759214471357" duration="18226000" />
+      <workItem from="1759302832743" duration="16761000" />
+    </task>
+    <task id="LOCAL-00054" summary="form fixes">
+      <option name="closed" value="true" />
+      <created>1755942364873</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1755942364873</updated>
+    </task>
+    <task id="LOCAL-00055" summary="sentry setup">
+      <option name="closed" value="true" />
+      <created>1756125334176</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1756125334177</updated>
+    </task>
+    <task id="LOCAL-00056" summary="sentry setup">
+      <option name="closed" value="true" />
+      <created>1756126340354</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1756126340354</updated>
+    </task>
+    <task id="LOCAL-00057" summary="sentry setup fix">
+      <option name="closed" value="true" />
+      <created>1756127239398</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1756127239398</updated>
+    </task>
+    <task id="LOCAL-00058" summary="file delete">
+      <option name="closed" value="true" />
+      <created>1756128016174</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1756128016174</updated>
+    </task>
+    <task id="LOCAL-00059" summary="new tag">
+      <option name="closed" value="true" />
+      <created>1756214698224</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1756214698224</updated>
+    </task>
+    <task id="LOCAL-00060" summary="Update background colors and improve layout for Sales and Consulting sections">
+      <option name="closed" value="true" />
+      <created>1756383182473</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1756383182485</updated>
+    </task>
+    <task id="LOCAL-00061" summary="update image">
+      <option name="closed" value="true" />
+      <created>1756383384678</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1756383384678</updated>
+    </task>
+    <task id="LOCAL-00062" summary="update image">
+      <option name="closed" value="true" />
+      <created>1756383466287</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1756383466287</updated>
+    </task>
+    <task id="LOCAL-00063" summary="update image">
+      <option name="closed" value="true" />
+      <created>1756383872033</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1756383872033</updated>
+    </task>
+    <task id="LOCAL-00064" summary="update image">
+      <option name="closed" value="true" />
+      <created>1756384366894</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1756384366894</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Add cookie consent management and implement dynamic sitemap generation">
+      <option name="closed" value="true" />
+      <created>1756389633771</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1756389633771</updated>
+    </task>
+    <task id="LOCAL-00066" summary="503">
+      <option name="closed" value="true" />
+      <created>1756390687854</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1756390687854</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Refactor SVG components and improve styling consistency across pages">
+      <option name="closed" value="true" />
+      <created>1756449931333</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1756449931333</updated>
+    </task>
+    <task id="LOCAL-00068" summary="sitemap">
+      <option name="closed" value="true" />
+      <created>1756450225940</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1756450225940</updated>
+    </task>
+    <task id="LOCAL-00069" summary="link navigation">
+      <option name="closed" value="true" />
+      <created>1756450863506</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1756450863506</updated>
+    </task>
+    <task id="LOCAL-00070" summary="link navigation">
+      <option name="closed" value="true" />
+      <created>1756452168616</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1756452168616</updated>
+    </task>
+    <task id="LOCAL-00071" summary="link navigation">
+      <option name="closed" value="true" />
+      <created>1756453241905</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1756453241905</updated>
+    </task>
+    <task id="LOCAL-00072" summary="sitemap fix">
+      <option name="closed" value="true" />
+      <created>1756478049466</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1756478049466</updated>
+    </task>
+    <task id="LOCAL-00073" summary="web development service page">
+      <option name="closed" value="true" />
+      <created>1756709910852</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1756709910852</updated>
+    </task>
+    <task id="LOCAL-00074" summary="web development service page">
+      <option name="closed" value="true" />
+      <created>1756710019312</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1756710019312</updated>
+    </task>
+    <task id="LOCAL-00075" summary="web development service page">
+      <option name="closed" value="true" />
+      <created>1756710229799</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1756710229799</updated>
+    </task>
+    <task id="LOCAL-00076" summary="site map fix and blog image fix">
+      <option name="closed" value="true" />
+      <created>1756733843767</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1756733843767</updated>
+    </task>
+    <task id="LOCAL-00077" summary="site map fix and blog image fix">
+      <option name="closed" value="true" />
+      <created>1756734520596</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1756734520596</updated>
+    </task>
+    <task id="LOCAL-00078" summary="sitemap fixes">
+      <option name="closed" value="true" />
+      <created>1756734612629</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1756734612629</updated>
+    </task>
+    <task id="LOCAL-00079" summary="sitemap fixes">
+      <option name="closed" value="true" />
+      <created>1756735130921</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1756735130921</updated>
+    </task>
+    <task id="LOCAL-00080" summary="sitemap fixes">
+      <option name="closed" value="true" />
+      <created>1756735387959</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1756735387959</updated>
+    </task>
+    <task id="LOCAL-00081" summary="token">
+      <option name="closed" value="true" />
+      <created>1756735438690</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1756735438690</updated>
+    </task>
+    <task id="LOCAL-00082" summary="token">
+      <option name="closed" value="true" />
+      <created>1756738270476</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1756738270477</updated>
+    </task>
+    <task id="LOCAL-00083" summary="site map server side">
+      <option name="closed" value="true" />
+      <created>1756796018867</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1756796018867</updated>
+    </task>
+    <task id="LOCAL-00084" summary="site map server side">
+      <option name="closed" value="true" />
+      <created>1756796068821</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1756796068821</updated>
+    </task>
+    <task id="LOCAL-00085" summary="no more infinite loading.">
+      <option name="closed" value="true" />
+      <created>1756796790083</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1756796790083</updated>
+    </task>
+    <task id="LOCAL-00086" summary="url fixe">
+      <option name="closed" value="true" />
+      <created>1756797256999</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1756797256999</updated>
+    </task>
+    <task id="LOCAL-00087" summary="monthly date set">
+      <option name="closed" value="true" />
+      <created>1756797337243</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1756797337243</updated>
+    </task>
+    <task id="LOCAL-00088" summary="token setup in header">
+      <option name="closed" value="true" />
+      <created>1756797715353</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1756797715353</updated>
+    </task>
+    <task id="LOCAL-00089" summary=" cache: &quot;no-store&quot;,">
+      <option name="closed" value="true" />
+      <created>1756798077370</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1756798077370</updated>
+    </task>
+    <task id="LOCAL-00090" summary=" cache: &quot;no-store&quot;,">
+      <option name="closed" value="true" />
+      <created>1756798125381</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1756798125381</updated>
+    </task>
+    <task id="LOCAL-00091" summary="server side calling">
+      <option name="closed" value="true" />
+      <created>1756809764962</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1756809764962</updated>
+    </task>
+    <task id="LOCAL-00092" summary="server side calling">
+      <option name="closed" value="true" />
+      <created>1756810929428</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1756810929429</updated>
+    </task>
+    <task id="LOCAL-00093" summary="adding our community page">
+      <option name="closed" value="true" />
+      <created>1758810094703</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1758810094703</updated>
+    </task>
+    <task id="LOCAL-00094" summary="adding our community page">
+      <option name="closed" value="true" />
+      <created>1758810998679</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1758810998679</updated>
+    </task>
+    <task id="LOCAL-00095" summary="adding our community page">
+      <option name="closed" value="true" />
+      <created>1758811057921</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1758811057921</updated>
+    </task>
+    <task id="LOCAL-00096" summary="live without blogs">
+      <option name="closed" value="true" />
+      <created>1758872410545</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1758872410545</updated>
+    </task>
+    <task id="LOCAL-00097" summary="add blog components and client review section">
+      <option name="closed" value="true" />
+      <created>1758895135983</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1758895135983</updated>
+    </task>
+    <task id="LOCAL-00098" summary="refactor blog data structure and update date handling; enhance testimonial section with new button">
+      <option name="closed" value="true" />
+      <created>1758969634902</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1758969634903</updated>
+    </task>
+    <task id="LOCAL-00099" summary="refactor sections for improved layout and styling; enhance responsiveness and visual consistency">
+      <option name="closed" value="true" />
+      <created>1759220757596</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1759220757597</updated>
+    </task>
+    <task id="LOCAL-00100" summary="remove blog for now">
+      <option name="closed" value="true" />
+      <created>1759221010424</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1759221010424</updated>
+    </task>
+    <task id="LOCAL-00101" summary="with blog">
+      <option name="closed" value="true" />
+      <created>1759300790596</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1759300790596</updated>
+    </task>
+    <task id="LOCAL-00102" summary="with blog">
+      <option name="closed" value="true" />
+      <created>1759300945827</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1759300945827</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="update image" />
+    <MESSAGE value="Add cookie consent management and implement dynamic sitemap generation" />
+    <MESSAGE value="503" />
+    <MESSAGE value="Refactor SVG components and improve styling consistency across pages" />
+    <MESSAGE value="sitemap" />
+    <MESSAGE value="link navigation" />
+    <MESSAGE value="sitemap fix" />
+    <MESSAGE value="web development service page" />
+    <MESSAGE value="site map fix and blog image fix" />
+    <MESSAGE value="sitemap fixes" />
+    <MESSAGE value="token" />
+    <MESSAGE value="site map server side" />
+    <MESSAGE value="no more infinite loading." />
+    <MESSAGE value="url fixe" />
+    <MESSAGE value="monthly date set" />
+    <MESSAGE value="token setup in header" />
+    <MESSAGE value=" cache: &quot;no-store&quot;," />
+    <MESSAGE value="server side calling" />
+    <MESSAGE value="adding our community page" />
+    <MESSAGE value="live without blogs" />
+    <MESSAGE value="add blog components and client review section" />
+    <MESSAGE value="refactor blog data structure and update date handling; enhance testimonial section with new button" />
+    <MESSAGE value="refactor sections for improved layout and styling; enhance responsiveness and visual consistency" />
+    <MESSAGE value="remove blog for now" />
+    <MESSAGE value="with blog" />
+    <option name="LAST_COMMIT_MESSAGE" value="with blog" />
+    <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
+  </component>
+</project>
