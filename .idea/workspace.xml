@@ -4,191 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="with blog">
-      <change afterPath="$PROJECT_DIR$/public/assets/home/founder.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/home/sellLikeCrazy.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage/CaseStudiesSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage/PainSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage/PricingSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage/SolutionSection.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tf-landing-page.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next-sitemap.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/Capture.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/Capture_2.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/TF_review_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/about-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/emp.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/fire.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/mail.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/multiple-hand.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/about/team.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/contact/mail-astornot.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/desktopLogo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/fact.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/13662824_5295526-scaled.jpg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/Screenshot_2023-12-13_at_1.11.37_PM.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/TF_business_solutions.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-Should-Founders-2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-Should-Founders-4-1.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/Why-You-Might-Not.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/astronot.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/banner-background.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/banner-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/bg-hero.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/black-stone-texture-dark-slate-background-top-view.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/business-consulting.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/footer-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/graph.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/image-1-1.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/image-2.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/image-3.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/laptop.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/question_mark.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/rigth-man.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/startupulseBg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/target.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/home/testimonial_TF.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/mesha.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/musings.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pak-wheel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/pandora.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/programmer.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/review.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/serve_co_logo.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/3d.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/account.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/bdm.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/bg-CMO-hero.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/cash.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/contact-3d.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/cool-astronot.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/cto-3d.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/girl.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/like.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/mobile-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/pattern-bg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/phone.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/researcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/sales.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/user.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/services/webDevelopmentBg.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/svg/community.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/svg/downArrow.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/testimonial_1.mp4" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap-0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sitemap.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentry.edge.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sentry.server.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/DealSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/HeroSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/HowStartedSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/Not LikeSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/VisionSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AboutPage/WhatWeDoSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogCard.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogDetail.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Blog/BlogList.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientReviews/clientReviewsSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ClientReviews/videoReviewSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/ClientsSlider.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/CookieConsent.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/GlobalLoading.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Common/Timeline.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ContactPage/ContactUs.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/BuildForFounderSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/FeaturesSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/HeadlineSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/NewServiceSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/SuccessSnapshotsSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/Testimonials.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/bannerSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/AboutStartupulseSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/ClientLogoSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/FactAndFifureSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/HeroSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/OurCommunitySection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/ReadyToJoinSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/OurCommunity/SuccessStoriesSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/ SalesIssuesSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/Banner.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/ConsultancyOffer.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/FoundersSalesSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HappyClientSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HelpSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/HeroSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/SalesStrategySection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/StorySection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/VideoReviewSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhoIsThisFor.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhoSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SalesConsulting/WhySection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/AaaS/CaseStudiesSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/AaaS/OurProcessSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/BenefitSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/DifferenceSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/FaqSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/PricingTableSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/SkillSetSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/ToolSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/TransformSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalCMO/contactForm.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalSDR/IntegrationSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/FractionalSDR/SalesTeamSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/HeroSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesAutomation/CaseStudiesSextion.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesAutomation/Separator.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/FinalCTASection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/PricingPlanSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ProblemSolutionSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ProcessSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/SalesChannelsSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ServiceSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/ToolsSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/industrySection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Services/SalesConsultation/whyChooseSection.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instrumentation-client.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/instrumentation.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/sitemap.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lib/strapi.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/404.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/about/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/blogs.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/contact/send.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/recaptcha/contact.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/recaptcha/verify.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/api/revalidate.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blogs/[slug].tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/blogs/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/client-review/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contact/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/our-community/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/sales-consulting/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/server-sitemap-index.xml.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/server-sitemap.xml.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/ai-agent-as-a-service/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/b2b-sales-consultation/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-cmo/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-cto/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/fractional-sdr/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/sales-automation-for-startups/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/services/web-development/index.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types/blog.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,12 +31,12 @@
     &quot;assignee&quot;: &quot;billalkhanzada&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/talhafakhar/tfsalespage.git",
-    "accountId": "b6f6c9ad-11de-4aeb-9de9-463590c22c33"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/talhafakhar/tfsalespage.git&quot;,
+    &quot;accountId&quot;: &quot;b6f6c9ad-11de-4aeb-9de9-463590c22c33&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -235,32 +52,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "js.debugger.nextJs.config.created.client": "true",
-    "js.debugger.nextJs.config.created.server": "true",
-    "last_opened_file_path": "//wsl.localhost/Ubuntu-24.04/root/tf-sales/public/assets/home",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "wsl://Ubuntu-24.04@/home/developer/.nvm/versions/node/v20.17.0/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "\\\\wsl.localhost\\Ubuntu-24.04\\root\\tf-sales\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;//wsl.localhost/Ubuntu-24.04/root/tf-sales/public/assets/home&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;wsl://Ubuntu-24.04@/home/developer/.nvm/versions/node/v20.17.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;\\\\wsl.localhost\\Ubuntu-24.04\\root\\tf-sales\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "AiIgnore"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;AiIgnore&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactDesignerToolWindowState">
     <option name="myId2Visible">
       <map>
@@ -391,23 +208,7 @@
       <workItem from="1758796131433" duration="28338000" />
       <workItem from="1758956326155" duration="6217000" />
       <workItem from="1759214471357" duration="18226000" />
-      <workItem from="1759302832743" duration="16761000" />
-    </task>
-    <task id="LOCAL-00054" summary="form fixes">
-      <option name="closed" value="true" />
-      <created>1755942364873</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1755942364873</updated>
-    </task>
-    <task id="LOCAL-00055" summary="sentry setup">
-      <option name="closed" value="true" />
-      <created>1756125334176</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1756125334177</updated>
+      <workItem from="1759302832743" duration="17556000" />
     </task>
     <task id="LOCAL-00056" summary="sentry setup">
       <option name="closed" value="true" />
@@ -785,7 +586,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759300945827</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience">
+      <option name="closed" value="true" />
+      <created>1759324852274</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1759324852274</updated>
+    </task>
+    <task id="LOCAL-00104" summary="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience">
+      <option name="closed" value="true" />
+      <created>1759325137041</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1759325137041</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -805,7 +622,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="update image" />
     <MESSAGE value="Add cookie consent management and implement dynamic sitemap generation" />
     <MESSAGE value="503" />
     <MESSAGE value="Refactor SVG components and improve styling consistency across pages" />
@@ -830,7 +646,8 @@
     <MESSAGE value="refactor sections for improved layout and styling; enhance responsiveness and visual consistency" />
     <MESSAGE value="remove blog for now" />
     <MESSAGE value="with blog" />
-    <option name="LAST_COMMIT_MESSAGE" value="with blog" />
+    <MESSAGE value="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
