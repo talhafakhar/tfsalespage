@@ -59,7 +59,7 @@ export default function CommunityChannels() {
                            transition={{ duration: 0.6, delay: index * 0.2 }}
                            whileHover={{ scale: 1.05 }}
                            viewport={{ once: true }}
-                           className={`rounded-xl p-6 flex flex-col justify-between shadow-md border border-gray-200 ${
+                           className={`rounded-xl p-6 flex flex-col bg-white justify-between shadow-md border border-gray-200 ${
                                channel.cardBg ? channel.cardBg : "bg-white"
                            }`}
                        >

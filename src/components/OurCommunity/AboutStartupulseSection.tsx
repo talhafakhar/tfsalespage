@@ -2,9 +2,7 @@ import React from 'react';
 import { Lightbulb, Users, Rocket} from 'lucide-react';
 import Image from "next/image";
 import { motion } from "framer-motion";
-
 const AboutSection = () => {
-
     const features = [
         {
             title: "Innovation Hub",
@@ -24,8 +22,12 @@ const AboutSection = () => {
     ];
 
     return (
-        <section className="py-10">
-            <div className="max-w-6xl mx-auto px-6">
+        <section className="py-10 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <div className="absolute top-20 right-2 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
+            </div>
+            <div className="max-w-6xl mx-auto px-6 relative z-10">
                 <div className="text-center mb-6">
                     <h2 className="text-4xl md:text-5xl font-bold  mb-4">
                         Meet <span className="text-yellow-400">StartUPulse</span>
@@ -34,7 +36,6 @@ const AboutSection = () => {
                         The dynamic platform connecting entrepreneurs worldwide with resources, mentorship, and community to turn startup dreams into reality.
                     </p>
                 </div>
-
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <div className="space-y-6">
                         {features.map((feature, index) => {
@@ -46,7 +47,7 @@ const AboutSection = () => {
                                     whileInView={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.8 }}
                                     viewport={{ once: true }}
-                                    className="group flex items-center space-x-4 p-6 rounded-xl border border-gray-400"
+                                    className="group flex items-center bg-white space-x-4 p-6 rounded-xl border border-gray-400"
                                 >
                                     <div className="flex-shrink-0 w-12 h-12 bg-primary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                         <IconComponent className="w-6 h-6 text-black" />

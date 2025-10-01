@@ -99,7 +99,7 @@ const Navbar: React.FC = () => {
                             </div>
                         </div>
                         <span className="font-logo text-lg lg:text-xl text-white text-nowrap">
-    Business Solution
+    Business Solutions
   </span>
                     </Link>
                     <div className="hidden lg:flex items-center space-x-1">

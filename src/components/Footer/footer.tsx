@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
                                         </div>
                                     </div>
                                     <span className="font-logo text-xl text-white">
-    Business Solution
+    Business Solutions
   </span>
                                 </Link>
                                 <p className="text-slate-300 leading-relaxed mb-8 text-lg">
