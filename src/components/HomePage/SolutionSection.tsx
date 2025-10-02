@@ -87,7 +87,7 @@ const SolutionSection: React.FC = () => {
                         className="inline-block px-6 py-3 bg-primary  font-bold text-lg rounded hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/50">
                         GET YOUR CUSTOM SALES STRATEGY →
                     </a>
-                    <p className="text-gray-500 text-sm mt-4">No generic advice. Just a tailored roadmap for your business.</p>
+                    <p className="text-gray-400 text-sm mt-4">No generic advice. Just a tailored roadmap for your business.</p>
                 </div>
             </div>
         </section>

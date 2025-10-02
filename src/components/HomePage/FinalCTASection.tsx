@@ -33,13 +33,13 @@ const FinalCTA: React.FC = () => {
                     <ArrowRight className="w-6 h-6" />
                 </button>
 
-                <p className="mt-8 text-gray-400 text-base">
+                <p className="mt-8 text-gray-300 text-base">
                     Prefer to start small?{" "}
                     <button
                         onClick={() =>
                             window.open("https://calendly.com/talhafakhar/discoverycall", "_blank")
                         }
-                        className="underline underline-offset-4 font-medium hover:text-yellow-400 transition"
+                        className="underline underline-offset-4 font-medium text-primary transition"
                     >
                         Start with a Free Sales Audit
                     </button>

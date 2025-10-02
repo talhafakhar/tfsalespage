@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="update package.json">
+    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/HeroSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/PricingSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/PricingSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/FinalCTASection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/HomePage/SolutionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/SolutionSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -218,15 +213,8 @@
       <workItem from="1759214471357" duration="18226000" />
       <workItem from="1759302832743" duration="17556000" />
       <workItem from="1759325524861" duration="1055000" />
-      <workItem from="1759388460563" duration="2573000" />
-    </task>
-    <task id="LOCAL-00059" summary="new tag">
-      <option name="closed" value="true" />
-      <created>1756214698224</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1756214698224</updated>
+      <workItem from="1759388460563" duration="2798000" />
+      <workItem from="1759404535826" duration="1099000" />
     </task>
     <task id="LOCAL-00060" summary="Update background colors and improve layout for Sales and Consulting sections">
       <option name="closed" value="true" />
@@ -612,7 +600,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759326084967</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="fix: update footer and navbar links, refactor hero section, and adjust pricing plans">
+      <option name="closed" value="true" />
+      <created>1759394524372</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1759394524372</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +628,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Refactor SVG components and improve styling consistency across pages" />
     <MESSAGE value="sitemap" />
     <MESSAGE value="link navigation" />
     <MESSAGE value="sitemap fix" />
@@ -657,7 +652,8 @@
     <MESSAGE value="refactor configuration and layout; enhance responsiveness and add new sections for improved user experience" />
     <MESSAGE value="remove sentry for now" />
     <MESSAGE value="update package.json" />
-    <option name="LAST_COMMIT_MESSAGE" value="update package.json" />
+    <MESSAGE value="fix: update footer and navbar links, refactor hero section, and adjust pricing plans" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: update footer and navbar links, refactor hero section, and adjust pricing plans" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
