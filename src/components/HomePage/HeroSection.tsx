@@ -1,35 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Clock, Users, TrendingUp, Star } from "lucide-react";
+import {  Users, TrendingUp, Star } from "lucide-react";
 import Navbar from "@/components/Header/Navbar";
 
 const HeroSection = () => {
     const [isVisible, setIsVisible] = useState(false);
-    const [timeLeft, setTimeLeft] = useState({
-        hours: 23,
-        minutes: 59,
-        seconds: 59,
-    });
 
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true);
         }, 100);
-
-        const timer = setInterval(() => {
-            setTimeLeft((prev) => {
-                if (prev.seconds > 0) {
-                    return { ...prev, seconds: prev.seconds - 1 };
-                } else if (prev.minutes > 0) {
-                    return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-                } else if (prev.hours > 0) {
-                    return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-                }
-                return prev;
-            });
-        }, 1000);
-
-        return () => clearInterval(timer);
-    }, []);
+        }, []);
 
     return (
         <div className="bg-black">
@@ -37,38 +17,6 @@ const HeroSection = () => {
             <section className="min-h-screen relative bg-black bg-cover bg-center" style={{ backgroundImage: "url('/assets/home/sales-bg.webp')" }}>
                 <div className="absolute inset-0 bg-black opacity-70"></div>
                 <div className="container mx-auto relative z-10 px-4 pt-12 md:pt-20">
-                    <div
-                        className={`transform transition-all duration-1000 ${
-                            isVisible
-                                ? "translate-y-0 opacity-100"
-                                : "translate-y-10 opacity-0"
-                        }`}
-                    >
-                        <div className="bg-red-600 text-white py-2 sm:py-3 px-4 sm:px-6 rounded-lg inline-flex flex-wrap items-center justify-center space-x-2 sm:space-x-3 mb-6 sm:mb-8 text-sm sm:text-base">
-                            <Clock className="w-4 h-4 sm:w-5 sm:h-5" />
-                            <span className="font-bold whitespace-nowrap">
-                Limited Spots Available - Expires In:
-              </span>
-                            <div className="flex space-x-2">
-                                {["hours", "minutes", "seconds"].map((unit) => (
-                                    <div
-                                        key={unit}
-                                        className="bg-black px-2 sm:px-3 py-1 rounded text-center"
-                                    >
-                    <span className="text-lg sm:text-2xl font-bold">
-                      {String(timeLeft[unit as keyof typeof timeLeft]).padStart(
-                          2,
-                          "0"
-                      )}
-                    </span>
-                                        <span className="text-[10px] sm:text-xs block uppercase">
-                      {unit.slice(0, 3)}
-                    </span>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
                     <div className="max-w-4xl mx-auto text-center">
                         <div
                             className={`transform transition-all duration-1000 delay-200 ${

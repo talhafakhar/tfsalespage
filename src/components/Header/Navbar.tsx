@@ -13,8 +13,31 @@ const Navbar: React.FC = () => {
     }, []);
   
     const [isVisible, setIsVisible] = useState(false);
+    const [timeLeft, setTimeLeft] = useState({
+        hours: 23,
+        minutes: 59,
+        seconds: 59,
+    });
+
     useEffect(() => {
-        setIsVisible(true);
+        setTimeout(() => {
+            setIsVisible(true);
+        }, 100);
+
+        const timer = setInterval(() => {
+            setTimeLeft((prev) => {
+                if (prev.seconds > 0) {
+                    return { ...prev, seconds: prev.seconds - 1 };
+                } else if (prev.minutes > 0) {
+                    return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
+                } else if (prev.hours > 0) {
+                    return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
+                }
+                return prev;
+            });
+        }, 1000);
+
+        return () => clearInterval(timer);
     }, []);
     return (
         <nav className={`transition-all duration-300 transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'} ${scrolled ? 'bg-secondary backdrop-blur-md shadow-lg ' : 'bg-black backdrop-blur-sm'}`}>
@@ -91,8 +114,23 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-primary text-black py-2 px-4 text-center font-bold text-xs sm:text-sm md:text-base">
-                ⚡ LIMITED TIME OFFER: Book Your Discovery Call Today & Get a FREE Sales Audit ($297 Value)
+            <div className="bg-primary  py-1 gap-5 flex flex-wrap justify-center items-center  px-4 text-center  text-xs sm:text-sm md:text-base">
+                    <span>⚡ LIMITED TIME OFFER: Book Your Discovery Call Today & Get a FREE Sales Audit ($297 Value) - Limited Spots Available - Expires In:</span>
+                    <div className="flex flex-wrap gap-2">
+                        {["hours", "minutes", "seconds"].map((unit) => (
+                            <div key={unit} className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded text-center">
+                                <span>
+                      {String(timeLeft[unit as keyof typeof timeLeft]).padStart(
+                          2,
+                          "0"
+                      )}
+                    </span>
+                                <span className="text-xs block uppercase">
+                      {unit.slice(0, 3)}
+                    </span>
+                            </div>
+                        ))}
+                    </div>
             </div>
         </nav>
     );

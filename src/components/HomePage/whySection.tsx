@@ -1,6 +1,7 @@
 import {BarChart3, BookOpen, Briefcase, CheckCircle} from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import Link from "next/link";
 
 const benefits = [
     {
@@ -33,7 +34,7 @@ const WhyTFBusiness: React.FC = () => {
             </div>
             <div className="max-w-7xl mx-auto text-center relative z-10">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12">
-                    Why <span className="text-primary">TF Business Solutions?</span>
+                    Why <Link href="https://www.tfbusinesssolutions.com" className="text-primary">TF Business Solutions?</Link>
                 </h2>
                 <div className="flex flex-col md:flex-row justify-center gap-12 items-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full md:w-1/2">

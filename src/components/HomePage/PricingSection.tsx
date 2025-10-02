@@ -44,7 +44,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({ plans }) => {
                     </h2>
                 </div>
 
-                {/* Pricing Cards */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
                     {plans.map((plan, index) => (
                         <Card key={index} highlighted={plan.highlighted}>

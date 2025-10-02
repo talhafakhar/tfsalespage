@@ -140,29 +140,29 @@ export default function Home() {
                 <PricingSection
                     plans={[
                         {
-                            title: "1:1 Coaching for Founders",
-                            subtitle: "Personalized coaching to help founders scale smarter",
-                            price: "$49",
-                            billing: "20 hrs minimum",
-                            features: [
-                                { text: "Tailored coaching roadmap" },
-                                { text: "Weekly strategy calls" },
-                                { text: "Accountability check-ins" },
-                                { text: "Access to founder resources" },
-                            ],
-                        },
-                        {
                             title: "Team Training",
                             subtitle: "Boost team skills with structured AI & sales training",
                             price: "$40",
                             billing: "20 hrs minimum (2 members)",
-                            highlighted: true,
-                            badge: "Best value",
                             features: [
                                 { text: "Hands-on team workshops" },
                                 { text: "Sales playbook development" },
                                 { text: "Role-specific coaching" },
                                 { text: "Progress tracking & reporting" },
+                            ],
+                        },
+                        {
+                            title: "1:1 Coaching for Founders",
+                            badge: "Best value",
+                            subtitle: "Personalized coaching to help founders scale smarter",
+                            price: "$49",
+                            billing: "20 hrs minimum",
+                            highlighted: true,
+                            features: [
+                                { text: "Tailored coaching roadmap" },
+                                { text: "Weekly strategy calls" },
+                                { text: "Accountability check-ins" },
+                                { text: "Access to founder resources" },
                             ],
                         },
                     ]}

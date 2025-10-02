@@ -8,6 +8,7 @@ import {
     Rocket,
     Users,
 } from "lucide-react";
+import Link from "next/link";
 const pillars = [
     {
         icon: <Brain className="w-10 h-10 text-yellow-400" />,
@@ -47,7 +48,7 @@ const SolutionSection: React.FC = () => {
             <div className="mx-auto max-w-7xl ">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-                        Build a Scalable B2B Sales Engine with <span className="text-primary"> TF Business Solutions</span>
+                        Build a Scalable B2B Sales Engine with <br/><Link href="https://www.tfbusinesssolutions.com" className="text-primary"> TF Business Solutions</Link>
                     </h2>
                     <p className="text-gray-400 text-lg md:text-xl mt-6 max-w-3xl mx-auto">
                         A proven system that transforms founders from hustle mode to systematic growth
