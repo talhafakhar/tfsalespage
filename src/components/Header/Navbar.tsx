@@ -13,17 +13,59 @@ const Navbar: React.FC = () => {
     }, []);
   
     const [isVisible, setIsVisible] = useState(false);
+    const [slotsLeft, setSlotsLeft] = useState(0);
+    const [weekLabel, setWeekLabel] = useState("");
     const [timeLeft, setTimeLeft] = useState({
         hours: 23,
         minutes: 59,
         seconds: 59,
     });
 
+
     useEffect(() => {
         setTimeout(() => {
             setIsVisible(true);
         }, 100);
+        const today = new Date();
+        const day = today.getDate();
+        const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
 
+        const weekNumber = Math.ceil(day / 7);
+        let slots = 0;
+        let label = "";
+
+        switch (weekNumber) {
+            case 1:
+                slots = 4;
+                label = "1st week";
+                break;
+            case 2:
+                slots = 3;
+                label = "2nd week";
+                break;
+            case 3:
+                slots = 2;
+                label = "3rd week";
+                break;
+            case 4:
+                slots = 1;
+                label = "4th week";
+                break;
+            default:
+                if (day === lastDay) {
+                    slots = 0;
+                    label = "Last day of the month";
+                } else {
+                    slots = 0;
+                    label = "No slots available";
+                }
+        }
+
+        setSlotsLeft(slots);
+        setWeekLabel(label);
+    }, []);
+
+    useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft((prev) => {
                 if (prev.seconds > 0) {
@@ -38,8 +80,7 @@ const Navbar: React.FC = () => {
         }, 1000);
 
         return () => clearInterval(timer);
-    }, []);
-    return (
+    }, []);    return (
         <nav className={`transition-all duration-300 transform ${isVisible ? 'translate-y-0 opacity-100' : '-translate-y-10 opacity-0'} ${scrolled ? 'bg-secondary backdrop-blur-md shadow-lg ' : 'bg-black backdrop-blur-sm'}`}>
             <div className="container mx-auto px-4 py-4">
                 <div className="flex justify-between items-center">
@@ -114,25 +155,29 @@ const Navbar: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-primary  py-1 gap-5 flex flex-wrap justify-center items-center  px-4 text-center  text-xs sm:text-sm md:text-base">
-                    <span>⚡ LIMITED TIME OFFER: Book Your Discovery Call Today & Get a FREE Sales Audit ($297 Value) - Limited Spots Available - Expires In:</span>
-                    <div className="flex flex-wrap gap-2">
-                        {["hours", "minutes", "seconds"].map((unit) => (
-                            <div key={unit} className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded text-center">
-                                <span>
-                      {String(timeLeft[unit as keyof typeof timeLeft]).padStart(
-                          2,
-                          "0"
-                      )}
-                    </span>
-                                <span className="text-xs block uppercase">
-                      {unit.slice(0, 3)}
-                    </span>
-                            </div>
-                        ))}
-                    </div>
-            </div>
-        </nav>
+            <div className="bg-primary py-2 gap-5 flex flex-wrap justify-center items-center px-4 text-center text-xs sm:text-sm md:text-base font-medium">
+      <span>
+        ⚡ LIMITED TIME OFFER: {weekLabel} —{" "}
+          <strong>{slotsLeft} {slotsLeft === 1 ? "slot" : "slots"} available!</strong> <br />
+        Book your Discovery Call today & get a FREE Sales Audit ($297 Value)! Expires in:
+      </span>
+
+                <div className="flex flex-wrap gap-2">
+                    {["hours", "minutes", "seconds"].map((unit) => (
+                        <div
+                            key={unit}
+                            className="bg-red-500 text-white px-2 sm:px-3 py-1 rounded text-center shadow-md"
+                        >
+            <span className="font-mono text-base sm:text-lg">
+              {String(timeLeft[unit as keyof typeof timeLeft]).padStart(2, "0")}
+            </span>
+                            <span className="text-[10px] block uppercase tracking-widest">
+              {unit.slice(0, 3)}
+            </span>
+                        </div>
+                    ))}
+                </div>
+            </div>        </nav>
     );
 };
 

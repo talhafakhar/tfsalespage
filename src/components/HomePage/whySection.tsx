@@ -1,4 +1,4 @@
-import {BarChart3, BookOpen, Briefcase, CheckCircle} from "lucide-react";
+import {BarChart3, Briefcase, CheckCircle} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import Link from "next/link";
@@ -6,24 +6,20 @@ import Link from "next/link";
 const benefits = [
     {
         icon: <BarChart3 className="w-8 h-8 text-primary"/>,
-        title: "ROI-driven",
-        desc: "Focused on measurable results and tangible business growth.",
+        title: "Insight-Driven Audit",
+        desc: "Our sales audit uncovers gaps so your consultation delivers real impact",
     },
     {
         icon: <Briefcase className="w-8 h-8 text-primary"/>,
-        title: "Cross-Industry Expertise",
-        desc: "Experience across multiple sectors to tailor strategies for your niche.",
+        title: "Tailored Consultation",
+        desc: "We craft strategies aligned with your industry, audience, and growth goals",
     },
     {
         icon: <CheckCircle className="w-8 h-8 text-primary"/>,
-        title: "Proven Track Record",
-        desc: "Trusted by businesses to deliver consistent results.",
+        title: "Strategic Team Training",
+        desc: "We assess your team to build a powerful, results-focused training plan",
     },
-    {
-        icon: <BookOpen className="w-8 h-8 text-primary"/>,
-        title: "Done-for-You Playbooks",
-        desc: "Ready-to-implement systems that save you time and effort.",
-    },
+
 ];
 
 const WhyTFBusiness: React.FC = () => {
@@ -33,15 +29,20 @@ const WhyTFBusiness: React.FC = () => {
                 <div className="absolute bottom-20 left-20 w-[400px] h-[200px] bg-primary/30 rounded-full blur-3xl"></div>
             </div>
             <div className="max-w-7xl mx-auto text-center relative z-10">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12">
-                    Why <Link href="https://www.tfbusinesssolutions.com" className="text-primary">TF Business Solutions?</Link>
+                <h2 className="text-3xl md:text-4xl font-bold mb-8 max-w-4xl mx-auto">
+                    Why <Link href="https://www.tfbusinesssolutions.com" className="text-primary">TF Business Solutions </Link> to Accelerate Your Sales?
                 </h2>
+                <p className="mb-12 text-gray-600">
+                    Tailored Consultation: We craft strategies aligned with your industry, audience, and growth goals.</p>
                 <div className="flex flex-col md:flex-row justify-center gap-12 items-center">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full md:w-1/2">
                         {benefits.map((benefit, idx) => (
                             <div
                                 key={idx}
-                                className="p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition bg-white text-left"
+                                className={`
+        p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition bg-white text-left
+        ${benefits.length === 3 && idx === 2 ? 'sm:col-span-2 sm:mx-auto sm:w-2/3' : ''}
+      `}
                             >
                                 <div className="mb-4">{benefit.icon}</div>
                                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
