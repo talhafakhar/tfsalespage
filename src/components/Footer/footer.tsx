@@ -1,5 +1,5 @@
 import React from 'react';
-import {ArrowRight, ExternalLink, Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter,} from 'lucide-react';
+import {ArrowRight, ExternalLink, Facebook, Instagram, Linkedin, Mail, Phone, Twitter,} from 'lucide-react';
 import Image from "next/image";
 import Link from "next/link";
 
