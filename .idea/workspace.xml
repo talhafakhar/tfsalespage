@@ -7,7 +7,6 @@
     <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/HomePage/whySection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +32,12 @@
     &quot;assignee&quot;: &quot;billalkhanzada&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/talhafakhar/tfsalespage.git&quot;,
-    &quot;accountId&quot;: &quot;b6f6c9ad-11de-4aeb-9de9-463590c22c33&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/talhafakhar/tfsalespage.git",
+    "accountId": "10689fc6-4509-46a7-9f06-472abe7e6614"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -61,7 +60,9 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "js.debugger.nextJs.config.created.client": "true",
     "js.debugger.nextJs.config.created.server": "true",
     "last_opened_file_path": "//wsl.localhost/Ubuntu-24.04/root/tf-sales/public/assets/home",
@@ -72,7 +73,7 @@
     "nodejs_interpreter_path": "wsl://Ubuntu-24.04@/home/developer/.nvm/versions/node/v20.17.0/bin/node",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "settings.nodejs",
-    "ts.external.directory.path": "\\\\wsl.localhost\\Ubuntu-24.04\\root\\tfsalespage\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Users\\Talha Fakhar\\AppData\\Local\\Programs\\WebStorm\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -150,7 +151,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e03c56caf84a-JavaScript-WS-252.23892.411" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.32098.39" />
       </set>
     </attachedChunks>
   </component>
@@ -218,6 +219,7 @@
       <workItem from="1760170316258" duration="89000" />
       <workItem from="1760170505844" duration="1771000" />
       <workItem from="1760178020530" duration="808000" />
+      <workItem from="1774616865149" duration="501000" />
     </task>
     <task id="LOCAL-00060" summary="Update background colors and improve layout for Sales and Consulting sections">
       <option name="closed" value="true" />
