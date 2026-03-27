@@ -155,7 +155,7 @@ export default function Home() {
                             title: "1:1 Coaching for Founders",
                             badge: "Best value",
                             subtitle: "Personalized coaching to help founders scale smarter",
-                            price: "$49",
+                            price: "$59",
                             billing: "20 hrs minimum",
                             highlighted: true,
                             features: [
