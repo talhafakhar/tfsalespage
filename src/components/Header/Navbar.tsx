@@ -13,12 +13,11 @@ const getWeekSlots = () => {
         2: { slots: 3, label: "2nd week" },
         3: { slots: 2, label: "3rd week" },
         4: { slots: 1, label: "4th week" },
+        5: { slots: 1, label: "5th week" },
     };
 
-    return weekMap[weekNumber] ?? {
-        slots: 0,
-        label: day === lastDay ? "Last day of the month" : "No slots available",
-    };
+    return weekMap[weekNumber] ?? { slots: 1, label: "This week" };
+
 };
 
 const getEndOfWeek = () => {
