@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="fix npm and pm2 path" />
+    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="fix npm and pm2 path">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,15 +220,7 @@
       <workItem from="1760170316258" duration="89000" />
       <workItem from="1760170505844" duration="1771000" />
       <workItem from="1760178020530" duration="808000" />
-      <workItem from="1774616865149" duration="4202000" />
-    </task>
-    <task id="LOCAL-00065" summary="Add cookie consent management and implement dynamic sitemap generation">
-      <option name="closed" value="true" />
-      <created>1756389633771</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1756389633771</updated>
+      <workItem from="1774616865149" duration="4633000" />
     </task>
     <task id="LOCAL-00066" summary="503">
       <option name="closed" value="true" />
@@ -610,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774855922323</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="fix npm and pm2 path">
+      <option name="closed" value="true" />
+      <created>1774856022413</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1774856022413</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
