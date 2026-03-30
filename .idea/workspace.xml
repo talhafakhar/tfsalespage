@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="2a416d92-36cc-4ced-9086-9927eaa4c419" name="Changes" comment="fixes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,15 +216,7 @@
       <workItem from="1760170316258" duration="89000" />
       <workItem from="1760170505844" duration="1771000" />
       <workItem from="1760178020530" duration="808000" />
-      <workItem from="1774616865149" duration="3503000" />
-    </task>
-    <task id="LOCAL-00062" summary="update image">
-      <option name="closed" value="true" />
-      <created>1756383466287</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1756383466287</updated>
+      <workItem from="1774616865149" duration="3860000" />
     </task>
     <task id="LOCAL-00063" summary="update image">
       <option name="closed" value="true" />
@@ -612,7 +602,15 @@
       <option name="project" value="LOCAL" />
       <updated>1774684542134</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="fixes">
+      <option name="closed" value="true" />
+      <created>1774855472247</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1774855472247</updated>
+    </task>
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -632,7 +630,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="link navigation" />
     <MESSAGE value="sitemap fix" />
     <MESSAGE value="web development service page" />
     <MESSAGE value="site map fix and blog image fix" />
@@ -657,7 +654,8 @@
     <MESSAGE value="update package.json" />
     <MESSAGE value="fix: update footer and navbar links, refactor hero section, and adjust pricing plans" />
     <MESSAGE value="changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="changes" />
+    <MESSAGE value="fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixes" />
     <option name="NON_MODAL_COMMIT_POSTPONE_SLOW_CHECKS" value="false" />
   </component>
 </project>
