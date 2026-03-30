@@ -5,7 +5,6 @@ import Image from 'next/image';
 const getWeekSlots = () => {
     const today = new Date();
     const day = today.getDate();
-    const lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
     const weekNumber = Math.ceil(day / 7);
 
     const weekMap: Record<number, { slots: number; label: string }> = {
